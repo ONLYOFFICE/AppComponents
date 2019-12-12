@@ -1365,6 +1365,17 @@
   dependencies:
     global "^4.3.2"
 
+"@storybook/addon-contexts@^5.2.8":
+  version "5.2.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-contexts/-/addon-contexts-5.2.8.tgz#1f47e92e42ec560b32a1ed7495d700482d0c4a37"
+  integrity sha512-pqbh/qlF9qeRU+YUvgVM24PpKhxEP57poIp3rL5gdMkJ1fQXdFuBjnyZLIJ8SQgY9zvWS6dmuBNAUkd3U1fj6A==
+  dependencies:
+    "@storybook/addons" "5.2.8"
+    "@storybook/api" "5.2.8"
+    "@storybook/components" "5.2.8"
+    "@storybook/core-events" "5.2.8"
+    core-js "^3.0.1"
+
 "@storybook/addon-knobs@^5.2.8":
   version "5.2.8"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-5.2.8.tgz#e0d03823969921a0da57a329376d03066dd749ee"
