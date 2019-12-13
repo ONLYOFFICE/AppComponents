@@ -5,7 +5,7 @@ Custom Tabs menu
 ### Usage
 
 ```js
-import { ThemeProvider } from "asc-web-components";
+import { ThemeProvider } from "app-components";
 ```
 
 ```jsx
