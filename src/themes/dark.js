@@ -1,5 +1,4 @@
 const Dark = {
-  type: "dark",
   backgroundColor: "#1F2933",
   fontFamily: "Open Sans, sans-serif, Arial",
   color: "#E4E7EB",

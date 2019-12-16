@@ -6,12 +6,10 @@ import Readme from "./README.md";
 import { BooleanValue } from "react-values";
 import Box from "../Box/";
 import Text from "../Text";
-import JSONPrettyMon from "react-json-pretty/dist/monikai";
 import JSONPretty from "react-json-pretty";
 import { Base, Dark } from "../../themes";
 
 const LightTheme = {
-  type: "light",
   backgroundColor: "#FFF",
   fontFamily: "sans-serif",
   color: "#333",
@@ -19,7 +17,6 @@ const LightTheme = {
 };
 
 const DarkTheme = {
-  type: "dark",
   backgroundColor: "#1F2933",
   fontFamily: "Open Sans",
   color: "#E4E7EB",
@@ -49,38 +46,52 @@ storiesOf("Components|ThemeComponents", module)
         </Box>
       )}
     </BooleanValue>
-  ))
+  ));
+storiesOf("Components|ThemeComponents", module)
+  .addParameters({ options: { showAddonPanel: false } })
   .add("Base theme", () => {
     const jsonTheme = {
-      main: "line-height:1.3;color:#748096;background:white;overflow:auto;",
-      error: "line-height:1.3;color:#748096;background:white;overflow:auto;",
-      key: "color:#b553bf;",
-      string: "color:#fba856;",
-      value: "color:#93a3bf;",
-      boolean: "color:#448aa9;"
+      main: "line-height:1.5;background:#FFF;overflow:auto;",
+      error: "line-height:1.5;background:#FFF;overflow:auto;",
+      key: "color:#444;",
+      string: "color:#00873D;"
     };
     return (
       <Box paddingProp={"16px"}>
-        <Text isBold={true} fontSize={"20px"}>
-          Base theme
+        <Text isBold fontSize="20px">
+          Base theme:
         </Text>
-        <JSONPretty
-          id="json-pretty"
-          data={JSON.stringify(Base)}
-          theme={jsonTheme}
-        ></JSONPretty>
+        <Text as="div" isBold fontSize="14px">
+          <JSONPretty
+            id="json-pretty"
+            data={JSON.stringify(Base)}
+            theme={jsonTheme}
+          />
+        </Text>
       </Box>
     );
-  })
-  .add("Dark theme", () => (
-    <Box paddingProp={"16px"}>
-      <Text isBold={true} fontSize={"20px"}>
-        Dark theme
-      </Text>
-      <JSONPretty
-        id="json-pretty"
-        data={JSON.stringify(Dark)}
-        theme={JSONPrettyMon}
-      ></JSONPretty>
-    </Box>
-  ));
+  });
+storiesOf("Components|ThemeComponents", module)
+  .addParameters({ options: { showAddonPanel: false } })
+  .add("Dark theme", () => {
+    const jsonTheme = {
+      main: "line-height:1.5;background:#1F2933;overflow:auto;",
+      error: "line-height:1.5;background:#1F2933;overflow:auto;",
+      key: "color:#1F97CA;",
+      string: "color:#00873D;"
+    };
+    return (
+      <Box paddingProp={"16px"}>
+        <Text isBold fontSize="20px">
+          Dark theme:
+        </Text>
+        <Text as="div" isBold color="#1F97CA" fontSize="14px">
+          <JSONPretty
+            id="json-pretty"
+            data={JSON.stringify(Dark)}
+            theme={jsonTheme}
+          />
+        </Text>
+      </Box>
+    );
+  });

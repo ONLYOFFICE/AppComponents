@@ -1,5 +1,4 @@
 const Base = {
-  type: "light",
   backgroundColor: "#FFF",
   fontFamily: "Open Sans, sans-serif, Arial",
   color: "#333",
