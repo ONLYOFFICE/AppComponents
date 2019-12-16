@@ -6,8 +6,11 @@ import Readme from "./README.md";
 import { BooleanValue } from "react-values";
 import Box from "../Box/";
 import Text from "../Text";
+import JSONPrettyMon from "react-json-pretty/dist/monikai";
+import JSONPretty from "react-json-pretty";
+import { Base, Dark } from "../../themes";
 
-const Light = {
+const LightTheme = {
   type: "light",
   backgroundColor: "#FFF",
   fontFamily: "sans-serif",
@@ -15,7 +18,7 @@ const Light = {
   boxShadow: "0.8rem 0.8rem 1.5rem gray"
 };
 
-const Dark = {
+const DarkTheme = {
   type: "dark",
   backgroundColor: "#1F2933",
   fontFamily: "Open Sans",
@@ -25,7 +28,7 @@ const Dark = {
 
 storiesOf("Components|ThemeComponents", module)
   .addDecorator(withReadme(Readme))
-  .add("Dark", () => (
+  .add("Default", () => (
     <BooleanValue>
       {({ value, toggle }) => (
         <Box displayProp="flex" paddingProp="16px" alignItems="center">
@@ -37,7 +40,7 @@ storiesOf("Components|ThemeComponents", module)
             />
           </Box>
           <Box>
-            <ThemeProvider theme={value ? Dark : Light}>
+            <ThemeProvider theme={value ? DarkTheme : LightTheme}>
               <Text isBold fontSize="16px">
                 {value ? "Dark" : "Light"}
               </Text>
@@ -46,4 +49,38 @@ storiesOf("Components|ThemeComponents", module)
         </Box>
       )}
     </BooleanValue>
+  ))
+  .add("Base theme", () => {
+    const jsonTheme = {
+      main: "line-height:1.3;color:#748096;background:white;overflow:auto;",
+      error: "line-height:1.3;color:#748096;background:white;overflow:auto;",
+      key: "color:#b553bf;",
+      string: "color:#fba856;",
+      value: "color:#93a3bf;",
+      boolean: "color:#448aa9;"
+    };
+    return (
+      <Box paddingProp={"16px"}>
+        <Text isBold={true} fontSize={"20px"}>
+          Base theme
+        </Text>
+        <JSONPretty
+          id="json-pretty"
+          data={JSON.stringify(Base)}
+          theme={jsonTheme}
+        ></JSONPretty>
+      </Box>
+    );
+  })
+  .add("Dark theme", () => (
+    <Box paddingProp={"16px"}>
+      <Text isBold={true} fontSize={"20px"}>
+        Dark theme
+      </Text>
+      <JSONPretty
+        id="json-pretty"
+        data={JSON.stringify(Dark)}
+        theme={JSONPrettyMon}
+      ></JSONPretty>
+    </Box>
   ));
