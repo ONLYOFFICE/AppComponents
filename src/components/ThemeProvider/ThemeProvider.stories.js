@@ -8,19 +8,18 @@ import Box from "../Box/";
 import Text from "../Text";
 import JSONPretty from "react-json-pretty";
 import { Base, Dark } from "../../themes";
+import Heading from "../Heading";
 
 const LightTheme = {
   backgroundColor: "#FFF",
   fontFamily: "sans-serif",
-  color: "#333",
-  boxShadow: "0.8rem 0.8rem 1.5rem gray"
+  textColor: "#333"
 };
 
 const DarkTheme = {
   backgroundColor: "#1F2933",
   fontFamily: "Open Sans",
-  color: "#E4E7EB",
-  boxShadow: "0.4rem 0.4rem 1.5rem #111"
+  textColor: "#E4E7EB"
 };
 
 storiesOf("Components|ThemeComponents", module)
@@ -58,9 +57,7 @@ storiesOf("Components|ThemeComponents", module)
     };
     return (
       <Box paddingProp={"16px"}>
-        <Text isBold fontSize="20px">
-          Base theme:
-        </Text>
+        <Heading>Base theme:</Heading>
         <Text as="div" isBold fontSize="14px">
           <JSONPretty
             id="json-pretty"
@@ -81,10 +78,8 @@ storiesOf("Components|ThemeComponents", module)
       string: "color:#00873D;"
     };
     return (
-      <Box paddingProp={"16px"}>
-        <Text isBold fontSize="20px">
-          Dark theme:
-        </Text>
+      <Box textAlign="right" paddingProp={"16px"}>
+        <Heading>Dark theme:</Heading>
         <Text as="div" isBold color="#1F97CA" fontSize="14px">
           <JSONPretty
             id="json-pretty"

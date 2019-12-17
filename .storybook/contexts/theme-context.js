@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import ThemeProvider from "../../src/components/Theme-provider/";
+import ThemeProvider from "../../src/components/ThemeProvider/";
 import { Base, Dark } from "../../src/themes/index";
 
 const ThemeWrapper = ({ theme, children }) => (

@@ -12,26 +12,21 @@ You can change the CSS styles in the theme, and they will be applied to all chil
 ### Usage
 
 ```js
-import { ThemeProvider } from "app-components";
+import { ThemeProvider, Themes } from "app-components";
 ```
 
 ```jsx
-const BaseTheme = {
-  backgroundColor: "#FFF",
-  fontFamily: "sans-serif",
-  color: "#333"
-};
+const newTheme = {...Themes.Base, color: "red"}
 
 <ThemeProvider theme={BaseTheme}>
   <Box>
     <Text>Base theme</Text>
-    <Text theme={{ color: "red", fontFamily: "Roboto" }}>Override theme</Text>
   </Box>
 </ThemeProvider>;
 ```
 
 ### ThemeProvider Properties
 
-| Props   |   Type   | Required | Values |    Default    | Description                                                |
-| ------- | :------: | :------: | :----: | :-----------: | ---------------------------------------------------------- |
+| Props   |   Type   | Required | Values |    Default    | Description                                 |
+| ------- | :------: | :------: | :----: | :-----------: | ------------------------------------------- |
 | `theme` | `object` |    ✅    |   -    | `Base styles` | Provides a theme to all children components |
