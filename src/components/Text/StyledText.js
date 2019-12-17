@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 const styleCss = css`
   font-family: ${props => props.theme.fontFamily};
   text-align: left;
-  color: ${props => (props.color ? props.color : props.theme.color)};
+  color: ${props => (props.color ? props.color : props.theme.textColor)};
   ${props =>
     props.truncate === true &&
     css`

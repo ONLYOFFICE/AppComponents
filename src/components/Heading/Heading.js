@@ -28,12 +28,10 @@ Heading.propTypes = {
 };
 
 Heading.defaultProps = {
-  title: "",
   truncate: false,
   isInline: false,
   size: "large",
-  level: 1,
-  className: ""
+  level: 1
 };
 
 export default Heading;
