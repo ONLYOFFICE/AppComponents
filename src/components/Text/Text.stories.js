@@ -11,6 +11,7 @@ import {
 import Text from ".";
 import withReadme from "storybook-readme/with-readme";
 import Readme from "./README.md";
+import Box from "../Box";
 
 const textTags = ["p", "span", "div"];
 
@@ -18,7 +19,7 @@ storiesOf("Components|Text", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
   .add("Default", () => (
-    <div style={{ width: "100%" }}>
+    <Box paddingProp="16px" widthProp="100%">
       <Text
         title={text("title", "")}
         as={select("as", textTags, "p")}
@@ -34,5 +35,5 @@ storiesOf("Components|Text", module)
       >
         {text("Text", "Sample text")}
       </Text>
-    </div>
+    </Box>
   ));
