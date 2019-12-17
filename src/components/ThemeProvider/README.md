@@ -18,7 +18,7 @@ import { ThemeProvider, Themes } from "app-components";
 ```jsx
 const newTheme = {...Themes.Base, color: "red"}
 
-<ThemeProvider theme={BaseTheme}>
+<ThemeProvider theme={newTheme}>
   <Box>
     <Text>Base theme</Text>
   </Box>
