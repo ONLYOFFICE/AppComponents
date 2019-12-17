@@ -2,6 +2,8 @@ import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { addReadme } from 'storybook-readme';
 import { withConsole } from '@storybook/addon-console';
+import { withContexts } from "@storybook/addon-contexts/react";
+import { contexts } from "./contexts/index";
 
 import '!style-loader!css-loader!./styles.scss';
 
@@ -42,5 +44,6 @@ function loadStories() {
 }
 
 addDecorator((storyFn, context) => withConsole()(storyFn)(context));
+addDecorator(withContexts(contexts));
 
 configure(loadStories, module);

@@ -25,7 +25,7 @@ storiesOf("Components|Text", module)
         fontSize={number("fontSize", 13)}
         fontWeight={number("fontWeight")}
         truncate={boolean("truncate", false)}
-        color={color("color", "#333333")}
+        color={color("color", "")}
         backgroundColor={color("backgroundColor", "")}
         isBold={boolean("isBold", false)}
         isItalic={boolean("isItalic", false)}
