@@ -1,14 +1,13 @@
 # ThemeProvider
 
-Custom theme provider.
-Wraps your components and they will use CSS styles depending on the selected theme.
+Custom theme provider based on [Theme Provider](https://www.styled-components.com/docs/advanced).
 
 List of themes:
 
 - [Base theme](/?path=/story/components-themecomponents--base-theme)
 - [Dark theme](/?path=/story/components-themecomponents--dark-theme)
 
-Нou can change CSS styles in the theme and they will be applied to all components that are in the "ThemeProvider"
+You can change the CSS styles in the theme, and they will be applied to all children components of ThemeProvider
 
 ### Usage
 
@@ -35,4 +34,4 @@ const BaseTheme = {
 
 | Props   |   Type   | Required | Values |    Default    | Description                                                |
 | ------- | :------: | :------: | :----: | :-----------: | ---------------------------------------------------------- |
-| `theme` | `object` |    ✅    |   -    | `Base styles` | Provides a theme to all React components underneath itself |
+| `theme` | `object` |    ✅    |   -    | `Base styles` | Provides a theme to all children components |
