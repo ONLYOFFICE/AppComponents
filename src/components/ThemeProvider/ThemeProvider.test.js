@@ -7,7 +7,7 @@ const theme = {
   backgroundColor: "#fff"
 };
 
-describe("Weekdays tests:", () => {
+describe("<ThemeProvider />", () => {
   it("ThemeProvider renders without error", () => {
     const wrapper = mount(
       <ThemeProvider theme={theme}>
