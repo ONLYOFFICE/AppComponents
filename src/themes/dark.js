@@ -1,8 +1,7 @@
 const Dark = {
+  textColor: "#E4E7EB",
   backgroundColor: "#1F2933",
-  fontFamily: "Open Sans, sans-serif, Arial",
-  color: "#E4E7EB",
-  boxShadow: "0.4rem 0.4rem 1.5rem #111"
+  fontFamily: "Open Sans, sans-serif, Arial"
 };
 
 export default Dark;
