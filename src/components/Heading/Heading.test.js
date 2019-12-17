@@ -24,4 +24,16 @@ describe("<Heading />", () => {
     expect(wrapper.prop("className")).toEqual("test");
     expect(wrapper.getDOMNode().style).toHaveProperty("color", "red");
   });
+
+  it("test css props", () => {
+    const wrapper = mount(
+      <Heading truncate isInline color="red">
+        Some text
+      </Heading>
+    );
+
+    expect(wrapper.props().color).toEqual("red");
+    expect(wrapper.props().truncate).toEqual(true);
+    expect(wrapper.props().truncate).toEqual(true);
+  });
 });

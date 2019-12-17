@@ -15,13 +15,14 @@ describe("<Text />", () => {
 
   it("test css props", () => {
     const wrapper = mount(
-      <Text backgroundColor="#333" display="contents">
+      <Text backgroundColor="#333" display="contents" tag="div">
         Some text
       </Text>
     );
 
     expect(wrapper.props().display).toEqual("contents");
     expect(wrapper.props().backgroundColor).toEqual("#333");
+    expect(wrapper.props().tag).toEqual("div");
   });
 
   it("id, className, style is exists", () => {
