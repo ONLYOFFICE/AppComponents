@@ -1,12 +1,10 @@
-import React, {forwardRef} from "react";
-import PropTypes from 'prop-types';
-import StyledBox from './StyledBox';
+import React, { forwardRef } from "react";
+import PropTypes from "prop-types";
+import StyledBox from "./StyledBox";
 
-const Box = forwardRef(({ tag, as, id, className, style, ...rest }, ref) => {
+const Box = forwardRef(({ tag, as, ...rest }, ref) => {
   //console.log("Box render", rest)
-  return (
-    <StyledBox as={!as && tag ? tag : as} ref={ref} id={id} className={className} style={style} {...rest} />
-  );
+  return <StyledBox as={!as && tag ? tag : as} ref={ref} {...rest} />;
 });
 
 Box.propTypes = {
@@ -31,14 +29,11 @@ Box.propTypes = {
   overflowProp: PropTypes.string,
   paddingProp: PropTypes.string,
   textAlign: PropTypes.string,
-  widthProp: PropTypes.string,
-  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  className: PropTypes.string
-}
+  widthProp: PropTypes.string
+};
 
 Box.defaultProps = {
-  displayProp: 'block'
+  displayProp: "block"
 };
 
 Box.displayName = "Box";

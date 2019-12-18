@@ -2,18 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import StyledText from "./StyledText";
 
-const Text = ({ title, tag, as, id, className, style, ...rest }) => {
+const Text = ({ title, tag, as, ...rest }) => {
   //console.log("Text render", rest)
-  return (
-    <StyledText
-      as={!as && tag ? tag : as}
-      title={title}
-      id={id}
-      className={className}
-      style={style}
-      {...rest}
-    />
-  );
+  return <StyledText as={!as && tag ? tag : as} title={title} {...rest} />;
 };
 
 Text.propTypes = {
@@ -28,10 +19,7 @@ Text.propTypes = {
   isBold: PropTypes.bool,
   isInline: PropTypes.bool,
   isItalic: PropTypes.bool,
-  display: PropTypes.string,
-  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  className: PropTypes.string
+  display: PropTypes.string
 };
 
 Text.defaultProps = {

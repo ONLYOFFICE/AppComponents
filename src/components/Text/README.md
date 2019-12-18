@@ -34,9 +34,6 @@ const StyledText = styled(Text)`
 
 | Props             |            Type             | Required | Values |  Default  | Description                                        |
 | ----------------- | :-------------------------: | :------: | :----: | :-------: | -------------------------------------------------- |
-| `id`              |      `string, number`       |    -     |   -    |     -     | Used as HTML `id` property                         |
-| `className`       |          `string`           |    -     |   -    |     -     | Accepts class                                      |
-| `style`           |       `array, object`       |    -     |   -    |     -     | Accepts css styles                                 |
 | `fontSize`        | `oneOfType(number, string)` |    -     |   -    |   `13`    | Sets the font size                                 |
 | `as`              |          `string`           |    -     |   -    |    `p`    | Sets the tag through which to render the component |
 | `title`           |           `bool`            |    -     |   -    |     -     | Title                                              |
