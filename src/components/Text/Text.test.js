@@ -15,14 +15,34 @@ describe("<Text />", () => {
 
   it("test css props", () => {
     const wrapper = mount(
-      <Text backgroundColor="#333" display="contents" tag="div">
+      <Text
+        color="red"
+        backgroundColor="#333"
+        display="contents"
+        tag="div"
+        fontWeight={700}
+        truncate
+        fontSize="13px"
+        isItalic
+      >
         Some text
       </Text>
     );
 
+    expect(wrapper.props().color).toEqual("red");
     expect(wrapper.props().display).toEqual("contents");
     expect(wrapper.props().backgroundColor).toEqual("#333");
     expect(wrapper.props().tag).toEqual("div");
+    expect(wrapper.props().fontWeight).toEqual(700);
+    expect(wrapper.props().truncate).toEqual(true);
+    expect(wrapper.props().fontSize).toEqual("13px");
+
+    const wrapper2 = mount(
+      <Text isInline isBold>
+        Some text
+      </Text>
+    );
+    expect(wrapper2.props().isInline).toEqual(true);
   });
 
   it("id, className, style is exists", () => {
