@@ -11,8 +11,8 @@ import { Icons } from "app-components";
 ```jsx
 <Icons.NavLogoIcon
   color="#333333"
-  isfill={false}
-  isStroke={false}
+  fill={false}
+  stroke={false}
   size="small"
 />
 ```
@@ -23,5 +23,5 @@ import { Icons } from "app-components";
 | ---------- | :------: | :------: | :-------------------------------: | :------: | ------------------------- |
 | `size`     | `string` |    -     | `small`, `medium`, `big` ,`scale` | `medium` | Specifies the icon size   |
 | `color`    | `string` |    -     |                 -                 | `black`  | Specifies the icon color  |
-| `isfill`   |  `bool`  |    -     |                 -                 |    -     | Specifies the icon fill   |
-| `isStroke` |  `bool`  |    -     |                 -                 |    -     | Specifies the icon stroke |
+| `fill`   |  `bool`  |    -     |                 -                 |    -     | Specifies the icon fill   |
+| `stroke` |  `bool`  |    -     |                 -                 |    -     | Specifies the icon stroke |

@@ -28,14 +28,14 @@ storiesOf("Components|Icons", module)
           "big"
         );
 
-        const isFill = boolean("isfill", false);
-        const iconColor = isFill
+        const fill = boolean("fill", false);
+        const iconColor = fill
           ? { color: `${color("color", "dimgray")}` }
           : {};
 
-        const isStroke = boolean("isStroke", false);
-        const iconStroke = isStroke
-          ? { stroke: `${color("stroke", "dimgray")}` }
+        const stroke = boolean("stroke", false);
+        const iconStroke = stroke
+          ? { strokeProp: `${color("strokeColor", "dimgray")}` }
           : {};
 
         const containerWidth =
@@ -58,8 +58,8 @@ storiesOf("Components|Icons", module)
           >
             <Box marginProp="16px 0" style={containerWidth}>
               <Icon
-                isfill={isFill}
-                isStroke={isStroke}
+                fill={fill}
+                stroke={stroke}
                 size={sizeValue}
                 {...iconColor}
                 {...iconStroke}

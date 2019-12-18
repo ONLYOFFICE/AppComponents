@@ -81,10 +81,10 @@ export default function createStyledIcon(
   const StyledIcon = styled(Icon)(
     props => `
     ${props.fillPath} {
-      ${props.isfill ? "fill:" + props.color : ""};
+      ${props.fill ? "fill:" + props.color : ""};
     }
     ${props.strokePath} {
-      ${props.isStroke ? "stroke:" + props.stroke : ""};
+      ${props.stroke ? "stroke:" + props.strokeProp : ""};
     }
     overflow: hidden;
     vertical-align: middle;
@@ -95,10 +95,10 @@ export default function createStyledIcon(
   StyledIcon.displayName = displayName;
   StyledIcon.propTypes = {
     color: PropTypes.string,
-    stroke: PropTypes.string,
+    strokeProp: PropTypes.string,
     size: PropTypes.oneOf(["small", "medium", "big", "scale"]),
-    isfill: PropTypes.bool,
-    isStroke: PropTypes.bool,
+    fill: PropTypes.bool,
+    stroke: PropTypes.bool,
     fillPath: PropTypes.string,
     strokePath: PropTypes.string
   };

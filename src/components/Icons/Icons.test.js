@@ -33,15 +33,15 @@ describe("<Icons />", () => {
     expect(wrapper.prop("size")).toBe("scale");
   });
 
-  it("isfill prop", () => {
-    const wrapper = mount(<Icons.AZSortingIcon isfill />);
+  it("fill prop", () => {
+    const wrapper = mount(<Icons.AZSortingIcon fill />);
 
-    expect(wrapper.prop("isfill")).toBe(true);
+    expect(wrapper.prop("fill")).toBe(true);
   });
 
-  it("isStroke prop", () => {
-    const wrapper = mount(<Icons.AZSortingIcon isStroke />);
+  it("stroke prop", () => {
+    const wrapper = mount(<Icons.AZSortingIcon stroke />);
 
-    expect(wrapper.prop("isStroke")).toBe(true);
+    expect(wrapper.prop("stroke")).toBe(true);
   });
 });
