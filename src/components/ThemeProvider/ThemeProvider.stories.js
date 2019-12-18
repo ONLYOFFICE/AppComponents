@@ -13,16 +13,16 @@ import Heading from "../Heading";
 const LightTheme = {
   backgroundColor: "#FFF",
   fontFamily: "sans-serif",
-  textColor: "#333"
+  text: { color: "#333" }
 };
 
 const DarkTheme = {
   backgroundColor: "#1F2933",
   fontFamily: "Open Sans",
-  textColor: "#E4E7EB"
+  text: { color: "#E4E7EB" }
 };
 
-storiesOf("Components|ThemeComponents", module)
+storiesOf("Components|ThemeProvider", module)
   .addDecorator(withReadme(Readme))
   .add("Default", () => (
     <BooleanValue>
@@ -46,7 +46,7 @@ storiesOf("Components|ThemeComponents", module)
       )}
     </BooleanValue>
   ));
-storiesOf("Components|ThemeComponents", module)
+storiesOf("Components|ThemeProvider", module)
   .addParameters({ options: { showAddonPanel: false } })
   .add("Base theme", () => {
     const jsonTheme = {
@@ -58,9 +58,7 @@ storiesOf("Components|ThemeComponents", module)
     return (
       <ThemeProvider theme={LightTheme}>
         <Box paddingProp={"16px"}>
-          <Heading>
-            Base theme:
-          </Heading>
+          <Heading>Base theme:</Heading>
           <Text as="div" isBold fontSize="14px">
             <JSONPretty
               id="json-pretty"
@@ -72,7 +70,7 @@ storiesOf("Components|ThemeComponents", module)
       </ThemeProvider>
     );
   });
-storiesOf("Components|ThemeComponents", module)
+storiesOf("Components|ThemeProvider", module)
   .addParameters({ options: { showAddonPanel: false } })
   .add("Dark theme", () => {
     const jsonTheme = {
@@ -84,9 +82,7 @@ storiesOf("Components|ThemeComponents", module)
     return (
       <ThemeProvider theme={DarkTheme}>
         <Box paddingProp={"16px"}>
-          <Heading>
-            Dark theme:
-          </Heading>
+          <Heading>Dark theme:</Heading>
           <Text as="div" isBold color="#1F97CA" fontSize="14px">
             <JSONPretty
               id="json-pretty"
