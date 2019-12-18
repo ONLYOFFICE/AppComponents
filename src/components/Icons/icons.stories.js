@@ -16,7 +16,7 @@ const iconNames = Object.keys(Icons);
 storiesOf("Components|Icons", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
-  .add("all icons", () => (
+  .add("Default", () => (
     <Box
       displayProp="grid"
       style={{ gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr" }}
