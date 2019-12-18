@@ -51,15 +51,7 @@ export default function createStyledIcon(
       el.appendChild(el.ownerDocument.importNode(doc.documentElement, true));
     }
     render() {
-      const {
-        isfill,
-        isStroke,
-        color,
-        stroke,
-        fillPath,
-        strokePath,
-        ...props
-      } = this.props;
+      const { ...props } = this.props;
 
       var svg = ReactDOMServer.renderToString(
         <Component {...props}></Component>
