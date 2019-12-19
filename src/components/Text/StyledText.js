@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 
 const styleCss = css`
-  font-family: 'Open Sans', sans-serif, Arial;
+  font-family: ${props => props.theme.fontFamily};
   text-align: left;
-  color: ${props => props.color};
+  color: ${props => (props.color ? props.color : props.theme.color)};
   ${props =>
     props.truncate === true &&
     css`

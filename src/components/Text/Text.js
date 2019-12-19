@@ -27,7 +27,6 @@ Text.propTypes = {
 
 Text.defaultProps = {
   title: '',
-  color: '#333333',
   fontSize: 13,
   truncate: false,
   isBold: false,
