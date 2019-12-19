@@ -16,13 +16,13 @@ import { Box } from "app-components";
 
 | Props            |      Type         | Required | Values | Default | Description                                           |
 | :--------------: | :---------------: | :------: | :----: | :-----: | ----------------------------------------------------- |
-| `as`             | `string`          |    -     |   -    |    `p`  | Sets the tag through which to render the component    |
+| `as`             | `string`          |    -     |   -    |         | Sets the tag through which to render the component    |
 | `alignContent`   | `string`          |    -     |   -    |    -    | sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis |
 | `alignItems`     | `string`          |    -     |   -    |    -    | sets the align-self value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area. |
 | `alignSelf`      | `string`          |    -     |   -    |    -    | overrides a grid or flex item's align-items value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis. |
 | `backgroundProp` | `string`          |    -     |   -    |    -    | sets all background style properties at once, such as color, image, origin and size, or repeat method. |
 | `borderProp`     | `string`,`object` |    -     |   -    |    -    | sets an element's border. It sets the values of border-width, border-style, and border-color. |
-| `displayProp`    | `string`          |    -     |   -    |    -    | sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex. |
+| `displayProp`    | `string`          |    -     |   -    | `block` | sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex. |
 | `flexBasis`      | `string`          |    -     |   -    |    -    | sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing. |
 | `flexDirection`  | `string`          |    -     |   -    |    -    | sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed). |
 | `flexProp`       | `string`          |    -     |   -    |    -    | sets how a flex item will grow or shrink to fit the space available in its flex container. It is a shorthand for flex-grow, flex-shrink, and flex-basis. |
