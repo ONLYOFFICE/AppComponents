@@ -28,12 +28,12 @@ storiesOf("Components|Text", module)
         truncate={boolean("truncate", false)}
         color={color("color", "")}
         backgroundColor={color("backgroundColor", "")}
-        isBold={boolean("isBold", false)}
-        isItalic={boolean("isItalic", false)}
-        isInline={boolean("isInline", false)}
+        bold={boolean("bold", false)}
+        italic={boolean("italic", false)}
+        inline={boolean("inline", false)}
         display={text("display")}
       >
-        {text("Text", "Sample text")}
+        {text("text", "Sample text")}
       </Text>
     </Box>
   ));

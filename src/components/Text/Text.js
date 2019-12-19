@@ -16,18 +16,18 @@ Text.propTypes = {
   fontWeight: PropTypes.number,
   backgroundColor: PropTypes.string,
   truncate: PropTypes.bool,
-  isBold: PropTypes.bool,
-  isInline: PropTypes.bool,
-  isItalic: PropTypes.bool,
+  bold: PropTypes.bool,
+  inline: PropTypes.bool,
+  italic: PropTypes.bool,
   display: PropTypes.string
 };
 
 Text.defaultProps = {
   fontSize: 13,
   truncate: false,
-  isBold: false,
-  isInline: false,
-  isItalic: false
+  bold: false,
+  inline: false,
+  italic: false
 };
 
 export default Text;

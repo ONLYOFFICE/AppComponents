@@ -37,7 +37,7 @@ storiesOf("Components|ThemeProvider", module)
           </Box>
           <Box>
             <ThemeProvider theme={value ? DarkTheme : LightTheme}>
-              <Text isBold fontSize="16px">
+              <Text bold fontSize="16px">
                 {value ? "Dark" : "Light"}
               </Text>
             </ThemeProvider>
@@ -59,7 +59,7 @@ storiesOf("Components|ThemeProvider", module)
       <ThemeProvider theme={LightTheme}>
         <Box paddingProp={"16px"}>
           <Heading>Base theme:</Heading>
-          <Text as="div" isBold fontSize="14px">
+          <Text as="div" bold fontSize="14px">
             <JSONPretty
               id="json-pretty"
               data={JSON.stringify(Base)}
@@ -83,7 +83,7 @@ storiesOf("Components|ThemeProvider", module)
       <ThemeProvider theme={DarkTheme}>
         <Box paddingProp={"16px"}>
           <Heading>Dark theme:</Heading>
-          <Text as="div" isBold color="#1F97CA" fontSize="14px">
+          <Text as="div" bold color="#1F97CA" fontSize="14px">
             <JSONPretty
               id="json-pretty"
               data={JSON.stringify(Dark)}

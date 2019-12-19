@@ -23,7 +23,7 @@ describe("<Text />", () => {
         fontWeight={700}
         truncate
         fontSize="13px"
-        isItalic
+        italic
       >
         Some text
       </Text>
@@ -38,11 +38,11 @@ describe("<Text />", () => {
     expect(wrapper.props().fontSize).toEqual("13px");
 
     const wrapper2 = mount(
-      <Text isInline isBold>
+      <Text inline bold>
         Some text
       </Text>
     );
-    expect(wrapper2.props().isInline).toEqual(true);
+    expect(wrapper2.props().inline).toEqual(true);
   });
 
   it("id, className, style is exists", () => {

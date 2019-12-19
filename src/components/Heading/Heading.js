@@ -12,13 +12,13 @@ Heading.propTypes = {
   color: PropTypes.string,
   title: PropTypes.string,
   truncate: PropTypes.bool,
-  isInline: PropTypes.bool,
+  inline: PropTypes.bool,
   size: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge"])
 };
 
 Heading.defaultProps = {
   truncate: false,
-  isInline: false,
+  inline: false,
   size: "large",
   level: 1
 };

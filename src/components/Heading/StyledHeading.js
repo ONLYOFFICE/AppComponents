@@ -12,7 +12,12 @@ const fontSize = css`
 const styleCss = css`
   font-family: ${props => props.theme.fontFamily};
   text-align: left;
-  color: ${props => (props.color ? props.color : props.theme.text.color)};
+  color: ${props =>
+    props.color
+      ? props.color
+      : props.theme.text
+      ? props.theme.text.color
+      : "#333"};
   ${props =>
     props.truncate === true &&
     css`
@@ -24,7 +29,7 @@ const styleCss = css`
   font-size: ${fontSize}px;
   font-weight: 600;
   ${props =>
-    props.isInline &&
+    props.inline &&
     css`
       display: inline-block;
     `}

@@ -27,7 +27,7 @@ describe("<Heading />", () => {
 
   it("test css props", () => {
     const wrapper = mount(
-      <Heading truncate isInline color="red">
+      <Heading truncate inline color="red">
         Some text
       </Heading>
     );
