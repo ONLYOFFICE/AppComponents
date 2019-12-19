@@ -129,6 +129,42 @@ describe('<Grid />', () => {
     expect(wrapper.props().tag).toEqual("div");
     expect(wrapper.props().widthProp).toEqual("100vw");
 
+
+    const wrapper2 = mount(<Grid columnsProp={{ count: 3, size: "100px" }} />);
+    expect(typeof wrapper.props().columnsProp).toEqual("object");
+    expect(wrapper2.props().columnsProp.count).toEqual(3);
+    expect(wrapper2.props().columnsProp.size).toEqual("100px");
+
+    const wrapper3 = mount(<Grid columnsProp="25%" />);
+    expect(typeof wrapper3.props().columnsProp).toEqual("string");
+    expect(wrapper3.props().columnsProp).toEqual("25%");
+
+    const wrapper4 = mount(<Grid rowsProp="50px" />);
+    expect(typeof wrapper4.props().rowsProp).toEqual("string");
+    expect(wrapper4.props().rowsProp).toEqual("50px");
+
+    const wrapper5 = mount(<Grid areasProp={[
+      ["header", "header", "header"],
+      ["navbar", "main", "sidebar"],
+      ["footer", "footer", "footer"]
+    ]} />);
+    expect(Array.isArray(wrapper5.props().areasProp)).toEqual(true);
+    expect(wrapper5.props().areasProp.length).toEqual(3);
+    expect(Array.isArray(wrapper5.props().areasProp[0])).toEqual(true);
+    expect(wrapper5.props().areasProp[0].length).toEqual(3);
+    expect(wrapper5.props().areasProp[0][0]).toEqual("header");
+    expect(wrapper5.props().areasProp[0][1]).toEqual("header");
+    expect(wrapper5.props().areasProp[0][2]).toEqual("header");
+    expect(Array.isArray(wrapper5.props().areasProp[1])).toEqual(true);
+    expect(wrapper5.props().areasProp[1].length).toEqual(3);
+    expect(wrapper5.props().areasProp[1][0]).toEqual("navbar");
+    expect(wrapper5.props().areasProp[1][1]).toEqual("main");
+    expect(wrapper5.props().areasProp[1][2]).toEqual("sidebar");
+    expect(Array.isArray(wrapper5.props().areasProp[2])).toEqual(true);
+    expect(wrapper5.props().areasProp[2].length).toEqual(3);
+    expect(wrapper5.props().areasProp[2][0]).toEqual("footer");
+    expect(wrapper5.props().areasProp[2][1]).toEqual("footer");
+    expect(wrapper5.props().areasProp[2][2]).toEqual("footer");
   });
 
 });
