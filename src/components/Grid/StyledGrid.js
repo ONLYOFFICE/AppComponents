@@ -83,7 +83,6 @@ const StyledGrid = styled.div`
   ${props => props.alignItems && alignItemsStyle(props.alignItems)}
   ${props => props.alignSelf && alignSelfStyle(props.alignSelf)}
   ${props => props.areasProp && areasStyle(props)}
-  box-sizing: border-box;
   ${props => props.columnsProp && columnsStyle(props)}
   display: grid;
   ${props => props.gridArea && gridAreaStyle(props.gridArea)}
