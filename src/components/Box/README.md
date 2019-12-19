@@ -21,7 +21,7 @@ import { Box } from "app-components";
 | `alignItems`     | `string`          |    -     |   -    |    -    | sets the align-self value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area. |
 | `alignSelf`      | `string`          |    -     |   -    |    -    | overrides a grid or flex item's align-items value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis. |
 | `backgroundProp` | `string`          |    -     |   -    |    -    | sets all background style properties at once, such as color, image, origin and size, or repeat method. |
-| `borderProp`     | `string`,`object` |    -     |   -    |    -    | sets an element's border. It sets the values of border-width, border-style, and border-color. |
+| `borderProp`     | `string`,`object` |    -     |   `"1px solid red"`, `{ "style": "solid",  "width": "1px", "color": "red", "radius": "5px" }`   |    -    | sets an element's border. It sets the values of border-width, border-style, and border-color. |
 | `displayProp`    | `string`          |    -     |   -    | `block` | sets whether an element is treated as a block or inline element and the layout used for its children, such as flow layout, grid or flex. |
 | `flexBasis`      | `string`          |    -     |   -    |    -    | sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing. |
 | `flexDirection`  | `string`          |    -     |   -    |    -    | sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed). |
