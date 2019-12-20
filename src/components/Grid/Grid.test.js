@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import renderer from 'react-test-renderer'
+import 'jest-styled-components'
 import Grid from '.';
 
 describe('<Grid />', () => {
@@ -21,7 +23,7 @@ describe('<Grid />', () => {
     expect(wrapper.getDOMNode().style).toHaveProperty("color", "red");
   });
 
-  it("test css props", () => {
+  it("props transfer test", () => {
     const wrapper = mount(
       <Grid
         alignContent="center"
@@ -125,6 +127,9 @@ describe('<Grid />', () => {
 
     expect(Array.isArray(wrapper.props().rowsProp)).toEqual(true);
     expect(wrapper.props().rowsProp.length).toEqual(3);
+    expect(wrapper.props().rowsProp[0]).toEqual("auto");
+    expect(wrapper.props().rowsProp[1]).toEqual("1fr");
+    expect(wrapper.props().rowsProp[2]).toEqual("auto");
 
     expect(wrapper.props().tag).toEqual("div");
     expect(wrapper.props().widthProp).toEqual("100vw");
@@ -166,5 +171,45 @@ describe('<Grid />', () => {
     expect(wrapper5.props().areasProp[2][1]).toEqual("footer");
     expect(wrapper5.props().areasProp[2][2]).toEqual("footer");
   });
+
+  test('it applies styles', () => {
+    const tree = renderer.create(<Grid />).toJSON();
+    expect(tree).toHaveStyleRule('display', 'grid');
+
+    const tree1 = renderer.create(<Grid columnsProp={["200px", ["100px","1fr"], "auto"]} />).toJSON();
+    expect(tree1).toHaveStyleRule('grid-template-columns', '200px minmax(100px,1fr) auto');
+
+    const tree2 = renderer.create(<Grid columnsProp="25%" />).toJSON();
+    expect(tree2).toHaveStyleRule('grid-template-columns', 'repeat(auto-fill,25%)');
+
+    const tree3 = renderer.create(<Grid columnsProp={{ count: 3, size: "100px" }} />).toJSON();
+    expect(tree3).toHaveStyleRule('grid-template-columns', 'repeat(3,100px)');
+
+    const tree4 = renderer.create(<Grid columnsProp={{ count: 3, size: ["100px", "1fr"] }} />).toJSON();
+    expect(tree4).toHaveStyleRule('grid-template-columns', 'repeat(3,minmax(100px,1fr))');
+
+    const tree5 = renderer.create(<Grid rowsProp={["100px", ["100px","1fr"], "auto"]} />).toJSON();
+    expect(tree5).toHaveStyleRule('grid-template-rows', '100px minmax(100px,1fr) auto');
+
+    const tree6 = renderer.create(<Grid rowsProp="50px" />).toJSON();
+    expect(tree6).toHaveStyleRule('grid-auto-rows', '50px');
+
+    const tree7 = renderer.create(<Grid areasProp={[["header","header"],["navbar","main"]]} />).toJSON();
+    expect(tree7).toHaveStyleRule('grid-template-areas', '"header header" "navbar main"');
+
+    const tree8 = renderer.create(<Grid
+    rowsProp={["auto", "1fr", "auto"]}
+    columnsProp={[["100px","1fr"], "3fr", ["100px","1fr"]]}
+    areasProp={[
+      { name: "header", start: [0, 0], end: [2, 0] },
+      { name: "navbar", start: [0, 1], end: [0, 1] },
+      { name: "main", start: [1, 1], end: [1, 1] },
+      { name: "sidebar", start: [2, 1], end: [2, 1] },
+      { name: "footer", start: [0, 2], end: [2, 2] }
+    ]} />).toJSON();
+    expect(tree8).toHaveStyleRule('grid-template-areas', '"header header header" "navbar main sidebar" "footer footer footer"');
+    expect(tree8).toHaveStyleRule('grid-template-columns', 'minmax(100px,1fr) 3fr minmax(100px,1fr)');
+    expect(tree8).toHaveStyleRule('grid-template-rows', 'auto 1fr auto');
+  }); 
 
 });

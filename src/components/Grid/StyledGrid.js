@@ -38,17 +38,11 @@ const columnsStyle = props => {
   }
   if (typeof props.columnsProp === 'object') {
     return css`
-      grid-template-columns: repeat(
-        ${props.columnsProp.count},
-        ${getSizeValue(props.columnsProp.size)}
-      );
+      grid-template-columns: repeat(${props.columnsProp.count}, ${getSizeValue(props.columnsProp.size)});
     `;
   }
   return css`
-    grid-template-columns: repeat(
-      auto-fill,
-      ${getSizeValue(props.columnsProp)}
-    );
+    grid-template-columns: repeat(auto-fill, ${getSizeValue(props.columnsProp)});
   `;
 };
 
