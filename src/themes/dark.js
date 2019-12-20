@@ -5,6 +5,7 @@ const Dark = {
     color: darkColors.text
   },
   backgroundColor: darkColors.backgroundColor,
+  color: "#E4E7EB",
 
   fontFamily: "Open Sans, sans-serif, Arial"
 };
