@@ -1,4 +1,4 @@
-# Box 
+# Box
 
 A container that lays out its contents in one direction. Box provides  general CSS capabilities like flexbox layout, paddings, background color, border, and animation.
 
@@ -15,7 +15,7 @@ import { Box } from "app-components";
 ### Properties
 
 | Props            |      Type         | Required | Values | Default | Description                                           |
-| :--------------: | :---------------: | :------: | :----: | :-----: | ----------------------------------------------------- |
+| :--------------: | :---------------: | :------: | :----: | :-----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `as`             | `string`          |    -     |   -    |         | Sets the tag through which to render the component    |
 | `alignContent`   | `string`          |    -     |   -    |    -    | sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis |
 | `alignItems`     | `string`          |    -     |   -    |    -    | sets the align-self value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area. |

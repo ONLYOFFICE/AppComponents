@@ -98,5 +98,8 @@
   },
   "resolutions": {
     "js-yaml": "3.13.1"
+  },
+  "dependencies": {
+    "html-to-react": "^1.4.2"
   }
 }
