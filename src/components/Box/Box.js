@@ -9,7 +9,6 @@ const Box = forwardRef(({ tag, as, ...rest }, ref) => {
 
 Box.propTypes = {
   as: PropTypes.string,
-  tag: PropTypes.string,
   alignContent: PropTypes.string,
   alignItems: PropTypes.string,
   alignSelf: PropTypes.string,
@@ -28,6 +27,7 @@ Box.propTypes = {
   marginProp: PropTypes.string,
   overflowProp: PropTypes.string,
   paddingProp: PropTypes.string,
+  tag: PropTypes.string,
   textAlign: PropTypes.string,
   widthProp: PropTypes.string
 };
