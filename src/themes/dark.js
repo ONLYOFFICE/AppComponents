@@ -1,8 +1,13 @@
+import darkColors from "../utils/darkColors";
+
 const Dark = {
-  backgroundColor: "#1F2933",
-  fontFamily: "Open Sans, sans-serif, Arial",
+  text: {
+    color: darkColors.text
+  },
+  backgroundColor: darkColors.backgroundColor,
   color: "#E4E7EB",
-  boxShadow: "0.4rem 0.4rem 1.5rem #111"
+
+  fontFamily: "Open Sans, sans-serif, Arial"
 };
 
 export default Dark;

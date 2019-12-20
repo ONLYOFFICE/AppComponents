@@ -32,16 +32,16 @@ const StyledText = styled(Text)`
 
 ### Properties
 
-| Props             |   Type   | Required | Values |  Default  | Description                                        |
-| ----------------- | :------: | :------: | :----: | :-------: | -------------------------------------------------- |
-| `fontSize`        | `oneOfType(number, string)` |    -     |   -    |   `13`    | Sets the font size                                 |
-| `as`              | `string` |    -     |   -    |    `p`    | Sets the tag through which to render the component |
-| `title`           |  `bool`  |    -     |   -    |     -     | Title                                              |
-| `truncate`        |  `bool`  |    -     |   -    |  `false`  | Disables word wrapping                             |
-| `isInline`        |  `bool`  |    -     |   -    |  `false`  | Sets the 'display: inline-block' property          |
-| `display`         | `string` |    -     |   -    |     -     | Sets the 'display' property                        |
-| `color`           | `string` |    -     |   -    | `#333333` | Specifies the text color                           |
-| `isBold`          |  `bool`  |    -     |   -    |  `false`  | Sets font weight value ​​to bold                   |
-| `isItalic`        |  `bool`  |    -     |   -    |  `false`  | Sets the font style                                |
-| `backgroundColor` | `string` |    -     |   -    |     -     | Sets background color                              |
-| `fontWeight`      | `number` |    -     |   -    |     -     | Sets the font weight                               |
+| Props             |       Type       | Required | Values |  Default  | Description                                        |
+| ----------------- | :--------------: | :------: | :----: | :-------: | -------------------------------------------------- |
+| `fontSize`        | `number, string` |    -     |   -    |   `13`    | Sets the font size                                 |
+| `as`              |     `string`     |    -     |   -    |    `p`    | Sets the tag through which to render the component |
+| `title`           |      `bool`      |    -     |   -    |     -     | Title                                              |
+| `truncate`        |      `bool`      |    -     |   -    |  `false`  | Disables word wrapping                             |
+| `inline`          |      `bool`      |    -     |   -    |  `false`  | Sets the 'display: inline-block' property          |
+| `display`         |     `string`     |    -     |   -    |     -     | Sets the 'display' property                        |
+| `color`           |     `string`     |    -     |   -    | `#333333` | Specifies the text color                           |
+| `bold`            |      `bool`      |    -     |   -    |  `false`  | Sets font weight value ​​to bold                   |
+| `italic`          |      `bool`      |    -     |   -    |  `false`  | Sets the font style                                |
+| `backgroundColor` |     `string`     |    -     |   -    |     -     | Sets background color                              |
+| `fontWeight`      |     `number`     |    -     |   -    |     -     | Sets the font weight                               |

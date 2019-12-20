@@ -25,10 +25,10 @@ storiesOf("Components|Heading", module)
         level={select("level", levels, 1)}
         title={text("title", "")}
         truncate={boolean("truncate", false)}
-        isInline={boolean("isInline", false)}
+        inline={boolean("inline", false)}
         size={select("size", size, "large")}
       >
-        {text("Text", "Sample text Heading")}
+        {text("text", "Sample text Heading")}
       </Heading>
     </Box>
   ));

@@ -3,7 +3,13 @@ import styled, { css } from "styled-components";
 const styleCss = css`
   font-family: ${props => props.theme.fontFamily};
   text-align: left;
-  color: ${props => (props.color ? props.color : props.theme.color)};
+
+  color: ${props =>
+    props.color
+      ? props.color
+      : props.theme.text
+      ? props.theme.text.color
+      : "#333"};
   ${props =>
     props.truncate === true &&
     css`
@@ -21,9 +27,9 @@ const styleCss = css`
         font-size: ${props.fontSize}px;
       `)};
   font-weight: ${props =>
-    props.fontWeight ? props.fontWeight : props.isBold == true ? 700 : 500};
+    props.fontWeight ? props.fontWeight : props.bold == true ? 700 : 500};
   ${props =>
-    props.isItalic == true &&
+    props.italic == true &&
     css`
       font-style: italic;
     `}
@@ -33,7 +39,7 @@ const styleCss = css`
       background-color: ${props => props.backgroundColor};
     `}
   ${props =>
-    props.isInline
+    props.inline
       ? css`
           display: inline-block;
         `

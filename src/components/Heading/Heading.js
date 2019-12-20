@@ -2,17 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import StyledHeading from "./StyledHeading";
 
-const Heading = ({ level, id, className, style, ...rest }) => {
+const Heading = ({ level, ...rest }) => {
   //console.log("Heading render", rest)
-  return (
-    <StyledHeading
-      as={`h${level}`}
-      id={id}
-      className={className}
-      style={style}
-      {...rest}
-    />
-  );
+  return <StyledHeading as={`h${level}`} {...rest} />;
 };
 
 Heading.propTypes = {
@@ -20,20 +12,15 @@ Heading.propTypes = {
   color: PropTypes.string,
   title: PropTypes.string,
   truncate: PropTypes.bool,
-  isInline: PropTypes.bool,
-  size: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge"]),
-  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  className: PropTypes.string
+  inline: PropTypes.bool,
+  size: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge"])
 };
 
 Heading.defaultProps = {
-  title: "",
   truncate: false,
-  isInline: false,
+  inline: false,
   size: "large",
-  level: 1,
-  className: ""
+  level: 1
 };
 
 export default Heading;

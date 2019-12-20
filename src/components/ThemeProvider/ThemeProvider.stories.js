@@ -8,20 +8,21 @@ import Box from "../Box/";
 import Text from "../Text";
 import JSONPretty from "react-json-pretty";
 import { Base, Dark } from "../../themes";
+import Heading from "../Heading";
 
 const LightTheme = {
   backgroundColor: "#FFF",
   fontFamily: "sans-serif",
-  color: "#333"
+  text: { color: "#333" }
 };
 
 const DarkTheme = {
   backgroundColor: "#1F2933",
   fontFamily: "Open Sans",
-  color: "#E4E7EB"
+  text: { color: "#E4E7EB" }
 };
 
-storiesOf("Components|ThemeComponents", module)
+storiesOf("Components|ThemeProvider", module)
   .addDecorator(withReadme(Readme))
   .add("Default", () => (
     <BooleanValue>
@@ -36,7 +37,7 @@ storiesOf("Components|ThemeComponents", module)
           </Box>
           <Box>
             <ThemeProvider theme={value ? DarkTheme : LightTheme}>
-              <Text isBold fontSize="16px">
+              <Text bold fontSize="16px">
                 {value ? "Dark" : "Light"}
               </Text>
             </ThemeProvider>
@@ -45,7 +46,7 @@ storiesOf("Components|ThemeComponents", module)
       )}
     </BooleanValue>
   ));
-storiesOf("Components|ThemeComponents", module)
+storiesOf("Components|ThemeProvider", module)
   .addParameters({ options: { showAddonPanel: false } })
   .add("Base theme", () => {
     const jsonTheme = {
@@ -55,21 +56,21 @@ storiesOf("Components|ThemeComponents", module)
       string: "color:#00873D;"
     };
     return (
-      <Box paddingProp={"16px"}>
-        <Text isBold fontSize="20px">
-          Base theme:
-        </Text>
-        <Text as="div" isBold fontSize="14px">
-          <JSONPretty
-            id="json-pretty"
-            data={JSON.stringify(Base)}
-            theme={jsonTheme}
-          />
-        </Text>
-      </Box>
+      <ThemeProvider theme={LightTheme}>
+        <Box paddingProp={"16px"}>
+          <Heading>Base theme:</Heading>
+          <Text as="div" bold fontSize="14px">
+            <JSONPretty
+              id="json-pretty"
+              data={JSON.stringify(Base)}
+              theme={jsonTheme}
+            />
+          </Text>
+        </Box>
+      </ThemeProvider>
     );
   });
-storiesOf("Components|ThemeComponents", module)
+storiesOf("Components|ThemeProvider", module)
   .addParameters({ options: { showAddonPanel: false } })
   .add("Dark theme", () => {
     const jsonTheme = {
@@ -79,17 +80,17 @@ storiesOf("Components|ThemeComponents", module)
       string: "color:#00873D;"
     };
     return (
-      <Box textAlign="right" paddingProp={"16px"}>
-        <Text isBold fontSize="20px">
-          Dark theme:
-        </Text>
-        <Text as="div" isBold color="#1F97CA" fontSize="14px">
-          <JSONPretty
-            id="json-pretty"
-            data={JSON.stringify(Dark)}
-            theme={jsonTheme}
-          />
-        </Text>
-      </Box>
+      <ThemeProvider theme={DarkTheme}>
+        <Box paddingProp={"16px"}>
+          <Heading>Dark theme:</Heading>
+          <Text as="div" bold color="#1F97CA" fontSize="14px">
+            <JSONPretty
+              id="json-pretty"
+              data={JSON.stringify(Dark)}
+              theme={jsonTheme}
+            />
+          </Text>
+        </Box>
+      </ThemeProvider>
     );
   });

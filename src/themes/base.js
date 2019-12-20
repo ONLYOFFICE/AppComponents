@@ -1,8 +1,13 @@
+import baseColors from "../utils/baseColors";
+
 const Base = {
-  backgroundColor: "#FFF",
-  fontFamily: "Open Sans, sans-serif, Arial",
+  text: {
+    color: baseColors.text
+  },
+  backgroundColor: baseColors.backgroundColor,
   color: "#333",
-  boxShadow: "0.8rem 0.8rem 1.5rem gray",
+
+  fontFamily: "Open Sans, sans-serif, Arial"
 };
 
 export default Base;
