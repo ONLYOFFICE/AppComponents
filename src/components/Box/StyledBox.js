@@ -49,7 +49,6 @@ const StyledBox  = styled.div`
   ${props => props.alignSelf && alignSelfStyle(props.alignSelf)}
   ${props => props.backgroundProp && backgroundStyle(props.backgroundProp)}
   ${props => props.borderProp && borderStyle(props.borderProp)}
-  box-sizing: border-box;
   ${props => props.displayProp && displayStyle(props.displayProp)}
   ${props => props.flexBasis && flexBasisStyle(props.flexBasis)}
   ${props => props.flexDirection && flexDirectionStyle(props.flexDirection)}
@@ -61,7 +60,6 @@ const StyledBox  = styled.div`
   ${props => props.justifyItems && justifyItemsStyle(props.justifyItems)}
   ${props => props.justifySelf && justifySelfStyle(props.justifySelf)}
   ${props => props.marginProp && marginStyle(props.marginProp)}
-  outline: none;
   ${props => props.overflowProp && overflowStyle(props.overflowProp)}
   ${props => props.paddingProp && paddingStyle(props.paddingProp)}
   ${props => props.textAlign && textAlignStyle(props.textAlign)}

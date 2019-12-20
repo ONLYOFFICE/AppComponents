@@ -1,12 +1,10 @@
-import React, {forwardRef} from "react";
-import PropTypes from 'prop-types';
-import StyledBox from './StyledBox';
+import React, { forwardRef } from "react";
+import PropTypes from "prop-types";
+import StyledBox from "./StyledBox";
 
 const Box = forwardRef(({ tag, as, ...rest }, ref) => {
-  //console.log("Text render", rest)
-  return (
-    <StyledBox as={!as && tag ? tag : as} ref={ref} {...rest} />
-  );
+  //console.log("Box render", rest)
+  return <StyledBox as={!as && tag ? tag : as} ref={ref} {...rest} />;
 });
 
 Box.propTypes = {
@@ -32,10 +30,12 @@ Box.propTypes = {
   paddingProp: PropTypes.string,
   textAlign: PropTypes.string,
   widthProp: PropTypes.string
-}
+};
 
 Box.defaultProps = {
-  displayProp: 'block'
+  displayProp: "block"
 };
+
+Box.displayName = "Box";
 
 export default Box;

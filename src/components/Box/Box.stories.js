@@ -3,6 +3,7 @@ import { storiesOf } from "@storybook/react";
 import withReadme from 'storybook-readme/with-readme';
 import Readme from './README.md';
 import Box from ".";
+import Text from "../Text";
 
 const containerProps = {
   widthProp: "100%",
@@ -29,30 +30,30 @@ storiesOf("Components|Box", module)
   <Box {...containerProps}>
     <Box {...rowProps}>
       <Box {...commonBoxProps} backgroundProp="gray">
-        color background
+        <Text>color background</Text>
       </Box>
       <Box
         {...commonBoxProps}
         backgroundProp="linear-gradient(90deg, white, gray)"
       >
-        linear gradient background
+        <Text>linear gradient background</Text>
       </Box>
       <Box {...commonBoxProps} backgroundProp="radial-gradient(white, gray)">
-        radial gradient background
+        <Text>radial gradient background</Text>
       </Box>
     </Box>
     <Box {...rowProps}>
       <Box {...commonBoxProps} borderProp="4px solid gray">
-        solid border
+        <Text>solid border</Text>
       </Box>
       <Box {...commonBoxProps} borderProp="4px dashed gray">
-        dashed border
+        <Text>dashed border</Text>
       </Box>
       <Box {...commonBoxProps} borderProp="4px dotted gray">
-        dotted border
+        <Text>dotted border</Text>
       </Box>
       <Box {...commonBoxProps} borderProp="4px double gray">
-        double border
+        <Text>double border</Text>
       </Box>
     </Box>
     <Box {...rowProps}>
@@ -60,7 +61,7 @@ storiesOf("Components|Box", module)
         {...commonBoxProps}
         borderProp={{ style: "solid", width: "1px 0", color: "gray" }}
       >
-        Horizontal border
+        <Text>Horizontal border</Text>
       </Box>
       <Box
         {...commonBoxProps}
@@ -70,7 +71,7 @@ storiesOf("Components|Box", module)
           color: "gray"
         }}
       >
-        vertical border
+        <Text>vertical border</Text>
       </Box>
       <Box
         {...commonBoxProps}
@@ -80,7 +81,7 @@ storiesOf("Components|Box", module)
           color: "gray"
         }}
       >
-        left border
+        <Text>left border</Text>
       </Box>
       <Box
         {...commonBoxProps}
@@ -90,7 +91,7 @@ storiesOf("Components|Box", module)
           color: "gray"
         }}
       >
-        top border
+        <Text>top border</Text>
       </Box>
       <Box
         {...commonBoxProps}
@@ -100,7 +101,7 @@ storiesOf("Components|Box", module)
           color: "gray"
         }}
       >
-        right border
+        <Text>right border</Text>
       </Box>
       <Box
         {...commonBoxProps}
@@ -110,7 +111,7 @@ storiesOf("Components|Box", module)
           color: "gray"
         }}
       >
-        bottom border
+        <Text>bottom border</Text>
       </Box>
     </Box>
     <Box {...rowProps}>
@@ -123,7 +124,7 @@ storiesOf("Components|Box", module)
           radius: "100%"
         }}
       >
-        full round
+        <Text>full round</Text>
       </Box>
       <Box
         {...commonBoxProps}
@@ -134,7 +135,7 @@ storiesOf("Components|Box", module)
           radius: "5px"
         }}
       >
-        round
+        <Text>round</Text>
       </Box>
       <Box
         {...commonBoxProps}
@@ -145,7 +146,7 @@ storiesOf("Components|Box", module)
           radius: "5px 0 0 5px"
         }}
       >
-        left round
+        <Text>left round</Text>
       </Box>
       <Box
         {...commonBoxProps}
@@ -156,7 +157,7 @@ storiesOf("Components|Box", module)
           radius: "5px 5px 0 0"
         }}
       >
-        top round
+        <Text>top round</Text>
       </Box>
       <Box
         {...commonBoxProps}
@@ -167,7 +168,7 @@ storiesOf("Components|Box", module)
           radius: "0 5px 5px 0"
         }}
       >
-        right round
+        <Text>right round</Text>
       </Box>
       <Box
         {...commonBoxProps}
@@ -178,7 +179,7 @@ storiesOf("Components|Box", module)
           radius: "0 0 5px 5px"
         }}
       >
-        bottom round
+        <Text>bottom round</Text>
       </Box>
     </Box>
     <Box {...rowProps}>
@@ -191,7 +192,7 @@ storiesOf("Components|Box", module)
           radius: "10% 30% 50% 70%"
         }}
       >
-        Mix border
+        <Text>Mix border</Text>
       </Box>
     </Box>
   </Box>
