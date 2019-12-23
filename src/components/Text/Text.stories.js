@@ -24,7 +24,7 @@ storiesOf("Components|Text", module)
         title={text("title", "")}
         as={select("as", textTags, "p")}
         fontSize={number("fontSize", 13)}
-        fontWeight={number("fontWeight")}
+        fontWeight={text("fontWeight", '700')}
         truncate={boolean("truncate", false)}
         color={color("color", "")}
         backgroundColor={color("backgroundColor", "")}
