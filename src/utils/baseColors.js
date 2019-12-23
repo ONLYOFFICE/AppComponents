@@ -1,23 +1,23 @@
 const baseColors = {
-  text: "#333",
-  textGray: "#657077",
-  textInfo: "#A3A9AE",
-  textDisabled: "#ECEEF1",
+  black: "#333",
+  white: "#FFF",
+  greyLightMid: "#ECEEF1",
+  greyMid: "#D0D5DA",
+  grey: "#A3A9AE",
+  greyMain: "#657077",
 
-  link: "#316DAA",
-  errorColor: "#C96C27",
-
-  orange: "#ED7309",
-  orangeActive: "#FF8932",
-  orangeClick: "#C96C27",
-  orangeDisabled: "#FFCCA6",
-
-  blue: "#2DA7DB",
-  blueActive: "#3DB8EC",
-  blueClick: "#1F97CA",
+  blueMain: "#2DA7DB",
+  blueHover: "#3DB8EC",
+  bluePressed: "#1F97CA",
   blueDisabled: "#A6DCF2",
 
-  backgroundColor: "#FFF"
+  orangeMain: "#ED7309",
+  orangeHover: "#FF8932",
+  orangePressed: "#C96C27",
+  orangeDisabled: "#FFCCA6",
+
+  link: "#316DAA",
+  errorColor: "#C96C27"
 };
 
 export default baseColors;

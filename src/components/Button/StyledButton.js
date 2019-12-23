@@ -1,180 +1,184 @@
 import styled, { css } from "styled-components";
 
-const primaryCss = css`
-  border: 1px solid #2da7db;
-  box-sizing: border-box;
-`;
-
 const activeCss = css`
-  background-color: ${props => (props.primary ? "#1F97CA" : "#ECEEF1")};
-  color: ${props => (props.primary ? "#ffffff" : "#333333")};
-  ${props => !props.primary && { primaryCss }}
+  background-color: ${props =>
+    props.primary
+      ? props.theme.button.backgroundColor.primary
+      : props.theme.button.backgroundColor.primaryDisabled};
+  color: ${props =>
+    props.primary
+      ? props.theme.button.color.primary
+      : props.theme.button.color.primaryDisableActiveColor};
+
+  ${props => !props.primary && { border: props.theme.button.border.primaryActive }}
 `;
 
 const hoverCss = css`
-  background-color: ${props => (props.primary ? "#3DB8EC" : "#FFFFFF")};
-  color: ${props => (props.primary ? "#ffffff" : "#333333")};
-  ${props => !props.primary && { primaryCss }}
+  background-color: ${props =>
+    props.primary
+      ? props.theme.button.backgroundColor.primaryHover
+      : props.theme.button.backgroundColor.base};
+  color: ${props =>
+    props.primary
+      ? props.theme.button.color.primary
+      : props.theme.button.color.primaryDisableActiveColor};
+
+  ${props => !props.primary && { border: props.theme.button.border.primaryActive }}
 `;
 
 const StyledButton = styled.button.attrs(props => ({
   disabled: props.disabled || props.loaded ? "disabled" : "",
   tabIndex: props.tabIndex
 }))`
-  height: ${props =>
-    (props.size === "big" && "36px") ||
-    (props.size === "medium" && "32px") ||
-    (props.size === "base" && "24px")};
+box-sizing: border-box;
+margin: 0;
+font-family: ${props => props.theme.fontFamily};
+font-weight: ${props => props.theme.button.fontWeight};
 
-  line-height: ${props =>
-    (props.size === "big" && "19px") ||
-    (props.size === "medium" && "18px") ||
-    (props.size === "base" && "16px")};
+height: ${props =>
+  (props.size === "big" && props.theme.button.height.big) ||
+  (props.size === "medium" && props.theme.button.height.medium) ||
+  (props.size === "base" && props.theme.button.height.base)};
 
-  font-size: ${props =>
-    (props.size === "big" && "14px") ||
-    (props.size === "medium" && "13px") ||
-    (props.size === "base" && "12px")};
+line-height: ${props =>
+  (props.size === "big" && props.theme.button.lineHeight.big) ||
+  (props.size === "medium" && props.theme.button.lineHeight.medium) ||
+  (props.size === "base" && props.theme.button.lineHeight.base)};
 
-  color: ${props =>
-    (props.primary && "#FFFFFF") || (!props.disabled ? "#333333" : "#ECEEF1")};
+font-size: ${props =>
+  (props.size === "big" && props.theme.button.fontSize.big) ||
+  (props.size === "medium" && props.theme.button.fontSize.medium) ||
+  (props.size === "base" && props.theme.button.fontSize.base)};
 
-  background-color: ${props =>
-    !props.disabled || props.loaded
-      ? props.primary
-        ? "#2DA7DB"
-        : "#FFFFFF"
-      : props.primary
-      ? "#A6DCF2"
-      : "#FFFFFF"};
+color: ${props =>
+  (props.primary && props.theme.button.primaryColor) ||
+  (!props.disabled
+    ? props.theme.button.color.base
+    : props.theme.button.color.disabled)};
 
-  ${props => props.scale && `width: 100%;`}
 
-  padding: ${props =>
-    (props.size === "big" &&
-      (props.primary
-        ? props.icon
-          ? props.label
-            ? "8px 24px 9px 24px"
-            : "8px 10px 9px 10px"
-          : props.label
-          ? "8px 28px 9px 28px"
-          : "8px 10px 9px 10px"
-        : props.icon
+background-color: ${props =>
+  !props.disabled || props.isLoading
+    ? props.primary
+      ? props.theme.button.primaryBackground
+      : props.theme.button.background
+    : props.primary
+    ? props.theme.button.disabledBackground
+    : props.theme.button.background};
+
+${props => props.scale && `width: 100%;`}
+
+padding: ${props =>
+  (props.size === "big" &&
+    (props.primary
+      ? props.icon
         ? props.label
-          ? "8px 24px 9px 24px"
-          : "8px 10px 9px 10px"
+          ? props.theme.button.padding.big.primaryWithIconLabel
+          : props.theme.button.padding.big.primaryWithIcon
         : props.label
-        ? "8px 27px 9px 28px"
-        : "8px 10px 9px 10px")) ||
-    (props.size === "medium" &&
-      (props.primary
-        ? props.icon
-          ? props.label
-            ? "7px 24px 7px 24px"
-            : "7px 10px 7px 10px"
-          : props.label
-          ? "7px 24px 7px 24px"
-          : "7px 10px 7px 10px"
-        : props.icon
+        ? props.theme.button.padding.big.primaryUnknownLabel
+        : props.theme.button.padding.big.primaryUnknown
+      : props.icon
+      ? props.label
+        ? props.theme.button.padding.big.withIconLabel
+        : props.theme.button.padding.big.withIcon
+      : props.label
+      ? props.theme.button.padding.big.unknownLabel
+      : props.theme.button.padding.big.unknown)) ||
+  (props.size === "medium" &&
+    (props.primary
+      ? props.icon
         ? props.label
-          ? "7px 24px 7px 24px"
-          : "7px 10px 7px 10px"
+          ? props.theme.button.padding.medium.primaryWithIconLabel
+          : props.theme.button.padding.medium.primaryWithIcon
         : props.label
-        ? "7px 24px 7px 24px"
-        : "7px 10px 7px 10px")) ||
-    (props.size === "base" &&
-      (props.primary
-        ? props.icon
-          ? props.label
-            ? "3px 20px 5px 20px"
-            : "3px 5px 5px 5px"
-          : props.label
-          ? "3px 24px 5px 24px"
-          : "3px 5px 5px 5px"
-        : props.icon
+        ? props.theme.button.padding.medium.primaryUnknownLabel
+        : props.theme.button.padding.medium.primaryUnknown
+      : props.icon
+      ? props.label
+        ? props.theme.button.padding.medium.withIconLabel
+        : props.theme.button.padding.medium.withIcon
+      : props.label
+      ? props.theme.button.padding.medium.unknownLabel
+      : props.theme.button.padding.medium.unknown)) ||
+  (props.size === "base" &&
+    (props.primary
+      ? props.icon
         ? props.label
-          ? "3px 20px 5px 20px"
-          : "3px 5px 5px 5px"
+          ? props.theme.button.padding.base.primaryWithIconLabel
+          : props.theme.button.padding.base.primaryWithIcon
         : props.label
-        ? "3px 24px 5px 24px"
-        : "3px 5px 5px 5px"))};
+        ? props.theme.button.padding.base.primaryUnknownLabel
+        : props.theme.button.padding.base.primaryUnknown
+      : props.icon
+      ? props.label
+        ? props.theme.button.padding.base.withIconLabel
+        : props.theme.button.padding.base.withIcon
+      : props.label
+      ? props.theme.button.padding.base.unknownLabel
+      : props.theme.button.padding.base.unknown))};
 
-  cursor: ${props =>
-    props.disabled || props.loaded ? "default !important" : "pointer"};
+cursor: ${props =>
+  props.disabled || props.isLoading ? "default !important" : "pointer"};
 
-  font-family: ${props => props.theme.fontFamily};
-  border: none;
-  display: inline-block;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  touch-callout: none;
-  -o-touch-callout: none;
-  -moz-touch-callout: none;
-  -webkit-touch-callout: none;
-  user-select: none;
-  -o-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  stroke: none;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 
-  ${props =>
-    !props.primary &&
-    css`
-      border: 1px solid;
-      box-sizing: border-box;
-      border-color: ${props =>
-        !props.disabled && !props.loaded ? "#D0D5DA" : "#ECEEF1"};
-    `}
 
-  ${props =>
-    !props.disabled &&
-    !props.loaded &&
-    (props.hovered
-      ? hoverCss
-      : css`
-          &:hover {
-            ${hoverCss}
-          }
-        `)}
+border: ${props => props.theme.button.border.primary};
+display: ${props => props.theme.button.primary.display};
+text-align: ${props => props.theme.button.primary.textAlign};
+text-decoration: ${props => props.theme.button.primary.textDecoration};
+vertical-align: ${props => props.theme.button.primary.verticalAlign};
+border-radius: ${props => props.theme.button.primary.borderRadius};
+-moz-border-radius: ${props => props.theme.button.primary.borderRadius};
+-webkit-border-radius: ${props => props.theme.button.primary.borderRadius};
+touch-callout: ${props => props.theme.button.primary.touchCallout};
+-o-touch-callout: ${props => props.theme.button.primary.touchCallout};
+-moz-touch-callout: ${props => props.theme.button.primary.touchCallout};
+-webkit-touch-callout: ${props => props.theme.button.primary.touchCallout};
+user-select: ${props => props.theme.button.primary.userSelect};
+-o-user-select: ${props => props.theme.button.primary.userSelect};
+-moz-user-select: ${props => props.theme.button.primary.userSelect};
+-webkit-user-select: ${props => props.theme.button.primary.userSelect};
+stroke: ${props => props.theme.button.primary.stroke};
+overflow: ${props => props.theme.button.primary.overflow};
+text-overflow: ${props => props.theme.button.primary.textOverflow};
+white-space: ${props => props.theme.button.primary.whiteSpace};
 
-  ${props =>
-    !props.disabled &&
-    !props.loaded &&
-    (props.clicked
-      ? activeCss
-      : css`
-          &:active {
-            ${activeCss}
-          }
-        `)}
+${props =>
+  !props.primary &&
+  css`
+    border: ${props => props.theme.button.border.base};
+    border-color: ${props =>
+      !props.disabled && !props.isLoading
+        ? props.theme.button.borderColor
+        : props.theme.button.disableBorderColor};
+  `}
 
-  &:focus {
-    outline: none
-  }
+${props =>
+  !props.disabled &&
+  !props.isLoading &&
+  (props.isHovered
+    ? hoverCss
+    : css`
+        &:hover {
+          ${hoverCss}
+        }
+      `)}
 
-  .btnIcon,
-  .loader {
-    display: inline-block;
-    vertical-align: text-top;
-  }
+${props =>
+  !props.disabled &&
+  !props.isLoading &&
+  (props.isClicked
+    ? activeCss
+    : css`
+        &:active {
+          ${activeCss}
+        }
+      `)}
 
-  ${props =>
-    props.label &&
-    css`
-      .btnIcon,
-      .loader {
-        padding-right: 4px;
-      }
-    `}
+&:focus {
+  outline: ${props => props.theme.button.focus}
+}
 `;
 
 export default StyledButton;
