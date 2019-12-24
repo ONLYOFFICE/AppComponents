@@ -1,6 +1,10 @@
 import React from "react";
 import { mount } from "enzyme";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
 import Heading from ".";
+import ThemeProvider from "../ThemeProvider";
+import { Base } from "../../themes/index";
 
 describe("<Heading />", () => {
   it("renders without error", () => {
@@ -25,6 +29,32 @@ describe("<Heading />", () => {
     expect(wrapper.getDOMNode().style).toHaveProperty("color", "red");
   });
 
+  test("it applies styles", () => {
+    const tree = renderer
+      .create(
+        <Heading color="red" truncate inline>
+          Some text
+        </Heading>
+      )
+      .toJSON();
+
+    expect(tree).toHaveStyleRule("color", "red");
+    expect(tree).toHaveStyleRule("white-space", "nowrap");
+    expect(tree).toHaveStyleRule("overflow", "hidden");
+    expect(tree).toHaveStyleRule("text-overflow", "ellipsis");
+    expect(tree).toHaveStyleRule("display", "inline-block");
+
+    const tree2 = renderer
+      .create(
+        <ThemeProvider theme={Base}>
+          <Heading>Some text</Heading>
+        </ThemeProvider>
+      )
+      .toJSON();
+
+    expect(tree2).toHaveStyleRule("color", Base.text.color);
+  });
+
   it("test css props", () => {
     const wrapper = mount(
       <Heading truncate inline color="red">
@@ -33,6 +63,7 @@ describe("<Heading />", () => {
     );
 
     expect(wrapper.props().color).toEqual("red");
+    expect(wrapper.props().inline).toEqual(true);
     expect(wrapper.props().truncate).toEqual(true);
 
     const wrapperXLargeSize = mount(<Heading size="xlarge">Some text</Heading>);
