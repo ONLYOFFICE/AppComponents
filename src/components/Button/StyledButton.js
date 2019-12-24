@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Base } from "../../themes/index";
 
 const activeCss = css`
   background-color: ${props =>
@@ -10,7 +11,8 @@ const activeCss = css`
       ? props.theme.button.color.primary
       : props.theme.button.color.primaryDisableActiveColor};
 
-  ${props => !props.primary && { border: props.theme.button.border.primaryActive }}
+  ${props =>
+    !props.primary && { border: props.theme.button.border.primaryActive }}
 `;
 
 const hoverCss = css`
@@ -23,7 +25,8 @@ const hoverCss = css`
       ? props.theme.button.color.primary
       : props.theme.button.color.primaryDisableActiveColor};
 
-  ${props => !props.primary && { border: props.theme.button.border.primaryActive }}
+  ${props =>
+    !props.primary && { border: props.theme.button.border.primaryActive }}
 `;
 
 const StyledButton = styled.button.attrs(props => ({
@@ -58,7 +61,7 @@ color: ${props =>
 
 
 background-color: ${props =>
-  !props.disabled || props.isLoading
+  !props.disabled || props.loaded
     ? props.primary
       ? props.theme.button.primaryBackground
       : props.theme.button.background
@@ -73,55 +76,53 @@ padding: ${props =>
     (props.primary
       ? props.icon
         ? props.label
-          ? props.theme.button.padding.big.primaryWithIconLabel
-          : props.theme.button.padding.big.primaryWithIcon
+          ? props.theme.button.padding.big.primaryWithLabel
+          : props.theme.button.padding.big.primaryWithoutLabel
         : props.label
-        ? props.theme.button.padding.big.primaryUnknownLabel
-        : props.theme.button.padding.big.primaryUnknown
+        ? props.theme.button.padding.big.primaryWithoutIconLabel
+        : props.theme.button.padding.big.primaryWithoutIcon
       : props.icon
       ? props.label
-        ? props.theme.button.padding.big.withIconLabel
-        : props.theme.button.padding.big.withIcon
+        ? props.theme.button.padding.big.baseWithIconLabel
+        : props.theme.button.padding.big.baseWithIcon
       : props.label
-      ? props.theme.button.padding.big.unknownLabel
-      : props.theme.button.padding.big.unknown)) ||
+      ? props.theme.button.padding.big.baseWithoutIconLabel
+      : props.theme.button.padding.big.baseWithoutIcon)) ||
   (props.size === "medium" &&
     (props.primary
       ? props.icon
         ? props.label
-          ? props.theme.button.padding.medium.primaryWithIconLabel
-          : props.theme.button.padding.medium.primaryWithIcon
+          ? props.theme.button.padding.medium.primaryWithLabel
+          : props.theme.button.padding.medium.primaryWithoutLabel
         : props.label
-        ? props.theme.button.padding.medium.primaryUnknownLabel
-        : props.theme.button.padding.medium.primaryUnknown
+        ? props.theme.button.padding.medium.primaryWithoutIconLabel
+        : props.theme.button.padding.medium.primaryWithoutIcon
       : props.icon
       ? props.label
-        ? props.theme.button.padding.medium.withIconLabel
-        : props.theme.button.padding.medium.withIcon
+        ? props.theme.button.padding.medium.baseWithIconLabel
+        : props.theme.button.padding.medium.baseWithIcon
       : props.label
-      ? props.theme.button.padding.medium.unknownLabel
-      : props.theme.button.padding.medium.unknown)) ||
+      ? props.theme.button.padding.medium.baseWithoutIconLabel
+      : props.theme.button.padding.medium.baseWithoutIcon)) ||
   (props.size === "base" &&
     (props.primary
       ? props.icon
         ? props.label
-          ? props.theme.button.padding.base.primaryWithIconLabel
-          : props.theme.button.padding.base.primaryWithIcon
+          ? props.theme.button.padding.base.primaryWithLabel
+          : props.theme.button.padding.base.primaryWithoutLabel
         : props.label
-        ? props.theme.button.padding.base.primaryUnknownLabel
-        : props.theme.button.padding.base.primaryUnknown
+        ? props.theme.button.padding.base.primaryWithoutIconLabel
+        : props.theme.button.padding.base.primaryWithoutIcon
       : props.icon
       ? props.label
-        ? props.theme.button.padding.base.withIconLabel
-        : props.theme.button.padding.base.withIcon
+        ? props.theme.button.padding.base.baseWithIconLabel
+        : props.theme.button.padding.base.baseWithIcon
       : props.label
-      ? props.theme.button.padding.base.unknownLabel
-      : props.theme.button.padding.base.unknown))};
+      ? props.theme.button.padding.base.baseWithoutIconLabel
+      : props.theme.button.padding.base.baseWithoutIcon))};
 
 cursor: ${props =>
-  props.disabled || props.isLoading ? "default !important" : "pointer"};
-
-
+  props.disabled || props.loaded ? "default !important" : "pointer"};
 
 border: ${props => props.theme.button.border.primary};
 display: ${props => props.theme.button.primary.display};
@@ -149,36 +150,34 @@ ${props =>
   css`
     border: ${props => props.theme.button.border.base};
     border-color: ${props =>
-      !props.disabled && !props.isLoading
+      !props.disabled && !props.loaded
         ? props.theme.button.borderColor
         : props.theme.button.disableBorderColor};
   `}
 
 ${props =>
   !props.disabled &&
-  !props.isLoading &&
-  (props.isHovered
-    ? hoverCss
-    : css`
-        &:hover {
-          ${hoverCss}
-        }
-      `)}
+  !props.loaded &&
+  css`
+    &:hover {
+      ${hoverCss}
+    }
+  `}
 
 ${props =>
   !props.disabled &&
-  !props.isLoading &&
-  (props.isClicked
-    ? activeCss
-    : css`
-        &:active {
-          ${activeCss}
-        }
-      `)}
+  !props.loaded &&
+  css`
+    &:active {
+      ${activeCss}
+    }
+  `}
 
 &:focus {
   outline: ${props => props.theme.button.focus}
 }
 `;
+
+StyledButton.defaultProps = { theme: Base };
 
 export default StyledButton;

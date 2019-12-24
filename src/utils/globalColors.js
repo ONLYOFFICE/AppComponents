@@ -1,6 +1,7 @@
-const baseColors = {
+const globalColors = {
   black: "#333",
   white: "#FFF",
+  whiteSolitude: "#E4E7EB",
   greyLightMid: "#ECEEF1",
   greyMid: "#D0D5DA",
   grey: "#A3A9AE",
@@ -10,6 +11,7 @@ const baseColors = {
   blueHover: "#3DB8EC",
   bluePressed: "#1F97CA",
   blueDisabled: "#A6DCF2",
+  blueCharcoal: "#1F2933",
 
   orangeMain: "#ED7309",
   orangeHover: "#FF8932",
@@ -20,4 +22,4 @@ const baseColors = {
   errorColor: "#C96C27"
 };
 
-export default baseColors;
+export default globalColors;

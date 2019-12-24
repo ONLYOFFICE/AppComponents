@@ -1,43 +1,43 @@
-import baseColors from "../utils/baseColors";
+import globalColors from "../utils/globalColors";
 
 const Base = {
-  color: baseColors.black,
-  backgroundColor: baseColors.backgroundColor,
+  color: globalColors.black,
+  backgroundColor: globalColors.white,
   fontFamily: "Open Sans, sans-serif, Arial",
 
   text: {
-    color: baseColors.black
+    color: globalColors.black
   },
 
   button: {
     fontWeight: 600,
-    borderColor: baseColors.greyMid,
-    disableBorderColor: baseColors.lightGrey,
+    borderColor: globalColors.greyMid,
+    disableBorderColor: globalColors.greyLightMid,
     focus: "none",
 
     color: {
-      base: baseColors.black,
-      disabled: baseColors.lightGrey,
-      primary: baseColors.white
+      base: globalColors.black,
+      disabled: globalColors.greyLightMid,
+      primary: globalColors.white
     },
 
     backgroundColor: {
-      base: baseColors.white,
-      primaryDisabled: baseColors.lightGrey,
-      primary: baseColors.bluePressed,
-      primaryHover: baseColors.blueHover
+      base: globalColors.white,
+      primaryDisabled: globalColors.greyLightMid,
+      primary: globalColors.bluePressed,
+      primaryHover: globalColors.blueHover
     },
 
-    primaryColor: baseColors.white,
+    primaryColor: globalColors.white,
 
-    background: baseColors.white,
-    primaryBackground: baseColors.blueMain,
-    disabledBackground: baseColors.blueDisabled,
+    background: globalColors.white,
+    primaryBackground: globalColors.blueMain,
+    disabledBackground: globalColors.blueDisabled,
 
     border: {
       base: "1px solid",
       primary: "none",
-      primaryActive: `1px solid ${baseColors.blueMain}`
+      primaryActive: `1px solid ${globalColors.blueMain}`
     },
 
     primary: {
@@ -71,43 +71,47 @@ const Base = {
     },
     padding: {
       base: {
-        primaryWithIconLabel: "3px 20px 5px 20px",
-        primaryWithIcon: "3px 5px 5px 5px",
+        //primary with icon
+        primaryWithLabel: "3px 20px 5px 20px",
+        primaryWithoutLabel: "3px 5px 5px 5px",
 
-        primaryUnknownLabel: "3px 24px 5px 24px",
-        primaryUnknown: "3px 5px 5px 5px",
+        //primary without icon
+        primaryWithoutIconLabel: "3px 24px 5px 24px",
+        primaryWithoutIcon: "3px 5px 5px 5px",
 
-        withIconLabel: "3px 20px 5px 20px",
-        withIcon: "3px 5px 5px 5px",
+        //base with icon
+        baseWithIconLabel: "3px 20px 5px 20px",
+        baseWithIcon: "3px 5px 5px 5px",
 
-        unknownLabel: "3px 24px 5px 24px",
-        unknown: "3px 5px 5px 5px"
+        //base without icon
+        baseWithoutIconLabel: "3px 24px 5px 24px",
+        baseWithoutIcon: "3px 5px 5px 5px"
       },
       medium: {
-        primaryWithIconLabel: "7px 24px 7px 24px",
-        primaryWithIcon: "7px 10px 7px 10px",
+        primaryWithLabel: "7px 24px 7px 24px",
+        primaryWithoutLabel: "7px 10px 7px 10px",
 
-        primaryUnknownLabel: "7px 24px 7px 24px",
-        primaryUnknown: "7px 10px 7px 10px",
+        primaryWithoutIconLabel: "7px 24px 7px 24px",
+        primaryWithoutIcon: "7px 10px 7px 10px",
 
-        withIconLabel: "7px 24px 7px 24px",
-        withIcon: "7px 10px 7px 10px",
+        baseWithIconLabel: "7px 24px 7px 24px",
+        baseWithIcon: "7px 10px 7px 10px",
 
-        unknownLabel: "7px 24px 7px 24px",
-        unknown: "7px 10px 7px 10px"
+        baseWithoutIconLabel: "7px 24px 7px 24px",
+        baseWithoutIcon: "7px 10px 7px 10px"
       },
       big: {
-        primaryWithIconLabel: "8px 24px 9px 24px",
-        primaryWithIcon: "8px 10px 9px 10px",
+        primaryWithLabel: "8px 24px 9px 24px",
+        primaryWithoutLabel: "8px 10px 9px 10px",
 
-        primaryUnknownLabel: "8px 28px 9px 28px",
-        primaryUnknown: "8px 10px 9px 10px",
+        primaryWithoutIconLabel: "8px 28px 9px 28px",
+        primaryWithoutIcon: "8px 10px 9px 10px",
 
-        withIconLabel: "8px 24px 9px 24px",
-        withIcon: "8px 10px 9px 10px",
+        baseWithIconLabel: "8px 24px 9px 24px",
+        baseWithIcon: "8px 10px 9px 10px",
 
-        unknownLabel: "8px 27px 9px 28px",
-        unknown: "8px 10px 9px 10px"
+        baseWithoutIconLabel: "8px 27px 9px 28px",
+        baseWithoutIcon: "8px 10px 9px 10px"
       }
     }
   }
