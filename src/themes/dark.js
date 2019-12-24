@@ -106,7 +106,7 @@ const Dark = {
         baseWithIconLabel: "8px 24px 9px 24px",
         baseWithIcon: "8px 10px 9px 10px",
 
-        baseWithoutIconLabel: "8px 27px 9px 28px",
+        baseWithoutIconLabel: "8px 28px 9px 28px",
         baseWithoutIcon: "8px 10px 9px 10px"
       }
     }
