@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Base } from "../../themes/index";
 
 const fontSize = css`
   ${props =>
@@ -12,12 +13,7 @@ const fontSize = css`
 const styleCss = css`
   font-family: ${props => props.theme.fontFamily};
   text-align: left;
-  color: ${props =>
-    props.color
-      ? props.color
-      : props.theme.text
-      ? props.theme.text.color
-      : "#333"};
+  color: ${props => (props.color ? props.color : props.theme.text.color)};
   ${props =>
     props.truncate === true &&
     css`
@@ -38,5 +34,7 @@ const styleCss = css`
 const StyledHeading = styled.h1`
   ${styleCss};
 `;
+
+StyledHeading.defaultProps = { theme: Base };
 
 export default StyledHeading;
