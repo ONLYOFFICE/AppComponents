@@ -26,9 +26,7 @@ storiesOf("Components|Buttons", module)
           primary={boolean("primary", true)}
           size={select("size", sizeOptions, "big")}
           scale={boolean("scale", false)}
-          loaded={boolean("loaded", false)}
-          hovered={boolean("hovered", false)}
-          clicked={boolean("clicked", false)}
+          //loaded={boolean("loaded", false)}
           disabled={boolean("disabled", false)}
           onClick={action("clicked")}
 

@@ -35,7 +35,7 @@ class Button extends React.Component {
 
     return (
       <StyledButton {...this.props}>
-        {icon && <Icon {...this.props} />}
+        {icon ? <Icon {...this.props} /> : null}
         {label}
       </StyledButton>
     );
@@ -52,8 +52,6 @@ Button.propTypes = {
   className: PropTypes.string,
   id: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  hovered: PropTypes.bool,
-  clicked: PropTypes.bool,
   disabled: PropTypes.bool,
   loaded: PropTypes.bool,
   onClick: PropTypes.func
@@ -66,8 +64,6 @@ Button.defaultProps = {
   scale: false,
   icon: null,
   tabIndex: -1,
-  hovered: false,
-  clicked: false,
   disabled: false,
   loaded: false
 };
