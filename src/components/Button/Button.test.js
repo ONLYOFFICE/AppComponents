@@ -63,16 +63,6 @@ describe("<Button />", () => {
     expect(wrapper.prop("disabled")).toEqual(true);
   });
 
-  it("render with loaded prop", () => {
-    const wrapper = mount(<Button {...baseProps} loaded />);
-
-    expect(wrapper.prop("loaded")).toEqual(true);
-
-    wrapper.setProps({ primary: true });
-    expect(wrapper.prop("primary")).toEqual(true);
-    expect(wrapper.prop("loaded")).toEqual(true);
-  });
-
   it("render with various size", () => {
     const wrapper = mount(<Button {...baseProps} />);
 
@@ -161,7 +151,10 @@ describe("<Button />", () => {
     );
 
     const tree6 = renderer.create(<Button size="big" icon={icon} />).toJSON();
-    expect(tree6).toHaveStyleRule("padding", Base.button.padding.big.baseWithIcon);
+    expect(tree6).toHaveStyleRule(
+      "padding",
+      Base.button.padding.big.baseWithIcon
+    );
 
     const tree7 = renderer
       .create(<Button size="big" label="button" />)
@@ -172,7 +165,10 @@ describe("<Button />", () => {
     );
 
     const tree8 = renderer.create(<Button size="big" />).toJSON();
-    expect(tree8).toHaveStyleRule("padding", Base.button.padding.big.baseWithoutIcon);
+    expect(tree8).toHaveStyleRule(
+      "padding",
+      Base.button.padding.big.baseWithoutIcon
+    );
   });
 
   test("medium button padding styles", () => {
@@ -279,7 +275,10 @@ describe("<Button />", () => {
     );
 
     const tree6 = renderer.create(<Button size="base" icon={icon} />).toJSON();
-    expect(tree6).toHaveStyleRule("padding", Base.button.padding.base.baseWithIcon);
+    expect(tree6).toHaveStyleRule(
+      "padding",
+      Base.button.padding.base.baseWithIcon
+    );
 
     const tree7 = renderer
       .create(<Button size="base" label="button" />)
@@ -290,6 +289,9 @@ describe("<Button />", () => {
     );
 
     const tree8 = renderer.create(<Button size="base" />).toJSON();
-    expect(tree8).toHaveStyleRule("padding", Base.button.padding.base.baseWithoutIcon);
+    expect(tree8).toHaveStyleRule(
+      "padding",
+      Base.button.padding.base.baseWithoutIcon
+    );
   });
 });

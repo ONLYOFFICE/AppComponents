@@ -22,10 +22,7 @@ import { Button } from "asc-web-components";
 | Props      |   Type   | Required |         Values          | Default | Description                                           |
 | ---------- | :------: | :------: | :---------------------: | :-----: | ----------------------------------------------------- |
 | `icon`     |  `node`  |    -     |            -            | `null`  | Icon node element                                     |
-| `clicked`  |  `bool`  |    -     |            -            | `false` | Tells when the button should present a clicked state  |
 | `disabled` |  `bool`  |    -     |            -            | `false` | Tells when the button should present a disabled state |
-| `hovered`  |  `bool`  |    -     |            -            | `false` | Tells when the button should present a hovered state  |
-| `loaded`   |  `bool`  |    -     |            -            | `false` | Tells when the button should show loader icon         |
 | `label`    | `string` |    -     |            -            |    -    | Button text                                           |
 | `onClick`  |  `func`  |    -     |            -            |    -    | What the button will trigger when clicked             |
 | `primary`  |  `bool`  |    -     |            -            | `false` | Tells when the button should be primary               |

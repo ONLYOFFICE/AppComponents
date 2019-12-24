@@ -30,7 +30,7 @@ const hoverCss = css`
 `;
 
 const StyledButton = styled.button.attrs(props => ({
-  disabled: props.disabled || props.loaded ? "disabled" : "",
+  disabled: props.disabled ? "disabled" : "",
   tabIndex: props.tabIndex
 }))`
 box-sizing: border-box;
@@ -61,7 +61,7 @@ color: ${props =>
 
 
 background-color: ${props =>
-  !props.disabled || props.loaded
+  !props.disabled
     ? props.primary
       ? props.theme.button.primaryBackground
       : props.theme.button.background
@@ -121,8 +121,7 @@ padding: ${props =>
       ? props.theme.button.padding.base.baseWithoutIconLabel
       : props.theme.button.padding.base.baseWithoutIcon))};
 
-cursor: ${props =>
-  props.disabled || props.loaded ? "default !important" : "pointer"};
+cursor: ${props => (props.disabled ? "default !important" : "pointer")};
 
 border: ${props => props.theme.button.border.primary};
 display: ${props => props.theme.button.primary.display};
@@ -150,14 +149,13 @@ ${props =>
   css`
     border: ${props => props.theme.button.border.base};
     border-color: ${props =>
-      !props.disabled && !props.loaded
+      !props.disabled
         ? props.theme.button.borderColor
         : props.theme.button.disableBorderColor};
   `}
 
 ${props =>
   !props.disabled &&
-  !props.loaded &&
   css`
     &:hover {
       ${hoverCss}
@@ -166,7 +164,6 @@ ${props =>
 
 ${props =>
   !props.disabled &&
-  !props.loaded &&
   css`
     &:active {
       ${activeCss}

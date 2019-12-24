@@ -53,7 +53,6 @@ Button.propTypes = {
   id: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   disabled: PropTypes.bool,
-  loaded: PropTypes.bool,
   onClick: PropTypes.func
 };
 
@@ -64,8 +63,7 @@ Button.defaultProps = {
   scale: false,
   icon: null,
   tabIndex: -1,
-  disabled: false,
-  loaded: false
+  disabled: false
 };
 
 export default Button;
