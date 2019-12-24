@@ -44,4 +44,4 @@ const StyledText = styled(Text)`
 | `bold`            |      `bool`      |    -     |   -    |  `false`  | Sets font weight value ​​to bold                   |
 | `italic`          |      `bool`      |    -     |   -    |  `false`  | Sets the font style                                |
 | `backgroundColor` |     `string`     |    -     |   -    |     -     | Sets background color                              |
-| `fontWeight`      |     `number`     |    -     |   -    |     -     | Sets the font weight                               |
+| `fontWeight`      | `number, string` |    -     |   -    |     -     | Sets the font weight                               |
