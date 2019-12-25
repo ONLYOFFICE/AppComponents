@@ -90,7 +90,7 @@ describe("<Text />", () => {
       )
       .toJSON();
 
-    expect(tree2).toHaveStyleRule("font-weight", "700");
+    expect(tree2).toHaveStyleRule("font-weight", Base.text.fontWeightBold);
     expect(tree2).toHaveStyleRule("display", "inline-block");
 
     const tree3 = renderer

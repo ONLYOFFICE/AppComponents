@@ -44,6 +44,7 @@ const textAlignStyle = textAlign => `text-align: ${textAlign};`;
 const widthStyle = widthProp => `width: ${widthProp};`;
 
 const StyledBox  = styled.div`
+  box-sizing: border-box;
   ${props => props.alignContent && alignContentStyle(props.alignContent)}
   ${props => props.alignItems && alignItemsStyle(props.alignItems)}
   ${props => props.alignSelf && alignSelfStyle(props.alignSelf)}
