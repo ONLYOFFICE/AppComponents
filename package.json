@@ -100,6 +100,7 @@
     "js-yaml": "3.13.1"
   },
   "dependencies": {
+    "@tanem/svg-injector": "^8.0.36",
     "html-to-react": "^1.4.2"
   }
 }

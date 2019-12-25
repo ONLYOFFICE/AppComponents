@@ -1,3 +1,5 @@
+import React from "react";
+import Icon from "../../Icon";
 import createStyledIcon from "./createStyledIcon";
 import OrigCalendarIcon from "./calendar.react.svg";
 import OrigExpanderDownIcon from "./expander-down.react.svg";
@@ -18,12 +20,16 @@ import OrigToggleButtonCheckedIcon from "./toggle.button.checked.react.svg";
 import OrigToggleButtonIcon from "./toggle.button.react.svg";
 import OrigQuestionIcon from "./question.react.svg";
 
-export const ArrowContentIcon = createStyledIcon(
+/* export const ArrowContentIcon = createStyledIcon(
   OrigArrowContentIcon,
   "ArrowContentIcon"
-);
+); */
+export const ArrowContentIcon = () => <Icon svgSource={OrigArrowContentIcon} />;
+
+export const SearchIcon = () => <Icon svgSource="/search.svg" />;
+
 export const CalendarIcon = createStyledIcon(OrigCalendarIcon, "CalendarIcon");
-export const CheckIcon = createStyledIcon(OrigCheckIcon, "CheckIcon");
+/* export const CheckIcon = createStyledIcon(OrigCheckIcon, "CheckIcon");
 export const CheckboxIcon = createStyledIcon(
   OrigCheckboxIcon,
   "CheckboxIcon",
@@ -82,4 +88,4 @@ export const QuestionIcon = createStyledIcon(
   OrigQuestionIcon,
   "ToggleButtonIcon",
   "rect"
-);
+); */
