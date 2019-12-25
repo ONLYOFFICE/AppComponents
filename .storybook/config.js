@@ -1,11 +1,9 @@
-import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { addReadme } from 'storybook-readme';
-import { withConsole } from '@storybook/addon-console';
+import { configure, addDecorator, addParameters } from "@storybook/react";
+import { withA11y } from "@storybook/addon-a11y";
+import { addReadme } from "storybook-readme";
+import { withConsole } from "@storybook/addon-console";
 import { withContexts } from "@storybook/addon-contexts/react";
 import { contexts } from "./contexts/index";
-
-import '!style-loader!css-loader!./styles.scss';
 
 /*
 This is a package to make Story panel load and decode all files stories
@@ -23,22 +21,21 @@ addDecorator(addReadme);
 
 /* General options for storybook */
 addParameters({
-  options:
-  {
-    name: 'App Components Storybook',
+  options: {
+    name: "App Components Storybook",
     sortStoriesByKind: true,
     showAddonPanel: true,
     addonPanelInRight: true
   },
   /* Options for storybook-readme plugin */
   readme: {
-    codeTheme: 'github',
-    StoryPreview: ({ children }) => children,
-  },
+    codeTheme: "github",
+    StoryPreview: ({ children }) => children
+  }
 });
 
 /* automatically import all files ending in *.stories.js inside src folder */
-const srcStories = require.context('../src', true, /\.stories\.js$/);
+const srcStories = require.context("../src", true, /\.stories\.js$/);
 function loadStories() {
   srcStories.keys().forEach(filename => srcStories(filename));
 }

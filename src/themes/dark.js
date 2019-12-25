@@ -6,7 +6,20 @@ const Dark = {
   fontFamily: "Open Sans, sans-serif, Arial",
 
   text: {
-    color: globalColors.text
+    color: globalColors.text,
+    fontWeight: "normal",
+    fontWeightBold: "bold"
+  },
+
+  heading: {
+    fontSize: {
+      xlarge: "27px",
+      large: "23px",
+      medium: "21px",
+      small: "19px",
+      xsmall: "15px"
+    },
+    fontWeight: 600
   },
 
   button: {
