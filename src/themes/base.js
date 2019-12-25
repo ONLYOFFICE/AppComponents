@@ -7,7 +7,7 @@ const Base = {
 
   text: {
     color: globalColors.black,
-    fontWeight: 500,
+    fontWeight: "normal",
     fontWeightBold: 700
   },
 
