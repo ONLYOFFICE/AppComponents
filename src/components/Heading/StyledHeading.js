@@ -22,7 +22,7 @@ const styleCss = css`
       text-overflow: ellipsis;
     `}
 
-  font-size: ${fontSize}px;
+  font-size: ${fontSize};
   font-weight: ${props => props.theme.heading.fontWeight};
   ${props =>
     props.inline &&

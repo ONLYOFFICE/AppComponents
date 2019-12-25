@@ -13,11 +13,11 @@ const Base = {
 
   heading: {
     fontSize: {
-      xlarge: 27,
-      large: 23,
-      medium: 21,
-      small: 19,
-      xsmall: 15
+      xlarge: "27px",
+      large: "23px",
+      medium: "21px",
+      small: "19px",
+      xsmall: "15px"
     },
     fontWeight: 600
   },

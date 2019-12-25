@@ -86,49 +86,34 @@ describe("<Heading />", () => {
     const tree = renderer
       .create(<Heading size="xlarge">Some text</Heading>)
       .toJSON();
-    expect(tree).toHaveStyleRule(
-      "font-size",
-      `${Base.heading.fontSize.xlarge}px`
-    );
+    expect(tree).toHaveStyleRule("font-size", Base.heading.fontSize.xlarge);
   });
 
   test("medium button padding styles", () => {
     const tree = renderer
       .create(<Heading size="large">Some text</Heading>)
       .toJSON();
-    expect(tree).toHaveStyleRule(
-      "font-size",
-      `${Base.heading.fontSize.large}px`
-    );
+    expect(tree).toHaveStyleRule("font-size", Base.heading.fontSize.large);
   });
 
   test("medium button padding styles", () => {
     const tree = renderer
       .create(<Heading size="medium">Some text</Heading>)
       .toJSON();
-    expect(tree).toHaveStyleRule(
-      "font-size",
-      `${Base.heading.fontSize.medium}px`
-    );
+    expect(tree).toHaveStyleRule("font-size", Base.heading.fontSize.medium);
   });
 
   test("medium button padding styles", () => {
     const tree = renderer
       .create(<Heading size="small">Some text</Heading>)
       .toJSON();
-    expect(tree).toHaveStyleRule(
-      "font-size",
-      `${Base.heading.fontSize.small}px`
-    );
+    expect(tree).toHaveStyleRule("font-size", Base.heading.fontSize.small);
   });
 
   test("medium button padding styles", () => {
     const tree = renderer
       .create(<Heading size="xsmall">Some text</Heading>)
       .toJSON();
-    expect(tree).toHaveStyleRule(
-      "font-size",
-      `${Base.heading.fontSize.xsmall}px`
-    );
+    expect(tree).toHaveStyleRule("font-size", Base.heading.fontSize.xsmall);
   });
 });
