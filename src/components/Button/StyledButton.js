@@ -69,7 +69,7 @@ background-color: ${props =>
     ? props.theme.button.disabledBackground
     : props.theme.button.background};
 
-${props => props.scale && `width: 100%;`}
+width: ${props => (props.scale ? "100%" : "")};
 
 padding: ${props =>
   (props.size === "big" &&

@@ -11,8 +11,13 @@ class Button extends React.Component {
   render() {
     //console.log("Button render", this.props);
     const { label } = this.props;
+    const { scale, ...rest } = this.props;
 
-    return <StyledButton {...this.props}>{label}</StyledButton>;
+    return (
+      <StyledButton scale={scale ? 1 : 0} {...rest}>
+        {label}
+      </StyledButton>
+    );
   }
 }
 
