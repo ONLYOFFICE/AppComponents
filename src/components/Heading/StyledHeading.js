@@ -3,19 +3,19 @@ import { Base } from "../../themes/index";
 
 const fontSize = css`
   ${props =>
-    (props.size === "xlarge" && 27) ||
-    (props.size === "large" && 23) ||
-    (props.size === "medium" && 21) ||
-    (props.size === "small" && 19) ||
-    (props.size === "xsmall" && 15)}
+    (props.size === "xlarge" && props.theme.heading.fontSize.xlarge) ||
+    (props.size === "large" && props.theme.heading.fontSize.large) ||
+    (props.size === "medium" && props.theme.heading.fontSize.medium) ||
+    (props.size === "small" && props.theme.heading.fontSize.small) ||
+    (props.size === "xsmall" && props.theme.heading.fontSize.xsmall)}
 `;
 
 const styleCss = css`
+  margin: 0;
   font-family: ${props => props.theme.fontFamily};
-  text-align: left;
   color: ${props => (props.color ? props.color : props.theme.text.color)};
   ${props =>
-    props.truncate === true &&
+    props.truncate &&
     css`
       white-space: nowrap;
       overflow: hidden;
@@ -23,7 +23,7 @@ const styleCss = css`
     `}
 
   font-size: ${fontSize}px;
-  font-weight: 600;
+  font-weight: ${props => props.theme.heading.fontWeight};
   ${props =>
     props.inline &&
     css`

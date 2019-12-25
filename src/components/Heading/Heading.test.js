@@ -81,4 +81,54 @@ describe("<Heading />", () => {
     const wrapperXSmallSize = mount(<Heading size="xsmall">Some text</Heading>);
     expect(wrapperXSmallSize.props().size).toEqual("xsmall");
   });
+
+  test("medium button padding styles", () => {
+    const tree = renderer
+      .create(<Heading size="xlarge">Some text</Heading>)
+      .toJSON();
+    expect(tree).toHaveStyleRule(
+      "font-size",
+      `${Base.heading.fontSize.xlarge}px`
+    );
+  });
+
+  test("medium button padding styles", () => {
+    const tree = renderer
+      .create(<Heading size="large">Some text</Heading>)
+      .toJSON();
+    expect(tree).toHaveStyleRule(
+      "font-size",
+      `${Base.heading.fontSize.large}px`
+    );
+  });
+
+  test("medium button padding styles", () => {
+    const tree = renderer
+      .create(<Heading size="medium">Some text</Heading>)
+      .toJSON();
+    expect(tree).toHaveStyleRule(
+      "font-size",
+      `${Base.heading.fontSize.medium}px`
+    );
+  });
+
+  test("medium button padding styles", () => {
+    const tree = renderer
+      .create(<Heading size="small">Some text</Heading>)
+      .toJSON();
+    expect(tree).toHaveStyleRule(
+      "font-size",
+      `${Base.heading.fontSize.small}px`
+    );
+  });
+
+  test("medium button padding styles", () => {
+    const tree = renderer
+      .create(<Heading size="xsmall">Some text</Heading>)
+      .toJSON();
+    expect(tree).toHaveStyleRule(
+      "font-size",
+      `${Base.heading.fontSize.xsmall}px`
+    );
+  });
 });

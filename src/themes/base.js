@@ -6,7 +6,20 @@ const Base = {
   fontFamily: "Open Sans, sans-serif, Arial",
 
   text: {
-    color: globalColors.black
+    color: globalColors.black,
+    fontWeight: 500,
+    fontWeightBold: 700
+  },
+
+  heading: {
+    fontSize: {
+      xlarge: 27,
+      large: 23,
+      medium: 21,
+      small: 19,
+      xsmall: 15
+    },
+    fontWeight: 600
   },
 
   button: {
