@@ -8,7 +8,7 @@ const Dark = {
   text: {
     color: globalColors.text,
     fontWeight: "normal",
-    fontWeightBold: 700
+    fontWeightBold: "bold"
   },
 
   heading: {

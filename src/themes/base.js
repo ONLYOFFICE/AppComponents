@@ -8,7 +8,7 @@ const Base = {
   text: {
     color: globalColors.black,
     fontWeight: "normal",
-    fontWeightBold: 700
+    fontWeightBold: "bold"
   },
 
   heading: {
