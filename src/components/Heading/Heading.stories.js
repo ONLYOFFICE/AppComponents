@@ -18,7 +18,7 @@ const size = ["xsmall", "small", "medium", "large", "xlarge"];
 storiesOf("Components|Heading", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
-  .add("base", () => (
+  .add("Default", () => (
     <Box paddingProp="16px" widthProp="100%">
       <Heading
         color={color("color", "")}
