@@ -15,6 +15,43 @@ const StyledCheckbox = styled.label`
     margin-right: 8px;
   }
 
+  svg {
+    ${props =>
+      !props.indeterminate
+        ? css`
+            rect {
+              fill: ${props => props.theme.checkbox.fillColor};
+              stroke: ${props => props.theme.checkbox.borderColor};
+            }
+            path {
+              fill: ${props => props.theme.checkbox.arrowColor};
+            }
+          `
+        : css`
+            rect:last-child {
+              fill: ${props => props.theme.checkbox.indeterminateColor};
+            }
+          `}
+
+    ${props =>
+      props.disabled && !props.indeterminate
+        ? css`
+            rect {
+              fill: ${props => props.theme.checkbox.disableFillColor};
+              stroke: ${props => props.theme.checkbox.disableBorderColor};
+            }
+            path {
+              fill: ${props => props.theme.checkbox.disableArrowColor};
+            }
+          `
+        : props.disabled &&
+          css`
+            rect:last-child {
+              fill: ${props => props.theme.checkbox.disableIndeterminateColor};
+            }
+          `}
+  }
+
   &:hover {
     ${props =>
       props.disabled
@@ -24,7 +61,12 @@ const StyledCheckbox = styled.label`
         : css`
             cursor: pointer;
             rect:first-child {
-              stroke: #a3a9ae;
+              stroke: ${props => props.theme.checkbox.hoverBorderColor};
+            }
+            rect:last-child {
+              fill: ${props =>
+                props.indeterminate &&
+                props.theme.checkbox.hoverIndeterminateColor};
             }
           `}
   }

@@ -36,24 +36,24 @@ class Checkbox extends React.Component {
 
   onInputChange(e) {
     this.setState({ checked: e.target.checked });
-    this.props.onChange && this.props.onChange(e);
   }
 
   render() {
     //console.log("Checkbox render");
     const { disabled, label, checked, indeterminate } = this.props;
+    const { onChange, ...rest } = this.props;
     const disableColor = "#A3A9AE";
     const colorProps = disabled ? { color: disableColor } : {};
     const newProps = { className: "checkbox" };
 
     return (
-      <StyledCheckbox>
+      <StyledCheckbox {...rest}>
         <HiddenInput
           type="checkbox"
           checked={this.state.checked}
           disabled={disabled}
           ref={this.ref}
-          onChange={this.onInputChange}
+          onChange={this.onInputChange && onChange}
         />
 
         <>
