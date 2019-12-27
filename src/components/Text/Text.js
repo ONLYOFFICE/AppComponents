@@ -13,7 +13,7 @@ Text.propTypes = {
   title: PropTypes.string,
   color: PropTypes.string,
   fontSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  fontWeight: PropTypes.number,
+  fontWeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   backgroundColor: PropTypes.string,
   truncate: PropTypes.bool,
   bold: PropTypes.bool,

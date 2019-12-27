@@ -1,15 +1,10 @@
 import styled, { css } from "styled-components";
+import { Base } from "../../themes/index";
 
 const styleCss = css`
+  margin: 0;
   font-family: ${props => props.theme.fontFamily};
-  text-align: left;
-
-  color: ${props =>
-    props.color
-      ? props.color
-      : props.theme.text
-      ? props.theme.text.color
-      : "#333"};
+  color: ${props => (props.color ? props.color : props.theme.text.color)};
   ${props =>
     props.truncate === true &&
     css`
@@ -27,7 +22,11 @@ const styleCss = css`
         font-size: ${props.fontSize}px;
       `)};
   font-weight: ${props =>
-    props.fontWeight ? props.fontWeight : props.bold == true ? 700 : 500};
+    props.bold
+      ? props.theme.text.fontWeightBold
+      : props.fontWeight
+      ? props.fontWeight
+      : props.theme.text.fontWeight};
   ${props =>
     props.italic == true &&
     css`
@@ -47,11 +46,12 @@ const styleCss = css`
         css`
           display: ${props => props.display};
         `}
-  margin: 0;
 `;
 
 const StyledText = styled.p`
   ${styleCss};
 `;
+
+StyledText.defaultProps = { theme: Base };
 
 export default StyledText;
