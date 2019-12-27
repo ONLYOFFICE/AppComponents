@@ -16,11 +16,10 @@ storiesOf("Components|Checkbox", module)
       <BooleanValue>
         {({ value, toggle }) => (
           <Checkbox
-            id={text("id", "id")}
-            label={text("label", "label")}
-            isChecked={value}
-            isIndeterminate={boolean("isIndeterminate", false)}
-            isDisabled={boolean("isDisabled", false)}
+            label={text("label", "checkbox")}
+            checked={value}
+            indeterminate={boolean("indeterminate", false)}
+            disabled={boolean("disabled", false)}
             onChange={e => {
               action("onChange")(e);
               toggle(e.target.checked);

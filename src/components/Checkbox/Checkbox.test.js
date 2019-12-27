@@ -39,37 +39,37 @@ describe('<Checkbox />', () => {
     expect(wrapper.getDOMNode().style).toHaveProperty('color', 'red');
   });
 
-  it('accepts isDisabled', () => {
+  it('accepts disabled', () => {
     const wrapper = mount(
-      <Checkbox {...baseProps} isDisabled />
+      <Checkbox {...baseProps} disabled />
     );
 
-    expect(wrapper.prop('isDisabled')).toEqual(true);
+    expect(wrapper.prop('disabled')).toEqual(true);
   });
 
-  it('accepts isIndeterminate', () => {
+  it('accepts indeterminate', () => {
     const wrapper = mount(
-      <Checkbox {...baseProps} isIndeterminate />
+      <Checkbox {...baseProps} indeterminate />
     );
 
-    expect(wrapper.prop('isIndeterminate')).toEqual(true);
+    expect(wrapper.prop('indeterminate')).toEqual(true);
   });
 
-  it('accepts isChecked', () => {
+  it('accepts checked', () => {
     const wrapper = mount(
-      <Checkbox {...baseProps} isChecked />
+      <Checkbox {...baseProps} checked />
     );
 
-    expect(wrapper.prop('isChecked')).toEqual(true);
+    expect(wrapper.prop('checked')).toEqual(true);
   });
 
-  it('accepts isChecked and isDisabled', () => {
+  it('accepts checked and disabled', () => {
     const wrapper = mount(
-      <Checkbox {...baseProps} isChecked isDisabled />
+      <Checkbox {...baseProps} checked disabled />
     );
 
-    expect(wrapper.prop('isChecked')).toEqual(true);
-    expect(wrapper.prop('isDisabled')).toEqual(true);
+    expect(wrapper.prop('checked')).toEqual(true);
+    expect(wrapper.prop('disabled')).toEqual(true);
   });
 
   it('componentDidUpdate() props lifecycle test', () => {
@@ -77,13 +77,13 @@ describe('<Checkbox />', () => {
     const instance = wrapper.instance();
 
     instance.componentDidUpdate({
-      isChecked: true
+      checked: true
     }, wrapper.state());
 
     expect(wrapper.props()).toBe(wrapper.props());
 
     instance.componentDidUpdate({
-      isChecked: false
+      checked: false
     }, wrapper.state());
 
     expect(wrapper.props()).toBe(wrapper.props());
