@@ -123,6 +123,21 @@ const Dark = {
         baseWithoutIcon: "8px 10px 9px 10px"
       }
     }
+  },
+
+  checkbox: {
+    fillColor: "#fff",
+    borderColor: "#fff",
+    arrowColor: "#333",
+    indeterminateColor: "#333",
+
+    disableArrowColor: "#a3a9ae",
+    disableBorderColor: "#eceef1",
+    disableFillColor: "#f8f9f9",
+    disableIndeterminateColor: "#a3a9ae",
+
+    hoverBorderColor: "#a3a9ae",
+    hoverIndeterminateColor: "#a3a9ae"
   }
 };
 

@@ -127,6 +127,21 @@ const Base = {
         baseWithoutIcon: "8px 10px 9px 10px"
       }
     }
+  },
+
+  checkbox: {
+    fillColor: "#fff",
+    borderColor: "#D0D5DA",
+    arrowColor: "#333",
+    indeterminateColor: "#333",
+
+    disableArrowColor: "#d0d5da",
+    disableBorderColor: "#eceef1",
+    disableFillColor: "#f8f9f9",
+    disableIndeterminateColor: "#a3a9ae",
+
+    hoverBorderColor: "#a3a9ae",
+    hoverIndeterminateColor: "#a3a9ae"
   }
 };
 
