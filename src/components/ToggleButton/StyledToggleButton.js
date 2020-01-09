@@ -54,8 +54,8 @@ const StyledToggleButton = styled.label`
           }
         `}
 
-  .toggleText {
-    margin-left: 8px;
+  .toggle-button {
+    margin-right: 8px;
   }
 `;
 
@@ -66,6 +66,11 @@ const HiddenInput = styled.input`
   z-index: -1;
 `;
 
+const StyledText = styled(Text)`
+  color: ${props =>
+    props.disabled ? props.theme.text.disableColor : props.theme.text.color};
+`;
+
 StyledToggleButton.defaultProps = { theme: Base };
 
-export { StyledToggleButton, HiddenInput };
+export { StyledToggleButton, HiddenInput, StyledText };

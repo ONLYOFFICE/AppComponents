@@ -5,8 +5,7 @@ import {
   CheckboxCheckedIcon,
   CheckboxIndeterminateIcon
 } from "./svg";
-import Text from "../Text";
-import { StyledCheckbox, HiddenInput } from "./StyledCheckbox";
+import { StyledCheckbox, HiddenInput, StyledText } from "./StyledCheckbox";
 
 class Checkbox extends React.Component {
   constructor(props) {
@@ -41,8 +40,6 @@ class Checkbox extends React.Component {
     //console.log("Checkbox render");
     const { disabled, label, checked, indeterminate } = this.props;
     const { onChange, ...rest } = this.props;
-    const disableColor = "#A3A9AE";
-    const colorProps = disabled ? { color: disableColor } : {};
     const newProps = { className: "checkbox" };
 
     return (
@@ -67,9 +64,9 @@ class Checkbox extends React.Component {
         </>
 
         {this.props.label && (
-          <Text as="span" {...colorProps}>
+          <StyledText as="span" disabled={disabled}>
             {label}
-          </Text>
+          </StyledText>
         )}
       </StyledCheckbox>
     );
@@ -81,7 +78,7 @@ Checkbox.propTypes = {
   checked: PropTypes.bool,
   indeterminate: PropTypes.bool,
   disabled: PropTypes.bool,
-  onChange: PropTypes.func
+  onChange: PropTypes.func.isRequired
 };
 
 Checkbox.defaultProps = {

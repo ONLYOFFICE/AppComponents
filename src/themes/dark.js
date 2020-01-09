@@ -7,6 +7,7 @@ const Dark = {
 
   text: {
     color: globalColors.text,
+    disableColor: globalColors.greyLightMid,
     fontWeight: "normal",
     fontWeightBold: "bold"
   },

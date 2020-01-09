@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Text from "../Text";
 import { ToggleButtonIcon, ToggleButtonCheckedIcon } from "./svg";
-import { StyledToggleButton, HiddenInput } from "./StyledToggleButton";
+import {
+  StyledToggleButton,
+  HiddenInput,
+  StyledText
+} from "./StyledToggleButton";
 
 class ToggleButton extends Component {
   constructor(props) {
@@ -21,8 +24,8 @@ class ToggleButton extends Component {
   render() {
     const { disabled, label } = this.props;
     const { onChange, ...rest } = this.props;
-    const colorProps = disabled ? { color: "#A3A9AE" } : {};
     const { checked } = this.state;
+    const newProps = { className: "toggle-button" };
 
     //console.log("ToggleButton render");
     return (
@@ -35,13 +38,14 @@ class ToggleButton extends Component {
         />
 
         {React.createElement(
-          checked ? ToggleButtonCheckedIcon : ToggleButtonIcon
+          checked ? ToggleButtonCheckedIcon : ToggleButtonIcon,
+          { ...newProps }
         )}
 
         {label && (
-          <Text className="toggleText" as="span" {...colorProps}>
+          <StyledText as="span" disabled={disabled}>
             {label}
-          </Text>
+          </StyledText>
         )}
       </StyledToggleButton>
     );

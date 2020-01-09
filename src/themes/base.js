@@ -7,6 +7,7 @@ const Base = {
 
   text: {
     color: globalColors.black,
+    disableColor: globalColors.greyLightMid,
     fontWeight: "normal",
     fontWeightBold: "bold"
   },

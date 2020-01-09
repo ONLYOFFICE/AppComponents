@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Base } from "../../themes/index";
+import Text from "../Text";
 
 const StyledCheckbox = styled.label`
   display: flex;
@@ -79,6 +80,11 @@ const HiddenInput = styled.input`
   z-index: -1;
 `;
 
+const StyledText = styled(Text)`
+  color: ${props =>
+    props.disabled ? props.theme.text.disableColor : props.theme.text.color};
+`;
+
 StyledCheckbox.defaultProps = { theme: Base };
 
-export { StyledCheckbox, HiddenInput };
+export { StyledCheckbox, HiddenInput, StyledText };
