@@ -11,8 +11,6 @@ import OrigRadiobuttonIcon from "./radiobutton.react.svg";
 import OrigRadiobuttonCheckedIcon from "./radiobutton.checked.react.svg";
 import OrigPlusIcon from "./actions.header.touch.react.svg";
 import OrigCheckIcon from "./check.react.svg";
-import OrigToggleButtonCheckedIcon from "./toggle.button.checked.react.svg";
-import OrigToggleButtonIcon from "./toggle.button.react.svg";
 import OrigQuestionIcon from "./question.react.svg";
 
 export const ArrowContentIcon = createStyledIcon(
@@ -44,18 +42,6 @@ export const SettingsIcon = createStyledIcon(OrigSettingsIcon, "SettingsIcon");
 export const VerticalDotsIcon = createStyledIcon(
   OrigVerticalDotsIcon,
   "VerticalDotsIcon"
-);
-
-export const ToggleButtonCheckedIcon = createStyledIcon(
-  OrigToggleButtonCheckedIcon,
-  "ToggleButtonCheckedIcon",
-  "rect"
-);
-
-export const ToggleButtonIcon = createStyledIcon(
-  OrigToggleButtonIcon,
-  "ToggleButtonIcon",
-  "rect"
 );
 
 export const QuestionIcon = createStyledIcon(

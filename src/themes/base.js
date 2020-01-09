@@ -142,6 +142,14 @@ const Base = {
 
     hoverBorderColor: "#a3a9ae",
     hoverIndeterminateColor: "#a3a9ae"
+  },
+
+  toggleButton: {
+    fillColor: "#2DA7DB",
+    fillColorOff: "#A3A9AE",
+
+    disableFillColor: "#ECEEF1",
+    disableFillColorOff: "#ECEEF1"
   }
 };
 
