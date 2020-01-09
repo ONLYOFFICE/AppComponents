@@ -1,6 +1,10 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
 import Checkbox from ".";
+import { StyledCheckbox } from "./StyledCheckbox";
+import { Base } from "../../themes/index";
 
 const baseProps = {
   label: "checkbox",
@@ -89,5 +93,27 @@ describe("<Checkbox />", () => {
     input.simulate('change', event);
     expect(baseProps.onChange).toHaveBeenCalled();
     expect(wrapper1.state('checked')).toBe(true);
+  });
+
+  test('svg style test', () => {
+    const tree = renderer.create(<StyledCheckbox><svg><rect/></svg></StyledCheckbox>).toJSON();
+    expect(tree).toHaveStyleRule('fill', Base.checkbox.fillColor, {
+      modifier: 'svg rect'
+    })
+
+    const tree1 = renderer.create(<StyledCheckbox disabled><svg><rect/></svg></StyledCheckbox>).toJSON();
+    expect(tree1).toHaveStyleRule('fill', Base.checkbox.disableFillColor, {
+      modifier: 'svg rect'
+    })
+
+    const tree2 = renderer.create(<StyledCheckbox indeterminate><svg><rect/></svg></StyledCheckbox>).toJSON();
+    expect(tree2).toHaveStyleRule('fill', Base.checkbox.indeterminateColor, {
+      modifier: 'svg rect:last-child'
+    })
+
+    const tree3 = renderer.create(<StyledCheckbox disabled indeterminate><svg><rect/></svg></StyledCheckbox>).toJSON();
+    expect(tree3).toHaveStyleRule('fill', Base.checkbox.disableIndeterminateColor, {
+      modifier: 'svg rect:last-child'
+    })
   });
 });
