@@ -17,8 +17,6 @@ class Checkbox extends React.Component {
     this.state = {
       checked: props.checked
     };
-
-    this.onInputChange = this.onInputChange.bind(this);
   }
 
   componentDidMount() {
@@ -34,9 +32,9 @@ class Checkbox extends React.Component {
     }
   }
 
-  onInputChange(e) {
+  onInputChange = e => {
     this.setState({ checked: e.target.checked });
-  }
+  };
 
   render() {
     //console.log("Checkbox render");

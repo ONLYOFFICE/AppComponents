@@ -1,91 +1,66 @@
-import React from 'react';
-import { mount, shallow } from 'enzyme';
-import Checkbox from '.';
+import React from "react";
+import { mount, shallow } from "enzyme";
+import Checkbox from ".";
 
 const baseProps = {
-  value: 'test'
-}
+  label: "checkbox",
+  onChange: jest.fn()
+};
 
-describe('<Checkbox />', () => {
-  it('renders without error', () => {
-    const wrapper = mount(
-      <Checkbox {...baseProps} />
-    );
+describe("<Checkbox />", () => {
+  it("renders without error", () => {
+    const wrapper = mount(<Checkbox {...baseProps} />);
 
     expect(wrapper).toExist();
   });
 
-  it('accepts id', () => {
+  it("id, className, style is exists", () => {
     const wrapper = mount(
-      <Checkbox {...baseProps} id="testId" />
+      <Checkbox
+        {...baseProps}
+        id="testId"
+        className="test"
+        style={{ color: "red" }}
+      />
     );
 
-    expect(wrapper.prop('id')).toEqual('testId');
+    expect(wrapper.prop("id")).toEqual("testId");
+    expect(wrapper.prop("className")).toEqual("test");
+    expect(wrapper.getDOMNode().style).toHaveProperty("color", "red");
   });
 
-  it('accepts className', () => {
-    const wrapper = mount(
-      <Checkbox {...baseProps} className="test" />
-    );
+  it("accepts disabled", () => {
+    const wrapper = mount(<Checkbox {...baseProps} disabled />);
 
-    expect(wrapper.prop('className')).toEqual('test');
+    expect(wrapper.prop("disabled")).toEqual(true);
   });
 
-  it('accepts style', () => {
-    const wrapper = mount(
-      <Checkbox {...baseProps} style={{ color: 'red' }} />
-    );
+  it("accepts indeterminate", () => {
+    const wrapper = mount(<Checkbox {...baseProps} indeterminate />);
 
-    expect(wrapper.getDOMNode().style).toHaveProperty('color', 'red');
+    expect(wrapper.prop("indeterminate")).toEqual(true);
   });
 
-  it('accepts disabled', () => {
-    const wrapper = mount(
-      <Checkbox {...baseProps} disabled />
-    );
+  it("accepts checked", () => {
+    const wrapper = mount(<Checkbox {...baseProps} checked />);
 
-    expect(wrapper.prop('disabled')).toEqual(true);
+    expect(wrapper.prop("checked")).toEqual(true);
   });
 
-  it('accepts indeterminate', () => {
-    const wrapper = mount(
-      <Checkbox {...baseProps} indeterminate />
-    );
+  it("accepts checked and disabled", () => {
+    const wrapper = mount(<Checkbox {...baseProps} checked disabled />);
 
-    expect(wrapper.prop('indeterminate')).toEqual(true);
+    expect(wrapper.prop("checked")).toEqual(true);
+    expect(wrapper.prop("disabled")).toEqual(true);
   });
 
-  it('accepts checked', () => {
-    const wrapper = mount(
-      <Checkbox {...baseProps} checked />
-    );
+  it("componentDidUpdate() props lifecycle test", () => {
+    const wrapper = shallow(<Checkbox {...baseProps} />).instance();
 
-    expect(wrapper.prop('checked')).toEqual(true);
-  });
+    wrapper.componentDidUpdate({ checked: true }, wrapper.state);
+    expect(wrapper.props).toBe(wrapper.props);
 
-  it('accepts checked and disabled', () => {
-    const wrapper = mount(
-      <Checkbox {...baseProps} checked disabled />
-    );
-
-    expect(wrapper.prop('checked')).toEqual(true);
-    expect(wrapper.prop('disabled')).toEqual(true);
-  });
-
-  it('componentDidUpdate() props lifecycle test', () => {
-    const wrapper = shallow(<Checkbox {...baseProps} />);
-    const instance = wrapper.instance();
-
-    instance.componentDidUpdate({
-      checked: true
-    }, wrapper.state());
-
-    expect(wrapper.props()).toBe(wrapper.props());
-
-    instance.componentDidUpdate({
-      checked: false
-    }, wrapper.state());
-
-    expect(wrapper.props()).toBe(wrapper.props());
+    wrapper.componentDidUpdate({ checked: false }, wrapper.state);
+    expect(wrapper.props).toBe(wrapper.props);
   });
 });
