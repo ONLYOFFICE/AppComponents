@@ -34,6 +34,7 @@ class Checkbox extends React.Component {
 
   onInputChange = e => {
     this.setState({ checked: e.target.checked });
+    this.props.onChange && this.props.onChange(e);
   };
 
   render() {
@@ -51,7 +52,7 @@ class Checkbox extends React.Component {
           checked={this.state.checked}
           disabled={disabled}
           ref={this.ref}
-          onChange={this.onInputChange && onChange}
+          onChange={this.onInputChange}
         />
 
         <>
