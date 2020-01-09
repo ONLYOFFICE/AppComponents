@@ -2,6 +2,7 @@ const globalColors = {
   black: "#333",
   white: "#FFF",
   whiteSolitude: "#E4E7EB",
+  grayLight: "#F8F9F9",
   greyLightMid: "#ECEEF1",
   greyMid: "#D0D5DA",
   grey: "#A3A9AE",

@@ -126,26 +126,26 @@ const Dark = {
   },
 
   checkbox: {
-    fillColor: "#fff",
-    borderColor: "#fff",
-    arrowColor: "#333",
-    indeterminateColor: "#333",
+    fillColor: globalColors.white,
+    borderColor: globalColors.greyMid,
+    arrowColor: globalColors.black,
+    indeterminateColor: globalColors.black,
 
-    disableArrowColor: "#a3a9ae",
-    disableBorderColor: "#eceef1",
-    disableFillColor: "#f8f9f9",
-    disableIndeterminateColor: "#a3a9ae",
+    disableArrowColor: globalColors.greyMid,
+    disableBorderColor: globalColors.greyLightMid,
+    disableFillColor: globalColors.grayLight,
+    disableIndeterminateColor: globalColors.grey,
 
-    hoverBorderColor: "#a3a9ae",
-    hoverIndeterminateColor: "#a3a9ae"
+    hoverBorderColor: globalColors.grey,
+    hoverIndeterminateColor: globalColors.grey
   },
 
   toggleButton: {
-    fillColor: "#2DA7DB",
-    fillColorOff: "#A3A9AE",
+    fillColor: globalColors.blueMain,
+    fillColorOff: globalColors.grey,
 
-    disableFillColor: "#ECEEF1",
-    disableFillColorOff: "#ECEEF1"
+    disableFillColor: globalColors.greyLightMid,
+    disableFillColorOff: globalColors.greyLightMid
   }
 };
 
