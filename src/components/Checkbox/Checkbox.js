@@ -64,21 +64,25 @@ class Checkbox extends React.Component {
 
   render() {
     //console.log("Checkbox render");
-    const { disabled, reverse } = this.props;
+    const { disabled, label, reverse } = this.props;
     const { onChange, ...rest } = this.props;
 
     return (
       <StyledCheckbox {...rest}>
-        {reverse ? (
-          <>
-            {this.renderLabel()}
-            {this.renderCheckbox()}
-          </>
+        {label ? (
+          reverse ? (
+            <>
+              {this.renderLabel()}
+              {this.renderCheckbox()}
+            </>
+          ) : (
+            <>
+              {this.renderCheckbox()}
+              {this.renderLabel()}
+            </>
+          )
         ) : (
-          <>
-            {this.renderCheckbox()}
-            {this.renderLabel()}
-          </>
+          this.renderCheckbox()
         )}
 
         <HiddenInput

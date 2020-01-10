@@ -44,23 +44,27 @@ class ToggleButton extends Component {
   };
 
   render() {
-    const { disabled, reverse } = this.props;
+    const { disabled, reverse, label } = this.props;
     const { onChange, ...rest } = this.props;
     const { checked } = this.state;
 
     //console.log("ToggleButton render");
     return (
       <StyledToggleButton {...rest}>
-        {reverse ? (
-          <>
-            {this.renderLabel()}
-            {this.renderToggle()}
-          </>
+        {label ? (
+          reverse ? (
+            <>
+              {this.renderLabel()}
+              {this.renderToggle()}
+            </>
+          ) : (
+            <>
+              {this.renderToggle()}
+              {this.renderLabel()}
+            </>
+          )
         ) : (
-          <>
-            {this.renderToggle()}
-            {this.renderLabel()}
-          </>
+          this.renderToggle()
         )}
 
         <HiddenInput

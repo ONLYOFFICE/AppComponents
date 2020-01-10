@@ -14,7 +14,11 @@ const baseProps = {
 describe("<Checkbox />", () => {
   it("renders without error", () => {
     const wrapper = mount(<Checkbox {...baseProps} />);
+    expect(wrapper).toExist();
+  });
 
+  it("render without label", () => {
+    const wrapper = mount(<Checkbox onChange={jest.fn()} />);
     expect(wrapper).toExist();
   });
 

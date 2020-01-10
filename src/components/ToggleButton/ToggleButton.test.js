@@ -24,6 +24,11 @@ describe("<ToggleButton />", () => {
     expect(wrapper).toExist();
   });
 
+  it("render without label", () => {
+    const wrapper = mount(<ToggleButton onChange={jest.fn()} />);
+    expect(wrapper).toExist();
+  });
+
   it("id, className, style is exists", () => {
     const wrapper = mount(
       <ToggleButton
