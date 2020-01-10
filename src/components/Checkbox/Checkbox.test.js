@@ -3,7 +3,7 @@ import { mount, shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 import Checkbox from ".";
-import { StyledCheckbox } from "./StyledCheckbox";
+import { StyledCheckbox, StyledText } from "./StyledCheckbox";
 import { Base } from "../../themes/index";
 
 const baseProps = {
@@ -14,6 +14,12 @@ const baseProps = {
 describe("<Checkbox />", () => {
   it("renders without error", () => {
     const wrapper = mount(<Checkbox {...baseProps} />);
+
+    expect(wrapper).toExist();
+  });
+
+  it("reverse renders without error", () => {
+    const wrapper = mount(<Checkbox reverse {...baseProps} />);
 
     expect(wrapper).toExist();
   });
@@ -69,7 +75,7 @@ describe("<Checkbox />", () => {
   });
 
   it("input indeterminate test", () => {
-    const wrapper1 = mount(<Checkbox {...baseProps}/>);
+    const wrapper1 = mount(<Checkbox {...baseProps} />);
     const input = wrapper1.instance().ref.current;
     expect(input.indeterminate).toBe(false);
 
@@ -84,36 +90,78 @@ describe("<Checkbox />", () => {
     const wrapper = shallow(<Checkbox {...baseProps} />).instance();
     expect(wrapper.state.checked).toBe(false);
 
-    const event = { target: { checked: true }};
+    const event = { target: { checked: true } };
     wrapper.onInputChange(event);
     expect(wrapper.state.checked).toBe(true);
 
     const wrapper1 = mount(<Checkbox {...baseProps} />);
     const input = wrapper1.find('input[type="checkbox"]');
-    input.simulate('change', event);
+    input.simulate("change", event);
     expect(baseProps.onChange).toHaveBeenCalled();
-    expect(wrapper1.state('checked')).toBe(true);
+    expect(wrapper1.state("checked")).toBe(true);
   });
 
-  test('svg style test', () => {
-    const tree = renderer.create(<StyledCheckbox><svg><rect/></svg></StyledCheckbox>).toJSON();
-    expect(tree).toHaveStyleRule('fill', Base.checkbox.fillColor, {
-      modifier: 'svg rect'
-    })
+  test("svg style test", () => {
+    const tree = renderer
+      .create(
+        <StyledCheckbox>
+          <svg>
+            <rect />
+          </svg>
+        </StyledCheckbox>
+      )
+      .toJSON();
+    expect(tree).toHaveStyleRule("fill", Base.checkbox.fillColor, {
+      modifier: "svg rect"
+    });
 
-    const tree1 = renderer.create(<StyledCheckbox disabled><svg><rect/></svg></StyledCheckbox>).toJSON();
-    expect(tree1).toHaveStyleRule('fill', Base.checkbox.disableFillColor, {
-      modifier: 'svg rect'
-    })
+    const tree1 = renderer
+      .create(
+        <StyledCheckbox disabled>
+          <svg>
+            <rect />
+          </svg>
+        </StyledCheckbox>
+      )
+      .toJSON();
+    expect(tree1).toHaveStyleRule("fill", Base.checkbox.disableFillColor, {
+      modifier: "svg rect"
+    });
 
-    const tree2 = renderer.create(<StyledCheckbox indeterminate><svg><rect/></svg></StyledCheckbox>).toJSON();
-    expect(tree2).toHaveStyleRule('fill', Base.checkbox.indeterminateColor, {
-      modifier: 'svg rect:last-child'
-    })
+    const tree2 = renderer
+      .create(
+        <StyledCheckbox indeterminate>
+          <svg>
+            <rect />
+          </svg>
+        </StyledCheckbox>
+      )
+      .toJSON();
+    expect(tree2).toHaveStyleRule("fill", Base.checkbox.indeterminateColor, {
+      modifier: "svg rect:last-child"
+    });
 
-    const tree3 = renderer.create(<StyledCheckbox disabled indeterminate><svg><rect/></svg></StyledCheckbox>).toJSON();
-    expect(tree3).toHaveStyleRule('fill', Base.checkbox.disableIndeterminateColor, {
-      modifier: 'svg rect:last-child'
-    })
+    const tree3 = renderer
+      .create(
+        <StyledCheckbox disabled indeterminate>
+          <svg>
+            <rect />
+          </svg>
+        </StyledCheckbox>
+      )
+      .toJSON();
+    expect(tree3).toHaveStyleRule(
+      "fill",
+      Base.checkbox.disableIndeterminateColor,
+      {
+        modifier: "svg rect:last-child"
+      }
+    );
+
+    const tree4 = renderer.create(<StyledText reverse></StyledText>).toJSON();
+    expect(tree4).toHaveStyleRule("margin-right", "8px");
+
+    const tree5 = renderer.create(<StyledText></StyledText>).toJSON();
+    expect(tree5).toHaveStyleRule("margin-left", "8px");
   });
 });

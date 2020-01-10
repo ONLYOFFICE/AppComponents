@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Base } from "../../themes/index";
+import Text from "../Text";
 
 const StyledToggleButton = styled.label`
   position: relative;

@@ -4,6 +4,7 @@ import renderer from "react-test-renderer";
 import "jest-styled-components";
 import ToggleButton from ".";
 import { Base } from "../../themes/index";
+import { StyledText } from "./StyledToggleButton";
 
 const baseProps = {
   label: "checkbox",
@@ -13,6 +14,12 @@ const baseProps = {
 describe("<ToggleButton />", () => {
   it("renders without error", () => {
     const wrapper = mount(<ToggleButton {...baseProps} />);
+
+    expect(wrapper).toExist();
+  });
+
+  it("reverse renders without error", () => {
+    const wrapper = mount(<ToggleButton reverse {...baseProps} />);
 
     expect(wrapper).toExist();
   });
@@ -120,5 +127,11 @@ describe("<ToggleButton />", () => {
       Base.toggleButton.disableFillColorOff,
       { modifier: "svg rect" }
     );
+
+    const tree5 = renderer.create(<StyledText reverse></StyledText>).toJSON();
+    expect(tree5).toHaveStyleRule("margin-right", "8px");
+
+    const tree6 = renderer.create(<StyledText></StyledText>).toJSON();
+    expect(tree6).toHaveStyleRule("margin-left", "8px");
   });
 });
