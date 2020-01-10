@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Base } from "../../themes/index";
+import Text from "../Text";
 
 const StyledCheckbox = styled.label`
   display: flex;
@@ -10,10 +11,6 @@ const StyledCheckbox = styled.label`
   -o-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
-
-  .checkbox {
-    margin-right: 8px;
-  }
 
   svg {
     ${props =>
@@ -79,6 +76,13 @@ const HiddenInput = styled.input`
   z-index: -1;
 `;
 
-StyledCheckbox.defaultProps = { theme: Base };
+const StyledText = styled(Text)`
+  ${props => (props.reverse ? `margin-right: 8px` : `margin-left: 8px`)};
+  color: ${props =>
+    props.disabled ? props.theme.text.disableColor : props.theme.text.color};
+`;
 
-export { StyledCheckbox, HiddenInput };
+StyledCheckbox.defaultProps = { theme: Base };
+StyledText.defaultProps = { theme: Base };
+
+export { StyledCheckbox, HiddenInput, StyledText };

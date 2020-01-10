@@ -27,3 +27,4 @@ import { Checkbox } from "app-components";
 | `indeterminate` |  `bool`  |    -     |   -    |    -    | If true, this state is shown as a rectangle in the checkbox |
 | `label`         | `string` |    -     |   -    |    -    | Label of the input                                          |
 | `onChange`      |  `func`  |    ✅    |   -    |    -    | Will be triggered whenever an CheckboxInput is clicked      |
+| `reverse`       |  `bool`  |    -     |   -    | `false` | Swaps the checkbox and the label                            |
