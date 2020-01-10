@@ -18,9 +18,10 @@ import { ToggleButton } from "app-components";
 
 #### Properties
 
-| Props        |   Type   | Required | Values | Default | Description                                                    |
-| ------------ | :------: | :------: | :----: | :-----: | -------------------------------------------------------------- |
+| Props      |   Type   | Required | Values | Default | Description                                                    |
+| ---------- | :------: | :------: | :----: | :-----: | -------------------------------------------------------------- |
 | `checked`  |  `bool`  |    -     |   -    |    -    | The checked property sets the checked state of a ToggleButton. |
-| `onChange`   |  `func`  |    ✅    |   -    |    -    | Will be triggered whenever an ToggleButton is clicked          |
+| `onChange` |  `func`  |    ✅    |   -    |    -    | Will be triggered whenever an ToggleButton is clicked          |
 | `disabled` |  `bool`  |    -     |   -    |    -    | Disables the ToggleButton                                      |
-| `label`      | `string` |    -     |   -    |    -    | Label of the input                                             |
+| `label`    | `string` |    -     |   -    |    -    | Label of the input                                             |
+| `reverse`  |  `bool`  |    -     |   -    | `false` | Swaps the checkbox and the label                               |
