@@ -20,6 +20,7 @@ storiesOf("Components|Checkbox", module)
             checked={value}
             indeterminate={boolean("indeterminate", false)}
             disabled={boolean("disabled", false)}
+            reverse={boolean("reverse", false)}
             onChange={e => {
               action("onChange")(e);
               toggle(e.target.checked);

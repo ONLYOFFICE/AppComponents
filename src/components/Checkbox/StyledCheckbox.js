@@ -12,10 +12,6 @@ const StyledCheckbox = styled.label`
   -moz-user-select: none;
   -webkit-user-select: none;
 
-  .checkbox {
-    margin-right: 8px;
-  }
-
   svg {
     ${props =>
       !props.indeterminate
@@ -81,6 +77,7 @@ const HiddenInput = styled.input`
 `;
 
 const StyledText = styled(Text)`
+  ${props => (props.reverse ? `margin-right: 8px` : `margin-left: 8px`)};
   color: ${props =>
     props.disabled ? props.theme.text.disableColor : props.theme.text.color};
 `;

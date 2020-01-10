@@ -36,14 +36,51 @@ class Checkbox extends React.Component {
     this.props.onChange && this.props.onChange(e);
   };
 
+  renderLabel = () => {
+    const { reverse, disabled, label } = this.props;
+
+    return (
+      <StyledText as="span" reverse={reverse} disabled={disabled}>
+        {label}
+      </StyledText>
+    );
+  };
+
+  renderCheckbox = () => {
+    const { indeterminate, checked } = this.props;
+
+    return (
+      <>
+        {React.createElement(
+          indeterminate
+            ? CheckboxIndeterminateIcon
+            : checked
+            ? CheckboxCheckedIcon
+            : CheckboxIcon
+        )}
+      </>
+    );
+  };
+
   render() {
     //console.log("Checkbox render");
-    const { disabled, label, checked, indeterminate } = this.props;
+    const { disabled, reverse } = this.props;
     const { onChange, ...rest } = this.props;
-    const newProps = { className: "checkbox" };
 
     return (
       <StyledCheckbox {...rest}>
+        {reverse ? (
+          <>
+            {this.renderLabel()}
+            {this.renderCheckbox()}
+          </>
+        ) : (
+          <>
+            {this.renderCheckbox()}
+            {this.renderLabel()}
+          </>
+        )}
+
         <HiddenInput
           type="checkbox"
           checked={this.state.checked}
@@ -51,23 +88,6 @@ class Checkbox extends React.Component {
           ref={this.ref}
           onChange={this.onInputChange}
         />
-
-        <>
-          {React.createElement(
-            indeterminate
-              ? CheckboxIndeterminateIcon
-              : checked
-              ? CheckboxCheckedIcon
-              : CheckboxIcon,
-            { ...newProps }
-          )}
-        </>
-
-        {this.props.label && (
-          <StyledText as="span" disabled={disabled}>
-            {label}
-          </StyledText>
-        )}
       </StyledCheckbox>
     );
   }
@@ -78,11 +98,13 @@ Checkbox.propTypes = {
   checked: PropTypes.bool,
   indeterminate: PropTypes.bool,
   disabled: PropTypes.bool,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  reverse: PropTypes.bool
 };
 
 Checkbox.defaultProps = {
-  checked: false
+  checked: false,
+  reverse: false
 };
 
 export default Checkbox;
