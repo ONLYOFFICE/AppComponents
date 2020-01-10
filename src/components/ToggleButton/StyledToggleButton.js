@@ -53,10 +53,6 @@ const StyledToggleButton = styled.label`
             }
           }
         `}
-
-  .toggle-button {
-    margin-right: 8px;
-  }
 `;
 
 const HiddenInput = styled.input`
@@ -67,6 +63,7 @@ const HiddenInput = styled.input`
 `;
 
 const StyledText = styled(Text)`
+  ${props => (props.reverse ? `margin-right: 8px` : `margin-left: 8px`)};
   color: ${props =>
     props.disabled ? props.theme.text.disableColor : props.theme.text.color};
 `;

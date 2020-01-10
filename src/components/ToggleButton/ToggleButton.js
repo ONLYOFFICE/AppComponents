@@ -21,32 +21,54 @@ class ToggleButton extends Component {
     }
   }
 
+  renderLabel = () => {
+    const { disabled, label, reverse } = this.props;
+
+    return (
+      <StyledText as="span" reverse={reverse} disabled={disabled}>
+        {label}
+      </StyledText>
+    );
+  };
+
+  renderToggle = () => {
+    const { checked } = this.props;
+
+    return (
+      <>
+        {React.createElement(
+          checked ? ToggleButtonCheckedIcon : ToggleButtonIcon
+        )}
+      </>
+    );
+  };
+
   render() {
-    const { disabled, label } = this.props;
+    const { disabled, reverse } = this.props;
     const { onChange, ...rest } = this.props;
     const { checked } = this.state;
-    const newProps = { className: "toggle-button" };
 
     //console.log("ToggleButton render");
     return (
       <StyledToggleButton {...rest}>
+        {reverse ? (
+          <>
+            {this.renderLabel()}
+            {this.renderToggle()}
+          </>
+        ) : (
+          <>
+            {this.renderToggle()}
+            {this.renderLabel()}
+          </>
+        )}
+
         <HiddenInput
           type="checkbox"
           checked={checked}
           disabled={disabled}
           onChange={onChange}
         />
-
-        {React.createElement(
-          checked ? ToggleButtonCheckedIcon : ToggleButtonIcon,
-          { ...newProps }
-        )}
-
-        {label && (
-          <StyledText as="span" disabled={disabled}>
-            {label}
-          </StyledText>
-        )}
       </StyledToggleButton>
     );
   }
@@ -56,7 +78,13 @@ ToggleButton.propTypes = {
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
-  label: PropTypes.string
+  label: PropTypes.string,
+  reverse: PropTypes.bool
+};
+
+ToggleButton.defaultProps = {
+  checked: false,
+  reverse: false
 };
 
 export default ToggleButton;

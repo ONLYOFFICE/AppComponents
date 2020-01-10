@@ -19,6 +19,7 @@ storiesOf("Components|ToggleButton", module)
             checked={value}
             label={text("label", "label text")}
             disabled={boolean("disabled", false)}
+            reverse={boolean("reverse", false)}
             onChange={e => {
               toggle(e.target.checked);
               action("onChange")(e);
