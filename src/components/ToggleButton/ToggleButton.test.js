@@ -1,22 +1,25 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import Checkbox from ".";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
+import ToggleButton from ".";
+import { Base } from "../../themes/index";
 
 const baseProps = {
   label: "checkbox",
   onChange: jest.fn()
 };
 
-describe("<Checkbox />", () => {
+describe("<ToggleButton />", () => {
   it("renders without error", () => {
-    const wrapper = mount(<Checkbox {...baseProps} />);
+    const wrapper = mount(<ToggleButton {...baseProps} />);
 
     expect(wrapper).toExist();
   });
 
   it("id, className, style is exists", () => {
     const wrapper = mount(
-      <Checkbox
+      <ToggleButton
         {...baseProps}
         id="testId"
         className="test"
@@ -29,38 +32,93 @@ describe("<Checkbox />", () => {
     expect(wrapper.getDOMNode().style).toHaveProperty("color", "red");
   });
 
-  it("accepts disabled", () => {
-    const wrapper = mount(<Checkbox {...baseProps} disabled />);
+  it("componentDidUpdate() props lifecycle test", () => {
+    const wrapper = shallow(<ToggleButton {...baseProps} />).instance();
 
-    expect(wrapper.prop("disabled")).toEqual(true);
+    wrapper.componentDidUpdate({ checked: true });
+    expect(wrapper.props).toBe(wrapper.props);
+    expect(wrapper.state.checked).toBe(wrapper.props.checked);
+
+    wrapper.componentDidUpdate({ checked: false });
+    expect(wrapper.props).toBe(wrapper.props);
+    expect(wrapper.state.checked).toBe(wrapper.props.checked);
   });
 
-  it("accepts indeterminate", () => {
-    const wrapper = mount(<Checkbox {...baseProps} indeterminate />);
+  it("accepts disabled", () => {
+    const wrapper = mount(<ToggleButton {...baseProps} disabled />);
 
-    expect(wrapper.prop("indeterminate")).toEqual(true);
+    expect(wrapper.prop("disabled")).toEqual(true);
   });
 
   it("accepts checked", () => {
-    const wrapper = mount(<Checkbox {...baseProps} checked />);
+    const wrapper = mount(<ToggleButton {...baseProps} checked />);
+    expect(wrapper.state("checked")).toEqual(true);
 
-    expect(wrapper.prop("checked")).toEqual(true);
+    wrapper.setState({ checked: false });
+    expect(wrapper.state("checked")).toEqual(false);
   });
 
   it("accepts checked and disabled", () => {
-    const wrapper = mount(<Checkbox {...baseProps} checked disabled />);
+    const wrapper = mount(<ToggleButton {...baseProps} checked disabled />);
 
     expect(wrapper.prop("checked")).toEqual(true);
     expect(wrapper.prop("disabled")).toEqual(true);
   });
 
-  it("componentDidUpdate() props lifecycle test", () => {
-    const wrapper = shallow(<Checkbox {...baseProps} />).instance();
+  test("svg style test", () => {
+    const tree = renderer
+      .create(
+        <ToggleButton {...baseProps} checked>
+          <svg>
+            <rect />
+          </svg>
+        </ToggleButton>
+      )
+      .toJSON();
+    expect(tree).toHaveStyleRule("fill", Base.toggleButton.fillColor, {
+      modifier: "svg rect"
+    });
 
-    wrapper.componentDidUpdate({ checked: true }, wrapper.state);
-    expect(wrapper.props).toBe(wrapper.props);
+    const tree2 = renderer
+      .create(
+        <ToggleButton {...baseProps} disabled checked>
+          <svg>
+            <rect />
+          </svg>
+        </ToggleButton>
+      )
+      .toJSON();
+    expect(tree2).toHaveStyleRule("fill", Base.toggleButton.disableFillColor, {
+      modifier: "svg rect"
+    });
 
-    wrapper.componentDidUpdate({ checked: false }, wrapper.state);
-    expect(wrapper.props).toBe(wrapper.props);
+    const tree3 = renderer
+      .create(
+        <ToggleButton {...baseProps}>
+          <svg>
+            <rect />
+          </svg>
+        </ToggleButton>
+      )
+      .toJSON();
+    expect(tree3).toHaveStyleRule("fill", Base.toggleButton.fillColorOff, {
+      modifier: "svg rect"
+    });
+
+    const tree4 = renderer
+      .create(
+        <ToggleButton {...baseProps} disabled>
+          <svg>
+            <rect />
+          </svg>
+        </ToggleButton>
+      )
+      .toJSON();
+    expect(tree4).toHaveStyleRule("cursor", "default");
+    expect(tree4).toHaveStyleRule(
+      "fill",
+      Base.toggleButton.disableFillColorOff,
+      { modifier: "svg rect" }
+    );
   });
 });

@@ -86,5 +86,6 @@ const StyledText = styled(Text)`
 `;
 
 StyledCheckbox.defaultProps = { theme: Base };
+StyledText.defaultProps = { theme: Base };
 
 export { StyledCheckbox, HiddenInput, StyledText };

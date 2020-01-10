@@ -72,5 +72,6 @@ const StyledText = styled(Text)`
 `;
 
 StyledToggleButton.defaultProps = { theme: Base };
+StyledText.defaultProps = { theme: Base };
 
 export { StyledToggleButton, HiddenInput, StyledText };
