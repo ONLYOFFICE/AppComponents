@@ -86,13 +86,87 @@ describe("<Button />", () => {
 
   test("it applies styles", () => {
     const tree = renderer
-      .create(<Button {...baseProps} disabled primary />)
+      .create(<Button {...baseProps} scale />)
       .toJSON();
 
-    expect(tree).toHaveStyleRule(
+    expect(tree).toHaveStyleRule("width", "100%");
+
+    const tree1 = renderer
+      .create(<Button {...baseProps} primary />)
+      .toJSON();
+
+    expect(tree1).toHaveStyleRule(
+      "color",
+      Base.button.color.primary
+    );
+
+    expect(tree1).toHaveStyleRule(
+      "background-color",
+      Base.button.backgroundColor.primary
+    );
+
+    expect(tree1).toHaveStyleRule(
+      "border",
+      Base.button.border.primary
+    );
+
+    const tree2 = renderer
+      .create(<Button {...baseProps} primary disabled />)
+      .toJSON();
+
+    expect(tree2).toHaveStyleRule(
+      "color",
+      Base.button.color.primary
+    );
+
+    expect(tree2).toHaveStyleRule(
       "background-color",
       Base.button.backgroundColor.primaryDisabled
     );
+
+    expect(tree2).toHaveStyleRule(
+      "border",
+      Base.button.border.primaryDisabled
+    );
+
+    const tree3 = renderer
+      .create(<Button {...baseProps} />)
+      .toJSON();
+
+    expect(tree3).toHaveStyleRule(
+      "color",
+      Base.button.color.base
+    );
+
+    expect(tree3).toHaveStyleRule(
+      "background-color",
+      Base.button.backgroundColor.base
+    );
+
+    expect(tree3).toHaveStyleRule(
+      "border",
+      Base.button.border.base
+    );
+
+    const tree4 = renderer
+      .create(<Button {...baseProps} disabled />)
+      .toJSON();
+
+    expect(tree4).toHaveStyleRule(
+      "color",
+      Base.button.color.disabled
+    );
+
+    expect(tree4).toHaveStyleRule(
+      "background-color",
+      Base.button.backgroundColor.baseDisabled
+    );
+
+    expect(tree4).toHaveStyleRule(
+      "border",
+      Base.button.border.baseDisabled
+    );
+
   });
 
   test("big button padding styles", () => {
