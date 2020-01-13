@@ -84,21 +84,6 @@ describe("<Button />", () => {
     expect(wrapper.prop("scale")).toEqual(true);
   });
 
-  it("render with icon", () => {
-    const icon = <>icon</>;
-    const wrapper = mount(<Button {...baseProps} icon={icon} />);
-
-    expect(wrapper.prop("icon")).toEqual(icon);
-
-    wrapper.setProps({ size: "big", primary: true });
-    expect(wrapper.prop("size")).toEqual("big");
-    expect(wrapper.prop("primary")).toEqual(true);
-
-    wrapper.setProps({ size: "medium", primary: true });
-    expect(wrapper.prop("size")).toEqual("medium");
-    expect(wrapper.prop("primary")).toEqual(true);
-  });
-
   test("it applies styles", () => {
     const tree = renderer
       .create(<Button {...baseProps} disabled primary />)
