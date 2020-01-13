@@ -106,192 +106,117 @@ describe("<Button />", () => {
 
     expect(tree).toHaveStyleRule(
       "background-color",
-      Base.button.disabledBackground
+      Base.button.backgroundColor.primaryDisabled
     );
   });
 
   test("big button padding styles", () => {
-    const icon = <>icon</>;
     const tree = renderer
-      .create(<Button size="big" primary label="button" icon={icon} />)
+      .create(<Button size="big"/>)
       .toJSON();
     expect(tree).toHaveStyleRule(
       "padding",
-      Base.button.padding.big.primaryWithLabel
+      Base.button.padding.big
     );
 
     const tree2 = renderer
-      .create(<Button size="big" primary icon={icon} />)
+      .create(<Button size="big" primary/>)
       .toJSON();
     expect(tree2).toHaveStyleRule(
       "padding",
-      Base.button.padding.big.primaryWithoutLabel
+      Base.button.padding.big
     );
 
     const tree3 = renderer
-      .create(<Button size="big" label="button" primary />)
+      .create(<Button size="big" primary disabled/>)
       .toJSON();
     expect(tree3).toHaveStyleRule(
       "padding",
-      Base.button.padding.big.primaryWithoutIconLabel
+      Base.button.padding.big
     );
 
-    const tree4 = renderer.create(<Button size="big" primary />).toJSON();
+    const tree4 = renderer
+      .create(<Button size="big" primary disabled label="button"/>)
+      .toJSON();
     expect(tree4).toHaveStyleRule(
       "padding",
-      Base.button.padding.big.primaryWithoutIcon
-    );
-
-    const tree5 = renderer
-      .create(<Button size="big" label="button" icon={icon} />)
-      .toJSON();
-    expect(tree5).toHaveStyleRule(
-      "padding",
-      Base.button.padding.big.baseWithIconLabel
-    );
-
-    const tree6 = renderer.create(<Button size="big" icon={icon} />).toJSON();
-    expect(tree6).toHaveStyleRule(
-      "padding",
-      Base.button.padding.big.baseWithIcon
-    );
-
-    const tree7 = renderer
-      .create(<Button size="big" label="button" />)
-      .toJSON();
-    expect(tree7).toHaveStyleRule(
-      "padding",
-      Base.button.padding.big.baseWithoutIconLabel
-    );
-
-    const tree8 = renderer.create(<Button size="big" />).toJSON();
-    expect(tree8).toHaveStyleRule(
-      "padding",
-      Base.button.padding.big.baseWithoutIcon
+      Base.button.padding.big
     );
   });
 
   test("medium button padding styles", () => {
-    const icon = <>icon</>;
     const tree = renderer
-      .create(<Button size="medium" primary label="button" icon={icon} />)
+      .create(<Button size="medium"/>)
       .toJSON();
     expect(tree).toHaveStyleRule(
       "padding",
-      Base.button.padding.medium.primaryWithLabel
+      Base.button.padding.medium
     );
 
     const tree2 = renderer
-      .create(<Button size="medium" primary icon={icon} />)
+      .create(<Button size="medium" primary/>)
       .toJSON();
     expect(tree2).toHaveStyleRule(
       "padding",
-      Base.button.padding.medium.primaryWithoutLabel
+      Base.button.padding.medium
     );
 
     const tree3 = renderer
-      .create(<Button size="medium" label="button" primary />)
+      .create(<Button size="medium" primary disabled/>)
       .toJSON();
     expect(tree3).toHaveStyleRule(
       "padding",
-      Base.button.padding.medium.primaryWithoutIconLabel
+      Base.button.padding.medium
     );
 
-    const tree4 = renderer.create(<Button size="medium" primary />).toJSON();
+    const tree4 = renderer
+      .create(<Button size="medium" primary disabled label="button"/>)
+      .toJSON();
     expect(tree4).toHaveStyleRule(
       "padding",
-      Base.button.padding.medium.primaryWithoutIcon
-    );
-
-    const tree5 = renderer
-      .create(<Button size="medium" label="button" icon={icon} />)
-      .toJSON();
-    expect(tree5).toHaveStyleRule(
-      "padding",
-      Base.button.padding.medium.baseWithIconLabel
-    );
-
-    const tree6 = renderer
-      .create(<Button size="medium" icon={icon} />)
-      .toJSON();
-    expect(tree6).toHaveStyleRule(
-      "padding",
-      Base.button.padding.medium.baseWithIcon
-    );
-
-    const tree7 = renderer
-      .create(<Button size="medium" label="button" />)
-      .toJSON();
-    expect(tree7).toHaveStyleRule(
-      "padding",
-      Base.button.padding.medium.baseWithoutIconLabel
-    );
-
-    const tree8 = renderer.create(<Button size="medium" />).toJSON();
-    expect(tree8).toHaveStyleRule(
-      "padding",
-      Base.button.padding.medium.baseWithoutIcon
+      Base.button.padding.medium
     );
   });
 
   test("base button padding styles", () => {
-    const icon = <>icon</>;
     const tree = renderer
-      .create(<Button size="base" primary label="button" icon={icon} />)
+      .create(<Button/>)
       .toJSON();
     expect(tree).toHaveStyleRule(
       "padding",
-      Base.button.padding.base.primaryWithLabel
+      Base.button.padding.base
     );
 
     const tree2 = renderer
-      .create(<Button size="base" primary icon={icon} />)
+      .create(<Button size="base"/>)
       .toJSON();
     expect(tree2).toHaveStyleRule(
       "padding",
-      Base.button.padding.base.primaryWithoutLabel
+      Base.button.padding.base
     );
 
     const tree3 = renderer
-      .create(<Button size="base" label="button" primary />)
+      .create(<Button size="base" primary/>)
       .toJSON();
     expect(tree3).toHaveStyleRule(
       "padding",
-      Base.button.padding.base.primaryWithoutIconLabel
+      Base.button.padding.base
     );
 
-    const tree4 = renderer.create(<Button size="base" primary />).toJSON();
+    const tree4 = renderer
+      .create(<Button size="base" primary disabled/>)
+      .toJSON();
     expect(tree4).toHaveStyleRule(
       "padding",
-      Base.button.padding.base.primaryWithoutIcon
+      Base.button.padding.base
     );
 
     const tree5 = renderer
-      .create(<Button size="base" label="button" icon={icon} />)
+      .create(<Button size="base" primary disabled label="button"/>)
       .toJSON();
     expect(tree5).toHaveStyleRule(
       "padding",
-      Base.button.padding.base.baseWithIconLabel
-    );
-
-    const tree6 = renderer.create(<Button size="base" icon={icon} />).toJSON();
-    expect(tree6).toHaveStyleRule(
-      "padding",
-      Base.button.padding.base.baseWithIcon
-    );
-
-    const tree7 = renderer
-      .create(<Button size="base" label="button" />)
-      .toJSON();
-    expect(tree7).toHaveStyleRule(
-      "padding",
-      Base.button.padding.base.baseWithoutIconLabel
-    );
-
-    const tree8 = renderer.create(<Button size="base" />).toJSON();
-    expect(tree8).toHaveStyleRule(
-      "padding",
-      Base.button.padding.base.baseWithoutIcon
+      Base.button.padding.base
     );
   });
 });
