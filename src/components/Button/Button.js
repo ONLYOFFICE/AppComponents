@@ -27,9 +27,6 @@ Button.propTypes = {
   size: PropTypes.oneOf(["base", "medium", "big"]),
   scale: PropTypes.bool,
   tabIndex: PropTypes.number,
-  className: PropTypes.string,
-  id: PropTypes.string,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   disabled: PropTypes.bool,
   onClick: PropTypes.func
 };

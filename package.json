@@ -100,6 +100,7 @@
     "js-yaml": "3.13.1"
   },
   "dependencies": {
-    "html-to-react": "^1.4.2"
+    "html-to-react": "^1.4.2",
+    "lodash": "4.17.15"
   }
 }
