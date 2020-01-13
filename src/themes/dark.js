@@ -12,7 +12,7 @@ const {
 
   blueMain,
   blueHover,
-  bluePressed,
+  blueActive,
   blueDisabled,
   blueCharcoal,
 
@@ -90,29 +90,29 @@ const Dark = {
       big: "85px"
     },
     color: {
-      base: globalColors.black,
-      primary: globalColors.white,
-      disabled: globalColors.greyMid,
+      base: black,
+      primary: white,
+      disabled: greyMid
     },
     backgroundColor: {
-      base: globalColors.white,
-      baseHover: globalColors.white,
-      baseActive: globalColors.greyLightMid,
-      baseDisabled: globalColors.grayLight,
-      primary: globalColors.blueMain,
-      primaryHover: globalColors.blueHover,
-      primaryActive: globalColors.blueActive,
-      primaryDisabled: globalColors.blueDisabled
+      base: white,
+      baseHover: white,
+      baseActive: greyLightMid,
+      baseDisabled: grayLight,
+      primary: blueMain,
+      primaryHover: blueHover,
+      primaryActive: blueActive,
+      primaryDisabled: blueDisabled
     },
     border: {
-      base: `1px solid ${globalColors.greyMid}`,
-      baseHover: `1px solid ${globalColors.blueMain}`,
-      baseActive: `1px solid ${globalColors.blueMain}`,
-      baseDisabled: `1px solid ${globalColors.greyLightMid}`,
-      primary: `1px solid ${globalColors.blueMain}`,
-      primaryHover: `1px solid ${globalColors.blueHover}`,
-      primaryActive: `1px solid ${globalColors.blueActive}`,
-      primaryDisabled: `1px solid ${globalColors.blueDisabled}`
+      base: `1px solid ${greyMid}`,
+      baseHover: `1px solid ${blueMain}`,
+      baseActive: `1px solid ${blueMain}`,
+      baseDisabled: `1px solid ${greyLightMid}`,
+      primary: `1px solid ${blueMain}`,
+      primaryHover: `1px solid ${blueHover}`,
+      primaryActive: `1px solid ${blueActive}`,
+      primaryDisabled: `1px solid ${blueDisabled}`
     }
   },
 
