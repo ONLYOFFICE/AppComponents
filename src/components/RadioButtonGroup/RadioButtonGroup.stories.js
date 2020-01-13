@@ -58,15 +58,16 @@ storiesOf("Components|RadioButtonGroup", module)
     return (
       <Box paddingProp="16px">
         <RadioButtonGroup
-          onClick={e => {
-            action("onChange")(e);
-          }}
+          name={text("name", "group")}
+          selected={values[0]}
+          options={children}
           orientation={select("orientation", orientation, "horizontal")}
           width={text("width", "100%")}
           disabled={boolean("disabled", false)}
-          selected={values[0]}
           spacing={text("spacing", "15px")}
-          options={children}
+          onClick={e => {
+            action("onChange")(e);
+          }}
         />
       </Box>
     );

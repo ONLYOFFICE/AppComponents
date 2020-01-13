@@ -10,6 +10,11 @@ const StyledRadioButton = styled.label`
   user-select: none;
   cursor: ${props => !props.disabled && "pointer"};
 
+  .radio-button {
+    min-width: ${props => props.theme.radioButton.width};
+    min-height: ${props => props.theme.radioButton.height};
+  }
+
   ${props => css`
     path:first-child {
       stroke: ${props.theme.radioButton.borderColor};

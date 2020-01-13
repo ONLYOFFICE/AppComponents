@@ -43,7 +43,8 @@ class RadioButton extends React.Component {
     return (
       <>
         {React.createElement(
-          checked ? RadioButtonIconChecked : RadioButtonIcon
+          checked ? RadioButtonIconChecked : RadioButtonIcon,
+          { className: "radio-button" }
         )}
       </>
     );
