@@ -6,4 +6,5 @@ export { default as Heading } from "./components/Heading";
 export { default as Button } from "./components/Button";
 export { default as Checkbox } from "./components/Checkbox";
 export { default as ToggleButton } from "./components/ToggleButton";
+export { default as RadioButton } from "./components/RadioButton";
 export * as Themes from "./themes";
