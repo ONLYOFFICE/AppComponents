@@ -5,7 +5,7 @@ RadioButton allow you to add radiobutton
 ### Usage
 
 ```js
-import { RadioButton } from "asc-web-components";
+import { RadioButton } from "app-components";
 ```
 
 ```jsx
