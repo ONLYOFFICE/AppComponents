@@ -1,13 +1,38 @@
 import globalColors from "../utils/globalColors";
 
+const {
+  black,
+  white,
+  whiteSolitude,
+  grayLight,
+  greyLightMid,
+  greyMid,
+  grey,
+  greyMain,
+
+  blueMain,
+  blueHover,
+  bluePressed,
+  blueDisabled,
+  blueCharcoal,
+
+  orangeMain,
+  orangeHover,
+  orangePressed,
+  orangeDisabled,
+
+  link,
+  errorColor
+} = globalColors;
+
 const Base = {
-  color: globalColors.black,
-  backgroundColor: globalColors.white,
+  color: black,
+  backgroundColor: white,
   fontFamily: "Open Sans, sans-serif, Arial",
 
   text: {
-    color: globalColors.black,
-    disableColor: globalColors.greyLightMid,
+    color: black,
+    disableColor: greyLightMid,
     fontWeight: "normal",
     fontWeightBold: "bold"
   },
@@ -25,33 +50,33 @@ const Base = {
 
   button: {
     fontWeight: 600,
-    borderColor: globalColors.greyMid,
-    disableBorderColor: globalColors.greyLightMid,
+    borderColor: greyMid,
+    disableBorderColor: greyLightMid,
     focus: "none",
 
     color: {
-      base: globalColors.black,
-      disabled: globalColors.greyLightMid,
-      primary: globalColors.white
+      base: black,
+      disabled: greyLightMid,
+      primary: white
     },
 
     backgroundColor: {
-      base: globalColors.white,
-      primaryDisabled: globalColors.greyLightMid,
-      primary: globalColors.bluePressed,
-      primaryHover: globalColors.blueHover
+      base: white,
+      primaryDisabled: greyLightMid,
+      primary: bluePressed,
+      primaryHover: blueHover
     },
 
-    primaryColor: globalColors.white,
+    primaryColor: white,
 
-    background: globalColors.white,
-    primaryBackground: globalColors.blueMain,
-    disabledBackground: globalColors.blueDisabled,
+    background: white,
+    primaryBackground: blueMain,
+    disabledBackground: blueDisabled,
 
     border: {
       base: "1px solid",
       primary: "none",
-      primaryActive: `1px solid ${globalColors.blueMain}`
+      primaryActive: `1px solid ${blueMain}`
     },
 
     primary: {
@@ -131,26 +156,36 @@ const Base = {
   },
 
   checkbox: {
-    fillColor: globalColors.white,
-    borderColor: globalColors.greyMid,
-    arrowColor: globalColors.black,
-    indeterminateColor: globalColors.black,
+    fillColor: white,
+    borderColor: greyMid,
+    arrowColor: black,
+    indeterminateColor: black,
 
-    disableArrowColor: globalColors.greyMid,
-    disableBorderColor: globalColors.greyLightMid,
-    disableFillColor: globalColors.grayLight,
-    disableIndeterminateColor: globalColors.grey,
+    disableArrowColor: greyMid,
+    disableBorderColor: greyLightMid,
+    disableFillColor: grayLight,
+    disableIndeterminateColor: grey,
 
-    hoverBorderColor: globalColors.grey,
-    hoverIndeterminateColor: globalColors.grey
+    hoverBorderColor: grey,
+    hoverIndeterminateColor: grey
   },
 
   toggleButton: {
-    fillColor: globalColors.blueMain,
-    fillColorOff: globalColors.grey,
+    fillColor: blueMain,
+    fillColorOff: grey,
 
-    disableFillColor: globalColors.greyLightMid,
-    disableFillColorOff: globalColors.greyLightMid
+    disableFillColor: greyLightMid,
+    disableFillColorOff: greyLightMid
+  },
+
+  radioButton: {
+    fillColor: black,
+    borderColor: greyMid,
+
+    disableFillColor: greyMid,
+    disableBorderColor: greyLightMid,
+
+    hoverBorderColor: grey
   }
 };
 
