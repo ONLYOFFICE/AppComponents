@@ -30,7 +30,7 @@ describe("<RadioButton />", () => {
     expect(wrapper).toExist();
   });
 
-  it("accepts id", () => {
+  it("id, className, style is exists", () => {
     const wrapper = mount(
       <RadioButton
         {...baseProps}

@@ -50,10 +50,12 @@ class RadioButton extends React.Component {
   };
 
   render() {
+    //console.log("Radio-button render");
     const { label, disabled, value, reverse, checked } = this.props;
+    const { onClick, ...rest } = this.props;
 
     return (
-      <StyledRadioButton {...this.props}>
+      <StyledRadioButton {...rest}>
         {label ? (
           reverse ? (
             <>
