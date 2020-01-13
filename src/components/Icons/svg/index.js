@@ -7,8 +7,6 @@ import OrigSearchIcon from "./search.react.svg";
 import OrigSettingsIcon from "./settings.react.svg";
 import OrigArrowContentIcon from "./arrow.content.react.svg";
 import OrigRefreshIcon from "./refresh.react.svg";
-import OrigRadiobuttonIcon from "./radiobutton.react.svg";
-import OrigRadiobuttonCheckedIcon from "./radiobutton.checked.react.svg";
 import OrigPlusIcon from "./actions.header.touch.react.svg";
 import OrigCheckIcon from "./check.react.svg";
 import OrigQuestionIcon from "./question.react.svg";
@@ -28,14 +26,6 @@ export const ExpanderRightIcon = createStyledIcon(
   "ExpanderRightIcon"
 );
 export const PlusIcon = createStyledIcon(OrigPlusIcon, "PlusIcon");
-export const RadiobuttonCheckedIcon = createStyledIcon(
-  OrigRadiobuttonCheckedIcon,
-  "RadiobuttonCheckedIcon"
-);
-export const RadiobuttonIcon = createStyledIcon(
-  OrigRadiobuttonIcon,
-  "RadiobuttonIcon"
-);
 export const RefreshIcon = createStyledIcon(OrigRefreshIcon, "RefreshIcon");
 export const SearchIcon = createStyledIcon(OrigSearchIcon, "SearchIcon");
 export const SettingsIcon = createStyledIcon(OrigSettingsIcon, "SettingsIcon");

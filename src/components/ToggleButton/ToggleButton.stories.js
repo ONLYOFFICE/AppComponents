@@ -17,7 +17,7 @@ storiesOf("Components|ToggleButton", module)
         {({ value, toggle }) => (
           <ToggleButton
             checked={value}
-            label={text("label", "label text")}
+            label={text("label", "toggle-button")}
             disabled={boolean("disabled", false)}
             reverse={boolean("reverse", false)}
             onChange={e => {
