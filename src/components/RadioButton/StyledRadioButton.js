@@ -8,7 +8,7 @@ const StyledRadioButton = styled.label`
   position: relative;
   margin: 0;
   user-select: none;
-  cursor: ${props => !props.disabled && "pointer"};
+  cursor: ${props => (!props.disabled ? "pointer" : "default")};
 
   .radio-button {
     min-width: ${props => props.theme.radioButton.width};
