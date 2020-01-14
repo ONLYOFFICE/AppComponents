@@ -1,13 +1,38 @@
 import globalColors from "../utils/globalColors";
 
+const {
+  black,
+  white,
+  whiteSolitude,
+  grayLight,
+  greyLightMid,
+  greyMid,
+  grey,
+  greyMain,
+
+  blueMain,
+  blueHover,
+  blueActive,
+  blueDisabled,
+  blueCharcoal,
+
+  orangeMain,
+  orangeHover,
+  orangePressed,
+  orangeDisabled,
+
+  link,
+  errorColor
+} = globalColors;
+
 const Dark = {
-  color: globalColors.whiteSolitude,
-  backgroundColor: globalColors.blueCharcoal,
+  color: whiteSolitude,
+  backgroundColor: blueCharcoal,
   fontFamily: "Open Sans, sans-serif, Arial",
 
   text: {
-    color: globalColors.text,
-    disableColor: globalColors.greyLightMid,
+    color: white,
+    disableColor: greyLightMid,
     fontWeight: "normal",
     fontWeightBold: "bold"
   },
@@ -65,53 +90,63 @@ const Dark = {
       big: "85px"
     },
     color: {
-      base: globalColors.black,
-      primary: globalColors.white,
-      disabled: globalColors.greyMid,
+      base: black,
+      primary: white,
+      disabled: greyMid
     },
     backgroundColor: {
-      base: globalColors.white,
-      baseHover: globalColors.white,
-      baseActive: globalColors.greyLightMid,
-      baseDisabled: globalColors.grayLight,
-      primary: globalColors.blueMain,
-      primaryHover: globalColors.blueHover,
-      primaryActive: globalColors.blueActive,
-      primaryDisabled: globalColors.blueDisabled
+      base: white,
+      baseHover: white,
+      baseActive: greyLightMid,
+      baseDisabled: grayLight,
+      primary: blueMain,
+      primaryHover: blueHover,
+      primaryActive: blueActive,
+      primaryDisabled: blueDisabled
     },
     border: {
-      base: `1px solid ${globalColors.greyMid}`,
-      baseHover: `1px solid ${globalColors.blueMain}`,
-      baseActive: `1px solid ${globalColors.blueMain}`,
-      baseDisabled: `1px solid ${globalColors.greyLightMid}`,
-      primary: `1px solid ${globalColors.blueMain}`,
-      primaryHover: `1px solid ${globalColors.blueHover}`,
-      primaryActive: `1px solid ${globalColors.blueActive}`,
-      primaryDisabled: `1px solid ${globalColors.blueDisabled}`
+      base: `1px solid ${greyMid}`,
+      baseHover: `1px solid ${blueMain}`,
+      baseActive: `1px solid ${blueMain}`,
+      baseDisabled: `1px solid ${greyLightMid}`,
+      primary: `1px solid ${blueMain}`,
+      primaryHover: `1px solid ${blueHover}`,
+      primaryActive: `1px solid ${blueActive}`,
+      primaryDisabled: `1px solid ${blueDisabled}`
     }
   },
 
   checkbox: {
-    fillColor: globalColors.white,
-    borderColor: globalColors.greyMid,
-    arrowColor: globalColors.black,
-    indeterminateColor: globalColors.black,
+    fillColor: white,
+    borderColor: greyMid,
+    arrowColor: black,
+    indeterminateColor: black,
 
-    disableArrowColor: globalColors.greyMid,
-    disableBorderColor: globalColors.greyLightMid,
-    disableFillColor: globalColors.grayLight,
-    disableIndeterminateColor: globalColors.grey,
+    disableArrowColor: greyMid,
+    disableBorderColor: greyLightMid,
+    disableFillColor: grayLight,
+    disableIndeterminateColor: grey,
 
-    hoverBorderColor: globalColors.grey,
-    hoverIndeterminateColor: globalColors.grey
+    hoverBorderColor: grey,
+    hoverIndeterminateColor: grey
   },
 
   toggleButton: {
-    fillColor: globalColors.blueMain,
-    fillColorOff: globalColors.grey,
+    fillColor: blueMain,
+    fillColorOff: grey,
 
-    disableFillColor: globalColors.greyLightMid,
-    disableFillColorOff: globalColors.greyLightMid
+    disableFillColor: greyLightMid,
+    disableFillColorOff: greyLightMid
+  },
+
+  radioButton: {
+    fillColor: black,
+    borderColor: greyMid,
+
+    disableFillColor: greyMid,
+    disableBorderColor: greyLightMid,
+
+    hoverBorderColor: grey
   }
 };
 
