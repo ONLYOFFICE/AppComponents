@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import RadioButton from "../RadioButton";
-import StyledRadioButtonGroup from "./StyledRadioButtonGroup";
+import Box from "../Box";
 
 class RadioButtonGroup extends React.Component {
   constructor(props) {
@@ -34,13 +34,15 @@ class RadioButtonGroup extends React.Component {
     const { options, orientation, width, name, disabled, spacing } = this.props;
     const { onClick, ...rest } = this.props;
 
+    const display = orientation === "horizontal" ? "flex" : "block";
+
     return (
-      <StyledRadioButtonGroup {...rest} orientation={orientation} width={width}>
+      <Box {...rest} displayProp={display} widthProp={width}>
         {options.map(option => {
           return (
             <RadioButton
               key={option.value}
-              //name={name}
+              name={name}
               value={option.value}
               checked={this.state.selectedOption === option.value}
               onChange={this.onInputChange}
@@ -51,7 +53,7 @@ class RadioButtonGroup extends React.Component {
             />
           );
         })}
-      </StyledRadioButtonGroup>
+      </Box>
     );
   }
 }

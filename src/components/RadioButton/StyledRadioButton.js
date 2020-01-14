@@ -27,7 +27,6 @@ const StyledRadioButton = styled.label`
   ${props =>
     props.disabled
       ? css`
-          cursor: default;
           path:first-child {
             stroke: ${props.theme.radioButton.disableBorderColor};
           }
@@ -36,8 +35,6 @@ const StyledRadioButton = styled.label`
           }
         `
       : css`
-          cursor: pointer;
-
           &:hover {
             svg {
               path:first-child {
