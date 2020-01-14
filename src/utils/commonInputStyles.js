@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import { Base } from "../themes";
 
 const commonInputStyle = css`
   box-sizing: ${props => props.theme.input.boxSizing};
@@ -12,9 +13,7 @@ const commonInputStyle = css`
   box-shadow: ${props => props.theme.input.boxShadow};
 
   color: ${props =>
-    props.disabled
-      ? props.theme.input.disableColor
-      : props.theme.input.color};
+    props.disabled ? props.theme.input.disableColor : props.theme.input.color};
 
   background-color: ${props =>
     props.disabled
@@ -49,8 +48,9 @@ const commonInputStyle = css`
       props.theme.input.focusBorderColor};
   }
 
-  cursor: ${props =>
-    props.readOnly || props.disabled ? "default" : "text"};
+  cursor: ${props => (props.readOnly || props.disabled ? "default" : "text")};
 `;
+
+commonInputStyle.defaultProps = { theme: Base };
 
 export default commonInputStyle;

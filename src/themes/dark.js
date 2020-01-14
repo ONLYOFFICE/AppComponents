@@ -189,6 +189,7 @@ const Dark = {
     placeholderColor: greyMid,
     disablePlaceholderColor: greyMid,
 
+    transition: "all 0.2s ease 0s",
     appearance: "none",
     display: "flex",
     flex: "1 1 0%",

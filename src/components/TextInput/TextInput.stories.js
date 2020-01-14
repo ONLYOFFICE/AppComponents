@@ -41,7 +41,7 @@ storiesOf("Components|TextInput", module)
             autoComplete={text("autoComplete", "off")}
             tabIndex={number("tabIndex", 1)}
             border={boolean("border", true)}
-            mask={text("mask", null)}
+            mask={undefined}
             value={value}
             onBlur={action("onBlur")}
             onFocus={action("onFocus")}
