@@ -147,6 +147,39 @@ const Dark = {
     disableBorderColor: greyLightMid,
 
     hoverBorderColor: grey
+  },
+
+  textInput: {
+    fontWeight: "normal",
+    placeholderColor: greyMid,
+    disablePlaceholderColor: greyMid,
+
+    appearance: "none",
+    display: "flex",
+    flex: "1 1 0%",
+    outline: "none",
+    overflow: "hidden",
+
+    lineHeight: {
+      base: "20px",
+      middle: "20px",
+      big: "20px",
+      huge: "21px"
+    },
+
+    fontSize: {
+      base: "13px",
+      middle: "14px",
+      big: "16px",
+      huge: "18px"
+    },
+
+    padding: {
+      base: "5px 7px",
+      middle: "8px 12px",
+      big: "8px 16px",
+      huge: "8px 20px"
+    }
   }
 };
 
