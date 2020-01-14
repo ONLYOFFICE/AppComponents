@@ -1,26 +1,7 @@
-import React from "react";
 import styled from "styled-components";
-import MaskedInput from "react-text-mask";
 import commonInputStyles from "../../utils/commonInputStyles";
-
-const Input = ({
-  autoFocus,
-  disabled,
-  readOnly,
-  error,
-  warning,
-  scale,
-  border,
-  keepCharPositions,
-  fontWeight,
-  isBold,
-  ...props
-}) =>
-  props.mask != null ? (
-    <MaskedInput keepCharPositions {...props} />
-  ) : (
-    <input {...props} />
-  );
+import Input from "./Input";
+import { Base } from "../../themes";
 
 const StyledTextInput = styled(Input)`
   ${commonInputStyles}
@@ -51,7 +32,7 @@ const StyledTextInput = styled(Input)`
     (props.size === "big" && props.theme.textInput.padding.big) ||
     (props.size === "huge" && props.theme.textInput.padding.huge)};
 
-  transition: all 0.2s ease 0s;
+  transition: ${props => props.theme.textInput.transition};
 
   ::-webkit-input-placeholder {
     color: ${props =>
@@ -83,5 +64,7 @@ const StyledTextInput = styled(Input)`
 
   ${props => !props.border && `border: none;`}
 `;
+
+StyledTextInput.defaultProps = { theme: Base };
 
 export default StyledTextInput;
