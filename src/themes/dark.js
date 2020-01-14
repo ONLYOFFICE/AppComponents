@@ -149,6 +149,41 @@ const Dark = {
     hoverBorderColor: grey
   },
 
+  input: {
+    color: "#333",
+    disableColor: "#D0D5DA",
+
+    backgroundColor: "#fff",
+    disableBackgroundColor: "#F8F9F9",
+
+    width: {
+      base: "173px",
+      middle: "300px",
+      big: "350px",
+      huge: "500px"
+    },
+
+    borderRadius: "3px",
+    boxShadow: "none",
+    boxSizing: "border-box",
+    border: "solid 1px",
+
+    borderColor: "#D0D5DA",
+    errorBorderColor: "#c30",
+    warningBorderColor: "#f1ca92",
+    disabledBorderColor: "#ECEEF1",
+
+    hoverBorderColor: "#D0D5DA",
+    hoverErrorBorderColor: "#c30",
+    hoverWarningBorderColor: "#f1ca92",
+    hoverDisabledBorderColor: "#A3A9AE",
+
+    focusBorderColor: "#2DA7DB",
+    focusErrorBorderColor: "#c30",
+    focusWarningBorderColor: "#f1ca92",
+    focusDisabledBorderColor: "#ECEEF1"
+  },
+
   textInput: {
     fontWeight: "normal",
     placeholderColor: greyMid,

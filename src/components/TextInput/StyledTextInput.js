@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import MaskedInput from "react-text-mask";
-import commonInputStyles from "./common-input-styles";
+import commonInputStyles from "../../utils/commonInputStyles";
 
 const Input = ({
   autoFocus,
