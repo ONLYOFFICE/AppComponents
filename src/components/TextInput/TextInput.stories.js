@@ -28,26 +28,28 @@ storiesOf("Components|TextInput", module)
       >
         {({ value, set }) => (
           <TextInput
-            name={text("name", "")}
-            placeholder={text("placeholder", "This is placeholder")}
-            maxLength={number("maxLength", 255)}
-            size={select("size", sizeOptions, "base")}
-            autoFocus={boolean("autoFocus", false)}
-            disabled={boolean("disabled", false)}
-            readOnly={boolean("readOnly", false)}
-            error={boolean("error", false)}
-            warning={boolean("warning", false)}
-            scale={boolean("scale", false)}
-            autoComplete={text("autoComplete", "off")}
-            tabIndex={number("tabIndex", 1)}
-            border={boolean("border", true)}
-            mask={undefined}
             value={value}
-            onBlur={action("onBlur")}
-            onFocus={action("onFocus")}
             onChange={e => {
               set(e.target.value);
             }}
+            name={text("name", "")}
+            type={text("type", "text")}
+            size={select("size", sizeOptions, "base")}
+            placeholder={text("placeholder", "This is placeholder")}
+            autoComplete={text("autoComplete", "off")}
+            error={boolean("error", false)}
+            warning={boolean("warning", false)}
+            disabled={boolean("disabled", false)}
+            scale={boolean("scale", false)}
+            readOnly={boolean("readOnly", false)}
+            autoFocus={boolean("autoFocus", false)}
+            border={boolean("border", true)}
+            keepCharPositions={boolean("keepCharPositions", false)}
+            mask={undefined}
+            onFocus={action("onFocus")}
+            onBlur={action("onBlur")}
+            maxLength={number("maxLength", 255)}
+            tabIndex={number("tabIndex", 1)}
           />
         )}
       </StringValue>

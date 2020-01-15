@@ -33,21 +33,20 @@ const Input = ({
 
 Input.propTypes = {
   name: PropTypes.string,
-  type: PropTypes.oneOf(["text", "password", "email"]),
+  type: PropTypes.string,
   value: PropTypes.string.isRequired,
-  maxLength: PropTypes.number,
   placeholder: PropTypes.string,
-  tabIndex: PropTypes.number,
   autoComplete: PropTypes.string,
-  mask: PropTypes.oneOfType([PropTypes.array, PropTypes.func]),
-
   size: PropTypes.oneOf(["base", "middle", "big", "huge"]),
-  scale: PropTypes.bool,
+  maxLength: PropTypes.number,
+  tabIndex: PropTypes.number,
+  mask: PropTypes.oneOfType([PropTypes.array, PropTypes.func]),
 
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
 
+  scale: PropTypes.bool,
   border: PropTypes.bool,
   autoFocus: PropTypes.bool,
   disabled: PropTypes.bool,
