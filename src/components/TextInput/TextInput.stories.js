@@ -21,16 +21,13 @@ storiesOf("Components|TextInput", module)
   .addDecorator(withReadme(Readme))
   .add("text", () => (
     <Box paddingProp="16px">
-      <StringValue
-        onChange={e => {
-          action("onChange")(e);
-        }}
-      >
+      <StringValue>
         {({ value, set }) => (
           <TextInput
             value={value}
             onChange={e => {
               set(e.target.value);
+              action("onChange")(e);
             }}
             name={text("name", "")}
             type={text("type", "text")}
