@@ -25,18 +25,22 @@ storiesOf("Components|Icon", module)
   .addDecorator(withReadme(Readme))
   .add("base", () => (
     <Box paddingProp="16px" widthProp="100%">
-      <Icon
-        svgSource={select("svgSource", svgUrls, "/search.svg")}
-        color={color("color", "")}
-        strokeProp={color("strokeProp", "")}
-        size={select("size", size, "medium")}
-        fill={boolean("fill", false)}
-        stroke={boolean("stroke", false)}
-        fillPath={text("fillPath", "*")}
-        strokePath={text("strokePath", "*")}
-      />
-      <Icon
-        svgSource={"/search.svg"}
-      />
+      <Box paddingProp="16px" widthProp="100%">
+        <Icon
+          svgSource={select("svgSource", svgUrls, "/search.svg")}
+          color={color("color", "")}
+          strokeProp={color("strokeProp", "")}
+          size={select("size", size, "medium")}
+          fill={boolean("fill", false)}
+          stroke={boolean("stroke", false)}
+          fillPath={text("fillPath", "*")}
+          strokePath={text("strokePath", "*")}
+        />
+      </Box>
+      <Box paddingProp="16px" widthProp="100%">
+        <Icon
+          svgSource={"/search.svg"}
+        />
     </Box>
-  ));
+  </Box>
+));

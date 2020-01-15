@@ -21,7 +21,6 @@ import { Button } from "asc-web-components";
 
 | Props      |   Type   | Required |         Values          | Default | Description                                           |
 | ---------- | :------: | :------: | :---------------------: | :-----: | ----------------------------------------------------- |
-| `icon`     |  `node`  |    -     |            -            | `null`  | Icon node element                                     |
 | `disabled` |  `bool`  |    -     |            -            | `false` | Tells when the button should present a disabled state |
 | `label`    | `string` |    -     |            -            |    -    | Button text                                           |
 | `onClick`  |  `func`  |    -     |            -            |    -    | What the button will trigger when clicked             |
