@@ -14,6 +14,6 @@ import { Scrollbar } from "app-components";
 
 ### Properties
 
-| Props   |   Type   | Required |                           Values                            |   Default    | Description          |
-| ------- | :------: | :------: | :---------------------------------------------------------: | :----------: | -------------------- |
-| `stype` | `string` |          | `smallWhite`, `smallBlack`, `preMediumBlack`, `mediumBlack` | `smallBlack` | Scrollbar style type |
+| Props   |   Type   | Required |                           Values                            |   Default    | Description                                                |
+| ------- | :------: | :------: | :---------------------------------------------------------: | :----------: | ---------------------------------------------------------- |
+| `stype` | `string` |          | `smallWhite`, `smallBlack`, `preMediumBlack`, `mediumBlack` | `smallBlack` | Scrollbar style type, or your custom styled scrollbar type |
