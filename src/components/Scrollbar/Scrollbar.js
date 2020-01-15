@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Box from "../Box";
 import StyledScrollbar from "./StyledScrollbar";
 import { ScrollStyles } from "../../utils/commonStyles";
 
 const Scrollbar = React.forwardRef((props, ref) => {
   //console.log("Scrollbar render");
   const scrollbarType = ScrollStyles;
-
   const stype = scrollbarType[props.stype];
 
   const thumbV = stype ? stype.thumbV : {};
@@ -14,7 +14,7 @@ const Scrollbar = React.forwardRef((props, ref) => {
   const view = stype ? stype.view : {};
 
   const renderNavThumbVertical = ({ style, ...props }) => (
-    <div
+    <Box
       className="nav-thumb-vertical"
       {...props}
       style={{ ...style, ...thumbV }}
@@ -22,7 +22,7 @@ const Scrollbar = React.forwardRef((props, ref) => {
   );
 
   const renderNavThumbHorizontal = ({ style, ...props }) => (
-    <div
+    <Box
       className="nav-thumb-horizontal"
       {...props}
       style={{ ...style, ...thumbH }}
@@ -30,7 +30,7 @@ const Scrollbar = React.forwardRef((props, ref) => {
   );
 
   const renderView = ({ style, ...props }) => (
-    <div {...props} style={{ ...style, ...view }} className="scroll-body" />
+    <Box {...props} style={{ ...style, ...view }} className="scroll-body" />
   );
 
   return (
