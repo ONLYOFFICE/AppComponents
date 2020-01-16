@@ -103,7 +103,6 @@
     "html-to-react": "^1.4.2",
     "lodash": "4.17.15",
     "react-custom-scrollbars": "^4.2.1",
-    "lodash": "4.17.15",
     "react-text-mask": "^5.4.3"
   }
 }
