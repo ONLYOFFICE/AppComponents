@@ -1,13 +1,13 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import withReadme from "storybook-readme/with-readme";
-import { withKnobs, select } from "@storybook/addon-knobs/react";
+import { withKnobs, select, color } from "@storybook/addon-knobs/react";
 import Readme from "./README.md";
 import Scrollbar from ".";
 import Box from "../Box";
 import Text from "../Text";
 
-const stypes = ["smallWhite", "smallBlack", "preMediumBlack", "mediumBlack"];
+const sizes = ["small", "medium", "big"];
 
 storiesOf("Components|Scrollbar", module)
   .addDecorator(withReadme(Readme))
@@ -15,7 +15,8 @@ storiesOf("Components|Scrollbar", module)
   .add("Default", () => (
     <Box paddingProp="16px">
       <Scrollbar
-        stype={select("stype", stypes, "mediumBlack")}
+        size={select("size", sizes, "medium")}
+        color={color("color", "")}
         style={{ width: 300, height: 200 }}
       >
         <Text>

@@ -147,6 +147,11 @@ const Dark = {
     disableBorderColor: greyLightMid,
 
     hoverBorderColor: grey
+  },
+
+  scrollbar: {
+    backgroundColorVertical: "rgba(255, 255, 255, 0.5)",
+    backgroundColorHorizontal: "rgba(255, 255, 255, 0.5)"
   }
 };
 

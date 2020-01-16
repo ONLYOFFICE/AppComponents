@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Box from "../Box";
-import { Scrollbars } from "react-custom-scrollbars";
+import StyledScrollbar from "./StyledScrollbar";
 import { ScrollStyles } from "../../utils/commonStyles";
 
 const Scrollbar = React.forwardRef((props, ref) => {
   //console.log("Scrollbar render");
   const scrollbarType = ScrollStyles;
-  const stype = scrollbarType[props.stype];
+  const size = scrollbarType[props.size];
 
-  const thumbV = stype ? stype.thumbV : {};
-  const thumbH = stype ? stype.thumbH : {};
-  const view = stype ? stype.view : {};
+  const thumbV = size ? size.thumbV : {};
+  const thumbH = size ? size.thumbH : {};
+  const view = size ? size.view : {};
 
   const renderNavThumbVertical = ({ style, ...props }) => (
     <Box
@@ -34,7 +34,8 @@ const Scrollbar = React.forwardRef((props, ref) => {
   );
 
   return (
-    <Scrollbars
+    <StyledScrollbar
+      color={props.color}
       renderView={renderView}
       renderThumbVertical={renderNavThumbVertical}
       renderThumbHorizontal={renderNavThumbHorizontal}
@@ -45,12 +46,13 @@ const Scrollbar = React.forwardRef((props, ref) => {
 });
 
 Scrollbar.propTypes = {
-  stype: PropTypes.string,
+  size: PropTypes.oneOf(["small", "medium", "big"]),
+  color: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
 };
 
 Scrollbar.defaultProps = {
-  stype: "smallBlack"
+  size: "medium"
 };
 
 export default Scrollbar;

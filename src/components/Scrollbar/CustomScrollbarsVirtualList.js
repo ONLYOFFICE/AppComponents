@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StyledScrollbar from "./StyledScrollbar";
+import Scrollbar from "./Scrollbar";
 
 class CustomScrollbars extends React.Component {
   refSetter = (scrollbarsRef, forwardedRef) => {
@@ -12,31 +12,26 @@ class CustomScrollbars extends React.Component {
   };
 
   render() {
-    const { stype, onScroll, forwardedRef, children, ...rest } = this.props;
+    const { size, onScroll, forwardedRef, children, ...rest } = this.props;
 
     //console.log("CustomScrollbars", this.props);
     return (
-      <StyledScrollbar
+      <Scrollbar
         ref={scrollbarsRef =>
           this.refSetter.bind(this, scrollbarsRef, forwardedRef)
         }
         onScroll={onScroll}
-        stype={stype}
+        size={size}
         {...rest}
       >
         {children}
-      </StyledScrollbar>
+      </Scrollbar>
     );
   }
 }
 
 CustomScrollbars.propTypes = {
-  stype: PropTypes.oneOf([
-    "smallWhite",
-    "smallBlack",
-    "preMediumBlack",
-    "mediumBlack"
-  ]),
+  size: PropTypes.oneOf(["small", "medium", "bid"]),
   onScroll: PropTypes.func,
   children: PropTypes.any,
   forwardedRef: PropTypes.oneOfType([
@@ -46,7 +41,7 @@ CustomScrollbars.propTypes = {
 };
 
 CustomScrollbars.defaultProps = {
-  stype: "mediumBlack"
+  size: "medium"
 };
 
 const CustomScrollbarsVirtualList = React.forwardRef((props, ref) => (

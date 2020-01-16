@@ -1,5 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
+import renderer from "react-test-renderer";
+import "jest-styled-components";
 import Scrollbar from ".";
 
 describe("<Scrollbar />", () => {
@@ -9,8 +11,8 @@ describe("<Scrollbar />", () => {
     expect(wrapper).toExist();
   });
 
-  it("renders without stype", () => {
-    const wrapper = mount(<Scrollbar stype={null}>Some content</Scrollbar>);
+  it("renders without size", () => {
+    const wrapper = mount(<Scrollbar size={null}>Some content</Scrollbar>);
 
     expect(wrapper).toExist();
   });
@@ -24,4 +26,12 @@ describe("<Scrollbar />", () => {
     expect(wrapper.prop("className")).toEqual("test");
     expect(wrapper.getDOMNode().style).toHaveProperty("color", "red");
   });
+
+  test("svg text style test", () => {
+    const tree = renderer.create(<Scrollbar color="purple" />).toJSON();
+    expect(tree).toHaveStyleRule("background-color", "purple", {
+      modifier: ".nav-thumb-vertical"
+    });
+  });
 });
+//nav-thumb-horizontal
