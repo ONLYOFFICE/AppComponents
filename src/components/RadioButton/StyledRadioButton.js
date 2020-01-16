@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import { Base } from "../../themes/index";
-import Text from "../Text";
 
 const StyledRadioButton = styled.label`
   display: flex;
@@ -59,22 +58,21 @@ const StyledRadioButton = styled.label`
         margin-bottom: ${props.spacing};
       `};
   }
+
+  .radio-button-text {
+    ${props => (props.reverse ? `margin-right: 8px` : `margin-left: 8px`)};
+    color: ${props =>
+      props.disabled ? props.theme.text.disableColor : props.theme.text.color};
+  }
 `;
 
-const HiddenInput = styled.input`
+const StyledHiddenInput = styled.input`
   opacity: 0.0001;
   position: absolute;
   right: 0;
   z-index: -1;
 `;
 
-const StyledText = styled(Text)`
-  ${props => (props.reverse ? `margin-right: 8px` : `margin-left: 8px`)};
-  color: ${props =>
-    props.disabled ? props.theme.text.disableColor : props.theme.text.color};
-`;
-
 StyledRadioButton.defaultProps = { theme: Base };
-StyledText.defaultProps = { theme: Base };
 
-export { StyledRadioButton, HiddenInput, StyledText };
+export { StyledRadioButton, StyledHiddenInput };
