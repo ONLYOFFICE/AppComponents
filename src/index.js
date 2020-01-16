@@ -8,5 +8,6 @@ export { default as Checkbox } from "./components/Checkbox";
 export { default as ToggleButton } from "./components/ToggleButton";
 export { default as RadioButton } from "./components/RadioButton";
 export { default as RadioButtonGroup } from "./components/RadioButtonGroup";
+export { default as Scrollbar } from "./components/Scrollbar";
 export { default as TextInput } from "./components/TextInput";
 export * as Themes from "./themes";
