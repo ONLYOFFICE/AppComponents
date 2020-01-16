@@ -42,7 +42,7 @@ Input.propTypes = {
   tabIndex: PropTypes.number,
   mask: PropTypes.oneOfType([PropTypes.array, PropTypes.func]),
 
-  onChange: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
 

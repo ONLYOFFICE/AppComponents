@@ -41,8 +41,6 @@ storiesOf("Components|TextInput", module)
             readOnly={boolean("readOnly", false)}
             autoFocus={boolean("autoFocus", false)}
             border={boolean("border", true)}
-            keepCharPositions={boolean("keepCharPositions", false)}
-            mask={undefined}
             onFocus={action("onFocus")}
             onBlur={action("onBlur")}
             maxLength={number("maxLength", 255)}
