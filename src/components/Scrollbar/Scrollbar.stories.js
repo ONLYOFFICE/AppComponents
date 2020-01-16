@@ -7,7 +7,7 @@ import Scrollbar from ".";
 import Box from "../Box";
 import Text from "../Text";
 
-const stypes = ["smallWhite", "smallBlack", "mediumBlack"];
+const stypes = ["smallWhite", "smallBlack", "preMediumBlack", "mediumBlack"];
 
 storiesOf("Components|Scrollbar", module)
   .addDecorator(withReadme(Readme))

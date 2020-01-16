@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Box from "../Box";
-import StyledScrollbar from "./StyledScrollbar";
+import { Scrollbars } from "react-custom-scrollbars";
 import { ScrollStyles } from "../../utils/commonStyles";
 
 const Scrollbar = React.forwardRef((props, ref) => {
@@ -34,7 +34,7 @@ const Scrollbar = React.forwardRef((props, ref) => {
   );
 
   return (
-    <StyledScrollbar
+    <Scrollbars
       renderView={renderView}
       renderThumbVertical={renderNavThumbVertical}
       renderThumbHorizontal={renderNavThumbHorizontal}

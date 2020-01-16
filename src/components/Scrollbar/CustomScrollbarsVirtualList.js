@@ -1,6 +1,6 @@
 import React from "react";
-import Scrollbar from "../Scrollbar";
 import PropTypes from "prop-types";
+import StyledScrollbar from "./StyledScrollbar";
 
 class CustomScrollbars extends React.Component {
   refSetter = (scrollbarsRef, forwardedRef) => {
@@ -12,28 +12,20 @@ class CustomScrollbars extends React.Component {
   };
 
   render() {
-    const {
-      stype,
-      onScroll,
-      forwardedRef,
-      style,
-      children,
-      ...rest
-    } = this.props;
+    const { stype, onScroll, forwardedRef, children, ...rest } = this.props;
 
     //console.log("CustomScrollbars", this.props);
     return (
-      <Scrollbar
+      <StyledScrollbar
         ref={scrollbarsRef =>
           this.refSetter.bind(this, scrollbarsRef, forwardedRef)
         }
-        style={{ ...style, overflow: "hidden" }}
         onScroll={onScroll}
         stype={stype}
         {...rest}
       >
         {children}
-      </Scrollbar>
+      </StyledScrollbar>
     );
   }
 }
@@ -46,7 +38,6 @@ CustomScrollbars.propTypes = {
     "mediumBlack"
   ]),
   onScroll: PropTypes.func,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   children: PropTypes.any,
   forwardedRef: PropTypes.oneOfType([
     PropTypes.func,
