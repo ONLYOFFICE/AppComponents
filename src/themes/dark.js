@@ -152,6 +152,75 @@ const Dark = {
   scrollbar: {
     backgroundColorVertical: "rgba(255, 255, 255, 0.5)",
     backgroundColorHorizontal: "rgba(255, 255, 255, 0.5)"
+  },
+
+  input: {
+    color: "#333",
+    disableColor: "#D0D5DA",
+
+    backgroundColor: "#fff",
+    disableBackgroundColor: "#F8F9F9",
+
+    width: {
+      base: "173px",
+      middle: "300px",
+      big: "350px",
+      huge: "500px"
+    },
+
+    borderRadius: "3px",
+    boxShadow: "none",
+    boxSizing: "border-box",
+    border: "solid 1px",
+
+    borderColor: "#D0D5DA",
+    errorBorderColor: "#c30",
+    warningBorderColor: "#f1ca92",
+    disabledBorderColor: "#ECEEF1",
+
+    hoverBorderColor: "#D0D5DA",
+    hoverErrorBorderColor: "#c30",
+    hoverWarningBorderColor: "#f1ca92",
+    hoverDisabledBorderColor: "#A3A9AE",
+
+    focusBorderColor: "#2DA7DB",
+    focusErrorBorderColor: "#c30",
+    focusWarningBorderColor: "#f1ca92",
+    focusDisabledBorderColor: "#ECEEF1"
+  },
+
+  textInput: {
+    fontWeight: "normal",
+    placeholderColor: greyMid,
+    disablePlaceholderColor: greyMid,
+
+    transition: "all 0.2s ease 0s",
+    appearance: "none",
+    display: "flex",
+    flex: "1 1 0%",
+    outline: "none",
+    overflow: "hidden",
+
+    lineHeight: {
+      base: "20px",
+      middle: "20px",
+      big: "20px",
+      huge: "21px"
+    },
+
+    fontSize: {
+      base: "13px",
+      middle: "14px",
+      big: "16px",
+      huge: "18px"
+    },
+
+    padding: {
+      base: "5px 7px",
+      middle: "8px 12px",
+      big: "8px 16px",
+      huge: "8px 20px"
+    }
   }
 };
 
