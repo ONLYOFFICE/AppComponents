@@ -242,8 +242,8 @@ const Base = {
     focusBorderColor: "#2da7db",
     focusOutline: "none",
 
-    scrollWidth: "100% !important",
-    scrollHeight: "91px !important"
+    scrollWidth: "100%",
+    scrollHeight: "91px"
   }
 };
 

@@ -33,6 +33,8 @@ storiesOf("Components|TextArea", module)
               name={text("name", "")}
               tabIndex={number("tabIndex", 1)}
               value={value}
+              height={text("height", "90px")}
+              width={text("width", "100%")}
               onChange={e => {
                 set(e.target.value);
               }}
