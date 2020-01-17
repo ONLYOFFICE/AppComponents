@@ -2,6 +2,8 @@ import { css } from "styled-components";
 import { Base } from "../themes";
 
 const commonInputStyle = css`
+  font-family: ${props => props.theme.fontFamily};
+
   box-sizing: ${props => props.theme.input.boxSizing};
 
   border: ${props => props.theme.input.border};
@@ -25,13 +27,6 @@ const commonInputStyle = css`
     (props.warning && props.theme.input.warningBorderColor) ||
     (props.disabled && props.theme.input.disabledBorderColor) ||
     props.theme.input.borderColor};
-
-  width: ${props =>
-    (props.scale && "100%") ||
-    (props.size === "base" && props.theme.input.width.base) ||
-    (props.size === "middle" && props.theme.input.width.middle) ||
-    (props.size === "big" && props.theme.input.width.big) ||
-    (props.size === "huge" && props.theme.input.width.huge)};
 
   :hover {
     border-color: ${props =>

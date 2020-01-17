@@ -221,6 +221,26 @@ const Dark = {
       big: "8px 16px",
       huge: "8px 20px"
     }
+  },
+
+  textArea: {
+    width: "100%",
+    height: "90%",
+    border: "none",
+    outline: "none",
+    resize: "none",
+    overflow: "hidden",
+    padding: "5px 8px 2px 8px",
+    fontSize: "13px",
+    lineHeight: "1.5",
+
+    disabledColor: "#F8F9F9",
+
+    focusBorderColor: "#2da7db",
+    focusOutline: "none",
+
+    scrollWidth: "100% !important",
+    scrollHeight: "91px !important"
   }
 };
 

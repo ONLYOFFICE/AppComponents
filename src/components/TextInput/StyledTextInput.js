@@ -11,8 +11,14 @@ const StyledTextInput = styled(Input)`
   outline: ${props => props.theme.textInput.outline};
   overflow: ${props => props.theme.textInput.overflow};
 
-  font-family: ${props => props.theme.fontFamily};
   font-weight: ${props => props.theme.textInput.fontWeight};
+
+  width: ${props =>
+    (props.scale && "100%") ||
+    (props.size === "base" && props.theme.input.width.base) ||
+    (props.size === "middle" && props.theme.input.width.middle) ||
+    (props.size === "big" && props.theme.input.width.big) ||
+    (props.size === "huge" && props.theme.input.width.huge)};
 
   line-height: ${props =>
     (props.size === "base" && props.theme.textInput.lineHeight.base) ||
