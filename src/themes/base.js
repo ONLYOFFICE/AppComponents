@@ -22,7 +22,9 @@ const {
   orangeDisabled,
 
   link,
-  errorColor
+  errorColor,
+  warningColor,
+  red
 } = globalColors;
 
 const Base = {
@@ -158,11 +160,11 @@ const Base = {
   },
 
   input: {
-    color: "#333",
-    disableColor: "#D0D5DA",
+    color: black,
+    disableColor: greyMid,
 
-    backgroundColor: "#fff",
-    disableBackgroundColor: "#F8F9F9",
+    backgroundColor: white,
+    disableBackgroundColor: grayLight,
 
     width: {
       base: "173px",
@@ -176,20 +178,20 @@ const Base = {
     boxSizing: "border-box",
     border: "solid 1px",
 
-    borderColor: "#D0D5DA",
-    errorBorderColor: "#c30",
-    warningBorderColor: "#f1ca92",
-    disabledBorderColor: "#ECEEF1",
+    borderColor: greyMid,
+    errorBorderColor: red,
+    warningBorderColor: warningColor,
+    disabledBorderColor: greyLightMid,
 
-    hoverBorderColor: "#D0D5DA",
-    hoverErrorBorderColor: "#c30",
-    hoverWarningBorderColor: "#f1ca92",
-    hoverDisabledBorderColor: "#A3A9AE",
+    hoverBorderColor: greyMid,
+    hoverErrorBorderColor: red,
+    hoverWarningBorderColor: warningColor,
+    hoverDisabledBorderColor: grey,
 
-    focusBorderColor: "#2DA7DB",
-    focusErrorBorderColor: "#c30",
-    focusWarningBorderColor: "#f1ca92",
-    focusDisabledBorderColor: "#ECEEF1"
+    focusBorderColor: blueMain,
+    focusErrorBorderColor: red,
+    focusWarningBorderColor: warningColor,
+    focusDisabledBorderColor: greyLightMid
   },
 
   textInput: {

@@ -9,6 +9,7 @@ import Text from "../Text";
 import JSONPretty from "react-json-pretty";
 import { Base, Dark } from "../../themes";
 import Heading from "../Heading";
+import Checkbox from "../Checkbox";
 
 const LightTheme = {
   backgroundColor: "#FFF",
@@ -28,20 +29,13 @@ storiesOf("Components|ThemeProvider", module)
     <BooleanValue>
       {({ value, toggle }) => (
         <Box displayProp="flex" paddingProp="16px" alignItems="center">
-          <Box marginProp="0 8px 0 0">
-            <input
+          <ThemeProvider theme={value ? DarkTheme : LightTheme}>
+            <Checkbox
+              checked={value}
               onChange={e => toggle(e.target.value)}
-              type="checkbox"
-              value={value}
+              label={value ? "Dark" : "Light"}
             />
-          </Box>
-          <Box>
-            <ThemeProvider theme={value ? DarkTheme : LightTheme}>
-              <Text bold fontSize="16px">
-                {value ? "Dark" : "Light"}
-              </Text>
-            </ThemeProvider>
-          </Box>
+          </ThemeProvider>
         </Box>
       )}
     </BooleanValue>

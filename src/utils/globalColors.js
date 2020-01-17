@@ -20,7 +20,10 @@ const globalColors = {
   orangeDisabled: "#FFCCA6",
 
   link: "#316DAA",
-  errorColor: "#C96C27"
+  errorColor: "#C96C27",
+
+  warningColor: "#f1ca92",
+  red: "#c30"
 };
 
 export default globalColors;
