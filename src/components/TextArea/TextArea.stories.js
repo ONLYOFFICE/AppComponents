@@ -26,6 +26,8 @@ storiesOf("Components|TextArea", module)
             <TextArea
               placeholder={text("placeholder", "Add comment")}
               disabled={boolean("disabled", false)}
+              error={boolean("error", false)}
+              warning={boolean("warning", false)}
               readOnly={boolean("readOnly", false)}
               maxLength={number("maxLength", 1000)}
               name={text("name", "")}

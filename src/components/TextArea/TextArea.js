@@ -5,28 +5,24 @@ import { StyledTextArea, StyledScrollbar } from "./StyledTextArea";
 class TextArea extends React.PureComponent {
   render() {
     // console.log('Textarea render');
-    const {
-      disabled,
-      readOnly,
-      maxLength,
-      name,
-      onChange,
-      placeholder,
-      tabIndex,
-      value
-    } = this.props;
+    const { disabled, error, warning, onChange, style, ...rest } = this.props;
+
+    const errorProp = error ? 1 : 0;
+    const warningProp = warning ? 1 : 0;
+    const disabledProp = disabled ? 1 : 0;
+
     return (
-      <StyledScrollbar size="medium" {...this.props} disabled={disabled ? 1 : 0}>
+      <StyledScrollbar
+        size="medium"
+        error={errorProp}
+        warning={warningProp}
+        disabled={disabledProp}
+        style={style}
+      >
         <StyledTextArea
-          placeholder={placeholder}
           onChange={e => onChange && onChange(e)}
-          maxLength={maxLength}
-          name={name}
-          tabIndex={tabIndex}
-          disabled={disabled ? 1 : 0}
-          readOnly={readOnly}
-          value={value}
-          {...this.props}
+          disabled={disabledProp}
+          {...rest}
         />
       </StyledScrollbar>
     );
@@ -34,19 +30,20 @@ class TextArea extends React.PureComponent {
 }
 
 TextArea.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
+  error: PropTypes.bool,
+  warning: PropTypes.bool,
   readOnly: PropTypes.bool,
-  maxLength: PropTypes.number,
   name: PropTypes.string,
-  onChange: PropTypes.func,
   placeholder: PropTypes.string,
+  maxLength: PropTypes.number,
   tabIndex: PropTypes.number,
-  value: PropTypes.string
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
 };
 
 TextArea.defaultProps = {
-  disabled: false,
-  readOnly: false,
   placeholder: "",
   tabIndex: -1,
   value: ""
