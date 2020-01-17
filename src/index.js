@@ -10,4 +10,5 @@ export { default as RadioButton } from "./components/RadioButton";
 export { default as RadioButtonGroup } from "./components/RadioButtonGroup";
 export { default as Scrollbar } from "./components/Scrollbar";
 export { default as TextInput } from "./components/TextInput";
+export { default as TextArea } from "./components/TextArea";
 export * as Themes from "./themes";
