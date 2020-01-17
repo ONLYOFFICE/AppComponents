@@ -3,8 +3,8 @@ import { mount, shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 import RadioButton from ".";
-import { StyledText } from "./StyledRadioButton";
 import { Base } from "../../themes/index";
+import { css } from "styled-components";
 
 const baseProps = {
   name: "fruits",
@@ -156,12 +156,24 @@ describe("<RadioButton />", () => {
   });
 
   test("svg text style test", () => {
-    const tree = renderer.create(<StyledText reverse></StyledText>).toJSON();
-    expect(tree).toHaveStyleRule("margin-right", "8px");
-    expect(tree).toHaveStyleRule("color", Base.text.color);
+    const tree = renderer
+      .create(<RadioButton {...baseProps} reverse />)
+      .toJSON();
+    expect(tree).toHaveStyleRule("margin-right", "8px", {
+      modifier: ".radio-button-text"
+    });
+    expect(tree).toHaveStyleRule("color", Base.text.color, {
+      modifier: ".radio-button-text"
+    });
 
-    const tree1 = renderer.create(<StyledText disabled></StyledText>).toJSON();
-    expect(tree1).toHaveStyleRule("margin-left", "8px");
-    expect(tree1).toHaveStyleRule("color", Base.text.disableColor);
+    const tree1 = renderer
+      .create(<RadioButton {...baseProps} disabled />)
+      .toJSON();
+    expect(tree1).toHaveStyleRule("margin-left", "8px", {
+      modifier: ".radio-button-text"
+    });
+    expect(tree1).toHaveStyleRule("color", Base.text.disableColor, {
+      modifier: ".radio-button-text"
+    });
   });
 });

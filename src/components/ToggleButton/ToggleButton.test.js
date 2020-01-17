@@ -4,7 +4,6 @@ import renderer from "react-test-renderer";
 import "jest-styled-components";
 import ToggleButton from ".";
 import { Base } from "../../themes/index";
-import { StyledText } from "./StyledToggleButton";
 
 const baseProps = {
   label: "checkbox",
@@ -133,10 +132,16 @@ describe("<ToggleButton />", () => {
       { modifier: "svg rect" }
     );
 
-    const tree5 = renderer.create(<StyledText reverse></StyledText>).toJSON();
-    expect(tree5).toHaveStyleRule("margin-right", "8px");
+    const tree5 = renderer
+      .create(<ToggleButton {...baseProps} reverse />)
+      .toJSON();
+    expect(tree5).toHaveStyleRule("margin-right", "8px", {
+      modifier: ".toggle-button-text"
+    });
 
-    const tree6 = renderer.create(<StyledText></StyledText>).toJSON();
-    expect(tree6).toHaveStyleRule("margin-left", "8px");
+    const tree6 = renderer.create(<ToggleButton {...baseProps} />).toJSON();
+    expect(tree6).toHaveStyleRule("margin-left", "8px", {
+      modifier: ".toggle-button-text"
+    });
   });
 });

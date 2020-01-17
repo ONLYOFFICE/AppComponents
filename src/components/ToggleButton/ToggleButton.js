@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import Text from "../Text";
 import { ToggleButtonIcon, ToggleButtonCheckedIcon } from "./svg";
-import {
-  StyledToggleButton,
-  HiddenInput,
-  StyledText
-} from "./StyledToggleButton";
+import { StyledToggleButton, StyledHiddenInput } from "./StyledToggleButton";
 
 class ToggleButton extends Component {
   constructor(props) {
@@ -25,9 +22,14 @@ class ToggleButton extends Component {
     const { disabled, label, reverse } = this.props;
 
     return (
-      <StyledText as="span" reverse={reverse} disabled={disabled}>
+      <Text
+        as="span"
+        className="toggle-button-text"
+        reverse={reverse}
+        disabled={disabled}
+      >
         {label}
-      </StyledText>
+      </Text>
     );
   };
 
@@ -48,26 +50,22 @@ class ToggleButton extends Component {
     const { onChange, ...rest } = this.props;
     const { checked } = this.state;
 
+    const firstComponent = reverse ? this.renderLabel() : this.renderToggle();
+    const secondComponent = reverse ? this.renderToggle() : this.renderLabel();
+
     //console.log("ToggleButton render");
     return (
       <StyledToggleButton {...rest}>
         {label ? (
-          reverse ? (
-            <>
-              {this.renderLabel()}
-              {this.renderToggle()}
-            </>
-          ) : (
-            <>
-              {this.renderToggle()}
-              {this.renderLabel()}
-            </>
-          )
+          <>
+            {firstComponent}
+            {secondComponent}
+          </>
         ) : (
           this.renderToggle()
         )}
 
-        <HiddenInput
+        <StyledHiddenInput
           type="checkbox"
           checked={checked}
           disabled={disabled}
