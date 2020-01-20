@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import Text from "../Text";
+import { Base } from "../../themes";
 
 const hoveredCss = css`
   text-decoration: ${props =>
@@ -29,5 +30,9 @@ const StyledLink = styled(Text)`
       max-width: 100%;
     `}
 `;
+
+StyledLink.defaultProps = {
+  theme: Base
+};
 
 export default StyledLink;
