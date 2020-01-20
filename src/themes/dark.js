@@ -236,13 +236,27 @@ const Dark = {
     fontSize: "13px",
     lineHeight: "1.5",
 
-    disabledColor: "#F8F9F9",
+    disabledColor: grayLight,
 
-    focusBorderColor: "#2da7db",
+    focusBorderColor: blueMain,
     focusOutline: "none",
 
     scrollWidth: "100% !important",
     scrollHeight: "91px !important"
+  },
+
+  link: {
+    color: white,
+    lineHeight: "calc(100% + 6px)",
+    opacity: "0.5",
+    textDecoration: "none",
+    userSelect: "none",
+    cursor: "pointer",
+
+    hover: {
+      textDecoration: "underline dashed",
+      page: { textDecoration: "underline" }
+    }
   }
 };
 

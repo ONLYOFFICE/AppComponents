@@ -239,13 +239,27 @@ const Base = {
     fontSize: "13px",
     lineHeight: "1.5",
 
-    disabledColor: "#F8F9F9",
+    disabledColor: grayLight,
 
-    focusBorderColor: "#2da7db",
+    focusBorderColor: blueMain,
     focusOutline: "none",
 
     scrollWidth: "100%",
     scrollHeight: "91px"
+  },
+
+  link: {
+    color: black,
+    lineHeight: "calc(100% + 6px)",
+    opacity: "0.5",
+    textDecoration: "none",
+    userSelect: "none",
+    cursor: "pointer",
+
+    hover: {
+      textDecoration: "underline dashed",
+      page: { textDecoration: "underline" }
+    }
   }
 };
 
