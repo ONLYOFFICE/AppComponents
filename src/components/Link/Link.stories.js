@@ -13,6 +13,8 @@ import {
 import withReadme from "storybook-readme/with-readme";
 import { action } from "@storybook/addon-actions";
 import Box from "../Box";
+import Grid from "../Grid";
+import Heading from "../Heading";
 
 const target = ["_blank", "_self", "_parent", "_top"];
 const github = "https://github.com/ONLYOFFICE/AppComponents";
@@ -52,3 +54,59 @@ storiesOf("Components|Link", module)
       </Box>
     );
   });
+
+storiesOf("Components|Link", module)
+  .addParameters({ options: { showAddonPanel: false } })
+  .add("All", () => (
+    <Grid columnsProp={["1fr 1fr"]}>
+      <Box paddingProp="16px">
+        <Heading>Page links:</Heading>
+        <Box paddingProp="16px 0">
+          <Box paddingProp="4px 0">
+            <Link type="page" href={github}>
+              Page link
+            </Link>
+          </Box>
+          <Box paddingProp="4px 0">
+            <Link type="page" href={github} bold={true}>
+              Bold page link
+            </Link>
+          </Box>
+          <Box paddingProp="4px 0">
+            <Link type="page" href={github} hovered={true}>
+              Hovered page link
+            </Link>
+          </Box>
+          <Box paddingProp="4px 0">
+            <Link type="page" href={github} semitransparent={true}>
+              Semitransparent page link
+            </Link>
+          </Box>
+        </Box>
+      </Box>
+
+      <Box paddingProp="16px">
+        <Heading>Action links:</Heading>
+        <Box paddingProp="16px 0">
+          <Box paddingProp="4px 0">
+            <Link type="action">Action link</Link>
+          </Box>
+          <Box paddingProp="4px 0">
+            <Link type="action" bold={true}>
+              Bold action link
+            </Link>
+          </Box>
+          <Box paddingProp="4px 0">
+            <Link type="action" hovered={true}>
+              Hovered action link
+            </Link>
+          </Box>
+          <Box paddingProp="4px 0">
+            <Link type="action" semitransparent={true}>
+              Semitransparent action link
+            </Link>
+          </Box>
+        </Box>
+      </Box>
+    </Grid>
+  ));
