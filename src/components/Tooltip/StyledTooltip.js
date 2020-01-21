@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Base } from "../../themes";
 
-const TooltipStyle = styled.div`
+const StyledTooltip = styled.div`
   .__react_component_tooltip {
     border-radius: ${props => props.theme.tooltip.borderRadius};
     -moz-border-radius: ${props => props.theme.tooltip.borderRadius};
@@ -24,8 +24,8 @@ const TooltipStyle = styled.div`
   }
 `;
 
-TooltipStyle.defaultProps = {
+StyledTooltip.defaultProps = {
   theme: Base
 };
 
-export default TooltipStyle;
+export default StyledTooltip;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import ReactTooltip from "react-tooltip";
-import TooltipStyle from "./StyledTooltip";
+import StyledTooltip from "./StyledTooltip";
 
 class Tooltip extends Component {
   componentDidUpdate() {
@@ -29,7 +29,7 @@ class Tooltip extends Component {
     } = this.props;
 
     return (
-      <TooltipStyle {...rest}>
+      <StyledTooltip {...rest}>
         <ReactTooltip
           id={id}
           ref={reference}
@@ -53,7 +53,7 @@ class Tooltip extends Component {
         >
           {children}
         </ReactTooltip>
-      </TooltipStyle>
+      </StyledTooltip>
     );
   }
 }
