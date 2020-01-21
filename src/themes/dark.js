@@ -273,6 +273,21 @@ const Dark = {
     after: {
       border: "none"
     }
+  },
+
+  avatar: {
+    width: {
+      small: "32px",
+      medium: "48px",
+      big: "82px",
+      max: "160px"
+    },
+    height: {
+      small: "32px",
+      medium: "48px",
+      big: "82px",
+      max: "160px"
+    }
   }
 };
 
