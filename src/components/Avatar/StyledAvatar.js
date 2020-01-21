@@ -47,16 +47,16 @@ const AvatarWrapper = styled(Box)`
 `;
 
 const EditContainer = styled(Box)`
-  ${props => props.theme.avatar.editContainer.position};
-  ${props => props.theme.avatar.editContainer.width};
-  ${props => props.theme.avatar.editContainer.height};
-  ${props => props.theme.avatar.editContainer.top};
-  ${props => props.theme.avatar.editContainer.left};
-  ${props => props.theme.avatar.editContainer.transform};
-  ${props => props.theme.avatar.editContainer.padding};
-  ${props => props.theme.avatar.editContainer.textAlign};
-  ${props => props.theme.avatar.editContainer.lineHeight};
-  ${props => props.theme.avatar.editContainer.borderRadius};
+  position: ${props => props.theme.avatar.editContainer.position};
+  width: ${props => props.theme.avatar.editContainer.width};
+  height: ${props => props.theme.avatar.editContainer.height};
+  top: ${props => props.theme.avatar.editContainer.top};
+  left: ${props => props.theme.avatar.editContainer.left};
+  transform: ${props => props.theme.avatar.editContainer.transform};
+  padding: ${props => props.theme.avatar.editContainer.padding};
+  text-align: ${props => props.theme.avatar.editContainer.textAlign};
+  line-height: ${props => props.theme.avatar.editContainer.lineHeight};
+  border-radius: ${props => props.theme.avatar.editContainer.borderRadius};
 
   background: ${props =>
     props.gradient

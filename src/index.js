@@ -13,4 +13,5 @@ export { default as TextInput } from "./components/TextInput";
 export { default as TextArea } from "./components/TextArea";
 export { default as Link } from "./components/Link";
 export { default as Tooltip } from "./components/Tooltip";
+export { default as Avatar } from "./components/Avatar";
 export * as Themes from "./themes";
