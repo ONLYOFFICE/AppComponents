@@ -83,6 +83,8 @@ const arrayUsers = [
 | `data-offset`     | `string` |    -     | `top`, `left`, `right`, `bottom` |    -    | Offset of current tooltip         |
 | `data-place`      | `string` |    -     | `top`, `right`, `bottom`, `left` |    -    | Tooltip placement                 |
 | `data-tip`        | `string` |    -     |                -                 |    -    | Required if you need to component |
+| `data-delay-show` | `string` |    -     |                -                 |    -    | Tooltip show delay                |
+| `data-delay-hide` | `string` |    -     |                -                 |    -    | Tooltip hide delay                |
 
 ### ReactTooltip Properties
 
@@ -96,7 +98,9 @@ const arrayUsers = [
 | `offsetLeft`       |    `number`    |    -     |                -                 |    -    | Offset left all tooltips on page       |
 | `offsetRight`      |    `number`    |    -     |                -                 |    -    | Offset right all tooltips on page      |
 | `offsetTop`        |    `number`    |    -     |                -                 |    -    | Offset top all tooltips on page        |
+| `delayShow`        |    `number`    |    -     |                -                 |    -    | Tooltip show delay                     |
+| `delayHide`        |    `number`    |    -     |                -                 |    -    | Tooltip hide delay                     |
 | `place`            |    `string`    |    -     | `top`, `right`, `bottom`, `left` |  `top`  | Global tooltip placement               |
 | `style`            | `obj`, `array` |    -     |                -                 |    -    | Accepts css style                      |
 | `getContent`       |     `func`     |    -     |                                  |    -    | Generate the tip content dynamically   |
-
+| `overridePosition` |     `func`     |    -     |                -                 |    -    | Replaces the standard tooltip position |
