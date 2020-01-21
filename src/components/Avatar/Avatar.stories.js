@@ -6,7 +6,6 @@ import Readme from "./README.md";
 import Avatar from ".";
 import Box from "../Box";
 
-//const roleOptions = ["owner", "admin", "guest", "user"];
 const sizeOptions = ["max", "big", "medium", "small"];
 
 const editAction = () => console.log("Edit action");
@@ -23,7 +22,6 @@ storiesOf("Components|Avatar", module)
       <Box paddingProp="16px">
         <Avatar
           size={size}
-          //role={select("role", roleOptions, "admin")}
           source={text("source", "")}
           userName={text("userName", "")}
           editing={editing}

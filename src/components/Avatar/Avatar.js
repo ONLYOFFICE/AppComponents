@@ -11,19 +11,6 @@ import {
 import { CameraIcon } from "./svg";
 import Link from "../Link";
 
-/*const getRoleIcon = role => {
-  switch (role) {
-    case "guest":
-      return <Icons.GuestIcon size="scale" />;
-    case "admin":
-      return <Icons.AdministratorIcon size="scale" />;
-    case "owner":
-      return <Icons.OwnerIcon size="scale" />;
-    default:
-      return null;
-  }
-};*/
-
 const getInitials = userName =>
   userName
     .split(/\s/)
@@ -38,18 +25,9 @@ Initials.propTypes = {
   userName: PropTypes.string
 };
 
-// eslint-disable-next-line react/display-name
 const Avatar = memo(props => {
   //console.log("Avatar render");
-  const {
-    size,
-    source,
-    userName,
-    //role,
-    editing,
-    editLabel,
-    editAction
-  } = props;
+  const { size, source, userName, editing, editLabel, editAction } = props;
 
   const avatarContent = source ? (
     <StyledImage src={source} />
@@ -58,8 +36,6 @@ const Avatar = memo(props => {
   ) : (
     React.createElement(CameraIcon, { className: "empty-icon" })
   );
-
-  //const roleIcon = getRoleIcon(role);
 
   return (
     <StyledAvatar {...props}>
@@ -84,32 +60,27 @@ const Avatar = memo(props => {
           </EditLink>
         </EditContainer>
       )}
-      {/*<RoleWrapper size={size}>{roleIcon}</RoleWrapper>*/}
     </StyledAvatar>
   );
 });
 
 Avatar.propTypes = {
   size: PropTypes.oneOf(["max", "big", "medium", "small"]),
-  //role: PropTypes.oneOf(["owner", "admin", "guest", "user"]),
   source: PropTypes.string,
   editLabel: PropTypes.string,
   userName: PropTypes.string,
   editing: PropTypes.bool,
-  editAction: PropTypes.func,
-
-  className: PropTypes.string,
-  id: PropTypes.string,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+  editAction: PropTypes.func
 };
 
 Avatar.defaultProps = {
   size: "medium",
-  //role: "",
   source: "",
   editLabel: "Edit photo",
   userName: "",
   editing: false
 };
+
+Avatar.displayName = "Avatar";
 
 export default Avatar;
