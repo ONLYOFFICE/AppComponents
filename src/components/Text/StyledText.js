@@ -2,9 +2,11 @@ import styled, { css } from "styled-components";
 import { Base } from "../../themes/index";
 
 const styleCss = css`
-  margin: 0;
   font-family: ${props => props.theme.fontFamily};
   color: ${props => (props.color ? props.color : props.theme.text.color)};
+  
+  outline: none;
+
   ${props =>
     props.truncate === true &&
     css`
