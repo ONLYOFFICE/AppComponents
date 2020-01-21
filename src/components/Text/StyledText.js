@@ -6,6 +6,7 @@ const styleCss = css`
   color: ${props => (props.color ? props.color : props.theme.text.color)};
   
   outline: none;
+  margin: 0;
 
   ${props =>
     props.truncate === true &&

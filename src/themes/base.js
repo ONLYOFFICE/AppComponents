@@ -260,6 +260,22 @@ const Base = {
       textDecoration: "underline dashed",
       page: { textDecoration: "underline" }
     }
+  },
+
+  tooltip: {
+    borderRadius: "6px",
+    boxShadow: "0px 5px 20px rgba(0, 0, 0, 0.13)",
+    opacity: "1",
+    padding: "16px",
+    pointerEvents: "auto",
+    maxWidth: "340px",
+    backgroundColor: "#FFF",
+    before: {
+      border: "none"
+    },
+    after: {
+      border: "none"
+    }
   }
 };
 
