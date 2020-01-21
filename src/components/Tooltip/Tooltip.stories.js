@@ -100,7 +100,7 @@ storiesOf("Components|Tooltip", module)
           </Box>
           <Tooltip id="link" offsetRight={90} effect="solid">
             <Box>
-              <Text isBold={true} fontSize="16px">
+              <Text bold={true} fontSize="16px">
                 Bob Johnston
               </Text>
               <Text color="#A3A9AE" fontSize="13px">
@@ -154,7 +154,7 @@ storiesOf("Components|Tooltip", module)
             getContent={dataTip =>
               dataTip && (
                 <Box>
-                  <Text isBold={true} fontSize="16px">
+                  <Text bold={true} fontSize="16px">
                     {arrayUsers[dataTip].name}
                   </Text>
                   <Text color="#A3A9AE" fontSize="13px">
