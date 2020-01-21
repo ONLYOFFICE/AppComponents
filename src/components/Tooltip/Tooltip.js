@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import ReactTooltip from "react-tooltip";
 import StyledTooltip from "./StyledTooltip";
+import isEqual from "lodash/isEqual";
 
 class Tooltip extends Component {
-  componentDidUpdate() {
-    ReactTooltip.rebuild();
+  componentDidUpdate(nextProps) {
+    if (!isEqual(this.props, nextProps)) {
+      ReactTooltip.rebuild();
+    }
   }
 
   render() {

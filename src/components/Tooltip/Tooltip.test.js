@@ -5,18 +5,23 @@ import Text from "../text";
 
 describe("<Tooltip />", () => {
   it("renders without error", () => {
-    const wrapper = mount(<Tooltip id="id">{<Text>You tooltip text</Text>}</Tooltip>);
+    const wrapper = mount(
+      <Tooltip id="id">{<Text>You tooltip text</Text>}</Tooltip>
+    );
 
     expect(wrapper).toExist();
   });
 
-  /*it("Tooltip componentDidUpdate() lifecycle test", () => {
+  it("Tooltip componentDidUpdate() lifecycle test", () => {
     const wrapper = mount(
       <Tooltip id="id">{<Text>You tooltip content</Text>}</Tooltip>
     ).instance();
+    wrapper.componentDidUpdate({ offsetLeft: 5 });
+    expect(wrapper.props).toBe(wrapper.props);
+
     wrapper.componentDidUpdate(wrapper.props);
     expect(wrapper.props).toBe(wrapper.props);
-  });*/
+  });
 
   it("id, className, style is exists", () => {
     const wrapper = mount(
