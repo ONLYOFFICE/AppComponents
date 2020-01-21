@@ -276,6 +276,53 @@ const Dark = {
   },
 
   avatar: {
+    editLink: {
+      editLinkColor: "#FFF",
+      padding: "0 10px",
+
+      hover: { borderBottom: "none" },
+      span: {
+        display: "inline-block",
+        maxWidth: "100%",
+        textDecoration: "underline dashed"
+      }
+    },
+
+    editContainer: {
+      position: "absolute",
+      width: "100%",
+      height: "100%",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      padding: "75% 16px 5px",
+      textAlign: "center",
+      lineHeight: "19px",
+      borderRadius: "50%",
+      backgroundGradient:
+        "linear-gradient(180deg, rgba(6, 22, 38, 0) 24.48%, rgba(6, 22, 38, 0.75) 100%)",
+      backgroundTransparent: "transparent"
+    },
+
+    avatarContent: {
+      backgroundColor: "#2DA7DB",
+      borderRadius: "50%",
+      height: "100%",
+
+      svg: {
+        display: "block",
+        width: "50%",
+        height: "100%",
+        margin: "auto"
+      }
+    },
+
+    image: {
+      width: "100%",
+      height: "100%",
+      borderRadius: "50%"
+    },
+
     width: {
       small: "32px",
       medium: "48px",
@@ -287,6 +334,12 @@ const Dark = {
       medium: "48px",
       big: "82px",
       max: "160px"
+    },
+    fontSize: {
+      small: "12px",
+      medium: "20px",
+      big: "34px",
+      max: "72px"
     }
   }
 };
