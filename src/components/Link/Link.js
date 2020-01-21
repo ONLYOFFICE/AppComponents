@@ -29,7 +29,8 @@ Link.propTypes = {
   onClick: PropTypes.func,
   tabIndex: PropTypes.number,
   target: PropTypes.oneOf(["_blank", "_self", "_parent", "_top"]),
-  type: PropTypes.oneOf(["action", "page"])
+  type: PropTypes.oneOf(["action", "page"]),
+  rel: PropTypes.string
 };
 
 Link.defaultProps = {

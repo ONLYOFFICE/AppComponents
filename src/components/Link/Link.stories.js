@@ -41,7 +41,7 @@ storiesOf("Components|Link", module)
           fontSize={text("fontSize", "13px")}
           fontWeight={text("fontWeight", "400")}
           bold={boolean("bold", false)}
-          tabIndex={number("number", -1)}
+          tabIndex={number("tabIndex", -1)}
           target={select("target", target, "_blank")}
           textOverflow={boolean("textOverflow", false)}
           hovered={boolean("hovered", false)}
