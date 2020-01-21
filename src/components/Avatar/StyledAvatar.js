@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import Box from "../Box";
+import { Base } from "../../themes";
 
 const avatarBackground = "#ECEEF1";
 
@@ -122,6 +123,13 @@ const NamedAvatar = styled(Box)`
 
   ${noneUserSelect}
 `;
+
+StyledAvatar.defaultProps = { theme: Base };
+NamedAvatar.defaultProps = { theme: Base };
+StyledImage.defaultProps = { theme: Base };
+AvatarWrapper.defaultProps = { theme: Base };
+EditContainer.defaultProps = { theme: Base };
+EditLink.defaultProps = { theme: Base };
 
 export {
   StyledAvatar,

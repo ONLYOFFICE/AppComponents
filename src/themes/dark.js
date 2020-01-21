@@ -287,6 +287,14 @@ const Dark = {
         textDecoration: "underline dashed"
       }
     },
+    namedAvatar: {
+      color: "#FFF",
+      position: "absolute",
+      left: "50%",
+      top: "50%",
+      transform: "translate(-50%, -50%)",
+      fontWeight: "600"
+    },
 
     editContainer: {
       position: "absolute",
