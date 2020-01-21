@@ -91,7 +91,7 @@ const Avatar = memo(props => {
 
 Avatar.propTypes = {
   size: PropTypes.oneOf(["max", "big", "medium", "small"]),
-  role: PropTypes.oneOf(["owner", "admin", "guest", "user"]),
+  //role: PropTypes.oneOf(["owner", "admin", "guest", "user"]),
   source: PropTypes.string,
   editLabel: PropTypes.string,
   userName: PropTypes.string,
@@ -105,7 +105,7 @@ Avatar.propTypes = {
 
 Avatar.defaultProps = {
   size: "medium",
-  role: "",
+  //role: "",
   source: "",
   editLabel: "Edit photo",
   userName: "",

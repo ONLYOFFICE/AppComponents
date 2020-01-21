@@ -316,7 +316,8 @@ const Base = {
     },
 
     avatarContent: {
-      backgroundColor: "#2DA7DB",
+      nameBackground: "#2DA7DB",
+      avatarBackground: "#ECEEF1",
       borderRadius: "50%",
       height: "100%",
 

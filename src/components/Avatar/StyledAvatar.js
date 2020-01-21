@@ -2,8 +2,6 @@ import styled, { css } from "styled-components";
 import Box from "../Box";
 import { Base } from "../../themes";
 
-const avatarBackground = "#ECEEF1";
-
 const noneUserSelect = css`
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -32,8 +30,8 @@ const AvatarWrapper = styled(Box)`
   background-color: ${props =>
     (props.source === "" &&
       props.userName !== "" &&
-      props.theme.avatar.avatarContent.backgroundColor) ||
-    avatarBackground};
+      props.theme.avatar.avatarContent.nameBackground) ||
+    props.theme.avatar.avatarContent.avatarBackground};
 
   & > svg {
     display: ${props => props.theme.avatar.avatarContent.svg.display};
