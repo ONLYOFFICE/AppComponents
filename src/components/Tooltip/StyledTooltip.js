@@ -13,6 +13,7 @@ const TooltipStyle = styled.div`
     padding: ${props => props.theme.tooltip.padding};
     pointer-events: ${props => props.theme.tooltip.pointerEvents};
     max-width: ${props => props.theme.tooltip.maxWidth};
+    background-color: ${props => props.theme.tooltip.backgroundColor};
 
     &:before {
       border: ${props => props.theme.tooltip.before.border};

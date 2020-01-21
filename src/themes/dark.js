@@ -266,6 +266,7 @@ const Dark = {
     padding: "16px",
     pointerEvents: "auto",
     maxWidth: "340px",
+    backgroundColor: "#d3d3d3",
     before: {
       border: "none"
     },

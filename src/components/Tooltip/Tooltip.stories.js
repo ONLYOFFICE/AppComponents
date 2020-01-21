@@ -37,7 +37,7 @@ storiesOf("Components|Tooltip", module)
           delayHide={number("delayHide", 0)}
           getContent={dataTip => (
             <Box>
-              <Text isBold={true} fontSize="16px">
+              <Text bold fontSize="16px">
                 {dataTip}
               </Text>
               <Text color="#A3A9AE" fontSize="13px">

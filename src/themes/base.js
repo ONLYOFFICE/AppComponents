@@ -269,6 +269,7 @@ const Base = {
     padding: "16px",
     pointerEvents: "auto",
     maxWidth: "340px",
+    backgroundColor: "#FFF",
     before: {
       border: "none"
     },
