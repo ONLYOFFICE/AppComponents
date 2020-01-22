@@ -22,7 +22,7 @@ const Initials = props => (
 
 Initials.propTypes = {
   userName: PropTypes.string,
-  size: PropTypes.oneOf(["max", "big", "medium", "small"])
+  size: PropTypes.oneOf(["small", "medium", "big", "max"])
 };
 
 const Avatar = memo(props => {
@@ -47,7 +47,7 @@ const Avatar = memo(props => {
 });
 
 Avatar.propTypes = {
-  size: PropTypes.oneOf(["max", "big", "medium", "small"]),
+  size: PropTypes.oneOf(["small", "medium", "big", "max"]),
   source: PropTypes.string,
   userName: PropTypes.string
 };

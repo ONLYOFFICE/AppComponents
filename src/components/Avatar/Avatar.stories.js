@@ -6,7 +6,7 @@ import Readme from "./README.md";
 import Avatar from ".";
 import Box from "../Box";
 
-const sizeOptions = ["max", "big", "medium", "small"];
+const sizeOptions = ["small", "medium", "big", "max"];
 
 storiesOf("Components|Avatar", module)
   .addDecorator(withKnobs)

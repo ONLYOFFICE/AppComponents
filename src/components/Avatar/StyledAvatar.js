@@ -13,15 +13,15 @@ const noneUserSelect = css`
 const StyledAvatar = styled(Box)`
   position: relative;
   width: ${props =>
-    (props.size === "max" && props.theme.avatar.width.max) ||
-    (props.size === "big" && props.theme.avatar.width.big) ||
+    (props.size === "small" && props.theme.avatar.width.small) ||
     (props.size === "medium" && props.theme.avatar.width.medium) ||
-    (props.size === "small" && props.theme.avatar.width.small)};
+    (props.size === "big" && props.theme.avatar.width.big) ||
+    (props.size === "max" && props.theme.avatar.width.max)};
   height: ${props =>
-    (props.size === "max" && props.theme.avatar.height.max) ||
-    (props.size === "big" && props.theme.avatar.height.big) ||
+    (props.size === "small" && props.theme.avatar.height.small) ||
     (props.size === "medium" && props.theme.avatar.height.medium) ||
-    (props.size === "small" && props.theme.avatar.height.small)};
+    (props.size === "big" && props.theme.avatar.height.big) ||
+    (props.size === "max" && props.theme.avatar.height.max)};
 `;
 
 const StyledImageContainer = styled(Box)`
@@ -61,10 +61,10 @@ const StyledInitialsContainer = styled(Box)`
   transform: ${props => props.theme.avatar.initialsContainer.transform};
   font-weight: ${props => props.theme.avatar.initialsContainer.fontWeight};
   font-size: ${props =>
-    (props.size === "max" && props.theme.avatar.fontSize.max) ||
-    (props.size === "big" && props.theme.avatar.fontSize.big) ||
+    (props.size === "small" && props.theme.avatar.fontSize.small) ||
     (props.size === "medium" && props.theme.avatar.fontSize.medium) ||
-    (props.size === "small" && props.theme.avatar.fontSize.small)};
+    (props.size === "big" && props.theme.avatar.fontSize.big) ||
+    (props.size === "max" && props.theme.avatar.fontSize.max)};
 
   ${noneUserSelect}
 `;
