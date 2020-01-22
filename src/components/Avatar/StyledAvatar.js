@@ -53,7 +53,7 @@ const StyledImage = styled.img`
   ${noneUserSelect}
 `;
 
-const StyledinitialsContainer = styled(Box)`
+const StyledInitialsContainer = styled(Box)`
   color: ${props => props.theme.avatar.initialsContainer.color};
   position: ${props => props.theme.avatar.initialsContainer.position};
   left: ${props => props.theme.avatar.initialsContainer.left};
@@ -70,13 +70,13 @@ const StyledinitialsContainer = styled(Box)`
 `;
 
 StyledAvatar.defaultProps = { theme: Base };
-StyledinitialsContainer.defaultProps = { theme: Base };
+StyledInitialsContainer.defaultProps = { theme: Base };
 StyledImage.defaultProps = { theme: Base };
 StyledImageContainer.defaultProps = { theme: Base };
 
 export {
   StyledAvatar,
-  StyledinitialsContainer,
+  StyledInitialsContainer,
   StyledImage,
   StyledImageContainer
 };

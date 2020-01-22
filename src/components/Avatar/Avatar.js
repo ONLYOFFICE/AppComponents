@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import PropTypes from "prop-types";
 import {
   StyledAvatar,
-  StyledinitialsContainer,
+  StyledInitialsContainer,
   StyledImage,
   StyledImageContainer
 } from "./StyledAvatar";
@@ -15,9 +15,9 @@ const getInitials = userName =>
     .substring(0, 2);
 
 const Initials = props => (
-  <StyledinitialsContainer {...props}>
+  <StyledInitialsContainer {...props}>
     {getInitials(props.userName)}
-  </StyledinitialsContainer>
+  </StyledInitialsContainer>
 );
 
 Initials.propTypes = {
