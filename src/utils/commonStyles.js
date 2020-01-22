@@ -1,3 +1,5 @@
+import { css } from "styled-components";
+
 const ScrollStyles = {
   small: {
     thumbV: {
@@ -37,4 +39,12 @@ const ScrollStyles = {
   }
 };
 
-export { ScrollStyles };
+const NoUserSelect = css`
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+`;
+
+export { ScrollStyles, NoUserSelect };
