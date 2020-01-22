@@ -34,7 +34,7 @@ const Avatar = memo(props => {
   ) : userName ? (
     <Initials userName={userName} size={size} />
   ) : (
-    React.createElement(CameraIcon, { className: "empty-icon" })
+    <CameraIcon className="empty-icon" />
   );
 
   return (
