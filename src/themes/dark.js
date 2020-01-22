@@ -5,10 +5,10 @@ const {
   white,
   whiteSolitude,
   grayLight,
-  greyLightMid,
-  greyMid,
-  grey,
-  greyMain,
+  grayLightMid,
+  grayMid,
+  gray,
+  grayMain,
 
   blueMain,
   blueHover,
@@ -34,7 +34,7 @@ const Dark = {
 
   text: {
     color: white,
-    disableColor: greyLightMid,
+    disableColor: grayLightMid,
     fontWeight: "normal",
     fontWeightBold: "bold"
   },
@@ -94,12 +94,12 @@ const Dark = {
     color: {
       base: black,
       primary: white,
-      disabled: greyMid
+      disabled: grayMid
     },
     backgroundColor: {
       base: white,
       baseHover: white,
-      baseActive: greyLightMid,
+      baseActive: grayLightMid,
       baseDisabled: grayLight,
       primary: blueMain,
       primaryHover: blueHover,
@@ -107,10 +107,10 @@ const Dark = {
       primaryDisabled: blueDisabled
     },
     border: {
-      base: `1px solid ${greyMid}`,
+      base: `1px solid ${grayMid}`,
       baseHover: `1px solid ${blueMain}`,
       baseActive: `1px solid ${blueMain}`,
-      baseDisabled: `1px solid ${greyLightMid}`,
+      baseDisabled: `1px solid ${grayLightMid}`,
       primary: `1px solid ${blueMain}`,
       primaryHover: `1px solid ${blueHover}`,
       primaryActive: `1px solid ${blueActive}`,
@@ -120,35 +120,35 @@ const Dark = {
 
   checkbox: {
     fillColor: white,
-    borderColor: greyMid,
+    borderColor: grayMid,
     arrowColor: black,
     indeterminateColor: black,
 
-    disableArrowColor: greyMid,
-    disableBorderColor: greyLightMid,
+    disableArrowColor: grayMid,
+    disableBorderColor: grayLightMid,
     disableFillColor: grayLight,
-    disableIndeterminateColor: grey,
+    disableIndeterminateColor: gray,
 
-    hoverBorderColor: grey,
-    hoverIndeterminateColor: grey
+    hoverBorderColor: gray,
+    hoverIndeterminateColor: gray
   },
 
   toggleButton: {
     fillColor: blueMain,
-    fillColorOff: grey,
+    fillColorOff: gray,
 
-    disableFillColor: greyLightMid,
-    disableFillColorOff: greyLightMid
+    disableFillColor: grayLightMid,
+    disableFillColorOff: grayLightMid
   },
 
   radioButton: {
     fillColor: black,
-    borderColor: greyMid,
+    borderColor: grayMid,
 
-    disableFillColor: greyMid,
-    disableBorderColor: greyLightMid,
+    disableFillColor: grayMid,
+    disableBorderColor: grayLightMid,
 
-    hoverBorderColor: grey
+    hoverBorderColor: gray
   },
 
   scrollbar: {
@@ -158,7 +158,7 @@ const Dark = {
 
   input: {
     color: black,
-    disableColor: greyMid,
+    disableColor: grayMid,
 
     backgroundColor: white,
     disableBackgroundColor: grayLight,
@@ -175,26 +175,26 @@ const Dark = {
     boxSizing: "border-box",
     border: "solid 1px",
 
-    borderColor: greyMid,
+    borderColor: grayMid,
     errorBorderColor: red,
     warningBorderColor: warningColor,
-    disabledBorderColor: greyLightMid,
+    disabledBorderColor: grayLightMid,
 
-    hoverBorderColor: greyMid,
+    hoverBorderColor: grayMid,
     hoverErrorBorderColor: red,
     hoverWarningBorderColor: warningColor,
-    hoverDisabledBorderColor: grey,
+    hoverDisabledBorderColor: gray,
 
     focusBorderColor: blueMain,
     focusErrorBorderColor: red,
     focusWarningBorderColor: warningColor,
-    focusDisabledBorderColor: greyLightMid
+    focusDisabledBorderColor: grayLightMid
   },
 
   textInput: {
     fontWeight: "normal",
-    placeholderColor: greyMid,
-    disablePlaceholderColor: greyMid,
+    placeholderColor: grayMid,
+    disablePlaceholderColor: grayMid,
 
     transition: "all 0.2s ease 0s",
     appearance: "none",
@@ -266,12 +266,62 @@ const Dark = {
     padding: "16px",
     pointerEvents: "auto",
     maxWidth: "340px",
-    backgroundColor: "#d3d3d3",
+    backgroundColor: grayMid,
     before: {
       border: "none"
     },
     after: {
       border: "none"
+    }
+  },
+
+  avatar: {
+    initialsContainer: {
+      color: white,
+      position: "absolute",
+      left: "50%",
+      top: "50%",
+      transform: "translate(-50%, -50%)",
+      fontWeight: "600"
+    },
+
+    imageContainer: {
+      backgroundImage: blueMain,
+      background: grayLightMid,
+      borderRadius: "50%",
+      height: "100%",
+
+      svg: {
+        display: "block",
+        width: "50%",
+        height: "100%",
+        margin: "auto"
+      }
+    },
+
+    image: {
+      width: "100%",
+      height: "100%",
+      borderRadius: "50%"
+    },
+
+    width: {
+      small: "32px",
+      medium: "48px",
+      big: "82px",
+      max: "160px"
+    },
+    height: {
+      small: "32px",
+      medium: "48px",
+      big: "82px",
+      max: "160px"
+    },
+    fontSize: {
+      small: "12px",
+      medium: "20px",
+      big: "34px",
+      max: "72px"
     }
   },
 
