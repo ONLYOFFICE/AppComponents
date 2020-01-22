@@ -12,7 +12,7 @@ import Button from "../Button";
 storiesOf("Components|Backdrop", module)
   .addDecorator(withReadme(Readme))
   .addDecorator(withKnobs)
-  .add("base", () => (
+  .add("Default", () => (
     <Box paddingProp="16px">
       <BooleanValue>
         {({ value, toggle }) => (
