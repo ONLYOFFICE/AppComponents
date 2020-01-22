@@ -273,7 +273,9 @@ const Dark = {
     after: {
       border: "none"
     }
-  }
+  },
+
+  backdrop: { backgroundColor: "rgba(255, 255, 255, 0.5)" }
 };
 
 export default Dark;

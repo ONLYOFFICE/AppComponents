@@ -276,7 +276,9 @@ const Base = {
     after: {
       border: "none"
     }
-  }
+  },
+
+  backdrop: { backgroundColor: "rgba(0, 0, 0, 0.3)" }
 };
 
 export default Base;
