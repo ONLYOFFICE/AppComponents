@@ -1,14 +1,7 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Box from "../Box";
 import { Base } from "../../themes";
-
-const noneUserSelect = css`
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-`;
+import {NoUserSelect} from "../../utils/commonStyles";
 
 const StyledAvatar = styled(Box)`
   position: relative;
@@ -50,7 +43,7 @@ const StyledImage = styled.img`
   height: ${props => props.theme.avatar.image.height};
   border-radius: ${props => props.theme.avatar.image.borderRadius};
 
-  ${noneUserSelect}
+  ${NoUserSelect}
 `;
 
 const StyledInitialsContainer = styled(Box)`
@@ -66,7 +59,7 @@ const StyledInitialsContainer = styled(Box)`
     (props.size === "big" && props.theme.avatar.fontSize.big) ||
     (props.size === "max" && props.theme.avatar.fontSize.max)};
 
-  ${noneUserSelect}
+  ${NoUserSelect}
 `;
 
 StyledAvatar.defaultProps = { theme: Base };
