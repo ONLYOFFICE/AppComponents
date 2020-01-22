@@ -323,7 +323,9 @@ const Dark = {
       big: "34px",
       max: "72px"
     }
-  }
+  },
+
+  backdrop: { backgroundColor: "rgba(255, 255, 255, 0.5)" }
 };
 
 export default Dark;

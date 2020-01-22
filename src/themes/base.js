@@ -326,7 +326,9 @@ const Base = {
       big: "34px",
       max: "72px"
     }
-  }
+  },
+
+  backdrop: { backgroundColor: "rgba(0, 0, 0, 0.3)" }
 };
 
 export default Base;
