@@ -5,10 +5,10 @@ const {
   white,
   whiteSolitude,
   grayLight,
-  greyLightMid,
-  greyMid,
-  grey,
-  greyMain,
+  grayLightMid,
+  grayMid,
+  gray,
+  grayMain,
 
   blueMain,
   blueHover,
@@ -34,7 +34,7 @@ const Base = {
 
   text: {
     color: black,
-    disableColor: greyLightMid,
+    disableColor: grayLightMid,
     fontWeight: "normal",
     fontWeightBold: "bold"
   },
@@ -94,12 +94,12 @@ const Base = {
     color: {
       base: black,
       primary: white,
-      disabled: greyMid
+      disabled: grayMid
     },
     backgroundColor: {
       base: white,
       baseHover: white,
-      baseActive: greyLightMid,
+      baseActive: grayLightMid,
       baseDisabled: grayLight,
       primary: blueMain,
       primaryHover: blueHover,
@@ -107,10 +107,10 @@ const Base = {
       primaryDisabled: blueDisabled
     },
     border: {
-      base: `1px solid ${globalColors.greyMid}`,
+      base: `1px solid ${globalColors.grayMid}`,
       baseHover: `1px solid ${globalColors.blueMain}`,
       baseActive: `1px solid ${globalColors.blueMain}`,
-      baseDisabled: `1px solid ${globalColors.greyLightMid}`,
+      baseDisabled: `1px solid ${globalColors.grayLightMid}`,
       primary: `1px solid ${globalColors.blueMain}`,
       primaryHover: `1px solid ${globalColors.blueHover}`,
       primaryActive: `1px solid ${globalColors.blueActive}`,
@@ -120,25 +120,25 @@ const Base = {
 
   checkbox: {
     fillColor: white,
-    borderColor: greyMid,
+    borderColor: grayMid,
     arrowColor: black,
     indeterminateColor: black,
 
-    disableArrowColor: greyMid,
-    disableBorderColor: greyLightMid,
+    disableArrowColor: grayMid,
+    disableBorderColor: grayLightMid,
     disableFillColor: grayLight,
-    disableIndeterminateColor: grey,
+    disableIndeterminateColor: gray,
 
-    hoverBorderColor: grey,
-    hoverIndeterminateColor: grey
+    hoverBorderColor: gray,
+    hoverIndeterminateColor: gray
   },
 
   toggleButton: {
     fillColor: blueMain,
-    fillColorOff: grey,
+    fillColorOff: gray,
 
-    disableFillColor: greyLightMid,
-    disableFillColorOff: greyLightMid
+    disableFillColor: grayLightMid,
+    disableFillColorOff: grayLightMid
   },
 
   radioButton: {
@@ -146,12 +146,12 @@ const Base = {
     height: "16px",
 
     fillColor: black,
-    borderColor: greyMid,
+    borderColor: grayMid,
 
-    disableFillColor: greyMid,
-    disableBorderColor: greyLightMid,
+    disableFillColor: grayMid,
+    disableBorderColor: grayLightMid,
 
-    hoverBorderColor: grey
+    hoverBorderColor: gray
   },
 
   scrollbar: {
@@ -161,7 +161,7 @@ const Base = {
 
   input: {
     color: black,
-    disableColor: greyMid,
+    disableColor: grayMid,
 
     backgroundColor: white,
     disableBackgroundColor: grayLight,
@@ -178,26 +178,26 @@ const Base = {
     boxSizing: "border-box",
     border: "solid 1px",
 
-    borderColor: greyMid,
+    borderColor: grayMid,
     errorBorderColor: red,
     warningBorderColor: warningColor,
-    disabledBorderColor: greyLightMid,
+    disabledBorderColor: grayLightMid,
 
-    hoverBorderColor: greyMid,
+    hoverBorderColor: grayMid,
     hoverErrorBorderColor: red,
     hoverWarningBorderColor: warningColor,
-    hoverDisabledBorderColor: grey,
+    hoverDisabledBorderColor: gray,
 
     focusBorderColor: blueMain,
     focusErrorBorderColor: red,
     focusWarningBorderColor: warningColor,
-    focusDisabledBorderColor: greyLightMid
+    focusDisabledBorderColor: grayLightMid
   },
 
   textInput: {
     fontWeight: "normal",
-    placeholderColor: greyMid,
-    disablePlaceholderColor: greyMid,
+    placeholderColor: grayMid,
+    disablePlaceholderColor: grayMid,
 
     transition: "all 0.2s ease 0s",
     appearance: "none",
@@ -269,7 +269,7 @@ const Base = {
     padding: "16px",
     pointerEvents: "auto",
     maxWidth: "340px",
-    backgroundColor: "#FFF",
+    backgroundColor: white,
     before: {
       border: "none"
     },
@@ -280,7 +280,7 @@ const Base = {
 
   avatar: {
     editLink: {
-      editLinkColor: "#FFF",
+      editLinkColor: white,
       padding: "0 10px",
 
       hover: { borderBottom: "none" },
@@ -291,7 +291,7 @@ const Base = {
       }
     },
     namedAvatar: {
-      color: "#FFF",
+      color: white,
       position: "absolute",
       left: "50%",
       top: "50%",
@@ -316,8 +316,8 @@ const Base = {
     },
 
     avatarContent: {
-      nameBackground: "#2DA7DB",
-      avatarBackground: "#ECEEF1",
+      nameBackground: blueMain,
+      avatarBackground: grayLightMid,
       borderRadius: "50%",
       height: "100%",
 
