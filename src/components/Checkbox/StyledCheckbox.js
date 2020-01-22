@@ -1,15 +1,13 @@
 import styled, { css } from "styled-components";
 import { Base } from "../../themes/index";
+import { NoUserSelect } from "../../utils/commonStyles";
 
 const StyledCheckbox = styled.label`
   display: flex;
   align-items: center;
   position: relative;
   margin: 0;
-  user-select: none;
-  -o-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
+  ${NoUserSelect};
 
   svg {
     ${props =>

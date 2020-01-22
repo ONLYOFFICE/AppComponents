@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import Text from "../Text";
 import { Base } from "../../themes";
+import { NoUserSelect } from "../../utils/commonStyles";
 
 const hoveredCss = css`
   text-decoration: ${props =>
@@ -11,7 +12,7 @@ const hoveredCss = css`
 
 const StyledLink = styled(Text)`
   text-decoration: ${props => props.theme.link.textDecoration};
-  user-select: ${props => props.theme.link.userSelect};
+  ${NoUserSelect}
   cursor: ${props => props.theme.link.cursor};
   opacity: ${props => props.semitransparent && props.theme.link.opacity};
   color: ${props => (props.color ? props.color : props.theme.link.color)};

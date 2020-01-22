@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Base } from "../../themes/index";
+import { NoUserSelect } from "../../utils/commonStyles";
 
 const StyledToggleButton = styled.label`
   position: relative;
@@ -7,10 +8,8 @@ const StyledToggleButton = styled.label`
   display: flex;
   align-items: center;
   outline: none;
-  user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  -webkit-user-select: none;
+
+  ${NoUserSelect};
 
   ${props =>
     props.disabled

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Box from "../Box";
 import { Base } from "../../themes";
-import {NoUserSelect} from "../../utils/commonStyles";
+import { NoUserSelect } from "../../utils/commonStyles";
 
 const StyledAvatar = styled(Box)`
   position: relative;
@@ -47,8 +47,8 @@ const StyledImage = styled.img`
 `;
 
 const StyledInitialsContainer = styled(Box)`
+  position: absolute;
   color: ${props => props.theme.avatar.initialsContainer.color};
-  position: ${props => props.theme.avatar.initialsContainer.position};
   left: ${props => props.theme.avatar.initialsContainer.left};
   top: ${props => props.theme.avatar.initialsContainer.top};
   transform: ${props => props.theme.avatar.initialsContainer.transform};

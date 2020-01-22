@@ -57,12 +57,12 @@ class Checkbox extends React.Component {
 
     return (
       <>
-        {React.createElement(
-          indeterminate
-            ? CheckboxIndeterminateIcon
-            : checked
-            ? CheckboxCheckedIcon
-            : CheckboxIcon
+        {indeterminate ? (
+          <CheckboxIndeterminateIcon />
+        ) : checked ? (
+          <CheckboxCheckedIcon />
+        ) : (
+          <CheckboxIcon />
         )}
       </>
     );

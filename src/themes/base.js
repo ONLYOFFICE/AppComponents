@@ -52,15 +52,12 @@ const Base = {
 
   button: {
     fontWeight: 600,
-    boxSizing: "border-box",
     margin: 0,
     display: "inline-block",
     textAlign: "center",
     textDecoration: "none",
     verticalAlign: "middle",
     borderRadius: "3px",
-    touchCallout: "none",
-    userSelect: "none",
     stroke: "none",
     overflow: "hidden",
     textOverflow: "ellipsis",
@@ -253,7 +250,6 @@ const Base = {
     lineHeight: "calc(100% + 6px)",
     opacity: "0.5",
     textDecoration: "none",
-    userSelect: "none",
     cursor: "pointer",
 
     hover: {
@@ -281,7 +277,6 @@ const Base = {
   avatar: {
     initialsContainer: {
       color: white,
-      position: "absolute",
       left: "50%",
       top: "50%",
       transform: "translate(-50%, -50%)",

@@ -1,12 +1,15 @@
 import styled, { css } from "styled-components";
 import { Base } from "../../themes/index";
+import { NoUserSelect } from "../../utils/commonStyles";
 
 const StyledRadioButton = styled.label`
   display: flex;
   align-items: center;
   position: relative;
   margin: 0;
-  user-select: none;
+
+  ${NoUserSelect};
+
   cursor: ${props => (!props.disabled ? "pointer" : "default")};
 
   .radio-button {

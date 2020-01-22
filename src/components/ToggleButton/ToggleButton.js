@@ -36,13 +36,7 @@ class ToggleButton extends Component {
   renderToggle = () => {
     const { checked } = this.props;
 
-    return (
-      <>
-        {React.createElement(
-          checked ? ToggleButtonCheckedIcon : ToggleButtonIcon
-        )}
-      </>
-    );
+    return <>{checked ? <ToggleButtonCheckedIcon /> : <ToggleButtonIcon />}</>;
   };
 
   render() {
