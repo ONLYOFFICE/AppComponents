@@ -18,6 +18,6 @@ If you want to create an avatar with initials, only _first letter of first two w
 
 | Props      |   Type   | Required |             Values              | Default  | Description                                  |
 | ---------- | :------: | :------: | :-----------------------------: | :------: | -------------------------------------------- |
-| `size`     | `oneOf`  |    -     | `max`, `big`, `medium`, `small` | `medium` | Size of avatar                               |
+| `size`     | `oneOf`  |    -     | `small`, `medium`, `big`, `max` | `medium` | Size of avatar                               |
 | `source`   | `string` |    -     |                -                |    -     | The address of the image for an image avatar |
 | `userName` | `string` |    -     |                -                |    -     | Need to create an avatar with initials       |
