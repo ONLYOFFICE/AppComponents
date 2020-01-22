@@ -276,18 +276,7 @@ const Dark = {
   },
 
   avatar: {
-    editLink: {
-      editLinkColor: white,
-      padding: "0 10px",
-
-      hover: { borderBottom: "none" },
-      span: {
-        display: "inline-block",
-        maxWidth: "100%",
-        textDecoration: "underline dashed"
-      }
-    },
-    namedAvatar: {
+    initialsContainer: {
       color: white,
       position: "absolute",
       left: "50%",
@@ -296,25 +285,9 @@ const Dark = {
       fontWeight: "600"
     },
 
-    editContainer: {
-      position: "absolute",
-      width: "100%",
-      height: "100%",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      padding: "75% 16px 5px",
-      textAlign: "center",
-      lineHeight: "19px",
-      borderRadius: "50%",
-      backgroundGradient:
-        "linear-gradient(180deg, rgba(6, 22, 38, 0) 24.48%, rgba(6, 22, 38, 0.75) 100%)",
-      backgroundTransparent: "transparent"
-    },
-
-    avatarContent: {
-      nameBackground: blueMain,
-      avatarBackground: grayLightMid,
+    imageContainer: {
+      backgroundImage: blueMain,
+      background: grayLightMid,
       borderRadius: "50%",
       height: "100%",
 

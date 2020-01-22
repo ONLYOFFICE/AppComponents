@@ -2,14 +2,11 @@ import React, { memo } from "react";
 import PropTypes from "prop-types";
 import {
   StyledAvatar,
-  NamedAvatar,
+  StyledinitialsContainer,
   StyledImage,
-  AvatarWrapper,
-  EditContainer,
-  EditLink
+  StyledImageContainer
 } from "./StyledAvatar";
 import { CameraIcon } from "./svg";
-import Link from "../Link";
 
 const getInitials = userName =>
   userName
@@ -18,18 +15,21 @@ const getInitials = userName =>
     .substring(0, 2);
 
 const Initials = props => (
-  <NamedAvatar {...props}>{getInitials(props.userName)}</NamedAvatar>
+  <StyledinitialsContainer {...props}>
+    {getInitials(props.userName)}
+  </StyledinitialsContainer>
 );
 
 Initials.propTypes = {
-  userName: PropTypes.string
+  userName: PropTypes.string,
+  size: PropTypes.oneOf(["max", "big", "medium", "small"])
 };
 
 const Avatar = memo(props => {
   //console.log("Avatar render");
-  const { size, source, userName, editing, editLabel, editAction } = props;
+  const { size, source, userName } = props;
 
-  const avatarContent = source ? (
+  const imageContainer = source ? (
     <StyledImage src={source} />
   ) : userName ? (
     <Initials userName={userName} size={size} />
@@ -39,27 +39,9 @@ const Avatar = memo(props => {
 
   return (
     <StyledAvatar {...props}>
-      <AvatarWrapper source={source} userName={userName}>
-        {avatarContent}
-      </AvatarWrapper>
-      {editing && size === "max" && (
-        <EditContainer gradient={!!source}>
-          <EditLink>
-            <Link
-              className="link"
-              type="action"
-              title={editLabel}
-              textOverflow={true}
-              hovered={true}
-              fontSize="14px"
-              fontWeight={600}
-              onClick={editAction}
-            >
-              {editLabel}
-            </Link>
-          </EditLink>
-        </EditContainer>
-      )}
+      <StyledImageContainer source={source} userName={userName}>
+        {imageContainer}
+      </StyledImageContainer>
     </StyledAvatar>
   );
 });
@@ -67,18 +49,13 @@ const Avatar = memo(props => {
 Avatar.propTypes = {
   size: PropTypes.oneOf(["max", "big", "medium", "small"]),
   source: PropTypes.string,
-  editLabel: PropTypes.string,
-  userName: PropTypes.string,
-  editing: PropTypes.bool,
-  editAction: PropTypes.func
+  userName: PropTypes.string
 };
 
 Avatar.defaultProps = {
   size: "medium",
   source: "",
-  editLabel: "Edit photo",
-  userName: "",
-  editing: false
+  userName: ""
 };
 
 Avatar.displayName = "Avatar";

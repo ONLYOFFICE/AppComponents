@@ -5,15 +5,12 @@ import "jest-styled-components";
 import Avatar from ".";
 import { Base } from "../../themes";
 
-import { AvatarWrapper, EditContainer } from "./StyledAvatar";
+import { StyledImageContainer } from "./StyledAvatar";
 
 const baseProps = {
   size: "max",
   source: "",
-  editLabel: "Edit",
-  userName: "Demo User",
-  editing: false,
-  editAction: () => jest.fn()
+  userName: "Demo User"
 };
 
 describe("<Avatar />", () => {
@@ -38,7 +35,7 @@ describe("<Avatar />", () => {
     expect(wrapper.getDOMNode().style).toHaveProperty("color", "red");
   });
 
-  it("render big avatar", () => {
+  it("test avatar sizes", () => {
     const wrapper = mount(<Avatar {...baseProps} size="big" />);
     expect(wrapper.prop("size")).toEqual("big");
 
@@ -82,17 +79,17 @@ describe("<Avatar />", () => {
 
   test("test avatar background styles", () => {
     const tree = renderer
-      .create(<AvatarWrapper source="" userName="User" />)
+      .create(<StyledImageContainer source="" userName="User" />)
       .toJSON();
     expect(tree).toHaveStyleRule(
       "background-color",
-      Base.avatar.avatarContent.nameBackground
+      Base.avatar.imageContainer.backgroundImage
     );
 
-    const tree2 = renderer.create(<AvatarWrapper />).toJSON();
+    const tree2 = renderer.create(<StyledImageContainer />).toJSON();
     expect(tree2).toHaveStyleRule(
       "background-color",
-      Base.avatar.avatarContent.avatarBackground
+      Base.avatar.imageContainer.background
     );
   });
 
@@ -105,20 +102,9 @@ describe("<Avatar />", () => {
     expect(wrapper.prop("source")).toEqual("demo");
   });
 
-  it("render editing avatar", () => {
-    const wrapper = mount(<Avatar {...baseProps} editing />);
-    expect(wrapper.prop("editing")).toEqual(true);
-  });
-
   it("render without source and username", () => {
     const wrapper = mount(<Avatar source="" userName="" />);
     expect(wrapper.prop("source")).toEqual("");
     expect(wrapper.prop("userName")).toEqual("");
-  });
-
-  test("test avatar background styles", () => {
-    const wrapper = mount(<EditContainer gradient />);
-
-    expect(wrapper.prop("gradient")).toEqual(true);
   });
 });
