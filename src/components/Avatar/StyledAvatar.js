@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Box from "../Box";
 import { Base } from "../../themes";
-import {NoUserSelect} from "../../utils/commonStyles";
+import { NoUserSelect } from "../../utils/commonStyles";
 
 const StyledAvatar = styled(Box)`
   position: relative;
