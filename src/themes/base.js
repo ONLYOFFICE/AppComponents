@@ -374,6 +374,14 @@ const Base = {
     },
 
     tablet: { lineHeight: "36px" }
+  },
+
+  dropDown: {
+    zIndex: "150",
+    background: "#FFF",
+    borderRadius: "6px",
+    boxShadow: "0px 5px 20px rgba(0, 0, 0, 0.13)",
+    padding: "6px 0px"
   }
 };
 
