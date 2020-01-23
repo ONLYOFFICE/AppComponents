@@ -4,7 +4,6 @@ import renderer from "react-test-renderer";
 import "jest-styled-components";
 import RadioButton from ".";
 import { Base } from "../../themes/index";
-import { css } from "styled-components";
 
 const baseProps = {
   name: "fruits",
