@@ -54,6 +54,15 @@ class DropDown extends React.PureComponent {
         this.props.disableOnClickOutside();
       }
     }
+    if (
+      this.props.directionX !== prevProps.directionX ||
+      this.props.directionY !== prevProps.directionY
+    ) {
+      this.setState({
+        directionX: this.props.directionX,
+        directionY: this.props.directionY
+      });
+    }
   }
 
   handleClickOutside = e => {
