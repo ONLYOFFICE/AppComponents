@@ -323,7 +323,58 @@ const Base = {
     }
   },
 
-  backdrop: { backgroundColor: "rgba(0, 0, 0, 0.3)" }
+  backdrop: { backgroundColor: "rgba(0, 0, 0, 0.3)" },
+
+  dropDownItem: {
+    width: "100%",
+    maxWidth: "240px",
+    border: "none",
+    cursor: "pointer",
+    padding: "0px 16px",
+    lineHeight: "32px",
+    textAlign: "left",
+    background: "none",
+    textDecoration: "none",
+    fontStyle: "normal",
+    fontWeight: "600",
+    fontSize: "13px",
+
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+
+    outline: "none",
+    color: black,
+    textTransform: "none",
+
+    hoverBackgroundColor: grayLight,
+    noHoverBackgroundColor: white,
+
+    header: {
+      color: gray,
+      hoverCursor: "default",
+      hoverBackgroundColor: "white",
+      textTransform: "uppercase"
+    },
+
+    disabled: {
+      color: gray,
+      hoverCursor: "default",
+      hoverBackgroundColor: "white"
+    },
+
+    separator: {
+      padding: "0px 16px",
+      border: `0.5px solid ${grayLightMid}`,
+      cursor: "default",
+      margin: "6px 16px 6px",
+      lineHeight: "1px",
+      height: "1px",
+      width: "calc(100% - 32px)"
+    },
+
+    tablet: { lineHeight: "36px" }
+  }
 };
 
 export default Base;

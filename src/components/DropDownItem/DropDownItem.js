@@ -4,7 +4,7 @@ import StyledDropdownItem from "./StyledDropDownItem";
 
 const DropDownItem = props => {
   //console.log("DropDownItem render");
-  const { isSeparator, label, children, disabled, onClick } = props;
+  const { separator, label, children, disabled, onClick } = props;
 
   const onClickAction = () => {
     onClick && !disabled && onClick();
@@ -12,14 +12,14 @@ const DropDownItem = props => {
 
   return (
     <StyledDropdownItem {...props} onClick={onClickAction}>
-      {isSeparator ? "\u00A0" : label ? label : children && children}
+      {separator ? "\u00A0" : label ? label : children && children}
     </StyledDropdownItem>
   );
 };
 
 DropDownItem.propTypes = {
-  isSeparator: PropTypes.bool,
-  isHeader: PropTypes.bool,
+  separator: PropTypes.bool,
+  header: PropTypes.bool,
   tabIndex: PropTypes.number,
   label: PropTypes.string,
   disabled: PropTypes.bool,
@@ -29,8 +29,8 @@ DropDownItem.propTypes = {
 };
 
 DropDownItem.defaultProps = {
-  isSeparator: false,
-  isHeader: false,
+  separator: false,
+  header: false,
   tabIndex: -1,
   label: "",
   disabled: false,
