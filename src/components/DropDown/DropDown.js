@@ -100,9 +100,8 @@ class DropDown extends React.PureComponent {
     const dropDownMaxHeightProp = maxHeight
       ? { height: calculatedHeight + "px" }
       : {};
-    //console.log("DropDown render");
 
-    //console.log("props", this.props);
+    //console.log("DropDown render");
     return (
       <>
         <StyledDropdown
