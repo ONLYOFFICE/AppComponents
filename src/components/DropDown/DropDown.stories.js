@@ -22,7 +22,7 @@ storiesOf("Components| DropDown", module)
       <Heading>Base drop-down</Heading>
       <DropDown
         directionX={select("directionX", ["left", "right"], "left")}
-        directionY={select("directionY", ["top", "bottom"], "bottom")}
+        directionY={select("directionY", ["top", "bottom"], "top")}
         manualWidth={text("manualWidth", "260px")}
         manualX={text("manualX", "30px")}
         manualY={text("manualY", "70px")}

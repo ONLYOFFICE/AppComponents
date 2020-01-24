@@ -20,12 +20,12 @@ const StyledDropdown = styled(Box)`
     ${props =>
       props.directionY === "top" &&
       css`
-        bottom: ${props => (props.manualY ? props.manualY : "100%")};
+        top: ${props => (props.manualY ? props.manualY : "100%")};
       `}
     ${props =>
       props.directionY === "bottom" &&
       css`
-        top: ${props => (props.manualY ? props.manualY : "100%")};
+        bottom: ${props => (props.manualY ? props.manualY : "100%")};
       `}
     ${props =>
       props.directionX === "right" &&
