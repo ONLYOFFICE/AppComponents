@@ -44,20 +44,20 @@ describe("<DropDown />", () => {
 
   test("test directionY props styles", () => {
     const tree = renderer.create(<DropDown directionY="top" />).toJSON();
-    expect(tree).toHaveStyleRule("bottom", "100%");
+    expect(tree).toHaveStyleRule("top", "100%");
 
     const tree2 = renderer
       .create(<DropDown manualY="10px" directionY="top" />)
       .toJSON();
-    expect(tree2).toHaveStyleRule("bottom", "10px");
+    expect(tree2).toHaveStyleRule("top", "10px");
 
     const tree3 = renderer.create(<DropDown directionY="bottom" />).toJSON();
-    expect(tree3).toHaveStyleRule("top", "100%");
+    expect(tree3).toHaveStyleRule("bottom", "100%");
 
     const tree4 = renderer
       .create(<DropDown manualY="10px" directionY="bottom" />)
       .toJSON();
-    expect(tree4).toHaveStyleRule("top", "10px");
+    expect(tree4).toHaveStyleRule("bottom", "10px");
   });
 
   test("test directionX props styles", () => {

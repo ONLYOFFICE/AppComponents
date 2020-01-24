@@ -159,7 +159,7 @@ DropDown.propTypes = {
 
 DropDown.defaultProps = {
   directionX: "left",
-  directionY: "bottom",
+  directionY: "top",
   withBackdrop: true
 };
 

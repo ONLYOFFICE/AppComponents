@@ -1,15 +1,15 @@
 import styled, { css } from "styled-components";
-import Box from "../Box";
 import { Base } from "../../themes";
 
-const StyledDropdown = styled(Box)`
+const StyledDropdown = styled.div`
     position: absolute;
+    overflow-y: hidden;
     
     ${props =>
       props.maxHeight &&
       css`
-        max-height: ${props.maxHeight}px;
         overflow-y: auto;
+        max-height: ${props.maxHeight}px;
       `}
 
     ${props =>
