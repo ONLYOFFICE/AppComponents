@@ -66,7 +66,6 @@ class DropDown extends React.PureComponent {
   }
 
   handleClickOutside = e => {
-    //console.log(`DropDown handleClickOutside`, e);
     this.toggleDropDown(e);
   };
 
@@ -101,7 +100,7 @@ class DropDown extends React.PureComponent {
   render() {
     const { maxHeight, withBackdrop, children, open } = this.props;
     const { directionX, directionY, width } = this.state;
-    const isTablet = window.innerWidth < 1024; //TODO: Make some better
+    const isTablet = window.innerWidth < 1024;
     const itemHeight = isTablet ? 36 : 32;
     const fullHeight = children && children.length * itemHeight;
     const calculatedHeight =
