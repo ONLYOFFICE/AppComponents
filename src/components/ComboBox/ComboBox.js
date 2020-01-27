@@ -77,7 +77,7 @@ class ComboBox extends React.Component {
       advancedOptions,
       disabled,
       children,
-      noBorder,
+      withoutBorder,
       scaledOptions,
       displayType,
       toggleAction
@@ -113,7 +113,7 @@ class ComboBox extends React.Component {
         {...this.props}
       >
         <ComboButton
-          noBorder={noBorder}
+          withoutBorder={withoutBorder}
           disabled={disabled}
           selectedOption={selectedOption}
           withOptions={optionsLength > 0}
@@ -162,7 +162,7 @@ ComboBox.propTypes = {
   displayType: PropTypes.oneOf(["default", "toggle"]),
   dropDownMaxHeight: PropTypes.number,
   disabled: PropTypes.bool,
-  noBorder: PropTypes.bool,
+  withoutBorder: PropTypes.bool,
   onSelect: PropTypes.func,
   open: PropTypes.bool,
   options: PropTypes.array.isRequired,
@@ -176,7 +176,7 @@ ComboBox.propTypes = {
 ComboBox.defaultProps = {
   displayType: "default",
   disabled: false,
-  noBorder: false,
+  withoutBorder: false,
   scaled: true,
   scaledOptions: false,
   size: "base"

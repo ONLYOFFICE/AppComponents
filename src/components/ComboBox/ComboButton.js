@@ -11,7 +11,7 @@ import {
 class ComboButton extends React.Component {
   render() {
     const {
-      noBorder,
+      withoutBorder,
       onClick,
       disabled,
       innerContainer,
@@ -25,17 +25,13 @@ class ComboButton extends React.Component {
       size
     } = this.props;
 
-    const boxIconColor = disabled ? "#D0D5DA" : "#333";
-    const arrowIconColor = disabled ? "#D0D5DA" : "#A3A9AE";
-    const defaultIconColor = selectedOption.default
-      ? arrowIconColor
-      : boxIconColor;
+    const defaultOption = selectedOption.default;
 
     return (
       <StyledComboButton
         open={open}
         disabled={disabled}
-        noBorder={noBorder}
+        withoutBorder={withoutBorder}
         containOptions={optionsLength}
         withAdvancedOptions={withAdvancedOptions}
         onClick={onClick}
@@ -45,29 +41,26 @@ class ComboButton extends React.Component {
         {innerContainer && (
           <StyledOptionalItem
             className={innerContainerClassName}
-            color={defaultIconColor}
+            disabled={disabled}
+            defaultOption={defaultOption}
           >
             {innerContainer}
           </StyledOptionalItem>
         )}
         <Text
-          noBorder={noBorder}
+          withoutBorder={withoutBorder}
           title={selectedOption.label}
           as="div"
-          truncate={true}
+          truncate
           fontWeight={600}
           className="combo-button-label"
-          color={
-            selectedOption.default
-              ? arrowIconColor + " !important"
-              : boxIconColor
-          }
+          defaultOption={defaultOption}
         >
           {selectedOption.label}
         </Text>
         <StyledArrowIcon
           needDisplay={withOptions || withAdvancedOptions}
-          noBorder={noBorder}
+          withoutBorder={withoutBorder}
           open={open}
         >
           {(withOptions || withAdvancedOptions) && (
@@ -80,7 +73,7 @@ class ComboButton extends React.Component {
 }
 
 ComboButton.propTypes = {
-  noBorder: PropTypes.bool,
+  withoutBorder: PropTypes.bool,
   disabled: PropTypes.bool,
   selectedOption: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.object),
@@ -101,7 +94,7 @@ ComboButton.propTypes = {
 };
 
 ComboButton.defaultProps = {
-  noBorder: false,
+  withoutBorder: false,
   disabled: false,
   withOptions: true,
   withAdvancedOptions: false,

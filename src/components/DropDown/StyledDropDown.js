@@ -49,6 +49,13 @@ const StyledDropdown = styled.div`
     -moz-box-shadow: ${props => props.theme.dropDown.boxShadow};
     -webkit-box-shadow: ${props => props.theme.dropDown.boxShadow};
     padding: ${props => props.theme.dropDown.padding};
+
+
+    ${props =>
+      props.height &&
+      css`
+        padding: 0px;
+      `}
 `;
 
 StyledDropdown.defaultProps = {

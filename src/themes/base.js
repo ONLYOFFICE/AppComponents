@@ -384,6 +384,75 @@ const Base = {
     borderRadius: "6px",
     boxShadow: "0px 5px 20px rgba(0, 0, 0, 0.13)",
     padding: "6px 0px"
+  },
+
+  comboBox: {
+    width: {
+      base: "173px",
+      middle: "300px",
+      big: "350px",
+      huge: "500px"
+    },
+
+    arrow: {
+      width: "8px",
+      flex: "0 0 8px",
+      marginTopWithBorder: "5px",
+      marginTop: "12px",
+      marginRight: "8px",
+      marginLeft: "auto",
+      fillColor: "#A3A9AE"
+    },
+
+    button: {
+      height: "18px",
+      heightWithBorder: "32px",
+      paddingLeft: "8px",
+
+      color: "#333",
+      disabledColor: "#D0D5DA",
+      background: "#FFF",
+      backgroundWithBorder: "none",
+
+      border: "1px solid #D0D5DA",
+      borderRadius: "3px",
+      borderColor: "#2DA7DB",
+
+      disabledBorderColor: "#ECEEF1",
+      disabledBackground: "#f8f9f9",
+
+      hoverBorderColor: "#A3A9AE",
+      hoverBorderColorOpen: "#2DA7DB",
+      hoverDisabledBorderColor: "#ECEEF1"
+    },
+
+    label: {
+      marginRightWithBorder: "8px",
+      marginRight: "4px",
+
+      defaultDisabledColor: "#D0D5DA",
+      defaultColor: "#A3A9AE",
+      disabledColor: "#D0D5DA",
+      color: "#333",
+
+      maxWidth: "175px",
+
+      lineHeightWithoutBorder: "15px",
+      lineHeightTextDecoration: "underline dashed transparent"
+    },
+    childrenButton: {
+      marginRight: "8px",
+      defaultDisabledColor: "#D0D5DA",
+      defaultColor: "#A3A9AE",
+      disabledColor: "#D0D5DA",
+      color: "#333"
+    },
+
+    icon: {
+      width: "16px",
+      marginRight: "8px",
+      marginTop: "-2px"
+    }
   }
 };
 
