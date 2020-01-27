@@ -322,8 +322,12 @@ const Dark = {
 
   backdrop: { backgroundColor: "rgba(255, 255, 255, 0.5)" },
 
-  loader: { color: white, size: "40px", ovalFill: blueCharcoal, strokeWidth: 2 },
-  backdrop: { backgroundColor: "rgba(255, 255, 255, 0.5)" },
+  loader: {
+    color: white,
+    size: "40px",
+    ovalFill: blueCharcoal,
+    strokeWidth: 2
+  },
 
   dropDownItem: {
     width: "100%",
