@@ -6,6 +6,7 @@ import Backdrop from "../Backdrop";
 import { FixedSizeList } from "react-window";
 import onClickOutside from "react-onclickoutside";
 import StyledDropdown from "./StyledDropDown";
+import { size } from "../../utils/device";
 
 const Row = memo(({ data, index, style }) => {
   const option = data[index];
@@ -26,7 +27,7 @@ class DropDown extends React.PureComponent {
     super(props);
 
     this.state = {
-      width: this.dropDownRef ? this.dropDownRef.current.offsetWidth : 240,
+      width: 240,
       directionX: props.directionX,
       directionY: props.directionY
     };
@@ -100,8 +101,11 @@ class DropDown extends React.PureComponent {
   render() {
     const { maxHeight, withBackdrop, children, open } = this.props;
     const { directionX, directionY, width } = this.state;
-    const isTablet = window.innerWidth < 1024;
-    const itemHeight = isTablet ? 36 : 32;
+    const tabletHeight = 36;
+    const height = 32;
+
+    const isTablet = window.innerWidth < size.tablet;
+    const itemHeight = isTablet ? tabletHeight : height;
     const fullHeight = children && children.length * itemHeight;
     const calculatedHeight =
       fullHeight > 0 && fullHeight < maxHeight ? fullHeight : maxHeight;
