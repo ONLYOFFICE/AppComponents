@@ -1,6 +1,5 @@
 import createStyledIcon from "./createStyledIcon";
 import OrigCalendarIcon from "./calendar.react.svg";
-import OrigExpanderDownIcon from "./expander-down.react.svg";
 import OrigExpanderRightIcon from "./expander-right.react.svg";
 import OrigVerticalDotsIcon from "./vertical-dots.react.svg";
 import OrigSearchIcon from "./search.react.svg";
@@ -17,10 +16,6 @@ export const ArrowContentIcon = createStyledIcon(
 );
 export const CalendarIcon = createStyledIcon(OrigCalendarIcon, "CalendarIcon");
 export const CheckIcon = createStyledIcon(OrigCheckIcon, "CheckIcon");
-export const ExpanderDownIcon = createStyledIcon(
-  OrigExpanderDownIcon,
-  "ExpanderDownIcon"
-);
 export const ExpanderRightIcon = createStyledIcon(
   OrigExpanderRightIcon,
   "ExpanderRightIcon"
