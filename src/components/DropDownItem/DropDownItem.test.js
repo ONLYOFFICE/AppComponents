@@ -8,7 +8,6 @@ import { Base } from "../../themes";
 const baseProps = {
   separator: false,
   header: false,
-  tabIndex: -1,
   label: "test",
   disabled: false,
   noHover: false,

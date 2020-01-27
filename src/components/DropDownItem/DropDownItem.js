@@ -20,7 +20,6 @@ const DropDownItem = props => {
 DropDownItem.propTypes = {
   separator: PropTypes.bool,
   header: PropTypes.bool,
-  tabIndex: PropTypes.number,
   label: PropTypes.string,
   disabled: PropTypes.bool,
   noHover: PropTypes.bool,
@@ -31,7 +30,6 @@ DropDownItem.propTypes = {
 DropDownItem.defaultProps = {
   separator: false,
   header: false,
-  tabIndex: -1,
   label: "",
   disabled: false,
   noHover: false
