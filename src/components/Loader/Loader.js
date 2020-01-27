@@ -5,8 +5,8 @@ import { DualRing } from "./DualRing";
 import Text from "../Text";
 
 const Loader = props => {
-  const { type, color, size, label, style } = props;
-  const { fillColor, ...rest } = props;
+  const { type, color, size, style } = props;
+  const { fillColor, label, ...rest } = props;
 
   const svgRenderer = type => {
     switch (type) {

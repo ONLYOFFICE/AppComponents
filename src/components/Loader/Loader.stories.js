@@ -1,12 +1,10 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, select, color } from "@storybook/addon-knobs/react";
+import { withKnobs, text, color } from "@storybook/addon-knobs/react";
 import withReadme from "storybook-readme/with-readme";
 import Readme from "./README.md";
 import Loader from ".";
 import Box from "../Box";
-
-const typeOptions = ["base", "oval", "dual-ring"];
 
 storiesOf("Components|Loaders", module)
   .addDecorator(withKnobs)
@@ -14,7 +12,7 @@ storiesOf("Components|Loaders", module)
   .add("Default", () => (
     <Box paddingProp="16px">
       <Loader
-        type={select("type", typeOptions, "base")}
+        type="base"
         color={color("color", "")}
         size={text("size", "18px")}
         label={text("label", "Loading content, please wait...")}
@@ -24,7 +22,7 @@ storiesOf("Components|Loaders", module)
   .add("DualRing", () => (
     <Box paddingProp="16px">
       <Loader
-        type={select("type", typeOptions, "dual-ring")}
+        type="dual-ring"
         color={color("color", "")}
         size={text("size", "40px")}
         label={text("label", "Loading content, please wait.")}
@@ -34,7 +32,7 @@ storiesOf("Components|Loaders", module)
   .add("Oval", () => (
     <Box paddingProp="16px">
       <Loader
-        type={select("type", typeOptions, "oval")}
+        type="oval"
         color={color("color", "")}
         fillColor={color("fillColor", "")}
         size={text("size", "40px")}
