@@ -325,7 +325,66 @@ const Base = {
 
   backdrop: { backgroundColor: "rgba(0, 0, 0, 0.3)" },
 
-  loader: { color: "#63686a", size: "40px", ovalFill: "none", strokeWidth: 2 }
+  loader: { color: "#63686a", size: "40px", ovalFill: "none", strokeWidth: 2 },
+
+  dropDownItem: {
+    width: "100%",
+    maxWidth: "240px",
+    border: "none",
+    cursor: "pointer",
+    padding: "0px 16px",
+    lineHeight: "32px",
+    textAlign: "left",
+    background: "none",
+    textDecoration: "none",
+    fontStyle: "normal",
+    fontWeight: "600",
+    fontSize: "13px",
+
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+
+    outline: "none",
+    color: black,
+    textTransform: "none",
+
+    hoverBackgroundColor: grayLight,
+    noHoverBackgroundColor: white,
+
+    header: {
+      color: gray,
+      hoverCursor: "default",
+      hoverBackgroundColor: "white",
+      textTransform: "uppercase"
+    },
+
+    disabled: {
+      color: gray,
+      hoverCursor: "default",
+      hoverBackgroundColor: "white"
+    },
+
+    separator: {
+      padding: "0px 16px",
+      border: `0.5px solid ${grayLightMid}`,
+      cursor: "default",
+      margin: "6px 16px 6px",
+      lineHeight: "1px",
+      height: "1px",
+      width: "calc(100% - 32px)"
+    },
+
+    tablet: { lineHeight: "36px" }
+  },
+
+  dropDown: {
+    zIndex: "150",
+    background: "#FFF",
+    borderRadius: "6px",
+    boxShadow: "0px 5px 20px rgba(0, 0, 0, 0.13)",
+    padding: "6px 0px"
+  }
 };
 
 export default Base;

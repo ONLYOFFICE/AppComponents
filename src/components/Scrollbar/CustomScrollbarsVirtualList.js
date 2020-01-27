@@ -12,7 +12,7 @@ class CustomScrollbars extends React.Component {
   };
 
   render() {
-    const { size, onScroll, forwardedRef, ...rest } = this.props;
+    const { size, onScroll, forwardedRef, style, ...rest } = this.props;
 
     //console.log("CustomScrollbars", this.props);
     return (
@@ -20,6 +20,7 @@ class CustomScrollbars extends React.Component {
         ref={scrollbarsRef =>
           this.refSetter.bind(this, scrollbarsRef, forwardedRef)
         }
+        style={{ ...style, overflow: "hidden" }}
         onScroll={onScroll}
         size={size}
         {...rest}
@@ -32,6 +33,7 @@ CustomScrollbars.propTypes = {
   size: PropTypes.oneOf(["small", "medium", "bid"]),
   color: PropTypes.string,
   onScroll: PropTypes.func,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   forwardedRef: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.any })
