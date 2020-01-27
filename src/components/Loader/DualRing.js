@@ -1,12 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { StyledDualRing } from "./StyledLoader";
 
 export const DualRing = ({ size, color, label }) => (
-  <svg
-    width={size}
-    height={size}
+  <StyledDualRing
+    size={size}
+    color={color}
     viewBox="0 0 100 100"
     xmlns="http://www.w3.org/2000/svg"
-    stroke={color}
     aria-label={label}
   >
     <circle
@@ -20,7 +21,6 @@ export const DualRing = ({ size, color, label }) => (
       strokeLinecap="round"
       r="40"
       strokeWidth="8"
-      stroke={color}
       strokeDasharray="62.83185307179586 62.83185307179586"
       transform="rotate(32.3864 50 50)"
     >
@@ -47,7 +47,6 @@ export const DualRing = ({ size, color, label }) => (
       strokeLinecap="round"
       r="20"
       strokeWidth="4"
-      stroke={color}
       strokeDasharray="29.845130209103033 29.845130209103033"
       strokeDashoffset="29.845130209103033"
       transform="rotate(-360 -8.10878e-8 -8.10878e-8)"
@@ -63,5 +62,11 @@ export const DualRing = ({ size, color, label }) => (
         repeatCount="indefinite"
       ></animateTransform>
     </circle>
-  </svg>
+  </StyledDualRing>
 );
+
+DualRing.propTypes = {
+  size: PropTypes.string,
+  color: PropTypes.string,
+  label: PropTypes.string
+};

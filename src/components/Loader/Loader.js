@@ -5,14 +5,15 @@ import { DualRing } from "./DualRing";
 import Text from "../Text";
 
 const Loader = props => {
-  const { type, color, size, label, className, style, id } = props;
+  const { type, color, size, label, style } = props;
+  const { fillColor, ...rest } = props;
 
   const svgRenderer = type => {
     switch (type) {
       case "oval":
-        return <Oval {...props} />;
+        return <Oval fillColor={fillColor} {...rest} />;
       case "dual-ring":
-        return <DualRing {...props} />;
+        return <DualRing {...rest} />;
       default:
         return (
           <span style={{ ...style }}>
@@ -25,7 +26,7 @@ const Loader = props => {
   };
 
   return (
-    <div aria-busy="true" className={className} style={style} id={id}>
+    <div aria-busy="true" {...rest}>
       {svgRenderer(type)}
     </div>
   );
@@ -33,19 +34,16 @@ const Loader = props => {
 
 Loader.propTypes = {
   color: PropTypes.string,
+  fillColor: PropTypes.string,
   type: PropTypes.oneOf(["base", "oval", "dual-ring"]),
   size: PropTypes.string,
   label: PropTypes.string,
-  className: PropTypes.string,
-  id: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
 };
 
 Loader.defaultProps = {
-  color: "#63686a",
-  type: "base",
   size: "40px",
-  label: "Loading content, please wait."
+  label: "Loading please wait."
 };
 
 export default Loader;

@@ -11,34 +11,34 @@ const typeOptions = ["base", "oval", "dual-ring"];
 storiesOf("Components|Loaders", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
-  .add("base", () => (
+  .add("Default", () => (
     <Box paddingProp="16px">
       <Loader
         type={select("type", typeOptions, "base")}
-        color={color("color", "#63686a")}
+        color={color("color", "")}
         size={text("size", "18px")}
         label={text("label", "Loading content, please wait...")}
       />
     </Box>
   ))
-  .add("dual-ring", () => (
+  .add("DualRing", () => (
     <Box paddingProp="16px">
       <Loader
         type={select("type", typeOptions, "dual-ring")}
-        color={color("color", "#63686a")}
+        color={color("color", "")}
         size={text("size", "40px")}
         label={text("label", "Loading content, please wait.")}
       />
     </Box>
   ))
-  .add("oval", () => (
+  .add("Oval", () => (
     <Box paddingProp="16px">
       <Loader
         type={select("type", typeOptions, "oval")}
-        color={color("color", "#63686a")}
+        color={color("color", "")}
+        fillColor={color("fillColor", "")}
         size={text("size", "40px")}
         label={text("label", "Loading content, please wait.")}
       />
     </Box>
-  ))
-
+  ));

@@ -323,7 +323,9 @@ const Base = {
     }
   },
 
-  backdrop: { backgroundColor: "rgba(0, 0, 0, 0.3)" }
+  backdrop: { backgroundColor: "rgba(0, 0, 0, 0.3)" },
+
+  loader: { color: "#63686a", size: "40px", ovalFill: "none", strokeWidth: 2 }
 };
 
 export default Base;

@@ -1,16 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
+import { StyledOval } from "./StyledLoader";
 
-export const Oval = ({ size, color, label }) => (
-  <svg
-    width={size}
-    height={size}
+export const Oval = ({ label, fillColor, ...rest }) => (
+  <StyledOval
+    {...rest}
     viewBox="0 0 38 38"
     xmlns="http://www.w3.org/2000/svg"
-    stroke={color}
     aria-label={label}
   >
-    <g fill="none" fillRule="evenodd">
-      <g transform="translate(1 1)" strokeWidth="2">
+    <g fillRule="evenodd" fill={fillColor ? fillColor : "none"}>
+      <g transform="translate(1 1)">
         <circle strokeOpacity=".5" cx="18" cy="18" r="18" />
         <path d="M36 18c0-9.94-8.06-18-18-18">
           <animateTransform
@@ -24,5 +24,12 @@ export const Oval = ({ size, color, label }) => (
         </path>
       </g>
     </g>
-  </svg>
+  </StyledOval>
 );
+
+Oval.propTypes = {
+  size: PropTypes.string,
+  color: PropTypes.string,
+  label: PropTypes.string,
+  fillColor: PropTypes.string
+};
