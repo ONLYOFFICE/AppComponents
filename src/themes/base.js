@@ -9,6 +9,7 @@ const {
   grayMid,
   gray,
   grayMain,
+  shuttleGrey,
 
   blueMain,
   blueHover,
@@ -325,7 +326,7 @@ const Base = {
 
   backdrop: { backgroundColor: "rgba(0, 0, 0, 0.3)" },
 
-  loader: { color: "#63686a", size: "40px", ovalFill: "none", strokeWidth: 2 },
+  loader: { color: shuttleGrey, size: "40px", ovalFill: "none", strokeWidth: 2 },
 
   dropDownItem: {
     width: "100%",
@@ -380,7 +381,7 @@ const Base = {
 
   dropDown: {
     zIndex: "150",
-    background: "#FFF",
+    background: white,
     borderRadius: "6px",
     boxShadow: "0px 5px 20px rgba(0, 0, 0, 0.13)",
     padding: "6px 0px"
@@ -401,7 +402,7 @@ const Base = {
       marginTop: "12px",
       marginRight: "8px",
       marginLeft: "auto",
-      fillColor: "#A3A9AE"
+      fillColor: gray
     },
 
     button: {
@@ -409,31 +410,31 @@ const Base = {
       heightWithBorder: "32px",
       paddingLeft: "8px",
 
-      color: "#333",
-      disabledColor: "#D0D5DA",
-      background: "#FFF",
+      color: black,
+      disabledColor: grayMid,
+      background: white,
       backgroundWithBorder: "none",
 
-      border: "1px solid #D0D5DA",
+      border: `1px solid ${grayMid}`,
       borderRadius: "3px",
-      borderColor: "#2DA7DB",
+      borderColor: blueMain,
 
-      disabledBorderColor: "#ECEEF1",
-      disabledBackground: "#f8f9f9",
+      disabledBorderColor: grayLightMid,
+      disabledBackground: grayLight,
 
-      hoverBorderColor: "#A3A9AE",
-      hoverBorderColorOpen: "#2DA7DB",
-      hoverDisabledBorderColor: "#ECEEF1"
+      hoverBorderColor: gray,
+      hoverBorderColorOpen: blueMain,
+      hoverDisabledBorderColor: grayLightMid
     },
 
     label: {
       marginRightWithBorder: "8px",
       marginRight: "4px",
 
-      defaultDisabledColor: "#D0D5DA",
-      defaultColor: "#A3A9AE",
-      disabledColor: "#D0D5DA",
-      color: "#333",
+      defaultDisabledColor: grayMid,
+      defaultColor: gray,
+      disabledColor: grayMid,
+      color: black,
 
       maxWidth: "175px",
 
@@ -442,10 +443,10 @@ const Base = {
     },
     childrenButton: {
       marginRight: "8px",
-      defaultDisabledColor: "#D0D5DA",
-      defaultColor: "#A3A9AE",
-      disabledColor: "#D0D5DA",
-      color: "#333"
+      defaultDisabledColor: grayMid,
+      defaultColor: gray,
+      disabledColor: grayMid,
+      color: black
     },
 
     icon: {

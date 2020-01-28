@@ -320,7 +320,7 @@ const Dark = {
     }
   },
 
-  backdrop: { backgroundColor: "rgba(255, 255, 255, 0.5)" },
+  backdrop: { backgroundColor: "rgba(255, 255, 255, 0.3)" },
 
   loader: {
     color: white,
@@ -382,12 +382,12 @@ const Dark = {
 
   dropDown: {
     zIndex: "150",
-    background: "#FFF",
+    background: white,
     borderRadius: "6px",
     boxShadow: "0px 5px 20px rgba(0, 0, 0, 0.13)",
     padding: "6px 0px"
   },
-  
+
   comboBox: {
     width: {
       base: "173px",
@@ -403,7 +403,7 @@ const Dark = {
       marginTop: "12px",
       marginRight: "8px",
       marginLeft: "auto",
-      fillColor: "#A3A9AE"
+      fillColor: gray
     },
 
     button: {
@@ -411,31 +411,31 @@ const Dark = {
       heightWithBorder: "32px",
       paddingLeft: "8px",
 
-      color: "#333",
-      disabledColor: "#D0D5DA",
-      background: "#FFF",
+      color: black,
+      disabledColor: grayMid,
+      background: white,
       backgroundWithBorder: "none",
 
-      border: "1px solid #D0D5DA",
+      border: `1px solid ${grayMid}`,
       borderRadius: "3px",
-      borderColor: "#2DA7DB",
+      borderColor: white,
 
-      disabledBorderColor: "#ECEEF1",
-      disabledBackground: "#f8f9f9",
+      disabledBorderColor: grayLightMid,
+      disabledBackground: grayLight,
 
-      hoverBorderColor: "#A3A9AE",
-      hoverBorderColorOpen: "#2DA7DB",
-      hoverDisabledBorderColor: "#ECEEF1"
+      hoverBorderColor: gray,
+      hoverBorderColorOpen: blueMain,
+      hoverDisabledBorderColor: grayLightMid
     },
 
     label: {
       marginRightWithBorder: "8px",
       marginRight: "4px",
 
-      defaultDisabledColor: "#D0D5DA",
-      defaultColor: "#A3A9AE",
-      disabledColor: "#D0D5DA",
-      color: "#333",
+      defaultDisabledColor: grayMid,
+      defaultColor: gray,
+      disabledColor: grayMid,
+      color: white,
 
       maxWidth: "175px",
 
@@ -444,10 +444,10 @@ const Dark = {
     },
     childrenButton: {
       marginRight: "8px",
-      defaultDisabledColor: "#D0D5DA",
-      defaultColor: "#A3A9AE",
-      disabledColor: "#D0D5DA",
-      color: "#333"
+      defaultDisabledColor: grayMid,
+      defaultColor: gray,
+      disabledColor: grayMid,
+      color: black
     },
 
     icon: {
