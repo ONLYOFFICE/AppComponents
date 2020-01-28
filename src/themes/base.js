@@ -326,7 +326,12 @@ const Base = {
 
   backdrop: { backgroundColor: "rgba(0, 0, 0, 0.3)" },
 
-  loader: { color: shuttleGrey, size: "40px", ovalFill: "none", strokeWidth: 2 },
+  loader: {
+    color: shuttleGrey,
+    size: "40px",
+    ovalFill: "none",
+    strokeWidth: 2
+  },
 
   dropDownItem: {
     width: "100%",
@@ -441,18 +446,13 @@ const Base = {
       lineHeightWithoutBorder: "15px",
       lineHeightTextDecoration: "underline dashed transparent"
     },
+
     childrenButton: {
       marginRight: "8px",
       defaultDisabledColor: grayMid,
       defaultColor: gray,
       disabledColor: grayMid,
       color: black
-    },
-
-    icon: {
-      width: "16px",
-      marginRight: "8px",
-      marginTop: "-2px"
     }
   }
 };

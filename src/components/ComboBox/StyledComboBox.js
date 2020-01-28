@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import Box from "../Box";
 import { NoUserSelect } from "../../utils/commonStyles";
+import { Base } from "../../themes";
 
 const StyledComboBox = styled(Box)`
   position: relative;
@@ -172,16 +173,14 @@ const StyledOptionalItem = styled(Box)`
   }
 `;
 
-const StyledIcon = styled(Box)`
-  width: ${props => props.theme.comboBox.icon.width};
-  margin-right: ${props => props.theme.comboBox.icon.marginRight};
-  margin-top: ${props => props.theme.comboBox.icon.marginTop};
-`;
+StyledComboBox.defaultProps = { theme: Base };
+StyledArrowIcon.defaultProps = { theme: Base };
+StyledComboButton.defaultProps = { theme: Base };
+StyledOptionalItem.defaultProps = { theme: Base };
 
 export {
   StyledComboBox,
   StyledArrowIcon,
   StyledComboButton,
-  StyledOptionalItem,
-  StyledIcon
+  StyledOptionalItem
 };

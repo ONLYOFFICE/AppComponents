@@ -177,7 +177,7 @@ ComboBox.defaultProps = {
   displayType: "default",
   disabled: false,
   withoutBorder: false,
-  scaled: true,
+  scaled: false,
   scaledOptions: false,
   size: "base"
 };

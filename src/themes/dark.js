@@ -442,18 +442,13 @@ const Dark = {
       lineHeightWithoutBorder: "15px",
       lineHeightTextDecoration: "underline dashed transparent"
     },
+
     childrenButton: {
       marginRight: "8px",
       defaultDisabledColor: grayMid,
       defaultColor: gray,
       disabledColor: grayMid,
       color: black
-    },
-
-    icon: {
-      width: "16px",
-      marginRight: "8px",
-      marginTop: "-2px"
     }
   }
 };
