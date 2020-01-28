@@ -28,7 +28,6 @@ storiesOf("Components| DropDown", module)
         manualY={text("manualY", "70px")}
         maxHeight={number("maxHeight", 0)}
         open={boolean("open", true)}
-        withBackdrop={boolean("withBackdrop", false)}
       >
         <DropDownItem header label="Category 1" />
         <DropDownItem

@@ -98,7 +98,7 @@ class DropDown extends React.PureComponent {
   };
 
   render() {
-    const { maxHeight, withBackdrop, children, open } = this.props;
+    const { maxHeight, children } = this.props;
     const { directionX, directionY, width } = this.state;
     const tabletHeight = 36;
     const height = 32;
@@ -137,9 +137,6 @@ class DropDown extends React.PureComponent {
             children
           )}
         </StyledDropdown>
-        {withBackdrop && open && isTablet && (
-          <Backdrop visible zIndex={149} onClick={this.toggleDropDown} />
-        )}
       </>
     );
   }
@@ -154,7 +151,6 @@ DropDown.propTypes = {
   manualX: PropTypes.string,
   manualY: PropTypes.string,
   maxHeight: PropTypes.number,
-  withBackdrop: PropTypes.bool,
   clickOutsideAction: PropTypes.func,
   enableOnClickOutside: PropTypes.func,
   disableOnClickOutside: PropTypes.func
@@ -162,8 +158,7 @@ DropDown.propTypes = {
 
 DropDown.defaultProps = {
   directionX: "left",
-  directionY: "top",
-  withBackdrop: true
+  directionY: "top"
 };
 
 const EnhancedComponent = onClickOutside(DropDown);
