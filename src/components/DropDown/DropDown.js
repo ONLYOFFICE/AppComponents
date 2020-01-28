@@ -1,11 +1,10 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
-import CustomScrollbarsVirtualList from "../Scrollbar/CustomScrollbarsVirtualList";
 import DropDownItem from "../DropDownItem";
 import Backdrop from "../Backdrop";
 import { FixedSizeList } from "react-window";
 import onClickOutside from "react-onclickoutside";
-import StyledDropdown from "./StyledDropDown";
+import { StyledDropdown, StyledCustomScrollbarsVirtualList } from "./StyledDropDown";
 import { size } from "../../utils/device";
 
 const Row = memo(({ data, index, style }) => {
@@ -130,7 +129,7 @@ class DropDown extends React.PureComponent {
               itemSize={itemHeight}
               itemCount={children.length}
               itemData={children}
-              outerElementType={CustomScrollbarsVirtualList}
+              outerElementType={StyledCustomScrollbarsVirtualList}
             >
               {Row}
             </FixedSizeList>
