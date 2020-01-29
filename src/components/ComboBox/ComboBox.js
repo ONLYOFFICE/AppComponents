@@ -19,34 +19,29 @@ class ComboBox extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    const needUpdate =
-      !isEqual(this.props, nextProps) || !isEqual(this.state, nextState);
-
-    return needUpdate;
+    return !isEqual(this.props, nextProps) || !isEqual(this.state, nextState);
   }
-
-  stopAction = e => e.preventDefault();
-
-  setIsOpen = open => this.setState({ open: open });
 
   handleClickOutside = e => {
     if (this.ref.current.contains(e.target)) return;
 
-    this.setState({ open: !this.state.open }, () => {
-      this.props.toggleAction && this.props.toggleAction(e, this.state.open);
-    });
+    this.toggleOpen(e);
   };
 
-  comboBoxClick = e => {
+  onComboBoxClick = e => {
     if (this.props.disabled || (e && e.target.closest(".optionalBlock")))
       return;
 
+    this.toggleOpen(e);
+  };
+
+  toggleOpen = e => {
     this.setState({ open: !this.state.open }, () => {
       this.props.toggleAction && this.props.toggleAction(e, this.state.open);
     });
   };
 
-  optionClick = option => {
+  onOptionClick = option => {
     this.setState({
       open: !this.state.open,
       selectedOption: option
@@ -56,12 +51,12 @@ class ComboBox extends React.Component {
   };
 
   componentDidUpdate(prevProps) {
-    if (this.props.open !== prevProps.open) {
-      this.setIsOpen(this.props.open);
-    }
-
-    if (this.props.selectedOption !== prevProps.selectedOption) {
-      this.setState({ selectedOption: this.props.selectedOption });
+    const { selectedOption, open } = this.props;
+    if (
+      open !== prevProps.open ||
+      selectedOption !== prevProps.selectedOption
+    ) {
+      this.setState({ open: open, selectedOption: selectedOption });
     }
   }
 
@@ -108,7 +103,7 @@ class ComboBox extends React.Component {
         scaled={scaled}
         size={size}
         data={selectedOption}
-        onClick={this.comboBoxClick}
+        onClick={this.onComboBoxClick}
         toggleAction={toggleAction}
         {...this.props}
       >
@@ -144,7 +139,7 @@ class ComboBox extends React.Component {
                     disabled={
                       option.disabled || option.label === selectedOption.label
                     }
-                    onClick={this.optionClick.bind(this, option)}
+                    onClick={this.onOptionClick.bind(this, option)}
                   />
                 ))}
           </DropDown>

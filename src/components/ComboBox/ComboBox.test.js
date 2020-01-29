@@ -403,16 +403,16 @@ describe("<ComboBox />", () => {
     expect(shouldUpdate).toBe(true);
   });
 
-  it("causes function comboBoxClick()", () => {
+  it("causes function onComboBoxClick()", () => {
     const wrapper = shallow(<ComboBox {...baseProps} />);
     const instance = wrapper.instance();
 
-    instance.comboBoxClick();
+    instance.onComboBoxClick();
 
     expect(wrapper.state("open")).toBe(true);
   });
 
-  it("causes function optionClick()", () => {
+  it("causes function onOptionClick()", () => {
     const onSelect = jest.fn();
     const selectedOption = {
       key: 1,
@@ -423,7 +423,7 @@ describe("<ComboBox />", () => {
     );
     const instance = wrapper.instance();
 
-    instance.optionClick(selectedOption);
+    instance.onOptionClick(selectedOption);
 
     expect(wrapper.state("open")).toBe(false);
     expect(onSelect).toHaveBeenCalledWith(selectedOption);
@@ -435,6 +435,13 @@ describe("<ComboBox />", () => {
     wrapper.simulate("click");
 
     expect(wrapper.state("open")).toBe(false);
+  });
+
+  it("disabled onComboBoxClick test", () => {
+    const wrapper = mount(<ComboBox {...baseProps} disabled />);
+
+    wrapper.simulate("click");
+    expect(wrapper.state("open")).toBe(wrapper.state("open"));
   });
 
   it("causes function handleClick() with simulate and ComboBox not open", () => {
@@ -450,33 +457,11 @@ describe("<ComboBox />", () => {
     const instance = wrapper.instance();
     const newSelected = { key: 1, label: "Select" };
 
-    jest.spyOn(instance, "setIsOpen");
+    instance.componentDidUpdate({ open: true });
+    expect(wrapper.props()).toBe(wrapper.props());
 
-    wrapper.setProps({
-      open: true
-    });
-
-    expect(wrapper.props().open).toBe(true);
-
-    wrapper.setProps({
-      open: false
-    });
-
-    expect(wrapper.props().open).toBe(false);
-
-    instance.componentDidUpdate(
-      {
-        open: true,
-        selectedOption: newSelected
-      },
-      {
-        open: true
-      }
-    );
-
-    instance.forceUpdate(); //Need for manual re-render, enzyme issue
-
-    expect(instance.setIsOpen).toHaveBeenCalled();
+    instance.componentDidUpdate({ selectedOption: newSelected });
+    expect(wrapper.props()).toBe(wrapper.props());
   });
 
   it("id className style is exist", () => {
@@ -501,19 +486,6 @@ describe("<ComboBox />", () => {
     );
 
     expect(wrapper.prop("displayType")).toEqual("toggle");
-  });
-
-  it("click on toggle", () => {
-    const onToggleClick = jest.fn();
-    const wrapper = mount(
-      <ComboBox {...toggleDisplayProps} toggleAction={onToggleClick} />
-    );
-
-    jest.spyOn(wrapper.instance(), "setIsOpen");
-
-    wrapper.simulate("click");
-
-    expect(onToggleClick).toHaveBeenCalled();
   });
 
   it("click outside", () => {
