@@ -483,9 +483,9 @@ const Dark = {
       baseWidth: "267px",
       bigWidth: "295px",
       weekendColor: gray,
-      disabledColor: grayLightMid,
-      neighboringHoverColor: black,
-      neighboringColor: grayLightMid
+      disabledColor: shuttleGrey,
+      neighboringHoverColor: white,
+      neighboringColor: grayMain
     },
     selectedDay: {
       backgroundColor: orangeMain,
