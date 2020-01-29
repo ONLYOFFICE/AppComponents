@@ -9,6 +9,7 @@ const {
   grayMid,
   gray,
   grayMain,
+  shuttleGrey,
 
   blueMain,
   blueHover,
