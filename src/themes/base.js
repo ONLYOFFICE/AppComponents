@@ -454,6 +454,58 @@ const Base = {
       disabledColor: grayMid,
       color: black
     }
+  },
+
+  calendar: {
+    baseWidth: "265px",
+    bigWidth: "289px",
+    containerBaseWidth: "293px",
+    containerBigWidth: "325px",
+
+    hover: {
+      backgroundColor: grayLightMid,
+      borderRadius: "16px",
+      cursor: "pointer"
+    },
+
+    day: {
+      width: "32px",
+      height: "32px",
+      baseSizeWidth: "270px",
+      bigSizeWidth: "294px",
+      baseMarginTop: "3px",
+      bigMarginTop: "7.5px",
+      lineHeight: "33px"
+    },
+    weekdays: {
+      baseWidth: "272px",
+      bigWidth: "295px",
+      marginBottom: "-5px"
+    },
+    month: {
+      baseWidth: "267px",
+      bigWidth: "295px",
+      weekendColor: gray,
+      disabledColor: grayLightMid,
+      neighboringHoverColor: black,
+      neighboringColor: grayLightMid
+    },
+    selectedDay: {
+      backgroundColor: orangeMain,
+      borderRadius: "16px",
+      cursor: "pointer",
+      color: white
+    },
+    comboBox: {
+      minWidth: "80px",
+      height: "32px",
+      marginLeft: "8px",
+      padding: "0 0 24px 0"
+    },
+    comboBoxMonth: {
+      baseWidth: "172px",
+      bigWidth: "196px"
+    }
   }
 };
 
