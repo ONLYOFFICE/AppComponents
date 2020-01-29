@@ -273,11 +273,6 @@ class Calendar extends Component {
       openToDateMonth - 1 === minDateMonth
     ) {
       prevMonthDay = minDateDay;
-      console.log("openToDateYear", openToDateYear);
-      console.log("minDateYear", minDateYear);
-      console.log("openToDateMonth - 1", openToDateMonth - 1);
-      console.log("minDateMonth", minDateMonth);
-      console.log("prevMonthDay", prevMonthDay);
     }
 
     //prev month + year
@@ -494,7 +489,7 @@ class Calendar extends Component {
       optionsWeekdays
     } = this.state;
 
-    const dropDownSizeMonth = optionsMonth.length > 4 ? 184 : undefined;
+    const dropDownSizeMonth = 184;
     const dropDownSizeYear = optionsYear.length > 4 ? 184 : undefined;
 
     return (
