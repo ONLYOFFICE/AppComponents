@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import CustomScrollbarsVirtualList from "../Scrollbar/CustomScrollbarsVirtualList";
 import { Base } from "../../themes";
 
 const StyledDropdown = styled.div`
@@ -49,10 +50,26 @@ const StyledDropdown = styled.div`
     -moz-box-shadow: ${props => props.theme.dropDown.boxShadow};
     -webkit-box-shadow: ${props => props.theme.dropDown.boxShadow};
     padding: ${props => props.theme.dropDown.padding};
+
+
+    ${props =>
+      props.height &&
+      css`
+        padding: 0px;
+      `}
+`;
+
+const StyledCustomScrollbarsVirtualList = styled(CustomScrollbarsVirtualList)`
+  .nav-thumb-vertical {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .nav-thumb-horizontal {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 `;
 
 StyledDropdown.defaultProps = {
   theme: Base
 };
 
-export default StyledDropdown;
+export { StyledDropdown, StyledCustomScrollbarsVirtualList };

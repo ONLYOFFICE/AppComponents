@@ -32,4 +32,3 @@ When using component, it should be noted that parent must have CSS property _pos
 | `manualY`               | `string` |    -     |        -        |    -     | Required if you need to specify the exact distance from the parent component          |
 | `maxHeight`             | `number` |    -     |        -        |    -     | Required if the scrollbar is displayed                                                |
 | `open`                  |  `bool`  |    -     |        -        | `false`  | Tells when the dropdown should be opened                                              |
-| `withBackdrop`          |  `bool`  |    -     |        -        |  `auto`  | Used to display backdrop                                                              |

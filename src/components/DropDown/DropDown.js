@@ -1,11 +1,10 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
-import CustomScrollbarsVirtualList from "../Scrollbar/CustomScrollbarsVirtualList";
 import DropDownItem from "../DropDownItem";
 import Backdrop from "../Backdrop";
 import { FixedSizeList } from "react-window";
 import onClickOutside from "react-onclickoutside";
-import StyledDropdown from "./StyledDropDown";
+import { StyledDropdown, StyledCustomScrollbarsVirtualList } from "./StyledDropDown";
 import { size } from "../../utils/device";
 
 const Row = memo(({ data, index, style }) => {
@@ -99,7 +98,7 @@ class DropDown extends React.PureComponent {
   };
 
   render() {
-    const { maxHeight, withBackdrop, children, open } = this.props;
+    const { maxHeight, children } = this.props;
     const { directionX, directionY, width } = this.state;
     const tabletHeight = 36;
     const height = 32;
@@ -130,7 +129,7 @@ class DropDown extends React.PureComponent {
               itemSize={itemHeight}
               itemCount={children.length}
               itemData={children}
-              outerElementType={CustomScrollbarsVirtualList}
+              outerElementType={StyledCustomScrollbarsVirtualList}
             >
               {Row}
             </FixedSizeList>
@@ -138,9 +137,6 @@ class DropDown extends React.PureComponent {
             children
           )}
         </StyledDropdown>
-        {withBackdrop && open && isTablet && (
-          <Backdrop visible zIndex={149} onClick={this.toggleDropDown} />
-        )}
       </>
     );
   }
@@ -155,7 +151,6 @@ DropDown.propTypes = {
   manualX: PropTypes.string,
   manualY: PropTypes.string,
   maxHeight: PropTypes.number,
-  withBackdrop: PropTypes.bool,
   clickOutsideAction: PropTypes.func,
   enableOnClickOutside: PropTypes.func,
   disableOnClickOutside: PropTypes.func
@@ -163,8 +158,7 @@ DropDown.propTypes = {
 
 DropDown.defaultProps = {
   directionX: "left",
-  directionY: "top",
-  withBackdrop: true
+  directionY: "top"
 };
 
 const EnhancedComponent = onClickOutside(DropDown);

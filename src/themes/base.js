@@ -9,6 +9,7 @@ const {
   grayMid,
   gray,
   grayMain,
+  shuttleGrey,
 
   blueMain,
   blueHover,
@@ -325,7 +326,12 @@ const Base = {
 
   backdrop: { backgroundColor: "rgba(0, 0, 0, 0.3)" },
 
-  loader: { color: "#63686a", size: "40px", ovalFill: "none", strokeWidth: 2 },
+  loader: {
+    color: shuttleGrey,
+    size: "40px",
+    ovalFill: "none",
+    strokeWidth: 2
+  },
 
   dropDownItem: {
     width: "100%",
@@ -380,10 +386,74 @@ const Base = {
 
   dropDown: {
     zIndex: "150",
-    background: "#FFF",
+    background: white,
     borderRadius: "6px",
     boxShadow: "0px 5px 20px rgba(0, 0, 0, 0.13)",
     padding: "6px 0px"
+  },
+
+  comboBox: {
+    width: {
+      base: "173px",
+      middle: "300px",
+      big: "350px",
+      huge: "500px"
+    },
+
+    arrow: {
+      width: "8px",
+      flex: "0 0 8px",
+      marginTopWithBorder: "5px",
+      marginTop: "12px",
+      marginRight: "8px",
+      marginLeft: "auto",
+      fillColor: gray
+    },
+
+    button: {
+      height: "18px",
+      heightWithBorder: "32px",
+      paddingLeft: "8px",
+
+      color: black,
+      disabledColor: grayMid,
+      background: white,
+      backgroundWithBorder: "none",
+
+      border: `1px solid ${grayMid}`,
+      borderRadius: "3px",
+      borderColor: blueMain,
+
+      disabledBorderColor: grayLightMid,
+      disabledBackground: grayLight,
+
+      hoverBorderColor: gray,
+      hoverBorderColorOpen: blueMain,
+      hoverDisabledBorderColor: grayLightMid
+    },
+
+    label: {
+      marginRightWithBorder: "8px",
+      marginRight: "4px",
+
+      defaultDisabledColor: grayMid,
+      defaultColor: gray,
+      disabledColor: grayMid,
+      color: black,
+
+      maxWidth: "175px",
+
+      lineHeightWithoutBorder: "15px",
+      lineHeightTextDecoration: "underline dashed transparent"
+    },
+
+    childrenButton: {
+      marginRight: "8px",
+      defaultDisabledColor: grayMid,
+      defaultColor: gray,
+      disabledColor: grayMid,
+      color: black
+    }
   }
 };
 

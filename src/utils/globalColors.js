@@ -7,6 +7,7 @@ const globalColors = {
   grayMid: "#D0D5DA",
   gray: "#A3A9AE",
   grayMain: "#657077",
+  shuttleGrey: "#63686A",
 
   blueMain: "#2DA7DB",
   blueHover: "#3DB8EC",
