@@ -51,9 +51,9 @@ storiesOf("Components|Calendar", module)
         onChange={date => {
           action("Selected date")(date);
         }}
-        selectedDate={myDateKnob("selectedDate", new Date("09/12/2019"))}
-        openToDate={myDateKnob("openToDate", new Date("09/12/2019"))}
-        minDate={myDateKnob("minDate", new Date("09/12/2019"))}
+        selectedDate={myDateKnob("selectedDate", new Date())}
+        openToDate={myDateKnob("openToDate", new Date())}
+        minDate={myDateKnob("minDate", new Date("1970/01/01"))}
         maxDate={myDateKnob(
           "maxDate",
           new Date(new Date().getFullYear() + 1 + "/01/01")
