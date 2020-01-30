@@ -7,8 +7,7 @@ class ToggleContent extends React.Component {
   constructor(props) {
     super(props);
 
-    const { open } = props;
-    this.state = { open };
+    this.state = { open: props.open };
   }
 
   toggleContent = () => this.setState({ open: !this.state.open });
@@ -24,19 +23,13 @@ class ToggleContent extends React.Component {
     // console.log("ToggleContent render");
 
     const { children, label } = this.props;
-
     const { open } = this.state;
 
     return (
       <StyledContainer>
         <span className="span-toggle-content" onClick={this.toggleContent}>
           <Arrow open={open} />
-          <Heading
-            className="heading-toggle-content"
-            level={2}
-            size="small"
-            isInline={true}
-          >
+          <Heading className="heading-toggle-content" level={2} size="small">
             {label}
           </Heading>
         </span>
