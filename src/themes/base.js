@@ -194,7 +194,7 @@ const Base = {
 
   textInput: {
     fontWeight: "normal",
-    placeholderColor: grayMid,
+    placeholderColor: gray,
     disablePlaceholderColor: grayMid,
 
     transition: "all 0.2s ease 0s",
