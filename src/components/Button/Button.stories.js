@@ -7,7 +7,7 @@ import Readme from "./README.md";
 import Button from ".";
 import Box from "../Box";
 
-storiesOf("Components|Buttons", module)
+storiesOf("Components|Button", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
   .add("Default", () => {
