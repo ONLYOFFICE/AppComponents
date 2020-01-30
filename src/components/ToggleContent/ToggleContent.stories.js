@@ -34,7 +34,7 @@ storiesOf("Components|ToggleContent", module)
         case "button":
           children.push(
             <Button
-              label={text("Button label", "OK")}
+              label={text("Button label", "Button")}
               key={i}
               onClick={action("button clicked!")}
             />
@@ -65,7 +65,8 @@ storiesOf("Components|ToggleContent", module)
             <TextInput
               key={i}
               border
-              value="text"
+              value=""
+              placeholder="This is placeholder"
               onChange={event => alert(event.target.value)}
             />
           );
