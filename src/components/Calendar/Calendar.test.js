@@ -60,7 +60,6 @@ const baseDayProps = {
 };
 
 const selectedDate = new Date("09/12/2019");
-const openToDate = new Date("09/12/2019");
 const minDate = new Date("01/01/1970");
 const maxDate = new Date(new Date().getFullYear() + 1 + "/01/01");
 
@@ -439,7 +438,6 @@ describe("Calendar tests:", () => {
     const wrapper = shallow(<Calendar />).instance();
     let result = wrapper.getDays(minDate, maxDate, openToDate, selectedDate);
 
-    //TODO: Need fix this
     let i = 0;
     while (i !== 17) {
       expect(result[i].disableClass).toEqual("calendar-month_disabled");
@@ -453,7 +451,6 @@ describe("Calendar tests:", () => {
     const wrapper2 = shallow(<Calendar />).instance();
     result = wrapper2.getDays(minDate, maxDate, openToDate, selectedDate);
 
-    //TODO: Need fix this
     i = 0;
     while (i !== 29) {
       expect(result[i].disableClass).toEqual(null);
@@ -467,22 +464,55 @@ describe("Calendar tests:", () => {
     const wrapper3 = shallow(<Calendar />).instance();
     result = wrapper3.getDays(minDate, maxDate, openToDate, selectedDate);
 
-    //TODO: Need fix this
     i = 0;
     while (i !== 31) {
       expect(result[i].disableClass).toEqual(null);
       i++;
     }
 
-    selectedDate = new Date("01/01/2019");
-    minDate = new Date("12/01/2019");
+    selectedDate = new Date("02/01/2020");
+    minDate = new Date("01/30/2020");
+    openToDate = new Date("02/01/2020");
+    maxDate = new Date("01/01/2020");
+    const wrapper5 = shallow(<Calendar />).instance();
+    result = wrapper5.getDays(minDate, maxDate, openToDate, selectedDate);
+
+    i = 0;
+    while (i !== 3) {
+      expect(result[i].disableClass).toEqual("calendar-month_disabled");
+      i++;
+    }
+
+    selectedDate = new Date("02/01/2020");
+    minDate = new Date("12/31/2019");
     openToDate = new Date("01/01/2020");
     maxDate = new Date("01/01/2020");
-    const wrapper4 = shallow(<Calendar />).instance();
-    result = wrapper4.getDays(minDate, maxDate, openToDate, selectedDate);
+    const wrapper6 = shallow(<Calendar />).instance();
+    result = wrapper6.getDays(minDate, maxDate, openToDate, selectedDate);
+    expect(result[0].disableClass).toEqual("calendar-month_disabled");
 
-    //TODO: Need fix this
+    selectedDate = new Date("02/01/2020");
+    minDate = new Date("12/31/2019");
+    openToDate = new Date("04/01/2021");
+    maxDate = new Date("05/01/2021");
+    const wrapper7 = shallow(<Calendar />).instance();
+    result = wrapper7.getDays(minDate, maxDate, openToDate, selectedDate);
+    i = 34;
+    while (i !== 42) {
+      expect(result[i].disableClass).toEqual("calendar-month_disabled");
+      i++;
+    }
+  });
 
-    expect(result[2].disableClass).toEqual(null);
+  it("Calendar render comboBox dropDown year size", () => {
+    const props = {
+      selectedDate: new Date("02/01/2020"),
+      minDate: new Date("12/31/2019"),
+      openToDate: new Date("01/01/2020"),
+      maxDate: new Date("01/01/2020")
+    };
+
+    const wrapper = mount(<Calendar {...props} />);
+    expect(wrapper).toExist();
   });
 });
