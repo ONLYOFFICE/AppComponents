@@ -450,6 +450,15 @@ const Dark = {
       disabledColor: grayMid,
       color: black
     }
+  },
+  toggleContent: {
+    headingHeight: "24px",
+    headingLineHeight: "18px",
+    hoverBorderBottom: "1px dashed",
+    contentPadding: "10px 0px 0px 0px",
+    arrowMargin: "4px 8px 4px 0px",
+    transform: "rotate(180deg)",
+    iconColor: white
   }
 };
 
