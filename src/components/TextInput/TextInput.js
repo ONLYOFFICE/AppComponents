@@ -13,4 +13,15 @@ class TextInput extends React.Component {
   }
 }
 
+TextInput.defaultProps = {
+  type: "text",
+  value: "",
+  maxLength: 255,
+  size: "base",
+  tabIndex: -1,
+  autoComplete: "off",
+  border: true,
+  keepCharPositions: false
+};
+
 export default TextInput;

@@ -24,6 +24,34 @@ const StyledTextArea = styled(TextareaAutosize)`
   :focus {
     outline: ${props => props.theme.textArea.focusOutline};
   }
+
+  ::-webkit-input-placeholder {
+    color: ${props =>
+      props.disabled
+        ? props.theme.textInput.disablePlaceholderColor
+        : props.theme.textInput.placeholderColor};
+  }
+
+  :-moz-placeholder {
+    color: ${props =>
+      props.disabled
+        ? props.theme.textInput.disablePlaceholderColor
+        : props.theme.textInput.placeholderColor};
+  }
+
+  ::-moz-placeholder {
+    color: ${props =>
+      props.disabled
+        ? props.theme.textInput.disablePlaceholderColor
+        : props.theme.textInput.placeholderColor};
+  }
+
+  :-ms-input-placeholder {
+    color: ${props =>
+      props.disabled
+        ? props.theme.textInput.disablePlaceholderColor
+        : props.theme.textInput.placeholderColor};
+  }
 `;
 
 const StyledScrollbar = styled(Scrollbar)`

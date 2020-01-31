@@ -6,7 +6,7 @@ import Readme from "./README.md";
 import Loader from ".";
 import Box from "../Box";
 
-storiesOf("Components|Loaders", module)
+storiesOf("Components|Loader", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
   .add("Default", () => (

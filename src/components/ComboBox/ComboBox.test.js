@@ -464,7 +464,7 @@ describe("<ComboBox />", () => {
     expect(wrapper.props()).toBe(wrapper.props());
   });
 
-  it("id className style is exist", () => {
+  it("id, className, style is exists", () => {
     const wrapper = mount(
       <ComboBox
         {...baseProps}
