@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Base } from "../../themes/index";
+import { NoUserSelect } from "../../utils/commonStyles";
 
 const activeCss = css`
   &:active {
@@ -45,19 +46,21 @@ const colorStyle = props =>
     ? props.theme.button.color.disabled
     : props.theme.button.color.base);
 
-const backgroundColorStyle = props => props.primary
-  ? props.disabled
-    ? props.theme.button.backgroundColor.primaryDisabled
-    : props.theme.button.backgroundColor.primary
-  : props.disabled
+const backgroundColorStyle = props =>
+  props.primary
+    ? props.disabled
+      ? props.theme.button.backgroundColor.primaryDisabled
+      : props.theme.button.backgroundColor.primary
+    : props.disabled
     ? props.theme.button.backgroundColor.baseDisabled
     : props.theme.button.backgroundColor.base;
 
-const borderStyle = props => props.primary
-  ? props.disabled
-    ? props.theme.button.border.primaryDisabled
-    : props.theme.button.border.primary
-  : props.disabled
+const borderStyle = props =>
+  props.primary
+    ? props.disabled
+      ? props.theme.button.border.primaryDisabled
+      : props.theme.button.border.primary
+    : props.disabled
     ? props.theme.button.border.baseDisabled
     : props.theme.button.border.base;
 
@@ -67,7 +70,7 @@ const StyledButton = styled.button.attrs(props => ({
 }))`
 font-family: ${props => props.theme.fontFamily};
 font-weight: ${props => props.theme.button.fontWeight};
-box-sizing: ${props => props.theme.button.boxSizing};
+box-sizing: "border-box";
 margin: ${props => props.theme.button.margin};
 display: ${props => props.theme.button.display};
 text-align: ${props => props.theme.button.textAlign};
@@ -76,14 +79,9 @@ vertical-align: ${props => props.theme.button.verticalAlign};
 border-radius: ${props => props.theme.button.borderRadius};
 -moz-border-radius: ${props => props.theme.button.borderRadius};
 -webkit-border-radius: ${props => props.theme.button.borderRadius};
-touch-callout: ${props => props.theme.button.touchCallout};
--o-touch-callout: ${props => props.theme.button.touchCallout};
--moz-touch-callout: ${props => props.theme.button.touchCallout};
--webkit-touch-callout: ${props => props.theme.button.touchCallout};
-user-select: ${props => props.theme.button.userSelect};
--o-user-select: ${props => props.theme.button.userSelect};
--moz-user-select: ${props => props.theme.button.userSelect};
--webkit-user-select: ${props => props.theme.button.userSelect};
+
+${NoUserSelect};
+
 stroke: ${props => props.theme.button.stroke};
 overflow: ${props => props.theme.button.overflow};
 text-overflow: ${props => props.theme.button.textOverflow};

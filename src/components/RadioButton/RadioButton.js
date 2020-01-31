@@ -1,11 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Text from "../Text";
 import { RadioButtonIcon, RadioButtonIconChecked } from "./svg";
-import {
-  StyledRadioButton,
-  HiddenInput,
-  StyledText
-} from "./StyledRadioButton";
+import { StyledRadioButton, StyledHiddenInput } from "./StyledRadioButton";
 
 class RadioButton extends React.Component {
   constructor(props) {
@@ -31,9 +28,14 @@ class RadioButton extends React.Component {
     const { disabled, reverse, label } = this.props;
 
     return (
-      <StyledText as="span" disabled={disabled} reverse={reverse}>
+      <Text
+        as="span"
+        className="radio-button-text"
+        disabled={disabled}
+        reverse={reverse}
+      >
         {label}
-      </StyledText>
+      </Text>
     );
   };
 
@@ -42,9 +44,10 @@ class RadioButton extends React.Component {
 
     return (
       <>
-        {React.createElement(
-          checked ? RadioButtonIconChecked : RadioButtonIcon,
-          { className: "radio-button" }
+        {checked ? (
+          <RadioButtonIconChecked className="radio-button" />
+        ) : (
+          <RadioButtonIcon className="radio-button" />
         )}
       </>
     );
@@ -55,25 +58,25 @@ class RadioButton extends React.Component {
     const { label, disabled, value, reverse, checked } = this.props;
     const { onClick, ...rest } = this.props;
 
+    const firstComponent = reverse
+      ? this.renderLabel()
+      : this.renderRadioButton();
+    const secondComponent = reverse
+      ? this.renderRadioButton()
+      : this.renderLabel();
+
     return (
       <StyledRadioButton {...rest}>
         {label ? (
-          reverse ? (
-            <>
-              {this.renderLabel()}
-              {this.renderRadioButton()}
-            </>
-          ) : (
-            <>
-              {this.renderRadioButton()}
-              {this.renderLabel()}
-            </>
-          )
+          <>
+            {firstComponent}
+            {secondComponent}
+          </>
         ) : (
           this.renderRadioButton()
         )}
 
-        <HiddenInput
+        <StyledHiddenInput
           type="radio"
           value={value}
           checked={checked}

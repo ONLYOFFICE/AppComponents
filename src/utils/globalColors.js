@@ -3,10 +3,11 @@ const globalColors = {
   white: "#FFF",
   whiteSolitude: "#E4E7EB",
   grayLight: "#F8F9F9",
-  greyLightMid: "#ECEEF1",
-  greyMid: "#D0D5DA",
-  grey: "#A3A9AE",
-  greyMain: "#657077",
+  grayLightMid: "#ECEEF1",
+  grayMid: "#D0D5DA",
+  gray: "#A3A9AE",
+  grayMain: "#657077",
+  shuttleGrey: "#63686A",
 
   blueMain: "#2DA7DB",
   blueHover: "#3DB8EC",
@@ -20,7 +21,10 @@ const globalColors = {
   orangeDisabled: "#FFCCA6",
 
   link: "#316DAA",
-  errorColor: "#C96C27"
+  errorColor: "#C96C27",
+
+  warningColor: "#f1ca92",
+  red: "#c30"
 };
 
 export default globalColors;

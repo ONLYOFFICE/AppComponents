@@ -1,16 +1,13 @@
 import styled, { css } from "styled-components";
 import { Base } from "../../themes/index";
-import Text from "../Text";
+import { NoUserSelect } from "../../utils/commonStyles";
 
 const StyledCheckbox = styled.label`
   display: flex;
   align-items: center;
   position: relative;
   margin: 0;
-  user-select: none;
-  -o-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
+  ${NoUserSelect};
 
   svg {
     ${props =>
@@ -67,22 +64,21 @@ const StyledCheckbox = styled.label`
             }
           `}
   }
+
+  .checkbox-text {
+    ${props => (props.reverse ? `margin-right: 8px` : `margin-left: 8px`)};
+    color: ${props =>
+      props.disabled ? props.theme.text.disableColor : props.theme.text.color};
+  }
 `;
 
-const HiddenInput = styled.input`
+const StyledHiddenInput = styled.input`
   opacity: 0.0001;
   position: absolute;
   right: 0;
   z-index: -1;
 `;
 
-const StyledText = styled(Text)`
-  ${props => (props.reverse ? `margin-right: 8px` : `margin-left: 8px`)};
-  color: ${props =>
-    props.disabled ? props.theme.text.disableColor : props.theme.text.color};
-`;
-
 StyledCheckbox.defaultProps = { theme: Base };
-StyledText.defaultProps = { theme: Base };
 
-export { StyledCheckbox, HiddenInput, StyledText };
+export { StyledCheckbox, StyledHiddenInput };

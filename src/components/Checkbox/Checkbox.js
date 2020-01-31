@@ -5,7 +5,8 @@ import {
   CheckboxCheckedIcon,
   CheckboxIndeterminateIcon
 } from "./svg";
-import { StyledCheckbox, HiddenInput, StyledText } from "./StyledCheckbox";
+import Text from "../Text";
+import { StyledCheckbox, StyledHiddenInput } from "./StyledCheckbox";
 
 class Checkbox extends React.Component {
   constructor(props) {
@@ -40,9 +41,14 @@ class Checkbox extends React.Component {
     const { reverse, disabled, label } = this.props;
 
     return (
-      <StyledText as="span" reverse={reverse} disabled={disabled}>
+      <Text
+        as="span"
+        className="checkbox-text"
+        reverse={reverse}
+        disabled={disabled}
+      >
         {label}
-      </StyledText>
+      </Text>
     );
   };
 
@@ -51,12 +57,12 @@ class Checkbox extends React.Component {
 
     return (
       <>
-        {React.createElement(
-          indeterminate
-            ? CheckboxIndeterminateIcon
-            : checked
-            ? CheckboxCheckedIcon
-            : CheckboxIcon
+        {indeterminate ? (
+          <CheckboxIndeterminateIcon />
+        ) : checked ? (
+          <CheckboxCheckedIcon />
+        ) : (
+          <CheckboxIcon />
         )}
       </>
     );
@@ -67,25 +73,23 @@ class Checkbox extends React.Component {
     const { disabled, label, reverse } = this.props;
     const { onChange, ...rest } = this.props;
 
+    const firstComponent = reverse ? this.renderLabel() : this.renderCheckbox();
+    const secondComponent = reverse
+      ? this.renderCheckbox()
+      : this.renderLabel();
+
     return (
       <StyledCheckbox {...rest}>
         {label ? (
-          reverse ? (
-            <>
-              {this.renderLabel()}
-              {this.renderCheckbox()}
-            </>
-          ) : (
-            <>
-              {this.renderCheckbox()}
-              {this.renderLabel()}
-            </>
-          )
+          <>
+            {firstComponent}
+            {secondComponent}
+          </>
         ) : (
           this.renderCheckbox()
         )}
 
-        <HiddenInput
+        <StyledHiddenInput
           type="checkbox"
           checked={this.state.checked}
           disabled={disabled}

@@ -3,7 +3,7 @@ import { mount, shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 import Checkbox from ".";
-import { StyledCheckbox, StyledText } from "./StyledCheckbox";
+import { StyledCheckbox } from "./StyledCheckbox";
 import { Base } from "../../themes/index";
 
 const baseProps = {
@@ -162,10 +162,14 @@ describe("<Checkbox />", () => {
       }
     );
 
-    const tree4 = renderer.create(<StyledText reverse></StyledText>).toJSON();
-    expect(tree4).toHaveStyleRule("margin-right", "8px");
+    const tree4 = renderer.create(<StyledCheckbox reverse />).toJSON();
+    expect(tree4).toHaveStyleRule("margin-right", "8px", {
+      modifier: ".checkbox-text"
+    });
 
-    const tree5 = renderer.create(<StyledText></StyledText>).toJSON();
-    expect(tree5).toHaveStyleRule("margin-left", "8px");
+    const tree5 = renderer.create(<StyledCheckbox />).toJSON();
+    expect(tree5).toHaveStyleRule("margin-left", "8px", {
+      modifier: ".checkbox-text"
+    });
   });
 });
