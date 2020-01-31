@@ -305,11 +305,11 @@ describe("Calendar tests:", () => {
     );
   });
 
-  it("test firstDayOfMonth function", () => {
+  it("test getFirstDayOfMonth function", () => {
     const openToDate = new Date("03/01/2020");
     const wrapper = shallow(<Calendar />).instance();
 
-    expect(wrapper.firstDayOfMonth(openToDate)).toEqual(6);
+    expect(wrapper.getFirstDayOfMonth(openToDate)).toEqual(6);
   });
 
   it("test onSelectYear function", () => {
