@@ -1,6 +1,6 @@
-// import React from "react";
-// import Icon from "../../Icon";
-import createStyledIcon from "./createStyledIcon";
+import React from "react";
+import Icon from "../../Icon";
+// import createStyledIcon from "./createStyledIcon";
 import OrigCalendarIcon from "./calendar.react.svg";
 import OrigExpanderRightIcon from "./expander-right.react.svg";
 import OrigVerticalDotsIcon from "./vertical-dots.react.svg";
@@ -11,23 +11,20 @@ import OrigPlusIcon from "./actions.header.touch.react.svg";
 import OrigCheckIcon from "./check.react.svg";
 import OrigQuestionIcon from "./question.react.svg";
 
-export const CalendarIcon = createStyledIcon(OrigCalendarIcon, "CalendarIcon");
-export const CheckIcon = createStyledIcon(OrigCheckIcon, "CheckIcon");
-export const ExpanderRightIcon = createStyledIcon(
-  OrigExpanderRightIcon,
-  "ExpanderRightIcon"
-);
-export const PlusIcon = createStyledIcon(OrigPlusIcon, "PlusIcon");
-export const RefreshIcon = createStyledIcon(OrigRefreshIcon, "RefreshIcon");
-export const SearchIcon = createStyledIcon(OrigSearchIcon, "SearchIcon");
-export const SettingsIcon = createStyledIcon(OrigSettingsIcon, "SettingsIcon");
-export const VerticalDotsIcon = createStyledIcon(
-  OrigVerticalDotsIcon,
-  "VerticalDotsIcon"
-);
+export const CalendarIcon = (props) => <Icon svgSource={OrigCalendarIcon} {...props} />;
 
-export const QuestionIcon = createStyledIcon(
-  OrigQuestionIcon,
-  "ToggleButtonIcon",
-  "rect"
-);
+export const CheckIcon = (props) => <Icon svgSource={OrigCheckIcon} {...props} />;
+
+export const ExpanderRightIcon = (props) => <Icon svgSource={OrigExpanderRightIcon} {...props} />;
+
+export const PlusIcon = (props) => <Icon svgSource={OrigPlusIcon} {...props} />;
+
+export const RefreshIcon = (props) => <Icon svgSource={OrigRefreshIcon} {...props} />;
+
+export const SearchIcon = (props) => <Icon svgSource={OrigSearchIcon} {...props} />;
+
+export const SettingsIcon = (props) => <Icon svgSource={OrigSettingsIcon} {...props} />;
+
+export const VerticalDotsIcon = (props) => <Icon svgSource={OrigVerticalDotsIcon} {...props} />;
+
+export const QuestionIcon = (props) => <Icon svgSource={OrigQuestionIcon} fillPath="rect" {...props} />;

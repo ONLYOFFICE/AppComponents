@@ -16,7 +16,7 @@ const iconNames = Object.keys(Icons);
 storiesOf("Components|Icons", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
-  .addParameters({ options: { showAddonPanel: false } })
+  .addParameters({ options: { showAddonPanel: true } })
   .add("Default", () => (
     <Box
       displayProp="grid"
