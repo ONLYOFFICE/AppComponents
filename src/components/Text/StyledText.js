@@ -5,6 +5,7 @@ const styleCss = css`
   font-family: ${props => props.theme.fontFamily};
   color: ${props => (props.color ? props.color : props.theme.text.color)};
   
+  margin: 0;
   outline: none;
   margin: 0;
 
