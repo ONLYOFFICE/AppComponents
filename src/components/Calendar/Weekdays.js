@@ -15,6 +15,7 @@ class Weekdays extends React.Component {
     }
     return true;
   }
+  
   render() {
     //console.log("Weekdays render");
     const { optionsWeekdays, size } = this.props;

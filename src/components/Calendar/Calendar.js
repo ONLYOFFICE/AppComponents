@@ -212,7 +212,7 @@ class Calendar extends Component {
     return currentYear;
   };
 
-  firstDayOfMonth = openToDate => {
+  getFirstDayOfMonth = openToDate => {
     const firstDay = moment(openToDate)
       .locale("en")
       .startOf("month")
@@ -237,29 +237,16 @@ class Calendar extends Component {
     return arrayWeekDays;
   };
 
-  getDays = (minDate, maxDate, openToDate, selectedDate) => {
-    const currentYear = openToDate.getFullYear();
-    const currentMonth = openToDate.getMonth() + 1;
-    const countDaysInMonth = new Date(currentYear, currentMonth, 0).getDate();
-    let countDaysInPrevMonth = new Date(
-      currentYear,
-      currentMonth - 1,
-      0
-    ).getDate();
-    const arrayDays = [];
-    let className = "calendar-month_neighboringMonth";
-
-    const openToDateMonth = openToDate.getMonth();
-    const openToDateYear = openToDate.getFullYear();
-
-    const maxDateMonth = maxDate.getMonth();
-    const maxDateYear = maxDate.getFullYear();
-    const maxDateDay = maxDate.getDate();
-
-    const minDateMonth = minDate.getMonth();
-    const minDateYear = minDate.getFullYear();
-    const minDateDay = minDate.getDate();
-
+  getDaysInPrevMonth = (
+    openToDateYear,
+    minDateYear,
+    openToDateMonth,
+    minDateMonth,
+    minDateDay,
+    openToDate,
+    arrayDays,
+    countDaysInPrevMonth
+  ) => {
     //Disable preview month
     let disableClass = null;
     if (openToDateYear === minDateYear && openToDateMonth === minDateMonth) {
@@ -286,9 +273,9 @@ class Calendar extends Component {
     }
 
     // Show neighboring days in prev month
-    const firstDayOfMonth = this.firstDayOfMonth(openToDate);
-
-    for (let i = firstDayOfMonth; i != 0; i--) {
+    const getFirstDayOfMonth = this.getFirstDayOfMonth(openToDate);
+    let className = "calendar-month_neighboringMonth";
+    for (let i = getFirstDayOfMonth; i != 0; i--) {
       if (countDaysInPrevMonth + 1 === prevMonthDay) {
         disableClass = "calendar-month_disabled";
       }
@@ -302,10 +289,27 @@ class Calendar extends Component {
         dayState: "prev"
       });
     }
+    return arrayDays;
+  };
 
+  getDaysInCurrentMonth = (
+    openToDateYear,
+    maxDateYear,
+    openToDateMonth,
+    maxDateMonth,
+    maxDateDay,
+    minDateYear,
+    minDateMonth,
+    minDateDay,
+    selectedDate,
+    countDaysInMonth,
+    getFirstDayOfMonth,
+    openToDate,
+    arrayDays
+  ) => {
     //Disable max days in month
     let maxDay, minDay;
-    disableClass = null;
+    let disableClass = null;
     if (openToDateYear === maxDateYear && openToDateMonth >= maxDateMonth) {
       if (openToDateMonth === maxDateMonth) {
         maxDay = maxDateDay;
@@ -326,11 +330,11 @@ class Calendar extends Component {
     // Show days in month and weekend days
     let seven = 7;
     const dateNow = selectedDate.getDate();
-
+    let className = null;
     for (let i = 1; i <= countDaysInMonth; i++) {
-      if (i === seven - firstDayOfMonth - 1) {
+      if (i === seven - getFirstDayOfMonth - 1) {
         className = "calendar-month_weekend";
-      } else if (i === seven - firstDayOfMonth) {
+      } else if (i === seven - getFirstDayOfMonth) {
         seven += 7;
         className = "calendar-month_weekend";
       } else {
@@ -353,13 +357,25 @@ class Calendar extends Component {
         dayState: "now"
       });
     }
+    return arrayDays;
+  };
 
+  getDaysInNextMonth = (
+    getFirstDayOfMonth,
+    countDaysInMonth,
+    openToDateYear,
+    maxDateYear,
+    openToDateMonth,
+    maxDateMonth,
+    maxDateDay,
+    arrayDays
+  ) => {
     //Calculating neighboring days in next month
     let maxDaysInMonthTable = 42;
     const maxDaysInMonth = 42;
-    if (firstDayOfMonth > 5 && countDaysInMonth >= 30) {
+    if (getFirstDayOfMonth > 5 && countDaysInMonth >= 30) {
       maxDaysInMonthTable += 7;
-    } else if (firstDayOfMonth >= 5 && countDaysInMonth > 30) {
+    } else if (getFirstDayOfMonth >= 5 && countDaysInMonth > 30) {
       maxDaysInMonthTable += 7;
     }
     if (maxDaysInMonthTable > maxDaysInMonth) {
@@ -367,7 +383,7 @@ class Calendar extends Component {
     }
 
     //Disable next month days
-    disableClass = null;
+    let disableClass = null;
     if (openToDateYear === maxDateYear && openToDateMonth >= maxDateMonth) {
       disableClass = "calendar-month_disabled";
     }
@@ -393,10 +409,10 @@ class Calendar extends Component {
 
     //Show neighboring days in next month
     let dayInNextMonth = 1;
-    className = "calendar-month_neighboringMonth";
+    let className = "calendar-month_neighboringMonth";
     for (
       let i = countDaysInMonth;
-      i < maxDaysInMonthTable - firstDayOfMonth;
+      i < maxDaysInMonthTable - getFirstDayOfMonth;
       i++
     ) {
       if (i - countDaysInMonth === nextYearDay) {
@@ -412,6 +428,72 @@ class Calendar extends Component {
         dayState: "next"
       });
     }
+    return arrayDays;
+  };
+
+  getDays = (minDate, maxDate, openToDate, selectedDate) => {
+    const currentYear = openToDate.getFullYear();
+    const currentMonth = openToDate.getMonth() + 1;
+    const countDaysInMonth = new Date(currentYear, currentMonth, 0).getDate();
+    let countDaysInPrevMonth = new Date(
+      currentYear,
+      currentMonth - 1,
+      0
+    ).getDate();
+
+    let arrayDays = [];
+
+    const openToDateMonth = openToDate.getMonth();
+    const openToDateYear = openToDate.getFullYear();
+
+    const maxDateMonth = maxDate.getMonth();
+    const maxDateYear = maxDate.getFullYear();
+    const maxDateDay = maxDate.getDate();
+
+    const minDateMonth = minDate.getMonth();
+    const minDateYear = minDate.getFullYear();
+    const minDateDay = minDate.getDate();
+
+    const getFirstDayOfMonth = this.getFirstDayOfMonth(openToDate);
+
+    arrayDays = this.getDaysInPrevMonth(
+      openToDateYear,
+      minDateYear,
+      openToDateMonth,
+      minDateMonth,
+      minDateDay,
+      openToDate,
+      arrayDays,
+      countDaysInPrevMonth
+    );
+
+    arrayDays = this.getDaysInCurrentMonth(
+      openToDateYear,
+      maxDateYear,
+      openToDateMonth,
+      maxDateMonth,
+      maxDateDay,
+      minDateYear,
+      minDateMonth,
+      minDateDay,
+      selectedDate,
+      countDaysInMonth,
+      getFirstDayOfMonth,
+      openToDate,
+      arrayDays
+    );
+
+    arrayDays = this.getDaysInNextMonth(
+      getFirstDayOfMonth,
+      countDaysInMonth,
+      openToDateYear,
+      maxDateYear,
+      openToDateMonth,
+      maxDateMonth,
+      maxDateDay,
+      arrayDays
+    );
+
     //console.log("arrayDays", arrayDays);
     return arrayDays;
   };
