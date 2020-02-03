@@ -30,18 +30,10 @@ describe("DatePicker tests", () => {
 
   it("DatePicker componentDidUpdate() lifecycle test", () => {
     const wrapper = mount(<DatePicker />).instance();
-    //wrapper.componentDidUpdate(wrapper.props, wrapper.state);
-    //
-    //expect(wrapper.props).toBe(wrapper.props);
-    //expect(wrapper.state).toBe(wrapper.state);
+    wrapper.componentDidUpdate(wrapper.props, wrapper.state);
 
-    //Test error date function
-    //        const date = new Date();
-    //        date.setFullYear(1);
-    //
-    //        wrapper.componentDidUpdate({ selectedDate: date }, wrapper.state);
-    //        expect(wrapper.state.error).toBe(true);
-    //Test error date function
+    expect(wrapper.props).toBe(wrapper.props);
+    expect(wrapper.state).toBe(wrapper.state);
 
     wrapper.componentDidUpdate({ locale: "en" }, wrapper.state);
     expect(wrapper.state.value).toBe(moment(new Date()).format("L"));
@@ -72,7 +64,7 @@ describe("DatePicker tests", () => {
         error={false}
       />
     );
-    
+
     const instance = wrapper2.instance();
     instance.componentDidUpdate(
       { selectedDate: new Date("01/01/2030") },
@@ -81,8 +73,16 @@ describe("DatePicker tests", () => {
     expect(instance.state.error).toBe(true);
     expect(instance.state.open).toBe(false);
 
+    //Test error date function
     wrapper2.setProps({ selectedDate: new Date("01/01/2020") });
     expect(instance.state.error).toBe(false);
+
+    const date = new Date();
+    date.setFullYear(1);
+    wrapper2.setProps({ selectedDate: date });
+
+    instance.componentDidUpdate({ selectedDate: date }, wrapper.state);
+    expect(instance.state.error).toBe(true);
   });
 
   it("DatePicker check Compare date function", () => {
@@ -115,7 +115,7 @@ describe("DatePicker tests", () => {
   });
 
   it("DatePicker test onClick function", () => {
-    const wrapper = mount(<DatePicker open />);
+    const wrapper = mount(<DatePicker open disabled={false} />);
     const svg = wrapper.find(".calendar-icon");
 
     svg.simulate("click");
@@ -124,14 +124,14 @@ describe("DatePicker tests", () => {
     expect(wrapper.state("open")).toBe(true);
 
     const wrapper2 = mount(<DatePicker open={false} disabled />);
-    const svg2 = wrapper.find(".calendar-icon");
+    const svg2 = wrapper2.find(".calendar-icon");
     svg2.simulate("click");
     expect(wrapper2.state("open")).toBe(false);
     svg2.simulate("click");
     expect(wrapper2.state("open")).toBe(false);
   });
 
-  it("DatePicker test onClick function", () => {
+  it("DatePicker test getMask function", () => {
     const wrapper = shallow(<DatePicker open locale="en" />).instance();
     const mask = [/\d/, /\d/, "/", /\d/, /\d/, "/", /\d/, /\d/, /\d/, /\d/];
     expect(wrapper.getMask()).toEqual(mask);
@@ -186,6 +186,21 @@ describe("DatePicker tests", () => {
     expect(onChange).toHaveBeenCalled();
     expect(wrapper3.state("error")).toBe(true);
     expect(wrapper3.state("open")).toBe(false);
+
+    const props4 = { value: "03/03/2000", onChange };
+    const wrapper4 = mount(<DatePicker {...props4} />);
+    const input3 = wrapper4.find("input");
+    input3.simulate("change", { target: { value: "03/03/2000" } });
+    expect(onChange).toHaveBeenCalled();
+    input3.simulate("change", { target: { value: "03/03/2000" } });
+    expect(onChange).toHaveBeenCalled();
+
+    const momentDate = moment(
+      "03/03/2000",
+      moment.localeData().longDateFormat("L")
+    );
+    const date = momentDate.toDate();
+    expect(wrapper4.state("selectedDate")).toStrictEqual(date);
   });
 
   it("DatePicker check the Calendar onChange callback", () => {
