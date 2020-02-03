@@ -512,6 +512,16 @@ const Dark = {
       baseWidth: "172px",
       bigWidth: "196px"
     }
+  },
+
+  datePicker: {
+    width: "110px",
+    dropDownPadding: "16px 16px 16px 17px",
+    inputPadding: "5px 5px 5px 9px",
+    inputBorder: blueMain,
+    iconHeight: "100%",
+    iconWidth: "100%",
+    iconPadding: "0px 8px 0px 0px"
   }
 };
 
