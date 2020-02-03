@@ -25,22 +25,7 @@ class Calendar extends Component {
 
   mapPropsToState = props => {
     const { minDate, maxDate, openToDate, selectedDate } = props;
-    const months = moment.months();
-    const arrayWeekdays = moment.weekdaysMin();
-    const optionsMonth = this.getListMonth(
-      minDate,
-      maxDate,
-      openToDate,
-      months
-    );
-    const optionsYear = this.getArrayYears(minDate, maxDate);
-    const optionsDays = this.getDays(
-      minDate,
-      maxDate,
-      openToDate,
-      selectedDate
-    );
-    const optionsWeekdays = this.getWeekDays(arrayWeekdays);
+
     let newOpenToDate = openToDate;
     if (
       this.compareDates(openToDate, maxDate) > 0 ||
@@ -48,6 +33,23 @@ class Calendar extends Component {
     ) {
       newOpenToDate = minDate;
     }
+
+    const months = moment.months();
+    const arrayWeekdays = moment.weekdaysMin();
+    const optionsMonth = this.getListMonth(
+      minDate,
+      maxDate,
+      newOpenToDate,
+      months
+    );
+    const optionsYear = this.getArrayYears(minDate, maxDate);
+    const optionsDays = this.getDays(
+      minDate,
+      maxDate,
+      newOpenToDate,
+      selectedDate
+    );
+    const optionsWeekdays = this.getWeekDays(arrayWeekdays);
 
     const newState = {
       months,
