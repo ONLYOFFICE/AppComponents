@@ -62,23 +62,28 @@ describe("DatePicker tests", () => {
     expect(wrapper.state.value).toBe(
       moment(wrapper.props.selectedDate).format("L")
     );
-  });
 
-  /*it("DatePicker renders with open prop", () => {
-    const wrapper = mount(
+    //Check invalid value
+    const wrapper2 = mount(
       <DatePicker
-        selectedDate={new Date("01/01/1999")}
-        minDate={new Date("01/01/2000")}
-        maxDate={new Date("01/01/2020")}
+        selectedDate={new Date("01/01/2030")}
+        minDate={new Date("01/01/2019")}
+        maxDate={new Date("01/01/2021")}
         error={false}
       />
     );
-    expect(wrapper).toExist();
-  });*/
+    
+    const instance = wrapper2.instance();
+    instance.componentDidUpdate(
+      { selectedDate: new Date("01/01/2030") },
+      wrapper.state
+    );
+    expect(instance.state.error).toBe(true);
+    expect(instance.state.open).toBe(false);
 
-  //const state = { value: "01/01/2000", error: true };
-  //expect(wrapper.state.error).toBe(false);
-  //expect(wrapper.state.open).toBe(false);
+    wrapper2.setProps({ selectedDate: new Date("01/01/2020") });
+    expect(instance.state.error).toBe(false);
+  });
 
   it("DatePicker check Compare date function", () => {
     const date = new Date();
@@ -160,13 +165,28 @@ describe("DatePicker tests", () => {
     expect(wrapper5.getMask()).toEqual(mask5.reverse());
   });
 
-  /*it("DatePicker check the onChange callback", () => {
+  it("DatePicker check the onChange callback", () => {
     const onChange = jest.fn();
     const props = { value: "03/03/2000", onChange };
     const wrapper = mount(<DatePicker {...props} />).find("input");
     wrapper.simulate("change", { target: { value: "09/09/2019" } });
-    expect(onChange).toHaveBeenCalledWith(new Date("09/09/2019"));
-  });*/
+    expect(onChange).toHaveBeenCalled();
+
+    const props2 = { value: "03/03/2000", onChange };
+    const wrapper2 = mount(<DatePicker {...props2} />);
+    const input = wrapper2.find("input");
+    input.simulate("change", { target: { value: "09/09/201_" } });
+    expect(onChange).toHaveBeenCalled();
+    expect(wrapper2.state("error")).toBe(true);
+
+    const props3 = { value: "03/03/2000", onChange };
+    const wrapper3 = mount(<DatePicker {...props3} />);
+    const input2 = wrapper3.find("input");
+    input2.simulate("change", { target: { value: "Invalid date" } });
+    expect(onChange).toHaveBeenCalled();
+    expect(wrapper3.state("error")).toBe(true);
+    expect(wrapper3.state("open")).toBe(false);
+  });
 
   it("DatePicker check the Calendar onChange callback", () => {
     const onChange = jest.fn();
