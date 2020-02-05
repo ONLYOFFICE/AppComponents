@@ -316,7 +316,7 @@ describe("Calendar tests:", () => {
     const wrapper = shallow(<Calendar />).instance();
 
     wrapper.onSelectYear({ key: 2019, value: 2019 });
-    expect(wrapper.state.openToDate).toEqual(new Date("01/01/2019"));
+    expect(wrapper.state.openToDate.getFullYear()).toEqual(2019);
 
     const props = {
       openToDate: new Date("05/01/2000"),
@@ -395,9 +395,10 @@ describe("Calendar tests:", () => {
       className: "",
       dayState: "prev"
     });
-    expect(wrapper.state.selectedDate).toEqual(new Date("12/31/2019"));
-    expect(wrapper.state.openToDate).toEqual(new Date("12/31/2019"));
-    expect(onChange).toBeCalledWith(new Date("12/31/2019"));
+
+    expect(wrapper.state.selectedDate).toEqual(new Date(2019, 12, 31));
+    expect(wrapper.state.openToDate).toEqual(new Date(2019, 12, 31));
+    expect(onChange).toBeCalledWith(new Date(new Date(2019, 12, 31)));
 
     const wrapper2 = shallow(<Calendar {...props} />).instance();
     wrapper2.onDayClick({
@@ -406,9 +407,9 @@ describe("Calendar tests:", () => {
       className: "",
       dayState: "next"
     });
-    expect(wrapper2.state.selectedDate).toEqual(new Date("02/01/2020"));
-    expect(wrapper2.state.openToDate).toEqual(new Date("02/01/2020"));
-    expect(onChange).toBeCalledWith(new Date("02/01/2020"));
+    expect(wrapper2.state.selectedDate).toEqual(new Date(2020, 2, 1));
+    expect(wrapper2.state.openToDate).toEqual(new Date(2020, 2, 1));
+    expect(onChange).toBeCalledWith(new Date(2020, 2, 1));
 
     const wrapper3 = shallow(<Calendar {...props} />).instance();
     wrapper3.onDayClick({
@@ -417,8 +418,8 @@ describe("Calendar tests:", () => {
       className: "",
       dayState: "now"
     });
-    expect(wrapper3.state.selectedDate).toEqual(new Date("01/09/2020"));
-    expect(onChange).toBeCalledWith(new Date("01/09/2020"));
+    expect(wrapper3.state.selectedDate).toEqual(new Date(2020, 1, 9));
+    expect(onChange).toBeCalledWith(new Date(2020, 1, 9));
   });
 
   it("Calendar check Compare dates function", () => {
