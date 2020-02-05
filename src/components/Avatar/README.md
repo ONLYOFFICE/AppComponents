@@ -12,12 +12,10 @@ import { Avatar } from "app-components";
 <Avatar size="max" source="" userName="" editing={false} />
 ```
 
-If you want to create an avatar with initials, only _first letter of first two words_ of line is used.
-
 ### Properties
 
 | Props      |   Type   | Required |             Values              | Default  | Description                                  |
 | ---------- | :------: | :------: | :-----------------------------: | :------: | -------------------------------------------- |
-| `size`     | `oneOf`  |    -     | `small`, `medium`, `big`, `max` | `medium` | Size of avatar                               |
-| `source`   | `string` |    -     |                -                |    -     | The address of the image for an image avatar |
-| `userName` | `string` |    -     |                -                |    -     | Need to create an avatar with initials       |
+| `size`     | `oneOf`  |    -     | `small`, `medium`, `big`, `max` | `medium` | User profile picture size                    |
+| `source`   | `string` |    -     |                -                |    -     | URL or location of the file used to create user profile picture |
+| `userName` | `string` |    -     |                -                |    -     | User profile picture with user initials. __NB__: If you want to create a profile picture with initials, only _the first letters of the first two words_ of the line are used       |
