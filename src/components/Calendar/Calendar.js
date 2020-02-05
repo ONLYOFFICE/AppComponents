@@ -233,7 +233,7 @@ class Calendar extends Component {
       arrayWeekDays.push({
         key: `${this.props.locale}_${i}`,
         value: weekdays[i],
-        color: i >= 5 ? "#A3A9AE" : undefined
+        disabled: i >= 5 ? true : false
       });
     }
     return arrayWeekDays;
@@ -562,6 +562,7 @@ class Calendar extends Component {
       minDate,
       maxDate,
       locale,
+      theme,
       ...rest
     } = this.props;
     const {
@@ -575,11 +576,12 @@ class Calendar extends Component {
 
     const dropDownSizeMonth = 184;
     const dropDownSizeYear = optionsYear.length > 4 ? 184 : undefined;
+    const newTheme = this.props.theme ? { theme: {...this.props.theme} } : { };
 
     return (
       <StyledCalendarContainer size={size} {...rest}>
         <StyledCalendar size={size}>
-          <StyledComboBox>
+          <StyledComboBox {...newTheme}>
             <StyledComboBoxMonth size={size}>
               <ComboBox
                 scaled
@@ -603,11 +605,16 @@ class Calendar extends Component {
           </StyledComboBox>
 
           <StyledMonth size={size}>
-            <Weekdays optionsWeekdays={optionsWeekdays} size={size} />
+            <Weekdays
+              optionsWeekdays={optionsWeekdays}
+              size={size}
+              theme={theme}
+            />
             <Days
               optionsDays={optionsDays}
               size={size}
               onDayClick={this.onDayClick}
+              theme={theme}
             />
           </StyledMonth>
         </StyledCalendar>
@@ -623,6 +630,7 @@ Calendar.propTypes = {
   minDate: PropTypes.instanceOf(Date),
   maxDate: PropTypes.instanceOf(Date),
   locale: PropTypes.string,
+  theme: PropTypes.object,
   size: PropTypes.oneOf(["base", "big"])
 };
 

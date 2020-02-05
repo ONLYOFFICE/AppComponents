@@ -12,6 +12,8 @@ import {
   StyledInput
 } from "./StyledDatePicker";
 
+import { Base, Dark } from "../../themes";
+
 class DatePicker extends Component {
   constructor(props) {
     super(props);
@@ -79,7 +81,6 @@ class DatePicker extends Component {
           error: false
         });
       } else if (targetValue.indexOf("_") !== -1 && targetValue.length !== 0) {
-        //hasWarning
         newState = Object.assign({}, newState, {
           error: true
         });
@@ -287,6 +288,8 @@ class DatePicker extends Component {
                 selectedDate={selectedDate}
                 onChange={this.onChange}
                 size="base"
+                //theme={{ calendar: Base.calendar }}
+                theme={Base}
               />
             </DropDown>
           </StyledDropDown>
@@ -306,7 +309,6 @@ DatePicker.propTypes = {
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
   error: PropTypes.bool,
-  hasWarning: PropTypes.bool,
   open: PropTypes.bool
 };
 
