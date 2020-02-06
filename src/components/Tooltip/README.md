@@ -7,7 +7,7 @@ Custom tooltip
 ### Usage with array
 
 ```js
-import { Tooltip, Link, Text } from "app-components";
+import { Tooltip, Link, Text, Box } from "app-components";
 ```
 
 ```js
@@ -60,7 +60,7 @@ const arrayUsers = [
   offsetRight={90}
   getContent={dataTip =>
     dataTip ? (
-      <div>
+      <Box>
         <Text isBold={true} fontSize="16px">
           {arrayUsers[dataTip].name}
         </Text>
@@ -68,7 +68,7 @@ const arrayUsers = [
           {arrayUsers[dataTip].email}
         </Text>
         <Text fontSize="13px">{arrayUsers[dataTip].position}</Text>
-      </div>
+      </Box>
     ) : null
   }
 />

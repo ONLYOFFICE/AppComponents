@@ -1,7 +1,9 @@
 import React from "react";
 import Heading from "../Heading";
 import PropTypes from "prop-types";
-import { StyledContainer, StyledContent, StyledArrow } from "./StyledToggleContent";
+import { StyledContainer } from "./StyledToggleContent";
+import Box from "../Box";
+import { IconArrow } from "./svg";
 
 class ToggleContent extends React.Component {
   constructor(props) {
@@ -26,14 +28,16 @@ class ToggleContent extends React.Component {
     const { open } = this.state;
 
     return (
-      <StyledContainer {...rest}>
-        <span className="span-toggle-content" onClick={this.onToggleClick}>
-          <StyledArrow open={open} />
-          <Heading className="heading-toggle-content" level={2} size="small">
+      <StyledContainer {...rest} open={open}>
+        <span className="toggle-content_span" onClick={this.onToggleClick}>
+          <IconArrow className="toggle-content_arrow" />
+          <Heading className="toggle-content_heading" level={2} size="small">
             {label}
           </Heading>
         </span>
-        <StyledContent open={open}>{children}</StyledContent>
+        <Box className="toggle-content" open={open}>
+          {children}
+        </Box>
       </StyledContainer>
     );
   }

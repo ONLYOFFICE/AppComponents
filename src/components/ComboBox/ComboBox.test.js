@@ -10,6 +10,7 @@ import {
   StyledComboButton,
   StyledOptionalItem
 } from "./StyledComboBox";
+import Box from "../Box";
 
 const baseOptions = [
   { key: 0, label: "Select" },
@@ -374,11 +375,11 @@ describe("<ComboBox />", () => {
   it("with children node", () => {
     const wrapper = mount(
       <ComboBox {...baseProps}>
-        <div>demo</div>
+        <Box>demo</Box>
       </ComboBox>
     );
 
-    expect(wrapper.contains(<div>demo</div>)).toBe(true);
+    expect(wrapper.contains(<Box>demo</Box>)).toBe(true);
   });
 
   it("not re-render test", () => {

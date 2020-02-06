@@ -14,7 +14,7 @@ storiesOf("Components|TextArea", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
   .add("Default", () => (
-    <div>
+    <Box>
       <StringValue
         onChange={e => {
           action("onChange")(e);
@@ -42,5 +42,5 @@ storiesOf("Components|TextArea", module)
           </Box>
         )}
       </StringValue>
-    </div>
+    </Box>
   ));
