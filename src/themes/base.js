@@ -528,9 +528,7 @@ const Base = {
     dropDownPadding: "16px 16px 16px 17px",
     inputPadding: "5px 5px 5px 9px",
     inputBorder: blueMain,
-    iconHeight: "100%",
-    iconWidth: "100%",
-    iconPadding: "0px 8px 0px 0px"
+    iconPadding: "8px 8px 7px 0px"
   }
 };
 

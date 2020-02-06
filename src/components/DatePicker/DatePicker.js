@@ -6,11 +6,7 @@ import Calendar from "../Calendar";
 import moment from "moment";
 import isEmpty from "lodash/isEmpty";
 import { CalendarIcon } from "./svg";
-import {
-  StyledDateInput,
-  StyledDropDown,
-  StyledInput
-} from "./StyledDatePicker";
+import { StyledDatePicker } from "./StyledDatePicker";
 import { Base } from "../../themes";
 
 class DatePicker extends Component {
@@ -21,10 +17,6 @@ class DatePicker extends Component {
     this.ref = React.createRef();
 
     const { open, selectedDate, error, minDate, maxDate } = this.props;
-
-    if (open) {
-      this.handleAnyClick(true, this.handleClick);
-    }
 
     let newState = {
       open,
@@ -44,21 +36,7 @@ class DatePicker extends Component {
     this.state = newState;
   }
 
-  handleAnyClick = (subscribe, handler) => {
-    if (subscribe) {
-      document.addEventListener("click", handler);
-    } else {
-      document.removeEventListener("click", handler);
-    }
-  };
-
-  handleClick = e => {
-    this.state.open &&
-      !this.ref.current.contains(e.target) &&
-      this.onClick(false);
-  };
-
-  handleChange = e => {
+  onInputChange = e => {
     const { value } = this.state;
 
     const targetValue = e.target.value;
@@ -104,6 +82,11 @@ class DatePicker extends Component {
     if (!this.props.disabled) {
       this.setState({ open });
     }
+  };
+
+  onClose = e => {
+    if (this.ref.current.contains(e.target)) return;
+    this.setState({ open: !this.state.open });
   };
 
   compareDate = date => {
@@ -166,11 +149,7 @@ class DatePicker extends Component {
     return false;
   };
 
-  componentWillUnmount() {
-    this.handleAnyClick(false, this.handleClick);
-  }
-
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     const { locale, open, selectedDate, maxDate, minDate } = this.props;
     const { error, value } = this.state;
     let newState = {};
@@ -188,10 +167,6 @@ class DatePicker extends Component {
         selectedDate,
         value: moment(selectedDate).format("L")
       });
-    }
-
-    if (this.state.open !== prevState.open) {
-      this.handleAnyClick(this.state.open, this.handleClick);
     }
 
     if (open !== prevProps.open) {
@@ -240,7 +215,6 @@ class DatePicker extends Component {
 
   render() {
     const {
-      disabled,
       readOnly,
       minDate,
       maxDate,
@@ -248,51 +222,48 @@ class DatePicker extends Component {
       onChange,
       ...rest
     } = this.props;
+    const { disabled } = this.props;
     const { value, open, mask, error, selectedDate } = this.state;
 
     return (
-      <StyledDateInput {...rest} ref={this.ref}>
-        <StyledInput disabled={disabled} error={error}>
-          <TextInput
-            className="text-input-style"
-            scale
-            disabled={disabled}
-            readOnly={readOnly}
-            value={value}
-            onChange={this.handleChange}
-            mask={mask}
-            keepCharPositions
-            border={false}
-          />
+      <StyledDatePicker {...rest} ref={this.ref} error={error}>
+        <TextInput
+          className="date-picker-input"
+          scale
+          disabled={disabled}
+          readOnly={readOnly}
+          value={value}
+          onChange={this.onInputChange}
+          mask={mask}
+          keepCharPositions
+          border={false}
+        />
 
-          <div className="date-picker_icon">
-            <div className="icon-block">
-              <CalendarIcon
-                className="calendar-icon"
-                onClick={this.onClick.bind(this, !open)}
-              />
-            </div>
-          </div>
-        </StyledInput>
+        <CalendarIcon
+          className="date-picker-icon"
+          onClick={this.onClick.bind(this, !open)}
+        />
 
         {open && (
-          <StyledDropDown>
-            <DropDown className="drop-down" open={open}>
-              <Calendar
-                locale={locale}
-                minDate={minDate}
-                maxDate={maxDate}
-                disabled={disabled}
-                openToDate={selectedDate}
-                selectedDate={selectedDate}
-                onChange={this.onChange}
-                size="base"
-                theme={{ ...Base, ...Base.calendar }}
-              />
-            </DropDown>
-          </StyledDropDown>
+          <DropDown
+            className="date-picker-drop-down"
+            open={open}
+            clickOutsideAction={this.onClose}
+          >
+            <Calendar
+              locale={locale}
+              minDate={minDate}
+              maxDate={maxDate}
+              disabled={disabled}
+              openToDate={selectedDate}
+              selectedDate={selectedDate}
+              onChange={this.onChange}
+              size="base"
+              theme={{ ...Base, ...Base.calendar }}
+            />
+          </DropDown>
         )}
-      </StyledDateInput>
+      </StyledDatePicker>
     );
   }
 }

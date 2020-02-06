@@ -93,17 +93,6 @@ describe("DatePicker tests", () => {
     expect(wrapper.compareDate(errorDate)).toEqual(false);
   });
 
-  it("componentWillUnmount() lifecycle  test", () => {
-    const wrapper = mount(<DatePicker open />);
-    const componentWillUnmount = jest.spyOn(
-      wrapper.instance(),
-      "componentWillUnmount"
-    );
-
-    wrapper.unmount();
-    expect(componentWillUnmount).toHaveBeenCalled();
-  });
-
   it("DatePicker check is valid dates function", () => {
     var date = new Date();
     date.setFullYear(1);
@@ -116,7 +105,7 @@ describe("DatePicker tests", () => {
 
   it("DatePicker test onClick function", () => {
     const wrapper = mount(<DatePicker open disabled={false} />);
-    const svg = wrapper.find(".calendar-icon");
+    const svg = wrapper.find(".date-picker-icon");
 
     svg.simulate("click");
     expect(wrapper.state("open")).toBe(false);
@@ -124,7 +113,7 @@ describe("DatePicker tests", () => {
     expect(wrapper.state("open")).toBe(true);
 
     const wrapper2 = mount(<DatePicker open={false} disabled />);
-    const svg2 = wrapper2.find(".calendar-icon");
+    const svg2 = wrapper2.find(".date-picker-icon");
     svg2.simulate("click");
     expect(wrapper2.state("open")).toBe(false);
     svg2.simulate("click");
