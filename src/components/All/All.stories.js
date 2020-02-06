@@ -49,7 +49,7 @@ const options = [
 storiesOf("Components|All", module)
   .addParameters({ options: { showAddonPanel: false } })
   .add("All", () => (
-    <Grid gridGap="15px" columnsProp="330px">
+    <Grid gridGap="15px" columnsProp="400px">
       <Box paddingProp="16px" widthProp="100%">
         <Box paddingProp="8px">
           <Heading>Heading text</Heading>
@@ -229,7 +229,7 @@ storiesOf("Components|All", module)
           )}
         </BooleanValue>
         <Box paddingProp="8px">
-          <Scrollbar stype="mediumBlack" style={{ width: 300, height: 200 }}>
+          <Scrollbar stype="mediumBlack" style={{ width: 350, height: 200 }}>
             ================================================================
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
