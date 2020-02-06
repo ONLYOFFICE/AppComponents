@@ -140,6 +140,11 @@ const Dark = {
   },
 
   radioButton: {
+    color: white,
+    disableColor: grayLightMid,
+    width: "16px",
+    height: "16px",
+
     fillColor: black,
     borderColor: grayMid,
 
@@ -155,11 +160,11 @@ const Dark = {
   },
 
   input: {
-    color: black,
+    color: white,
     disableColor: grayMid,
 
-    backgroundColor: white,
-    disableBackgroundColor: grayLight,
+    backgroundColor: blueCharcoal,
+    disableBackgroundColor: shuttleGrey,
 
     width: {
       base: "173px",
