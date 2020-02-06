@@ -140,6 +140,8 @@ const Base = {
   },
 
   radioButton: {
+    color: black,
+    disableColor: grayLightMid,
     width: "16px",
     height: "16px",
 
