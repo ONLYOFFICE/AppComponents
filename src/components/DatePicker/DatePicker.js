@@ -11,8 +11,7 @@ import {
   StyledDropDown,
   StyledInput
 } from "./StyledDatePicker";
-
-import { Base, Dark } from "../../themes";
+import { Base } from "../../themes";
 
 class DatePicker extends Component {
   constructor(props) {
@@ -288,8 +287,7 @@ class DatePicker extends Component {
                 selectedDate={selectedDate}
                 onChange={this.onChange}
                 size="base"
-                //theme={{ calendar: Base.calendar }}
-                theme={Base}
+                theme={{ ...Base, ...Base.calendar }}
               />
             </DropDown>
           </StyledDropDown>

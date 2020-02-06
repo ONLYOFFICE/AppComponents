@@ -5,7 +5,6 @@ import moment from "moment";
 import Weekdays from "./Weekdays";
 import Days from "./Days";
 import isEmpty from "lodash/isEmpty";
-
 import {
   StyledComboBox,
   StyledComboBoxMonth,
@@ -576,7 +575,7 @@ class Calendar extends Component {
 
     const dropDownSizeMonth = 184;
     const dropDownSizeYear = optionsYear.length > 4 ? 184 : undefined;
-    const newTheme = this.props.theme ? { theme: {...this.props.theme} } : { };
+    const newTheme = this.props.theme ? { theme: { ...this.props.theme } } : {};
 
     return (
       <StyledCalendarContainer size={size} {...rest}>
@@ -608,13 +607,13 @@ class Calendar extends Component {
             <Weekdays
               optionsWeekdays={optionsWeekdays}
               size={size}
-              theme={theme}
+              {...newTheme}
             />
             <Days
               optionsDays={optionsDays}
               size={size}
               onDayClick={this.onDayClick}
-              theme={theme}
+              {...newTheme}
             />
           </StyledMonth>
         </StyledCalendar>

@@ -389,45 +389,47 @@ describe("Calendar tests:", () => {
 
     const props = {
       selectedDate: new Date("01/01/2020"),
+      openToDate: new Date("01/01/2020"),
+      locale: "en",
       onChange
     };
-    const wrapper = shallow(<Calendar {...props} locale="en" />);
-    const instance = wrapper.instance();
-    const value = {
+    const wrapper = shallow(<Calendar {...props} />).instance();
+    const pervValue = {
       value: 31,
-      disableClass: "",
-      className: "",
+      disableClass: null,
+      className: "calendar-month_neighboringMonth",
       dayState: "prev"
     };
-    instance.onDayClick(value);
+    wrapper.onDayClick(pervValue);
 
-    //expect(instance.state.selectedDate).toEqual(new Date("12/31/2019"));
-    //expect(instance.state.openToDate).toEqual(new Date("12/31/2019"));
-    //expect(onChange).toBeCalledWith(new Date(new Date("12/31/2019")));
-    expect(onChange).toBeCalled();
+    expect(wrapper.state.selectedDate).toStrictEqual(new Date("12/31/2019"));
+    expect(wrapper.state.openToDate).toEqual(new Date("12/31/2019"));
+    expect(onChange).toBeCalledWith(new Date(new Date("12/31/2019")));
+
+    const value = {
+      value: 1,
+      disableClass: null,
+      className: "calendar-month_neighboringMonth",
+      dayState: "next"
+    };
 
     const wrapper2 = shallow(<Calendar {...props} locale="en" />).instance();
-    wrapper2.onDayClick({
-      value: 1,
-      disableClass: "",
-      className: "",
-      dayState: "next"
-    });
-    //expect(wrapper2.state.selectedDate).toEqual(new Date("02/01/2020"));
-    //expect(wrapper2.state.openToDate).toEqual(new Date("02/01/2020"));
-    //expect(onChange).toBeCalledWith(new Date("02/01/2020"));
-    expect(onChange).toBeCalled();
+    wrapper2.onDayClick(value);
+    expect(wrapper2.state.selectedDate).toEqual(new Date("02/01/2020"));
+    expect(wrapper2.state.openToDate).toEqual(new Date("02/01/2020"));
+    expect(onChange).toBeCalledWith(new Date("02/01/2020"));
 
-    const wrapper3 = shallow(<Calendar {...props} locale="en" />).instance();
-    wrapper3.onDayClick({
+    const nextValue = {
       value: 9,
       disableClass: "",
       className: "",
       dayState: "now"
-    });
-    //expect(wrapper3.state.selectedDate).toEqual(new Date("01/09/2020"));
-    //expect(onChange).toBeCalledWith(new Date("01/09/2020"));
-    expect(onChange).toBeCalled();
+    };
+
+    const wrapper3 = shallow(<Calendar {...props} locale="en" />).instance();
+    wrapper3.onDayClick(nextValue);
+    expect(wrapper3.state.selectedDate).toEqual(new Date("01/09/2020"));
+    expect(onChange).toBeCalledWith(new Date("01/09/2020"));
   });
 
   it("Calendar check Compare dates function", () => {
