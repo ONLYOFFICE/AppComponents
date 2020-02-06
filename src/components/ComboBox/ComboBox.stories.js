@@ -12,11 +12,12 @@ import withReadme from "storybook-readme/with-readme";
 import Readme from "./README.md";
 import ComboBox from ".";
 import Button from "../Button";
-import RadioButton from "../RadioButton";
 import DropDownItem from "../DropDownItem";
 import Box from "../Box";
 import Grid from "../Grid";
 import Heading from "../Heading";
+import { Base } from "../../themes";
+import RadioButtonGroup from "../RadioButtonGroup";
 
 const sizeOptions = ["base", "middle", "big", "huge", "content"];
 
@@ -49,24 +50,41 @@ storiesOf("Components|ComboBox", module)
       }
     });
 
+    const theme = { ...Base, ...Base.radioButton };
+
+    const items = [
+      { value: "first", label: "A-Z" },
+      { value: "second", label: "Z-A" }
+    ];
+
+    const items2 = [
+      { value: "first", label: "First name" },
+      { value: "last", label: "Last name" }
+    ];
+
     const advancedOptions = (
       <>
         <DropDownItem key="1" noHover>
-          <RadioButton value="asc" name="first" label="A-Z" checked={true} />
+          <RadioButtonGroup
+            theme={theme}
+            name="group"
+            selected="first"
+            options={items}
+            orientation="vertical"
+            width="100%"
+            spacing="0px"
+          />
         </DropDownItem>
-        <DropDownItem key="2" noHover>
-          <RadioButton value="desc" name="first" label="Z-A" />
-        </DropDownItem>
-        <DropDownItem key="3" separator />
-        <DropDownItem key="4" noHover>
-          <RadioButton value="first" name="second" label="First name" />
-        </DropDownItem>
-        <DropDownItem key="5" noHover>
-          <RadioButton
-            value="last"
-            name="second"
-            label="Last name"
-            checked={true}
+        <DropDownItem key="2" separator />
+        <DropDownItem key="3" noHover>
+          <RadioButtonGroup
+            theme={theme}
+            name="group"
+            selected="last"
+            options={items2}
+            orientation="vertical"
+            width="100%"
+            spacing="0px"
           />
         </DropDownItem>
       </>
@@ -78,7 +96,6 @@ storiesOf("Components|ComboBox", module)
       <Grid columnsProp={["1fr 1fr"]}>
         <Box paddingProp="16px">
           <Heading>Default</Heading>
-
           <ComboBox
             options={comboOptions}
             selectedOption={comboOptions[0]}
@@ -96,7 +113,7 @@ storiesOf("Components|ComboBox", module)
             {childrenItems}
           </ComboBox>
         </Box>
-        
+
         <Box paddingProp="16px">
           <Heading>Advanced</Heading>
           <ComboBox
