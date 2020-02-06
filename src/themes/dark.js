@@ -128,7 +128,7 @@ const Dark = {
     disableIndeterminateColor: gray,
 
     hoverBorderColor: gray,
-    hoverIndeterminateColor: gray
+    hoverIndeterminateColor: black
   },
 
   toggleButton: {
