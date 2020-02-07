@@ -22,9 +22,9 @@ import { Checkbox } from "app-components";
 
 | Props           |   Type   | Required | Values | Default | Description                                                 |
 | --------------- | :------: | :------: | :----: | :-----: | ----------------------------------------------------------- |
-| `checked`       |  `bool`  |    -     |   -    | `false` | The checked property sets the checked state of a checkbox   |
-| `disabled`      |  `bool`  |    -     |   -    |    -    | Disables the Checkbox input                                 |
-| `indeterminate` |  `bool`  |    -     |   -    |    -    | If true, this state is shown as a rectangle in the checkbox |
-| `label`         | `string` |    -     |   -    |    -    | Label of the input                                          |
-| `onChange`      |  `func`  |    ✅    |   -    |    -    | Will be triggered whenever an CheckboxInput is clicked      |
+| `checked`       |  `bool`  |    -     |   -    | `false` | Makes the checkbox checked                                  |
+| `disabled`      |  `bool`  |    -     |   -    |    -    | Disables checkbox input                                     |
+| `indeterminate` |  `bool`  |    -     |   -    |    -    | If true, a black filled rectangle appears in the checkbox   |
+| `label`         | `string` |    -     |   -    |    -    | Checkbox label                                              |
+| `onChange`      |  `func`  |    ✅     |   -    |    -    | Returns the value of the `checked` prop                     |
 | `reverse`       |  `bool`  |    -     |   -    | `false` | Swaps the checkbox and the label                            |
