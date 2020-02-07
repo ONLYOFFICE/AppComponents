@@ -16,17 +16,23 @@ class Days extends React.Component {
     }
     return true;
   }
-  
+
   render() {
     //console.log("Days render");
 
-    const { optionsDays, size, onDayClick } = this.props;
+    const { optionsDays, size, onDayClick, ...rest } = this.props;
 
     return (
       <StyledDays size={size}>
         {optionsDays.map((day, index) => {
           return (
-            <Day size={size} key={index} day={day} onDayClick={onDayClick} />
+            <Day
+              size={size}
+              key={index}
+              day={day}
+              onDayClick={onDayClick}
+              {...rest}
+            />
           );
         })}
       </StyledDays>

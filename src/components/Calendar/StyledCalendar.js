@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { NoUserSelect } from "../../utils/commonStyles";
 import Box from "../Box";
 import { Base } from "../../themes";
+import Text from "../Text";
 
 const HoverStyle = css`
   &:hover {
@@ -12,6 +13,9 @@ const HoverStyle = css`
 `;
 
 const StyledComboBox = styled(Box)`
+  .combo-button-label {
+    color: ${props => props.theme.calendar.comboBox.color};
+  }
   position: relative;
   display: flex;
   padding: ${props => props.theme.calendar.comboBox.padding};
@@ -41,14 +45,61 @@ const StyledCalendarContainer = styled(Box)`
       : props.theme.calendar.containerBigWidth};
 `;
 
-const StyledCalendar = styled(Box)`    
+const StyledCalendar = styled(Box)`
   width: ${props =>
     props.size === "base"
       ? props.theme.calendar.baseWidth
       : props.theme.calendar.bigWidth};
+`;
 
+const StyledMonth = styled(Box)`
+  width: ${props =>
+    props.size === "base"
+      ? props.theme.calendar.month.baseWidth
+      : props.theme.calendar.month.bigWidth};
+`;
+
+const StyledWeekday = styled(Box)`
+  overflow: hidden;
+  flex-basis: calc(1 / 7 * 100%);
+  ${NoUserSelect}
+`;
+
+const StyledWeekdays = styled(Box)`
+  width: ${props =>
+    props.size === "base"
+      ? props.theme.calendar.weekdays.baseWidth
+      : props.theme.calendar.weekdays.bigWidth};
+  display: flex;
+  margin-bottom: ${props => props.theme.calendar.weekdays.marginBottom};
+`;
+
+const StyledWeekdaysText = styled(Text)`
+  color: ${props =>
+    props.disable
+      ? props.theme.calendar.weekdays.disabledColor
+      : props.theme.calendar.weekdays.color};
+  width: ${props => props.theme.calendar.day.width};
+  height: ${props => props.theme.calendar.day.height};
+  text-align: center;
+`;
+
+const StyledDay = styled(Box)`
+  display: flex;
+  flex-basis: calc(1 / 7 * 100%);
+  text-align: center;
+  line-height: ${props => props.theme.calendar.day.lineHeight};
+  user-select: none;
+  margin-top: ${props =>
+    props.size === "base"
+      ? props.theme.calendar.day.baseMarginTop
+      : props.theme.calendar.day.bigMarginTop};
+`;
+
+const StyledDayContent = styled(Box)`
   .calendar-month {
-    ${HoverStyle}
+    color: ${props => props.theme.calendar.month.color};
+    ${HoverStyle};
   }
 
   .calendar-month_neighboringMonth {
@@ -78,54 +129,9 @@ const StyledCalendar = styled(Box)`
     cursor: ${props => props.theme.calendar.selectedDay.cursor};
     color: ${props => props.theme.calendar.selectedDay.color};
   }
-`;
 
-const StyledMonth = styled(Box)`
-  width: ${props =>
-    props.size === "base"
-      ? props.theme.calendar.month.baseWidth
-      : props.theme.calendar.month.bigWidth};
-`;
-
-const StyledWeekday = styled(Box)`
-  overflow: hidden;
-  flex-basis: calc(1 / 7 * 100%);
-  ${NoUserSelect}
-`;
-
-const StyledWeekdays = styled(Box)`
-  width: ${props =>
-    props.size === "base"
-      ? props.theme.calendar.weekdays.baseWidth
-      : props.theme.calendar.weekdays.bigWidth};
-  display: flex;
-  margin-bottom: ${props => props.theme.calendar.weekdays.marginBottom};
-
-  .dayText {
-    width: ${props => props.theme.calendar.day.width};
-    height: ${props => props.theme.calendar.day.height};
-    text-align: center;
-  }
-`;
-
-const StyledDay = styled(Box)`
-  display: flex;
-  flex-basis: calc(1 / 7 * 100%);
-  text-align: center;
-  line-height: ${props => props.theme.calendar.day.lineHeight};
-  user-select: none;
-  margin-top: ${props =>
-    props.size === "base"
-      ? props.theme.calendar.day.baseMarginTop
-      : props.theme.calendar.day.bigMarginTop};
-`;
-
-const StyledDayContent = styled(Box)`
   width: ${props => props.theme.calendar.day.width};
   height: ${props => props.theme.calendar.day.height};
-  .textStyle {
-    text-align: center;
-  }
 `;
 
 const StyledDays = styled(Box)`
@@ -147,6 +153,7 @@ StyledWeekdays.defaultProps = { theme: Base };
 StyledDay.defaultProps = { theme: Base };
 StyledDayContent.defaultProps = { theme: Base };
 StyledDays.defaultProps = { theme: Base };
+StyledWeekdaysText.defaultProps = { theme: Base };
 
 export {
   StyledComboBox,
@@ -159,5 +166,6 @@ export {
   StyledWeekdays,
   StyledDay,
   StyledDayContent,
-  StyledDays
+  StyledDays,
+  StyledWeekdaysText
 };

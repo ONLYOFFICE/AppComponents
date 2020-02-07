@@ -1,6 +1,9 @@
 import React from "react";
-import { StyledWeekday, StyledWeekdays } from "./StyledCalendar";
-import Text from "../Text";
+import {
+  StyledWeekday,
+  StyledWeekdays,
+  StyledWeekdaysText
+} from "./StyledCalendar";
 import PropTypes from "prop-types";
 import { isArrayEqual } from "../../utils/array";
 
@@ -15,19 +18,19 @@ class Weekdays extends React.Component {
     }
     return true;
   }
-  
+
   render() {
     //console.log("Weekdays render");
-    const { optionsWeekdays, size } = this.props;
+    const { optionsWeekdays, size, ...rest } = this.props;
 
     return (
-      <StyledWeekdays size={size}>
+      <StyledWeekdays size={size} {...rest}>
         {optionsWeekdays.map((weekday, index) => {
           return (
-            <StyledWeekday key={index}>
-              <Text color={weekday.color} bold className={"dayText"}>
+            <StyledWeekday key={index} {...rest}>
+              <StyledWeekdaysText disable={weekday.disabled} bold {...rest}>
                 {weekday.value}
-              </Text>
+              </StyledWeekdaysText>
             </StyledWeekday>
           );
         })}
