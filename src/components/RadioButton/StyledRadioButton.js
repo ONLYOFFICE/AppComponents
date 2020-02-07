@@ -65,7 +65,7 @@ const StyledRadioButton = styled.label`
   .radio-button-text {
     ${props => (props.reverse ? `margin-right: 8px` : `margin-left: 8px`)};
     color: ${props =>
-      props.disabled ? props.theme.text.disableColor : props.theme.text.color};
+      props.disabled ? props.theme.radioButton.disableColor : props.theme.radioButton.color};
   }
 `;
 

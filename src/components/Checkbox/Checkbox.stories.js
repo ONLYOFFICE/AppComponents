@@ -16,7 +16,7 @@ storiesOf("Components|Checkbox", module)
       <BooleanValue>
         {({ value, toggle }) => (
           <Checkbox
-            label={text("label", "checkbox")}
+            label={text("label", "Checkbox")}
             checked={value}
             indeterminate={boolean("indeterminate", false)}
             disabled={boolean("disabled", false)}

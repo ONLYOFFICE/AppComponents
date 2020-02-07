@@ -25,7 +25,6 @@ class TextArea extends React.PureComponent {
     return (
       <StyledScrollbar
         size="medium"
-        color="rgba(0,0,0,0.1)"
         error={errorProp}
         warning={warningProp}
         disabled={disabledProp}
