@@ -5,7 +5,6 @@ import moment from "moment";
 import Weekdays from "./Weekdays";
 import Days from "./Days";
 import isEmpty from "lodash/isEmpty";
-
 import {
   StyledComboBox,
   StyledComboBoxMonth,
@@ -25,22 +24,7 @@ class Calendar extends Component {
 
   mapPropsToState = props => {
     const { minDate, maxDate, openToDate, selectedDate } = props;
-    const months = moment.months();
-    const arrayWeekdays = moment.weekdaysMin();
-    const optionsMonth = this.getListMonth(
-      minDate,
-      maxDate,
-      openToDate,
-      months
-    );
-    const optionsYear = this.getArrayYears(minDate, maxDate);
-    const optionsDays = this.getDays(
-      minDate,
-      maxDate,
-      openToDate,
-      selectedDate
-    );
-    const optionsWeekdays = this.getWeekDays(arrayWeekdays);
+
     let newOpenToDate = openToDate;
     if (
       this.compareDates(openToDate, maxDate) > 0 ||
@@ -48,6 +32,23 @@ class Calendar extends Component {
     ) {
       newOpenToDate = minDate;
     }
+
+    const months = moment.months();
+    const arrayWeekdays = moment.weekdaysMin();
+    const optionsMonth = this.getListMonth(
+      minDate,
+      maxDate,
+      newOpenToDate,
+      months
+    );
+    const optionsYear = this.getArrayYears(minDate, maxDate);
+    const optionsDays = this.getDays(
+      minDate,
+      maxDate,
+      newOpenToDate,
+      selectedDate
+    );
+    const optionsWeekdays = this.getWeekDays(arrayWeekdays);
 
     const newState = {
       months,
@@ -231,7 +232,7 @@ class Calendar extends Component {
       arrayWeekDays.push({
         key: `${this.props.locale}_${i}`,
         value: weekdays[i],
-        color: i >= 5 ? "#A3A9AE" : undefined
+        disabled: i >= 5 ? true : false
       });
     }
     return arrayWeekDays;
@@ -560,6 +561,7 @@ class Calendar extends Component {
       minDate,
       maxDate,
       locale,
+      theme,
       ...rest
     } = this.props;
     const {
@@ -573,11 +575,12 @@ class Calendar extends Component {
 
     const dropDownSizeMonth = 184;
     const dropDownSizeYear = optionsYear.length > 4 ? 184 : undefined;
+    const newTheme = this.props.theme ? { theme: { ...this.props.theme } } : {};
 
     return (
       <StyledCalendarContainer size={size} {...rest}>
         <StyledCalendar size={size}>
-          <StyledComboBox>
+          <StyledComboBox {...newTheme}>
             <StyledComboBoxMonth size={size}>
               <ComboBox
                 scaled
@@ -601,11 +604,16 @@ class Calendar extends Component {
           </StyledComboBox>
 
           <StyledMonth size={size}>
-            <Weekdays optionsWeekdays={optionsWeekdays} size={size} />
+            <Weekdays
+              optionsWeekdays={optionsWeekdays}
+              size={size}
+              {...newTheme}
+            />
             <Days
               optionsDays={optionsDays}
               size={size}
               onDayClick={this.onDayClick}
+              {...newTheme}
             />
           </StyledMonth>
         </StyledCalendar>
@@ -621,6 +629,7 @@ Calendar.propTypes = {
   minDate: PropTypes.instanceOf(Date),
   maxDate: PropTypes.instanceOf(Date),
   locale: PropTypes.string,
+  theme: PropTypes.object,
   size: PropTypes.oneOf(["base", "big"])
 };
 

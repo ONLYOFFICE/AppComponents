@@ -1,7 +1,6 @@
 import React from "react";
 import Icon from "../../Icon";
 // import createStyledIcon from "./createStyledIcon";
-import OrigCalendarIcon from "./calendar.react.svg";
 import OrigExpanderRightIcon from "./expander-right.react.svg";
 import OrigVerticalDotsIcon from "./vertical-dots.react.svg";
 import OrigSearchIcon from "./search.react.svg";
@@ -10,8 +9,6 @@ import OrigRefreshIcon from "./refresh.react.svg";
 import OrigPlusIcon from "./actions.header.touch.react.svg";
 import OrigCheckIcon from "./check.react.svg";
 import OrigQuestionIcon from "./question.react.svg";
-
-export const CalendarIcon = (props) => <Icon svgSource={OrigCalendarIcon} {...props} />;
 
 export const CheckIcon = (props) => <Icon svgSource={OrigCheckIcon} {...props} />;
 
