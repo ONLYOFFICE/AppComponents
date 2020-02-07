@@ -470,8 +470,6 @@ const Dark = {
   calendar: {
     baseWidth: "265px",
     bigWidth: "289px",
-    containerBaseWidth: "293px",
-    containerBigWidth: "325px",
 
     hover: {
       backgroundColor: shuttleGrey,

@@ -5,14 +5,8 @@ import moment from "moment";
 import Weekdays from "./Weekdays";
 import Days from "./Days";
 import isEmpty from "lodash/isEmpty";
-import {
-  StyledComboBox,
-  StyledComboBoxMonth,
-  StyledComboBoxDate,
-  StyledCalendarContainer,
-  StyledCalendar,
-  StyledMonth
-} from "./StyledCalendar";
+import { StyledCalendar } from "./StyledCalendar";
+import Box from "../Box";
 
 class Calendar extends Component {
   constructor(props) {
@@ -578,46 +572,42 @@ class Calendar extends Component {
     const newTheme = this.props.theme ? { theme: { ...this.props.theme } } : {};
 
     return (
-      <StyledCalendarContainer size={size} {...rest}>
-        <StyledCalendar size={size}>
-          <StyledComboBox {...newTheme}>
-            <StyledComboBoxMonth size={size}>
-              <ComboBox
-                scaled
-                scaledOptions
-                dropDownMaxHeight={dropDownSizeMonth}
-                onSelect={this.onSelectMonth}
-                selectedOption={selectedOptionMonth}
-                options={optionsMonth}
-              />
-            </StyledComboBoxMonth>
-            <StyledComboBoxDate>
-              <ComboBox
-                scaled
-                scaledOptions
-                dropDownMaxHeight={dropDownSizeYear}
-                onSelect={this.onSelectYear}
-                selectedOption={selectedOptionYear}
-                options={optionsYear}
-              />
-            </StyledComboBoxDate>
-          </StyledComboBox>
+      <StyledCalendar size={size} {...rest} {...newTheme}>
+        <Box className="calendar-combo-box_container">
+          <ComboBox
+            className="calendar-combo-box-month_container"
+            scaled
+            scaledOptions
+            dropDownMaxHeight={dropDownSizeMonth}
+            onSelect={this.onSelectMonth}
+            selectedOption={selectedOptionMonth}
+            options={optionsMonth}
+          />
+          <ComboBox
+            className="calendar-combo-box-year-container"
+            scaled
+            scaledOptions
+            dropDownMaxHeight={dropDownSizeYear}
+            onSelect={this.onSelectYear}
+            selectedOption={selectedOptionYear}
+            options={optionsYear}
+          />
+        </Box>
 
-          <StyledMonth size={size}>
-            <Weekdays
-              optionsWeekdays={optionsWeekdays}
-              size={size}
-              {...newTheme}
-            />
-            <Days
-              optionsDays={optionsDays}
-              size={size}
-              onDayClick={this.onDayClick}
-              {...newTheme}
-            />
-          </StyledMonth>
-        </StyledCalendar>
-      </StyledCalendarContainer>
+        <Box className="calendar-month-container">
+          <Weekdays
+            optionsWeekdays={optionsWeekdays}
+            size={size}
+            {...newTheme}
+          />
+          <Days
+            optionsDays={optionsDays}
+            size={size}
+            onDayClick={this.onDayClick}
+            {...newTheme}
+          />
+        </Box>
+      </StyledCalendar>
     );
   }
 }
