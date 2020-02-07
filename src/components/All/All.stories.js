@@ -11,7 +11,7 @@ import Button from "../Button";
 import Loader from "../Loader";
 import ComboBox from "../ComboBox";
 import TextInput from "../TextInput";
-
+import DatePicker from "../DatePicker";
 import TextArea from "../TextArea";
 
 import RadioButtonGroup from "../RadioButtonGroup";
@@ -167,7 +167,9 @@ storiesOf("Components|All", module)
             )}
           </StringValue>
         </Box>
-
+        <Box paddingProp="8px">
+          <DatePicker />
+        </Box>
         <Box paddingProp="8px">
           <StringValue>
             {({ value, set }) => (

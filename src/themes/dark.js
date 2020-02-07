@@ -489,6 +489,8 @@ const Dark = {
       lineHeight: "33px"
     },
     weekdays: {
+      color: white,
+      disabledColor: "#A3A9AE",
       baseWidth: "272px",
       bigWidth: "295px",
       marginBottom: "-5px"
@@ -496,6 +498,7 @@ const Dark = {
     month: {
       baseWidth: "267px",
       bigWidth: "295px",
+      color: white,
       weekendColor: gray,
       disabledColor: shuttleGrey,
       neighboringHoverColor: white,
@@ -508,6 +511,7 @@ const Dark = {
       color: white
     },
     comboBox: {
+      color: white,
       minWidth: "80px",
       height: "32px",
       marginLeft: "8px",
@@ -517,6 +521,14 @@ const Dark = {
       baseWidth: "172px",
       bigWidth: "196px"
     }
+  },
+
+  datePicker: {
+    width: "110px",
+    dropDownPadding: "16px 16px 16px 17px",
+    inputPadding: "5px 5px 5px 9px",
+    inputBorder: blueMain,
+    iconPadding: "8px 8px 7px 0px"
   }
 };
 
