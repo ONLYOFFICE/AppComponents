@@ -1,6 +1,6 @@
 # Avatar
 
-Used to display an avatar or brand.
+User profile picture or company brand image.
 
 ### Usage
 
