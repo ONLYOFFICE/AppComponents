@@ -15,11 +15,8 @@ const StyledAvatar = styled(Box)`
     (props.size === "medium" && props.theme.avatar.height.medium) ||
     (props.size === "big" && props.theme.avatar.height.big) ||
     (props.size === "max" && props.theme.avatar.height.max)};
-`;
 
-const StyledImageContainer = styled(Box)`
   border-radius: ${props => props.theme.avatar.imageContainer.borderRadius};
-  height: ${props => props.theme.avatar.imageContainer.height};
   background-color: ${props =>
     (props.source === "" &&
       props.userName !== "" &&
@@ -62,14 +59,8 @@ const StyledInitialsContainer = styled(Box)`
   ${NoUserSelect}
 `;
 
-StyledAvatar.defaultProps = { theme: Base };
 StyledInitialsContainer.defaultProps = { theme: Base };
 StyledImage.defaultProps = { theme: Base };
-StyledImageContainer.defaultProps = { theme: Base };
+StyledAvatar.defaultProps = { theme: Base };
 
-export {
-  StyledAvatar,
-  StyledInitialsContainer,
-  StyledImage,
-  StyledImageContainer
-};
+export { StyledInitialsContainer, StyledImage, StyledAvatar };

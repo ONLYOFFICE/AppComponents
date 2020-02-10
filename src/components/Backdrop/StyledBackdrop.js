@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Base } from "../../themes";
+import Box from "../Box";
 
-const StyledBackdrop = styled.div`
+const StyledBackdrop = styled(Box)`
   background-color: ${props => props.theme.backdrop.backgroundColor};
   display: ${props => (props.visible ? "block" : "none")};
   height: 100vh;

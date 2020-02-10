@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import isEqual from "lodash/isEqual";
-import { StyledDay, StyledDayContent } from "./StyledCalendar";
+import { StyledDay } from "./StyledCalendar";
 import Text from "../Text";
+import Box from "../Box";
 
 class Day extends React.Component {
   shouldComponentUpdate(nextProps) {
@@ -25,12 +26,19 @@ class Day extends React.Component {
       : { ...rest };
 
     return (
-      <StyledDay size={size} className={`calendar_day ${day.disableClass}`}>
-        <StyledDayContent {...newTheme} onClick={onDayClick.bind(this, day)}>
+      <StyledDay
+        size={size}
+        {...newTheme}
+        className={`calendar_day ${day.disableClass}`}
+      >
+        <Box
+          className="calendar-day_content"
+          onClick={onDayClick.bind(this, day)}
+        >
           <Text bold className={day.className}>
             {day.value}
           </Text>
-        </StyledDayContent>
+        </Box>
       </StyledDay>
     );
   }

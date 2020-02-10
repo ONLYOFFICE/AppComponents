@@ -1,8 +1,9 @@
 import styled, { css } from "styled-components";
 import CustomScrollbarsVirtualList from "../Scrollbar/CustomScrollbarsVirtualList";
 import { Base } from "../../themes";
+import Box from "../Box";
 
-const StyledDropdown = styled.div`
+const StyledDropdown = styled(Box)`
     position: absolute;
     overflow-y: hidden;
     

@@ -1,8 +1,9 @@
 import React from "react";
-import { mount, shallow, unmount } from "enzyme";
+import { mount } from "enzyme";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 import DropDown from ".";
+import Box from "../Box";
 
 describe("<DropDown />", () => {
   it("rendered without error", () => {
@@ -25,9 +26,9 @@ describe("<DropDown />", () => {
     const tree = renderer
       .create(
         <DropDown maxHeight={100}>
-          <div label="1"></div>
-          <div label="2"></div>
-          <div label="3"></div>
+          <Box label="1"></Box>
+          <Box label="2"></Box>
+          <Box label="3"></Box>
         </DropDown>
       )
       .toJSON();
@@ -126,7 +127,7 @@ describe("<DropDown />", () => {
   it("render with children", () => {
     const wrapper = mount(
       <DropDown>
-        <div label="1"></div>
+        <Box label="1"></Box>
       </DropDown>
     );
     expect(wrapper.children()).toHaveLength(1);

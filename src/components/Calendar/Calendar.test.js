@@ -8,9 +8,7 @@ import Day from "./Day";
 import Calendar from "./";
 import { Base } from "../../themes";
 import {
-  StyledComboBoxMonth,
   StyledCalendar,
-  StyledMonth,
   StyledWeekdays,
   StyledDay,
   StyledDays
@@ -145,67 +143,42 @@ describe("Day tests:", () => {
 
 describe("Calendar tests:", () => {
   test("test size styles", () => {
-    const tree = renderer.create(<Calendar size="base" />).toJSON();
-    expect(tree).toHaveStyleRule("max-width", Base.calendar.containerBaseWidth);
+    const tree = renderer.create(<StyledCalendar size="base" />).toJSON();
+    expect(tree).toHaveStyleRule("width", Base.calendar.baseWidth);
 
-    const tree2 = renderer.create(<Calendar size="big" />).toJSON();
-    expect(tree2).toHaveStyleRule("max-width", Base.calendar.containerBigWidth);
+    const tree2 = renderer.create(<StyledCalendar size="big" />).toJSON();
+    expect(tree2).toHaveStyleRule("width", Base.calendar.bigWidth);
 
-    const tree3 = renderer.create(<StyledComboBoxMonth size="base" />).toJSON();
-    expect(tree3).toHaveStyleRule(
-      "max-width",
-      Base.calendar.comboBoxMonth.baseWidth
-    );
-    expect(tree3).toHaveStyleRule(
-      "width",
-      Base.calendar.comboBoxMonth.baseWidth
-    );
+    const tree3 = renderer.create(<StyledCalendar size="base" />).toJSON();
+    expect(tree3).toHaveStyleRule("width", Base.calendar.month.baseWidth, {
+      modifier: ".calendar-month-container"
+    });
 
-    const tree4 = renderer.create(<StyledComboBoxMonth size="big" />).toJSON();
-    expect(tree4).toHaveStyleRule(
-      "max-width",
-      Base.calendar.comboBoxMonth.bigWidth
-    );
-    expect(tree4).toHaveStyleRule(
-      "width",
-      Base.calendar.comboBoxMonth.bigWidth
-    );
+    const tree4 = renderer.create(<StyledCalendar size="big" />).toJSON();
+    expect(tree4).toHaveStyleRule("width", Base.calendar.month.bigWidth, {
+      modifier: ".calendar-month-container"
+    });
 
-    const tree5 = renderer.create(<StyledCalendar size="base" />).toJSON();
-    expect(tree5).toHaveStyleRule("width", Base.calendar.baseWidth);
+    const tree5 = renderer.create(<StyledWeekdays size="base" />).toJSON();
+    expect(tree5).toHaveStyleRule("width", Base.calendar.weekdays.baseWidth);
 
-    const tree6 = renderer.create(<StyledCalendar size="big" />).toJSON();
-    expect(tree6).toHaveStyleRule("width", Base.calendar.bigWidth);
+    const tree6 = renderer.create(<StyledWeekdays size="big" />).toJSON();
+    expect(tree6).toHaveStyleRule("width", Base.calendar.weekdays.bigWidth);
 
-    const tree7 = renderer.create(<StyledMonth size="base" />).toJSON();
-    expect(tree7).toHaveStyleRule("width", Base.calendar.month.baseWidth);
-
-    const tree8 = renderer.create(<StyledMonth size="big" />).toJSON();
-    expect(tree8).toHaveStyleRule("width", Base.calendar.month.bigWidth);
-
-    const tree9 = renderer.create(<StyledWeekdays size="base" />).toJSON();
-    expect(tree9).toHaveStyleRule("width", Base.calendar.weekdays.baseWidth);
-
-    const tree10 = renderer.create(<StyledWeekdays size="big" />).toJSON();
-    expect(tree10).toHaveStyleRule("width", Base.calendar.weekdays.bigWidth);
-
-    const tree11 = renderer.create(<StyledDay size="base" />).toJSON();
-    expect(tree11).toHaveStyleRule(
+    const tree7 = renderer.create(<StyledDay size="base" />).toJSON();
+    expect(tree7).toHaveStyleRule(
       "margin-top",
       Base.calendar.day.baseMarginTop
     );
 
-    const tree12 = renderer.create(<StyledDay size="big" />).toJSON();
-    expect(tree12).toHaveStyleRule(
-      "margin-top",
-      Base.calendar.day.bigMarginTop
-    );
+    const tree8 = renderer.create(<StyledDay size="big" />).toJSON();
+    expect(tree8).toHaveStyleRule("margin-top", Base.calendar.day.bigMarginTop);
 
-    const tree13 = renderer.create(<StyledDays size="base" />).toJSON();
-    expect(tree13).toHaveStyleRule("width", Base.calendar.day.baseSizeWidth);
+    const tree9 = renderer.create(<StyledDays size="base" />).toJSON();
+    expect(tree9).toHaveStyleRule("width", Base.calendar.day.baseSizeWidth);
 
-    const tree14 = renderer.create(<StyledDays size="big" />).toJSON();
-    expect(tree14).toHaveStyleRule("width", Base.calendar.day.bigSizeWidth);
+    const tree10 = renderer.create(<StyledDays size="big" />).toJSON();
+    expect(tree10).toHaveStyleRule("width", Base.calendar.day.bigSizeWidth);
   });
 
   it("id, className, style is exists", () => {

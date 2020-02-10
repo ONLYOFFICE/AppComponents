@@ -5,8 +5,6 @@ import "jest-styled-components";
 import Avatar from ".";
 import { Base } from "../../themes";
 
-import { StyledImageContainer } from "./StyledAvatar";
-
 const baseProps = {
   size: "max",
   source: "",
@@ -78,15 +76,13 @@ describe("<Avatar />", () => {
   });
 
   test("test avatar background styles", () => {
-    const tree = renderer
-      .create(<StyledImageContainer source="" userName="User" />)
-      .toJSON();
+    const tree = renderer.create(<Avatar source="" userName="User" />).toJSON();
     expect(tree).toHaveStyleRule(
       "background-color",
       Base.avatar.imageContainer.backgroundImage
     );
 
-    const tree2 = renderer.create(<StyledImageContainer />).toJSON();
+    const tree2 = renderer.create(<Avatar />).toJSON();
     expect(tree2).toHaveStyleRule(
       "background-color",
       Base.avatar.imageContainer.background

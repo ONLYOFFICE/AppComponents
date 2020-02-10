@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  StyledWeekday,
-  StyledWeekdays,
-  StyledWeekdaysText
-} from "./StyledCalendar";
+import { StyledWeekday, StyledWeekdays } from "./StyledCalendar";
 import PropTypes from "prop-types";
 import { isArrayEqual } from "../../utils/array";
+import Text from "../Text";
 
 class Weekdays extends React.Component {
   shouldComponentUpdate(nextProps) {
@@ -27,10 +24,10 @@ class Weekdays extends React.Component {
       <StyledWeekdays size={size} {...rest}>
         {optionsWeekdays.map((weekday, index) => {
           return (
-            <StyledWeekday key={index} {...rest}>
-              <StyledWeekdaysText disable={weekday.disabled} bold {...rest}>
+            <StyledWeekday key={index} disable={weekday.disabled} {...rest}>
+              <Text className="calendar-weekday_text" bold>
                 {weekday.value}
-              </StyledWeekdaysText>
+              </Text>
             </StyledWeekday>
           );
         })}

@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import { NoUserSelect } from "../../utils/commonStyles";
 import Box from "../Box";
 import { Base } from "../../themes";
-import Text from "../Text";
 
 const HoverStyle = css`
   &:hover {
@@ -12,57 +11,55 @@ const HoverStyle = css`
   }
 `;
 
-const StyledComboBox = styled(Box)`
-  .combo-button-label {
-    color: ${props => props.theme.calendar.comboBox.color};
-  }
-  position: relative;
-  display: flex;
-  padding: ${props => props.theme.calendar.comboBox.padding};
-`;
-
-const StyledComboBoxMonth = styled(Box)`
-  width: ${props =>
-    props.size === "base"
-      ? props.theme.calendar.comboBoxMonth.baseWidth
-      : props.theme.calendar.comboBoxMonth.bigWidth};
-  max-width: ${props =>
-    props.size === "base"
-      ? props.theme.calendar.comboBoxMonth.baseWidth
-      : props.theme.calendar.comboBoxMonth.bigWidth};
-`;
-
-const StyledComboBoxDate = styled(Box)`
-  min-width: ${props => props.theme.calendar.comboBox.minWidth};
-  height: ${props => props.theme.calendar.comboBox.height};
-  margin-left: ${props => props.theme.calendar.comboBox.marginLeft};
-`;
-
-const StyledCalendarContainer = styled(Box)`
-  max-width: ${props =>
-    props.size === "base"
-      ? props.theme.calendar.containerBaseWidth
-      : props.theme.calendar.containerBigWidth};
-`;
-
 const StyledCalendar = styled(Box)`
   width: ${props =>
     props.size === "base"
       ? props.theme.calendar.baseWidth
       : props.theme.calendar.bigWidth};
-`;
 
-const StyledMonth = styled(Box)`
-  width: ${props =>
-    props.size === "base"
-      ? props.theme.calendar.month.baseWidth
-      : props.theme.calendar.month.bigWidth};
+  .calendar-combo-box_container {
+    .combo-button-label {
+      color: ${props => props.theme.calendar.comboBox.color};
+    }
+    position: relative;
+    display: flex;
+    padding: ${props => props.theme.calendar.comboBox.padding};
+
+    .calendar-combo-box-month_container {
+      width: ${props =>
+        props.size === "base"
+          ? props.theme.calendar.comboBoxMonth.baseWidth
+          : props.theme.calendar.comboBoxMonth.bigWidth};
+    }
+
+    .calendar-combo-box-year-container {
+      max-width: 80px;
+      margin-left: ${props => props.theme.calendar.comboBox.marginLeft};
+    }
+  }
+
+  .calendar-month-container {
+    width: ${props =>
+      props.size === "base"
+        ? props.theme.calendar.month.baseWidth
+        : props.theme.calendar.month.bigWidth};
+  }
 `;
 
 const StyledWeekday = styled(Box)`
   overflow: hidden;
   flex-basis: calc(1 / 7 * 100%);
   ${NoUserSelect}
+
+  .calendar-weekday_text {
+    color: ${props =>
+      props.disable
+        ? props.theme.calendar.weekdays.disabledColor
+        : props.theme.calendar.weekdays.color};
+    width: ${props => props.theme.calendar.day.width};
+    height: ${props => props.theme.calendar.day.height};
+    text-align: center;
+  }
 `;
 
 const StyledWeekdays = styled(Box)`
@@ -72,16 +69,6 @@ const StyledWeekdays = styled(Box)`
       : props.theme.calendar.weekdays.bigWidth};
   display: flex;
   margin-bottom: ${props => props.theme.calendar.weekdays.marginBottom};
-`;
-
-const StyledWeekdaysText = styled(Text)`
-  color: ${props =>
-    props.disable
-      ? props.theme.calendar.weekdays.disabledColor
-      : props.theme.calendar.weekdays.color};
-  width: ${props => props.theme.calendar.day.width};
-  height: ${props => props.theme.calendar.day.height};
-  text-align: center;
 `;
 
 const StyledDay = styled(Box)`
@@ -94,44 +81,44 @@ const StyledDay = styled(Box)`
     props.size === "base"
       ? props.theme.calendar.day.baseMarginTop
       : props.theme.calendar.day.bigMarginTop};
-`;
 
-const StyledDayContent = styled(Box)`
-  .calendar-month {
-    color: ${props => props.theme.calendar.month.color};
-    ${HoverStyle};
-  }
-
-  .calendar-month_neighboringMonth {
-    color: ${props => props.theme.calendar.month.neighboringColor};
-    ${HoverStyle};
-
-    &:hover {
-      color: ${props => props.theme.calendar.month.neighboringHoverColor};
+  .calendar-day_content {
+    .calendar-month {
+      color: ${props => props.theme.calendar.month.color};
+      ${HoverStyle};
     }
-  }
 
-  .calendar-month_disabled {
-    pointer-events: none;
-    color: ${props => props.theme.calendar.month.disabledColor};
-    ${HoverStyle}
-  }
+    .calendar-month_neighboringMonth {
+      color: ${props => props.theme.calendar.month.neighboringColor};
+      ${HoverStyle};
 
-  .calendar-month_weekend {
-    color: ${props => props.theme.calendar.month.weekendColor};
-    ${HoverStyle}
-  }
+      &:hover {
+        color: ${props => props.theme.calendar.month.neighboringHoverColor};
+      }
+    }
 
-  .calendar-month_selected-day {
-    background-color: ${props =>
-      props.theme.calendar.selectedDay.backgroundColor};
-    border-radius: ${props => props.theme.calendar.selectedDay.borderRadius};
-    cursor: ${props => props.theme.calendar.selectedDay.cursor};
-    color: ${props => props.theme.calendar.selectedDay.color};
-  }
+    .calendar-month_disabled {
+      pointer-events: none;
+      color: ${props => props.theme.calendar.month.disabledColor};
+      ${HoverStyle}
+    }
 
-  width: ${props => props.theme.calendar.day.width};
-  height: ${props => props.theme.calendar.day.height};
+    .calendar-month_weekend {
+      color: ${props => props.theme.calendar.month.weekendColor};
+      ${HoverStyle}
+    }
+
+    .calendar-month_selected-day {
+      background-color: ${props =>
+        props.theme.calendar.selectedDay.backgroundColor};
+      border-radius: ${props => props.theme.calendar.selectedDay.borderRadius};
+      cursor: ${props => props.theme.calendar.selectedDay.cursor};
+      color: ${props => props.theme.calendar.selectedDay.color};
+    }
+
+    width: ${props => props.theme.calendar.day.width};
+    height: ${props => props.theme.calendar.day.height};
+  }
 `;
 
 const StyledDays = styled(Box)`
@@ -143,29 +130,10 @@ const StyledDays = styled(Box)`
       : props.theme.calendar.day.bigSizeWidth};
 `;
 
-StyledComboBox.defaultProps = { theme: Base };
-StyledComboBoxMonth.defaultProps = { theme: Base };
-StyledComboBoxDate.defaultProps = { theme: Base };
-StyledCalendarContainer.defaultProps = { theme: Base };
 StyledCalendar.defaultProps = { theme: Base };
-StyledMonth.defaultProps = { theme: Base };
+StyledWeekday.defaultProps = { theme: Base };
 StyledWeekdays.defaultProps = { theme: Base };
 StyledDay.defaultProps = { theme: Base };
-StyledDayContent.defaultProps = { theme: Base };
 StyledDays.defaultProps = { theme: Base };
-StyledWeekdaysText.defaultProps = { theme: Base };
 
-export {
-  StyledComboBox,
-  StyledComboBoxMonth,
-  StyledComboBoxDate,
-  StyledCalendarContainer,
-  StyledCalendar,
-  StyledMonth,
-  StyledWeekday,
-  StyledWeekdays,
-  StyledDay,
-  StyledDayContent,
-  StyledDays,
-  StyledWeekdaysText
-};
+export { StyledCalendar, StyledWeekday, StyledWeekdays, StyledDay, StyledDays };

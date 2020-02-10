@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Base } from "../../themes";
+import Box from "../Box";
 
-const StyledTooltip = styled.div`
+const StyledTooltip = styled(Box)`
   .__react_component_tooltip {
     border-radius: ${props => props.theme.tooltip.borderRadius};
     -moz-border-radius: ${props => props.theme.tooltip.borderRadius};
