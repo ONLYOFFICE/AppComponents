@@ -16,7 +16,7 @@ import { Box } from "app-components";
 
 | Props            |      Type         | Required | Values | Default | Description                                           |
 | :--------------: | :---------------: | :------: | :----: | :-----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `as`             | `string`          |    -     |   -    |         | Allows to use any HTML tag within the component.    |
+| `as`             | `string`          |    -     |   -    |         | Sets the tag through which the component is rendered.    |
 | `alignContent`   | `string`          |    -     |   -    |    -    | Sets the distribution of space between and around content items along a Flexbox cross-axis or a Grid block axis. |
 | `alignItems`     | `string`          |    -     |   -    |    -    | Sets the align-self value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area. |
 | `alignSelf`      | `string`          |    -     |   -    |    -    | Overrides a grid or flex item's align-items value. In Grid layout, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis. |
