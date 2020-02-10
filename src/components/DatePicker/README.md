@@ -28,7 +28,7 @@ import { DatePicker } from "app-components";
 | `disabled`     | `bool`   |    -     | -      | -                         | Disables the date input box - makes it impossible to enter or choose a date                 |
 | `open`         | `bool`   |    -     |        | -                         | Opens a calendar on the selected web page                             |
 | `readOnly`     | `bool`   |    -     |        | -                         | Makes the data in the input box read-only and impossible to edit                |
-| `locale`       | `string` |    -     | -      | `User's browser settings` | If the language of the calendar is not set, it is chosen using the browser locale                               |
+| `locale`       | `string` |    -     | -      | `User's browser settings` | If the language of the calendar is not set, it is selected using the browser locale                               |
 | `maxDate`      | `date`   |    -     | -      | `new Date("3000/01/01")`  | Maximum date that the user can select.     |
 | `minDate`      | `date`   |    -     | -      | `new Date("1970/01/01")`  | Minimum date that the user can select.     |
 | `onChange`     | `func`   |    -     | -      | -                         | The function is called when the user selects a date |
