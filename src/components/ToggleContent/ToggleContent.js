@@ -29,9 +29,9 @@ class ToggleContent extends React.Component {
 
     return (
       <StyledContainer {...rest} open={open}>
-        <span className="toggle-content_span" onClick={this.onToggleClick}>
+        <span className="toggle-content_header" onClick={this.onToggleClick}>
           <IconArrow className="toggle-content_arrow" />
-          <Heading className="toggle-content_heading" level={2} size="small">
+          <Heading className="toggle-content_text" level={2} size="small">
             {label}
           </Heading>
         </span>

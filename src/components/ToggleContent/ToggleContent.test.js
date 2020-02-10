@@ -92,7 +92,7 @@ describe("<ToggleContent />", () => {
       </ToggleContent>
     );
 
-    const input = wrapper.find(".toggle-content_span");
+    const input = wrapper.find(".toggle-content_header");
     input.simulate("click");
     expect(wrapper.state("open")).toEqual(true);
 

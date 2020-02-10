@@ -4,7 +4,7 @@ import { Base } from "../../themes";
 import Box from "../Box";
 
 const StyledContainer = styled(Box)`
-  .toggle-content_span {
+  .toggle-content_header {
     display: flex;
     cursor: pointer;
     ${NoUserSelect}
@@ -24,7 +24,7 @@ const StyledContainer = styled(Box)`
     padding: ${props => props.theme.toggleContent.contentPadding};
   }
 
-  .toggle-content_heading {
+  .toggle-content_text {
     box-sizing: border-box;
     height: ${props => props.theme.toggleContent.headingHeight};
     line-height: ${props => props.theme.toggleContent.headingHeight};
