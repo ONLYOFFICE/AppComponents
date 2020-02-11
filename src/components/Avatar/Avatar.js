@@ -1,10 +1,9 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
 import {
-  StyledAvatar,
   StyledInitialsContainer,
   StyledImage,
-  StyledImageContainer
+  StyledAvatar
 } from "./StyledAvatar";
 import { CameraIcon } from "./svg";
 
@@ -38,11 +37,7 @@ const Avatar = memo(props => {
   );
 
   return (
-    <StyledAvatar {...props}>
-      <StyledImageContainer source={source} userName={userName}>
-        {imageContainer}
-      </StyledImageContainer>
-    </StyledAvatar>
+    <StyledAvatar {...props}>{imageContainer}</StyledAvatar>
   );
 });
 

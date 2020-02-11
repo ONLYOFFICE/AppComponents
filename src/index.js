@@ -21,4 +21,5 @@ export { default as DropDownItem } from "./components/DropDownItem";
 export { default as DropDown } from "./components/DropDown";
 export { default as ComboBox } from "./components/ComboBox";
 export { default as Calendar } from "./components/Calendar";
+export { default as DatePicker } from "./components/DatePicker";
 export * as Themes from "./themes";

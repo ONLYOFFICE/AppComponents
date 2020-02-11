@@ -161,7 +161,7 @@ describe("<RadioButton />", () => {
     expect(tree).toHaveStyleRule("margin-right", "8px", {
       modifier: ".radio-button-text"
     });
-    expect(tree).toHaveStyleRule("color", Base.text.color, {
+    expect(tree).toHaveStyleRule("color", Base.radioButton.color, {
       modifier: ".radio-button-text"
     });
 
@@ -171,7 +171,7 @@ describe("<RadioButton />", () => {
     expect(tree1).toHaveStyleRule("margin-left", "8px", {
       modifier: ".radio-button-text"
     });
-    expect(tree1).toHaveStyleRule("color", Base.text.disableColor, {
+    expect(tree1).toHaveStyleRule("color", Base.radioButton.disableColor, {
       modifier: ".radio-button-text"
     });
   });

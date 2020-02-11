@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Text from "../Text";
 import isEqual from "lodash/isEqual";
-import { StyledDay, StyledDayContent } from "./StyledCalendar";
+import { StyledDay } from "./StyledCalendar";
+import Text from "../Text";
+import Box from "../Box";
 
 class Day extends React.Component {
   shouldComponentUpdate(nextProps) {
@@ -19,18 +20,25 @@ class Day extends React.Component {
 
   render() {
     //console.log("Day render");
-    const { day, size, onDayClick } = this.props;
+    const { day, size, onDayClick, ...rest } = this.props;
+    const newTheme = this.props.theme
+      ? { theme: { ...this.props.theme } }
+      : { ...rest };
 
     return (
-      <StyledDay size={size} className={`calendar_day ${day.disableClass}`}>
-        <StyledDayContent
+      <StyledDay
+        size={size}
+        {...newTheme}
+        className={`calendar_day ${day.disableClass}`}
+      >
+        <Box
+          className="calendar-day_content"
           onClick={onDayClick.bind(this, day)}
-          className={day.className}
         >
-          <Text bold color="inherit;" className="textStyle">
+          <Text bold className={day.className}>
             {day.value}
           </Text>
-        </StyledDayContent>
+        </Box>
       </StyledDay>
     );
   }
@@ -39,7 +47,8 @@ class Day extends React.Component {
 Day.propTypes = {
   day: PropTypes.object,
   size: PropTypes.string,
-  onDayClick: PropTypes.func
+  onDayClick: PropTypes.func,
+  theme: PropTypes.object
 };
 
 export default Day;

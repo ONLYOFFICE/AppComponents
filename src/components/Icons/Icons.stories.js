@@ -17,7 +17,7 @@ storiesOf("Components|Icons", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
   .addParameters({ options: { showAddonPanel: false } })
-  .add("Default", () => (
+  /*.add("Default", () => (
     <Box
       displayProp="grid"
       style={{ gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr" }}
@@ -71,4 +71,4 @@ storiesOf("Components|Icons", module)
         );
       })}
     </Box>
-  ));
+  ));*/

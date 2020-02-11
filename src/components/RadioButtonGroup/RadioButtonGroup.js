@@ -33,6 +33,7 @@ class RadioButtonGroup extends React.Component {
     //console.log("RadioButtonGroup render");
     const { options, orientation, width, name, disabled, spacing } = this.props;
     const { onClick, ...rest } = this.props;
+    const newTheme = this.props.theme ? { theme: { ...this.props.theme } } : {};
 
     const display = orientation === "horizontal" ? "flex" : "block";
 
@@ -41,6 +42,7 @@ class RadioButtonGroup extends React.Component {
         {options.map(option => {
           return (
             <RadioButton
+              {...newTheme}
               key={option.value}
               name={name}
               value={option.value}
@@ -72,7 +74,8 @@ RadioButtonGroup.propTypes = {
   selected: PropTypes.string.isRequired,
   spacing: PropTypes.string,
   orientation: PropTypes.oneOf(["horizontal", "vertical"]),
-  width: PropTypes.string
+  width: PropTypes.string,
+  theme: PropTypes.object
 };
 
 RadioButtonGroup.defaultProps = {

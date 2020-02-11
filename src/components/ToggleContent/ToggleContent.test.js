@@ -4,7 +4,7 @@ import ToggleContent from ".";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 import { Base } from "../../themes";
-import { StyledContent, StyledArrow } from "./StyledToggleContent";
+import Box from "../Box";
 
 describe("<ToggleContent />", () => {
   it("renders without error", () => {
@@ -30,33 +30,39 @@ describe("<ToggleContent />", () => {
   test("Test ToggleContent styles", () => {
     const tree = renderer
       .create(
-        <StyledContent open>
-          <div>content</div>
-        </StyledContent>
+        <ToggleContent label="Some label" open>
+          <Box>content</Box>
+        </ToggleContent>
       )
       .toJSON();
 
-    expect(tree).toHaveStyleRule("display", "block");
+    expect(tree).toHaveStyleRule("display", "block", {
+      modifier: ".toggle-content"
+    });
 
     const tree2 = renderer
       .create(
-        <StyledContent open={false}>
-          <div>content</div>
-        </StyledContent>
+        <ToggleContent label="Some label">
+          <Box>content</Box>
+        </ToggleContent>
       )
       .toJSON();
 
-    expect(tree2).toHaveStyleRule("display", "none");
+    expect(tree2).toHaveStyleRule("display", "none", {
+      modifier: ".toggle-content"
+    });
 
     const tree3 = renderer
       .create(
-        <StyledArrow open>
-          <div>content</div>
-        </StyledArrow>
+        <ToggleContent open>
+          <Box>content</Box>
+        </ToggleContent>
       )
       .toJSON();
 
-    expect(tree3).toHaveStyleRule("transform", Base.toggleContent.transform);
+    expect(tree3).toHaveStyleRule("transform", Base.toggleContent.transform, {
+      modifier: ".toggle-content_arrow"
+    });
   });
 
   it("componentDidUpdate() props lifecycle test", () => {
@@ -86,7 +92,7 @@ describe("<ToggleContent />", () => {
       </ToggleContent>
     );
 
-    const input = wrapper.find(".span-toggle-content");
+    const input = wrapper.find(".toggle-content_header");
     input.simulate("click");
     expect(wrapper.state("open")).toEqual(true);
 

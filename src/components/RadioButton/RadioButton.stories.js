@@ -14,7 +14,7 @@ storiesOf("Components|RadioButton", module)
       <Box paddingProp="16px">
         <RadioButton
           value={text("value", "value")}
-          label={text("label", "radio-button")}
+          label={text("label", "Radio-button")}
           disabled={boolean("disabled", false)}
           checked={boolean("checked", false)}
           reverse={boolean("reverse", false)}
