@@ -14,7 +14,7 @@ import { Heading } from "app-components";
 </Heading>
 ```
 
-### If you need to override styles add forwardedAs instead of as
+### If you need to override styles add 'forwardedAs' instead of 'as'
 
 ```js
 const StyledHeading = styled(Heading)`
