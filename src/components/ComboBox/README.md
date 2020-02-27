@@ -1,6 +1,6 @@
 # ComboBox
 
-Custom combo box input
+A component for displaying a customizable list of options.
 
 ### Usage
 
@@ -34,17 +34,17 @@ const options = [
 />
 ```
 
-Options have options:
+Items within the ComboBox may have the following parameters:
 
-- key - Item key, may be a string or a number
-- label - Display text
-- icon - Optional name of icon that will be displayed before label
-- disabled - Make option disabled
-- onClick - On click function
+- key - option key, may be a string or a number
+- label - the displayed text
+- icon - optional name of the icon that will be displayed next to the label
+- disabled - disables options from the dropdown list
+- onClick - the event triggered when a component item is clicked 
 
-ComboBox perceives all property`s for positioning from DropDown!
+ComboBox inherits positioning parameters from DropDown component
 
-If you need to display a custom list of options, you must use advancedOptions property. Like this:
+To display a custom list of items, you need to use advancedOptions property. Like this:
 
 ```js
 const advancedOptions = (
@@ -89,7 +89,7 @@ const advancedOptions = (
 </ComboBox>
 ```
 
-To use Combobox as a toggle button, you must declare it according to the parameters:
+To use Combobox as a toggle button, use the parameters:
 
 ```jsx
 <ComboBox
@@ -112,23 +112,23 @@ To use Combobox as a toggle button, you must declare it according to the paramet
 | Props               |   Type    | Required |                   Values                   |  Default  | Description                                                                            |
 | ------------------- | :-------: | :------: | :----------------------------------------: | :-------: | -------------------------------------------------------------------------------------- |
 | `options`           |  `array`  |    ✅    |                     -                      |     -     | Combo box options                                                                      |
-| `selectedOption`    | `object`  |    ✅    |                     -                      |     -     | Selected option                                                                        |
-| `advancedOptions`   | `element` |    -     |                     -                      |     -     | If you need display options not basic options                                          |
-| `displayType`       |  `oneOf`  |    -     |            `default`, `toggle`             | `default` | Component Display Type                                                                 |
+| `selectedOption`    | `object`  |    ✅    |                     -                      |     -     | Sets the option that is selected by the user or is set by default                              |
+| `advancedOptions`   | `element` |    -     |                     -                      |     -     | Is used to display a custom list of items - other than the basic ones                  |
+| `displayType`       |  `oneOf`  |    -     |            `default`, `toggle`             | `default` | Is used to switch ComboBox to toggle mode to use toggle actions                        |
 | `dropDownMaxHeight` | `number`  |    -     |                     -                      |     -     | Height of Dropdown                                                                     |
-| `disabled`          |  `bool`   |    -     |                     -                      |  `false`  | Indicates that component is disabled                                                   |
-| `onSelect`          |  `func`   |    -     |                     -                      |     -     | Will be triggered whenever an ComboBox is selected option                              |
-| `scaledOptions`     |  `bool`   |    -     |                     -                      |  `false`  | Indicates that component`s options is scaled by ComboButton                            |
-| `toggleAction`      |  `func`   |    -     |                     -                      |     -     | The event will be raised when using `displayType: toggle` when clicking on a component |
-| `size`              |  `oneOf`  |    -     | `base`, `middle`, `big`, `huge`, `content` |  `base`   | Select component width, one of default                                                 |
-| `withoutBorder`     |  `bool`   |    -     |                     -                      |  `false`  | Indicates that component is displayed without borders                                  |
-| `scaled`            |  `bool`   |    -     |                     -                      |  `true`   | Indicates that component is scaled by parent                                           |
+| `disabled`          |  `bool`   |    -     |                     -                      |  `false`  | Disables the whole component                                                           |
+| `onSelect`          |  `func`   |    -     |                     -                      |     -     | The event triggered whenever an option of the ComboBox is selected                     |
+| `scaledOptions`     |  `bool`   |    -     |                     -                      |  `false`  | Allows the component`s options container scaling to fit ComboButton width             |
+| `toggleAction`      |  `func`   |    -     |                     -                      |     -     | The event triggered when `displayType: toggle` parameter is on                         |
+| `size`              |  `oneOf`  |    -     | `base`, `middle`, `big`, `huge`, `content` |  `base`   | Allows to select the component width                                                   |
+| `withoutBorder`     |  `bool`   |    -     |                     -                      |  `false`  | Allows to display the component without borders                                        |
+| `scaled`            |  `bool`   |    -     |                     -                      |  `true`   | Allows to scale the component to match the parent width                                |
 
 ### DropDown properties
 
 | Props                |  Type   | Required |       Values        |  Default  | Description                                                                       |
 | -------------------- | :-----: | :------: | :-----------------: | :-------: | --------------------------------------------------------------------------------- |
-| `directionX`         | `oneOf` |    -     |   `left`, `right`   |  `left`   | Sets the opening direction relative to the parent                                 |
-| `directionY`         | `oneOf` |    -     |   `top`, `bottom`   | `bottom`  | Sets the opening direction relative to the parent                                 |
-| `open`               | `bool`  |    -     |          -          |     -     | Tells when the dropdown should be opened                                          |
-| `clickOutsideAction` | `func`  |    -     | `default`, `toggle` | `default` | Required for determining a click outside DropDown with the withBackdrop parameter |
+| `directionX`         | `oneOf` |    -     |   `left`, `right`   |  `left`   | Sets the direction of dropdown menu opening relative to the parent                |
+| `directionY`         | `oneOf` |    -     |   `top`, `bottom`   | `bottom`  | Sets the direction of dropdown menu opening relative to the parent                |
+| `open`               | `bool`  |    -     |          -          |     -     | Says when the dropdown should be open                                             |
+| `clickOutsideAction` | `func`  |    -     | `default`, `toggle` | `default` | Required for determining the resulting action on a click outside DropDown list    |

@@ -26,5 +26,5 @@ import { Checkbox } from "app-components";
 | `disabled`      |  `bool`  |    -     |   -    |    -    | Disables checkbox input                                     |
 | `indeterminate` |  `bool`  |    -     |   -    |    -    | If true, a black filled rectangle appears in the checkbox   |
 | `label`         | `string` |    -     |   -    |    -    | Checkbox label                                              |
-| `onChange`      |  `func`  |    ✅    |   -    |    -    | Returns the value of the `checked` state                   |
+| `onChange`      |  `func`  |    ✅     |   -    |    -    | Returns the value of the `checked` prop                   |
 | `reverse`       |  `bool`  |    -     |   -    | `false` | Swaps the checkbox and the label                            |
