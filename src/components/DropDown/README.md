@@ -1,6 +1,6 @@
 # DropDown
 
-Is a dropdown with any number of action
+A dropdown menu with any number of actions
 
 ### Usage
 
@@ -12,23 +12,23 @@ import { DropDown } from "app-components";
 <DropDown open={false}></DropDown>
 ```
 
-By default, it is used with DropDownItem elements in role of children.
+By default, it is used with DropDownItem elements as children.
 
-If you want to display something custom, you can put it in children, but take into account that all stylization is assigned to the implemented component.
+If you want to display a custom element, place it among component children, but take into account that the styling will be applied to the whole component.
 
-When using component, it should be noted that parent must have CSS property _position: relative_. Otherwise, DropDown will appear outside parent's border.
+When using the component, note that the parent must have _position: relative_ CSS property. Otherwise, DropDown menu will appear outside the parent's borders.
 
 ### Properties
 
 | Props                   |   Type   | Required |     Values      | Default  | Description                                                                           |
 | ----------------------- | :------: | :------: | :-------------: | :------: | ------------------------------------------------------------------------------------- |
-| `clickOutsideAction`    |  `func`  |    -     |        -        |    -     | Required for determining a click outside DropDown with the withBackdrop parameter     |
+| `clickOutsideAction`    |  `func`  |    -     |        -        |    -     | Is required to relate a click outside DropDown with DropDown    |
 | `enableOnClickOutside`  |  `func`  |    -     |        -        |    -     | Enables outside click listening by setting up the event listening bindings.           |
 | `disableOnClickOutside` |  `func`  |    -     |        -        |    -     | Disables outside click listening by explicitly removing the event listening bindings. |
-| `directionX`            | `oneOf`  |    -     | `left`, `right` |  `left`  | Sets the opening direction relative to the parent                                     |
-| `directionY`            | `oneOf`  |    -     | `top`, `bottom` | `bottom` | Sets the opening direction relative to the parent                                     |
-| `manualWidth`           | `string` |    -     |        -        |    -     | Required if you need to specify the exact width of the component, for example 100%    |
-| `manualX`               | `string` |    -     |        -        |    -     | Required if you need to specify the exact distance from the parent component          |
-| `manualY`               | `string` |    -     |        -        |    -     | Required if you need to specify the exact distance from the parent component          |
-| `maxHeight`             | `number` |    -     |        -        |    -     | Required if the scrollbar is displayed                                                |
-| `open`                  |  `bool`  |    -     |        -        | `false`  | Tells when the dropdown should be opened                                              |
+| `directionX`            | `oneOf`  |    -     | `left`, `right` |  `left`  | Sets the direction of dropdown menu opening relative to the parent                    |
+| `directionY`            | `oneOf`  |    -     | `top`, `bottom` | `bottom` | Sets the direction of dropdown menu opening relative to the parent                    |
+| `manualWidth`           | `string` |    -     |        -        |    -     | Specifies the exact width of the component in percent            |
+| `manualX`               | `string` |    -     |        -        |    -     | Specifies the exact distance from the parent component along the horizontal axis                   |
+| `manualY`               | `string` |    -     |        -        |    -     | Specifies the exact distance from the parent component along the vertical axis                   |
+| `maxHeight`             | `number` |    -     |        -        |    -     | Sets the DropDown height at which a scrollbar appears                                                |
+| `open`                  |  `bool`  |    -     |        -        | `false`  | Says when the dropdown should be open                                              |
