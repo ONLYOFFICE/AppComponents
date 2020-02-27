@@ -1,6 +1,6 @@
 # Backdrop
 
-Background for displaying modal dialogs or other components
+Backdrop for displaying modal dialogs or other components
 
 ### Usage
 
@@ -16,5 +16,5 @@ import { Backdrop } from "app-components";
 
 | Props     |   Type   | Required | Values | Default | Description    |
 | --------- | :------: | :------: | :----: | :-----: | -------------- |
-| `visible` |  `bool`  |    -     |   -    | `false` | Display or not |
+| `visible` |  `bool`  |    -     |   -    | `false` | Used to display the backdrop or not to display |
 | `zIndex`  | `number` |    -     |   -    |  `100`  | CSS z-index    |
