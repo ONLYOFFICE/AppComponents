@@ -1,6 +1,6 @@
 # ToggleContent
 
-ToggleContent allow you to adding information, which you may hide/show by clicking header
+ToggleContent allows to add information which can be hidden/shown by clicking the header
 
 ### Usage
 
@@ -16,7 +16,7 @@ import { ToggleContent } from "app-components";
 
 #### Properties
 
-| Props   |  Type  | Required | Values |   Default    | Description             |
-| ------- | :----: | :------: | :----: | :----------: | ----------------------- |
-| `open`  | `bool` |    -     |   -    |   `false`    | State of component      |
-| `label` | `text` |    ✅    |   -    | `Some label` | Define label for header |
+| Props   |  Type  | Required | Values |   Default    | Description                      |
+| ------- | :----: | :------: | :----: | :----------: | -------------------------------- |
+| `open`  | `bool` |    -     |   -    |   `false`    | State of component               |
+| `label` | `text` |    ✅    |   -    | `Some label` | Sets the label for the header |

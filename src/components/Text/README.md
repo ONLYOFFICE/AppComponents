@@ -1,6 +1,6 @@
 # Text
 
-Component that displays plain text
+Displays plain text
 
 ## Usage
 
@@ -14,7 +14,7 @@ import { Text } from "app-components";
 </Text>
 ```
 
-### If you need to override styles add forwardedAs instead of as
+### If you need to override styles add 'forwardedAs' instead of 'as'
 
 ```js
 const StyledText = styled(Text)`
@@ -35,13 +35,13 @@ const StyledText = styled(Text)`
 | Props             |       Type       | Required | Values |  Default  | Description                                        |
 | ----------------- | :--------------: | :------: | :----: | :-------: | -------------------------------------------------- |
 | `fontSize`        | `number, string` |    -     |   -    |   `13`    | Sets the font size                                 |
-| `as`              |     `string`     |    -     |   -    |    `p`    | Sets the tag through which to render the component |
-| `title`           |      `bool`      |    -     |   -    |     -     | Title                                              |
+| `as`              |     `string`     |    -     |   -    |    `p`    | Sets the tag through which the component is rendered |
+| `title`           |      `bool`      |    -     |   -    |     -     | Title text                                             |
 | `truncate`        |      `bool`      |    -     |   -    |  `false`  | Disables word wrapping                             |
 | `inline`          |      `bool`      |    -     |   -    |  `false`  | Sets the 'display: inline-block' property          |
 | `display`         |     `string`     |    -     |   -    |     -     | Sets the 'display' property                        |
-| `color`           |     `string`     |    -     |   -    | `#333333` | Specifies the text color                           |
-| `bold`            |      `bool`      |    -     |   -    |  `false`  | Sets font weight value ​​to bold                   |
-| `italic`          |      `bool`      |    -     |   -    |  `false`  | Sets the font style                                |
-| `backgroundColor` |     `string`     |    -     |   -    |     -     | Sets background color                              |
+| `color`           |     `string`     |    -     |   -    | `#333333` | Sets the text color                           |
+| `bold`            |      `bool`      |    -     |   -    |  `false`  | Sets the font weight value ​​to bold                   |
+| `italic`          |      `bool`      |    -     |   -    |  `false`  | Sets italic font style                              |
+| `backgroundColor` |     `string`     |    -     |   -    |     -     | Sets the background color                              |
 | `fontWeight`      | `number, string` |    -     |   -    |     -     | Sets the font weight                               |
