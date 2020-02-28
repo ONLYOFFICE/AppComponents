@@ -1,6 +1,6 @@
 # TextArea
 
-Is used to display a custom textarea
+Is used to display a custom text area
 
 ### Usage
 
@@ -23,12 +23,12 @@ import { TextArea } from "app-components";
 | `value`       | `string` |    ✅    |   -    |         -         | Value of TextArea                                                                                          |
 | `onChange`    |  `func`  |    ✅    |   -    |         -         | Allows to handle changing events of the component                                                            |
 | `disabled`    |  `bool`  |    -     |   -    |      `false`      | Indicates that the field cannot be used                                                                     |
-| `error`       |  `bool`  |    -     |   -    |      `false`      | Indicates that the field has an error                                                                       |
-| `warning`     |  `bool`  |    -     |   -    |      `false`      | Indicates that the has a warning                                                                            |
+| `error`       |  `bool`  |    -     |   -    |      `false`      | Indicates that the field has an error with a red border                                                                       |
+| `warning`     |  `bool`  |    -     |   -    |      `false`      | Indicates that the has a warning with a yellow border                                                                            |
 | `readOnly`    |  `bool`  |    -     |   -    |      `false`      | Indicates that the field is displaying read-only content                                                    |
 | `name`        | `string` |    -     |   -    |         -         | Used as HTML `name` property                                                                                |
 | `height`      | `string` |    -     |   -    | Uses theme height | Sets the height of the TextArea                                                                                     |
-| `width`       | `string` |    -     |   -    | Uses theme width  | Sets width in TextArea                                                                                      |
+| `width`       | `string` |    -     |   -    | Uses theme width  | Sets width of the TextArea                                                                                      |
 | `placeholder` | `string` |    -     |   -    |         -         | Placeholder for TextArea                                                                                    |
 | `maxLength`   | `number` |    -     |   -    |         -         | Specifies the maximum number of characters allowed in the input box             |
 | `tabIndex`    | `number` |    -     |   -    |         -         | The tabIndex attribute specifies the tab order of an element (when the "tab" button is used for navigating) |
