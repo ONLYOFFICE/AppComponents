@@ -1,6 +1,6 @@
 # RadioButtonGroup
 
-RadioButtonGroup allow you to add group radiobutton
+Allows you to add a group radiobuttons
 
 ### Usage
 
@@ -24,11 +24,11 @@ import { RadioButtonGroup } from "app-components";
 
 | Props         |   Type    | Required |          Values          |   Default    | Description                                                                                                                                                                                                       |
 | ------------- | :-------: | :------: | :----------------------: | :----------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`        | `string`  |    ✅    |            -             |      -       | Used as HTML `name` property for `<input>` tag. Used for identification RadioButtonGroup                                                                                                                          |
-| `options`     | `arrayOf` |    ✅    |            -             |      -       | Array of objects, contains props for each `<RadioButton />` component                                                                                                                                             |
+| `name`        | `string`  |    ✅    |            -             |      -       | Used as HTML `name` property for `<input>` tag. Used for RadioButtonGroup identification                                                                                                                         |
+| `options`     | `arrayOf` |    ✅    |            -             |      -       | Array of objects, contains props for each `RadioButton` component                                                                                                                                             |
 | `selected`    | `string`  |    ✅    |            -             |      -       | Value of the selected radiobutton                                                                                                                                                                                 |
-| `onClick`     |  `func`   |    -     |            -             |      -       | Allow you to handle clicking events on `<RadioButton />` component                                                                                                                                                |
-| `orientation` |  `oneOf`  |    -     | `vertical`, `horizontal` | `horizontal` | Position of radiobuttons                                                                                                                                                                                          |
-| `disabled`    |  `bool`   |    -     |            -             |   `false`    | Disabling all radiobutton in group                                                                                                                                                                                |
-| `spacing`     | `string`  |    -     |            -             |    `15px`    | Margin between radiobutton. If orientation `horizontal`, it is `margin-left`(apply for all radiobuttons, except first), if orientation `vertical`, it is `margin-bottom`(apply for all radiobuttons, except last) |
+| `onClick`     |  `func`   |    -     |            -             |      -       | Allows to handle clicking events on `RadioButton` component                                                                                                                                                |
+| `orientation` |  `oneOf`  |    -     | `vertical`, `horizontal` | `horizontal` | Changes the position of radiobuttons                                                                                                                                                                                          |
+| `disabled`    |  `bool`   |    -     |            -             |   `false`    | Disabling all radiobuttons in a group                                                                                                                                                                                |
+| `spacing`     | `string`  |    -     |            -             |    `15px`    | Changes the spacing between radiobuttons. If orientation is `horizontal`, it is `margin-left`(applies to all radiobuttons, except for the first one), if orientation is `vertical`, it is `margin-bottom`(applies to all radiobuttons, except for the last one) |
 | `width`       | `string`  |    -     |            -             |    `100%`    | Width of RadioButtonGroup container                                                                                                                                                                               |

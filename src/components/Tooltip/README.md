@@ -4,8 +4,6 @@ Custom tooltip
 
 #### See documentation: https://github.com/wwayne/react-tooltip
 
-### Usage with array
-
 ```js
 import { Tooltip, Link, Text, Box } from "app-components";
 ```
@@ -78,29 +76,27 @@ const arrayUsers = [
 
 | Props             |   Type   | Required |              Values              | Default | Description                       |
 | ----------------- | :------: | :------: | :------------------------------: | :-----: | --------------------------------- |
-| `data-event`      | `string` |    -     |          `click, focus`          |    -    | Custom event to trigger tooltip   |
-| `data-for`        | `string` |    ✅    |                -                 |    -    | Corresponds to the id of Tooltip  |
-| `data-offset`     | `string` |    -     | `top`, `left`, `right`, `bottom` |    -    | Offset of current tooltip         |
+| `data-event`      | `string` |    -     |          `click, focus`          |    -    | Custom event that triggers the tooltip   |
+| `data-for`        | `string` |    ✅    |                -                 |    -    | Is necessary to display the tooltip. Id of the element Corresponds to the id of Tooltip  |
+| `data-offset`     | `string` |    -     | `top`, `left`, `right`, `bottom` |    -    | Offset of the current tooltip from the parent component     |
 | `data-place`      | `string` |    -     | `top`, `right`, `bottom`, `left` |    -    | Tooltip placement                 |
-| `data-tip`        | `string` |    -     |                -                 |    -    | Required if you need to component |
-| `data-delay-show` | `string` |    -     |                -                 |    -    | Tooltip show delay                |
-| `data-delay-hide` | `string` |    -     |                -                 |    -    | Tooltip hide delay                |
+| `data-tip`        | `string` |    -     |                -                 |    -    | Required to render custom content of the tooltip |
+| `data-delay-show` | `string` |    -     |                -                 |    -    | Shows tooltip with a delay        |
+| `data-delay-hide` | `string` |    -     |                -                 |    -    | Hides tooltip with a delay        |
 
 ### ReactTooltip Properties
 
 | Props              |      Type      | Required |              Values              | Default | Description                            |
 | ------------------ | :------------: | :------: | :------------------------------: | :-----: | -------------------------------------- |
-| `className`        |    `string`    |    -     |                -                 |    -    | Accepts class                          |
 | `effect`           |    `string`    |    -     |         `float`, `solid`         | `float` | Behavior of tooltip                    |
-| `id`               |    `string`    |    ✅    |                -                 |    -    | Used as HTML id property               |
-| `maxWidth`         |    `number`    |    -     |                -                 |  `340`  | Set max width of tooltip               |
-| `offsetBottom`     |    `number`    |    -     |                -                 |    -    | Offset bottom all tooltips on page     |
-| `offsetLeft`       |    `number`    |    -     |                -                 |    -    | Offset left all tooltips on page       |
-| `offsetRight`      |    `number`    |    -     |                -                 |    -    | Offset right all tooltips on page      |
-| `offsetTop`        |    `number`    |    -     |                -                 |    -    | Offset top all tooltips on page        |
-| `delayShow`        |    `number`    |    -     |                -                 |    -    | Tooltip show delay                     |
-| `delayHide`        |    `number`    |    -     |                -                 |    -    | Tooltip hide delay                     |
+| `id`               |    `string`    |    ✅    |                -                 |    -    | Used as HTML id attribute - like in data-for            |
+| `maxWidth`         |    `number`    |    -     |                -                 |  `340`  | Sets max width of tooltip               |
+| `offsetBottom`     |    `number`    |    -     |                -                 |    -    | Sets a bottom offset for all tooltips on page     |
+| `offsetLeft`       |    `number`    |    -     |                -                 |    -    | Sets a bottom offset for all tooltips on page       |
+| `offsetRight`      |    `number`    |    -     |                -                 |    -    | Sets a bottom offset for all tooltips on page      |
+| `offsetTop`        |    `number`    |    -     |                -                 |    -    | Sets a bottom offset for all tooltips on page        |
+| `delayShow`        |    `number`    |    -     |                -                 |    -    | Shows tooltip with a delay                     |
+| `delayHide`        |    `number`    |    -     |                -                 |    -    | Hides tooltip with a delay                     |
 | `place`            |    `string`    |    -     | `top`, `right`, `bottom`, `left` |  `top`  | Global tooltip placement               |
-| `style`            | `obj`, `array` |    -     |                -                 |    -    | Accepts css style                      |
-| `getContent`       |     `func`     |    -     |                                  |    -    | Generate the tip content dynamically   |
+| `getContent`       |     `func`     |    -     |                                  |    -    | Generates the tooltip content dynamically   |
 | `overridePosition` |     `func`     |    -     |                -                 |    -    | Replaces the standard tooltip position |

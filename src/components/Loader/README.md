@@ -14,9 +14,9 @@ import { Loader } from "app-components";
 
 ### Properties
 
-| Props   |   Type   | Required |           Values            |        Default         | Description |
-| ------- | :------: | :------: | :-------------------------: | :--------------------: | ----------- |
-| `color` | `string` |    -     |              -              |       `#63686a`        | Font color  |
-| `label` | `string` |    -     |              -              | `Loading please wait.` | Text label  |
-| `size`  | `string` |    -     |              -              |         `40px`         | Font size   |
-| `type`  | `oneOf`  |    -     | `base`, `oval`, `dual-ring` |         `base`         | Loader type |
+| Props   |   Type   | Required |           Values            |        Default          | Description |
+| ------- | :------: | :------: | :-------------------------: | :---------------------: | ----------- |
+| `color` | `string` |    -     |              -              |       `#63686a`         | Font color  |
+| `label` | `string` |    -     |              -              | `Loading, please wait.` | Text label  |
+| `size`  | `string` |    -     |              -              |         `40px`          | Font size   |
+| `type`  | `oneOf`  |    -     | `base`, `oval`, `dual-ring` |         `base`          | Loader type |

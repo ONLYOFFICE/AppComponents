@@ -1,6 +1,6 @@
 # Scrollbar
 
-Scrollbar is used for displaying custom scrollbar
+Is used to display a custom scrollbar
 
 ### Usage
 
@@ -16,5 +16,5 @@ import { Scrollbar } from "app-components";
 
 | Props   |   Type   | Required |          Values          |     Default      | Description                         |
 | ------- | :------: | :------: | :----------------------: | :--------------: | ----------------------------------- |
-| `size`  | `string` |          | `small`, `medium`, `big` |     `medium`     | Scrollbar width or your custom type |
-| `color` | `string` |    -     |            -             | Uses theme color | Specifies the scrollbar color       |
+| `size`  | `string` |          | `small`, `medium`, `big` |     `medium`     | Scrollbar width - either the default values oк can be set manually |
+| `color` | `string` |    -     |            -             | Uses theme color | Sets the scrollbar color       |

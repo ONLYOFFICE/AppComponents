@@ -29,4 +29,4 @@ const newTheme = {...Themes.Base, color: "red"}
 
 | Props   |   Type   | Required | Values |    Default    | Description                                 |
 | ------- | :------: | :------: | :----: | :-----------: | ------------------------------------------- |
-| `theme` | `object` |    ✅    |   -    | `Base styles` | Provides a theme to all children components |
+| `theme` | `object` |    ✅    |   -    | `Base styles` | Applies a theme to all children components |
