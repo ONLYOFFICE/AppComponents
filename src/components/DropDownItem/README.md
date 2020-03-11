@@ -1,6 +1,6 @@
 # DropDownItem
 
-Is a item of DropDown component
+An item used in DropDown component
 
 ### Usage
 
@@ -17,17 +17,17 @@ import { DropDownItem } from "app-components";
 />
 ```
 
-An item can act as separator, header, or container.
+The item can act as a separator, header, or container.
 
-When used as container, it will retain all styling features and positioning. To disable hover effects in container mode, you can use _noHover_ property.
+When used as a container, it retains all the styling features and positioning. To disable hover effects in container mode, you can use _noHover_ property.
 
 ### Properties
 
 | Props         |   Type   | Required | Values |     Default     | Description                                                |
 | ------------- | :------: | :------: | :----: | :-------------: | ---------------------------------------------------------- |
-| `disabled`    |  `bool`  |    -     |   -    |     `false`     | Tells when the dropdown item should display like disabled  |
-| `header`    |  `bool`  |    -     |   -    |     `false`     | Tells when the dropdown item should display like header    |
-| `separator` |  `bool`  |    -     |   -    |     `false`     | Tells when the dropdown item should display like separator |
+| `disabled`    |  `bool`  |    -     |   -    |     `false`     | Says when the dropdown item should be disabled  |
+| `header`    |  `bool`  |    -     |   -    |     `false`     | Says when the dropdown item should display as a header    |
+| `separator` |  `bool`  |    -     |   -    |     `false`     | Says when the dropdown item should display as a separator |
 | `label`       | `string` |    -     |   -    | `Dropdown item` | Dropdown item text                                         |
-| `noHover`     |  `bool`  |    -     |   -    |     `false`     | Disable default style hover effect                         |
-| `onClick`     |  `func`  |    -     |   -    |        -        | What the dropdown item will trigger when clicked           |
+| `noHover`     |  `bool`  |    -     |   -    |     `false`     | Disables default style hover effect                         |
+| `onClick`     |  `func`  |    -     |   -    |        -        | What the DropDown item will trigger when clicked           |
