@@ -18,5 +18,5 @@ import { ToggleContent } from "app-components";
 
 | Props   |  Type  | Required | Values |   Default    | Description                      |
 | ------- | :----: | :------: | :----: | :----------: | -------------------------------- |
-| `open`  | `bool` |    -     |   -    |   `false`    | State of component               |
+| `open`  | `bool` |    -     |   -    |   `false`    | Switches the state of the component to open or closed          |
 | `label` | `text` |    ✅    |   -    | `Some label` | Sets the label for the header |
