@@ -23,5 +23,5 @@ import { ToggleButton } from "app-components";
 | `checked`  |  `bool`  |    -     |   -    |    -    | Makes ToggleButton checked.                                    |
 | `onChange` |  `func`  |    ✅    |   -    |    -    | Is triggered whenever ToggleButton is clicked               |
 | `disabled` |  `bool`  |    -     |   -    |    -    | Disables the ToggleButton                                      |
-| `label`    | `string` |    -     |   -    |    -    | Label of the ToggleButton                                           |
+| `label`    | `string` |    -     |   -    |    -    | Sets the ToggleButton Label                                            |
 | `reverse`  |  `bool`  |    -     |   -    | `false` | Swaps the ToggleButton and the label                               |
