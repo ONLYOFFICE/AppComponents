@@ -18,7 +18,7 @@ import { Box } from "app-components";
 | :--------------: | :---------------: | :------: | :----: | :-----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `as`             | `string`          |    -     |   -    |         | Sets the tag through which the component is rendered.    |
 | `alignContent`   | `string`          |    -     |   -    |    -    | Sets the distribution of space between and around content items along a Flexbox cross-axis or a Grid block axis. |
-| `alignItems`     | `string`          |    -     |   -    |    -    | Sets the align-self value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area. |
+| `alignItems`     | `string`          |    -     |   -    |    -    | Sets the align-self value on all direct children as a group. In Flexbox, it controls the alignment of items on the cross axis. In Grid Layout, it controls the alignment of items on the block axis within their grid area. |
 | `alignSelf`      | `string`          |    -     |   -    |    -    | Overrides a grid or flex item's align-items value. In Grid layout, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis. |
 | `backgroundProp` | `string`          |    -     |   -    |    -    | Allows to set all background style properties at once, such as color, image, origin, size, and repeat method. |
 | `borderProp`     | `string`,`object` |    -     |   `"1px solid red"`, `{ "style": "solid",  "width": "1px", "color": "red", "radius": "5px" }`   |    -    | Sets an element's border. It sets the values of border-width, border-style, and border-color. |
@@ -36,4 +36,4 @@ import { Box } from "app-components";
 | `overflowProp`   | `string`          |    -     |   -    |    -    | Determines what to do when an element's content is too big to fit in its block formatting context. |
 | `paddingProp`    | `string`          |    -     |   -    |    -    | Sets the padding area on all four sides of an element. It is a shorthand for padding-top, padding-right, padding-bottom, and padding-left. |
 | `textAlign`      | `string`          |    -     |   -    |    -    | Sets the horizontal alignment of a block element or table-cell box. |
-| `widthProp`      | `string`          |    -     |   -    |    -    | Defines the width of the border of the element area. |
+| `widthProp`      | `string`          |    -     |   -    |    -    | Defines the width of the element area border. |
