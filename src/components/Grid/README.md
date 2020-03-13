@@ -32,4 +32,4 @@ import { Grid } from "app-components";
 | `marginProp`     | `string`          |    -     |   -    |    -    | Sets the margin area on all four sides of an element. It is a shorthand for margin-top, margin-right, margin-bottom, and margin-left. |
 | `paddingProp`    | `string`          |    -     |   -    |    -    | Sets the padding area on all four sides of an element. It is a shorthand for padding-top, padding-right, padding-bottom, and padding-left |
 | `rowsProp`       | `string`,`array`  |    -     |   `"50px"`, `["100px", ["100px","1fr"], "auto"]`   |    -    | Defines the sizing of the grid rows. It is possible to create several rows of a certain size with a single string. The property defines a grid object by setting the number of row repetitions and their size. It also allows to set row sizes. The row size can be specified as an array of minimum and maximum heights. |
-| `widthProp`      | `string`          |    -     |   -    | `100%`  | Defines the width of the border of the element area. |
+| `widthProp`      | `string`          |    -     |   -    | `100%`  | Defines the width of the element area border. |
