@@ -4,8 +4,8 @@ Custom theme provider based on [Theme Provider](https://www.styled-components.co
 
 List of themes:
 
-- [Base theme](/?path=/story/components-themecomponents--base-theme)
-- [Dark theme](/?path=/story/components-themecomponents--dark-theme)
+- [Base theme](https://dotnet.onlyoffice.com:8084/?path=/story/components-themeprovider--base-theme)
+- [Dark theme](https://dotnet.onlyoffice.com:8084/?path=/story/components-themeprovider--dark-theme)
 
 You can change the CSS styles in the theme, and they will be applied to all children components of ThemeProvider
 
