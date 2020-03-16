@@ -24,7 +24,7 @@ import { Button } from "app-components";
 | `disabled` |  `bool`  |    -     |            -            | `false` | Disables the button default functionality             |
 | `label`    | `string` |    -     |            -            |    -    | Allows to enter button text                           |
 | `onClick`  |  `func`  |    -     |            -            |    -    | The event triggered when the button is clicked        |
-| `primary`  |  `bool`  |    -     |            -            | `false` | Says when the button is primary                       |
-| `scale`    |  `bool`  |    -     |            -            | `false` | Scales the width of the button to 100%                |
-| `size`     | `oneOf`  |    -     | `base`, `middle`, `big` | `base`  | Sets button size                                      |
-| `tabIndex` | `number` |    -     |            -            |  `-1`   | Sets the button tabindex                              |
+| `primary`  |  `bool`  |    -     |            -            | `false` | Indicates which button is primary - highlights it with color                      |
+| `scale`    |  `bool`  |    -     |            -            | `false` | Scales the button width to 100%                       |
+| `size`     | `oneOf`  |    -     | `base`, `middle`, `big` | `base`  | Sets the button size                                      |
+| `tabIndex` | `number` |    -     |            -            |  `-1`   | The tabIndex attribute specifies the tab order of the button (when the "tab" button is used for navigating).                             |
