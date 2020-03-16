@@ -1,6 +1,6 @@
 # ComboBox
 
-A component for displaying a customizable list of options.
+A component displaying a customizable list of options.
 
 ### Usage
 
@@ -118,7 +118,7 @@ To use Combobox as a toggle button, use the parameters:
 | `dropDownMaxHeight` | `number`  |    -     |                     -                      |     -     | Height of Dropdown                                                                     |
 | `disabled`          |  `bool`   |    -     |                     -                      |  `false`  | Disables the whole component                                                           |
 | `onSelect`          |  `func`   |    -     |                     -                      |     -     | The event triggered whenever an option of the ComboBox is selected                     |
-| `scaledOptions`     |  `bool`   |    -     |                     -                      |  `false`  | Allows the component`s options container scaling to fit ComboButton width             |
+| `scaledOptions`     |  `bool`   |    -     |                     -                      |  `false`  | Allows the component`s options container to scale fitting ComboButton width             |
 | `toggleAction`      |  `func`   |    -     |                     -                      |     -     | The event triggered when `displayType: toggle` parameter is on                         |
 | `size`              |  `oneOf`  |    -     | `base`, `middle`, `big`, `huge`, `content` |  `base`   | Allows to select the component width                                                   |
 | `withoutBorder`     |  `bool`   |    -     |                     -                      |  `false`  | Allows to display the component without borders                                        |
