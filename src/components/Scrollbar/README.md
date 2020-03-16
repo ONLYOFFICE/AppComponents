@@ -16,5 +16,5 @@ import { Scrollbar } from "app-components";
 
 | Props   |   Type   | Required |          Values          |     Default      | Description                         |
 | ------- | :------: | :------: | :----------------------: | :--------------: | ----------------------------------- |
-| `size`  | `string` |          | `small`, `medium`, `big` |     `medium`     | Sets scrollbar width. Either the default values or can be set manually |
+| `size`  | `string` |          | `small`, `medium`, `big` |     `medium`     | Sets scrollbar width - either with standard values or can be set manually |
 | `color` | `string` |    -     |            -             | Uses theme color | Sets the scrollbar color       |
