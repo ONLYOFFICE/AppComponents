@@ -131,6 +131,27 @@ const Base = {
     hoverIndeterminateColor: gray
   },
 
+  switchButton: {
+    fillColor: white,
+    border: `1px solid ${globalColors.grayMid}`,
+    switchColor: gray,
+
+    disabledFillColor: grayLight,
+    disabledBorder: `1px solid ${globalColors.grayLightMid}`,
+    disabledSwitchColor: grayLightMid,
+    disabledDiv: grayMid,
+
+    hoverBorderColor: gray,
+
+    rectangleDivColor: white,
+    checkedRectangleDivColor: gray,
+
+    squareDivColor: gray,
+    checkedSquareDivColor: white
+
+    
+  },
+
   toggleButton: {
     fillColor: blueMain,
     fillColorOff: gray,
