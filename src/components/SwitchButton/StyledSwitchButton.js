@@ -7,7 +7,41 @@ const innerDivCss = css`
   z-index: 2;
 `;
 
-const isCheckedCss = css`
+const rectangleCss = css`
+  width: 16px;
+  height: 2px;
+
+  background: ${props => 
+    props.disabled
+      ? props.theme.switchButton.disabledDiv
+      : props.checked  
+        ? props.theme.switchButton.checkedRectangleDivColor
+        : props.theme.switchButton.rectangleDivColor
+  } ;
+`;
+
+const squareCss = css`
+  width: 7px;
+  height: 7px;
+
+  background: ${props => 
+    props.disabled
+      ? props.theme.switchButton.disabledDiv
+      : props.checked  
+        ? props.theme.switchButton.checkedSquareDivColor
+        : props.theme.switchButton.squareDivColor
+  } ;
+`;
+
+const StyledChecked = styled.div`
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: -1px;
+  bottom: 0px;
+  border-radius: 3px 0px 0px 3px;
+  z-index: 1;
+  
   right: ${props => 
     props.checked
       ? '-50%'
@@ -23,49 +57,11 @@ const isCheckedCss = css`
       ? 'matrix(-1, 0, 0, 1, 0, 0);'
       : 'none'
   };
-  background-color: ${props => 
+  background: ${props => 
     props.disabled
-      ? "#ECEEF1"
-      : "#A3A9AE"
+      ? props.theme.switchButton.disabledSwitchColor
+      : props.theme.switchButton.switchColor
   };
-`;
-
-const rectangleCss = css`
-  width: 16px;
-  height: 2px;
-
-  background: ${props => 
-    props.disabled
-      ? '#D8D8D8'
-      : props.checked  
-        ? '#A3A9AE'
-        : '#FFFFFF'
-  } ;
-`;
-
-const squareCss = css`
-  width: 7px;
-  height: 7px;
-
-  background: ${props => 
-    props.disabled
-      ? '#D8D8D8'
-      : props.checked  
-        ? '#FFFFFF'
-        : '#A3A9AE'
-  } ;
-`;
-
-const StyledChecked = styled.div`
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  top: -1px;
-  bottom: 0px;
-  border-radius: 3px 0px 0px 3px;
-  z-index: 1;
-  
-  ${isCheckedCss};
 `;
 
 const StyledSwitchButton = styled.div`
@@ -73,24 +69,25 @@ const StyledSwitchButton = styled.div`
   height: 32px;
   position: relative;
   background: ${props => 
-    !props.disabled
-      ? "#FFF"
-      : "#F8F9F9"
+    props.disabled
+      ? props.theme.switchButton.disabledFillColor
+      : props.theme.switchButton.fillColor
+      
   };
   box-sizing: border-box;
 
   border-radius: 3px;
   border: ${props => 
     props.disabled
-      ? '1px solid #ECEEF1'
-      : '1px solid #D0D5DA'
+      ? props.theme.switchButton.disabledBorder
+      : props.theme.switchButton.border  
   };
 
   &:hover {
     border-color: ${props => 
       props.disabled
       ? 'none'
-      : '#A3A9AE' 
+      : props.theme.switchButton.hoverBorderColor 
     };
     cursor: ${props =>
       props.disabled

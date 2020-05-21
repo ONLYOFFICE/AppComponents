@@ -28,7 +28,7 @@ class SwitchButton extends Component {
   }
 
   render() {
-    const { disabled, ...rest } = this.props;
+    const { disabled, onChange, ...rest } = this.props;
     const { checked } = this.state;
 
     return (
