@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { 
-  StyledSwitchButton, 
-  StyledChecked, 
+  StyledSwitchButton,  
   StyledHiddenInput 
 } from './StyledSwitchButton';
+
+import { 
+  SwitchButtonActiveUnchecked,
+  SwitchButtonActiveChecked
+} from './svg';
 
 class SwitchButton extends Component {
   constructor(props) {
@@ -27,29 +31,34 @@ class SwitchButton extends Component {
     this.props.onChange && this.props.onChange(e);
   }
 
-  render() {
-    const { disabled, onChange, ...rest } = this.props;
-    const { checked } = this.state;
+  renderSwitch = () => {
+    const { checked } = this.props;
 
     return (
-      <label {...rest}>
-        <StyledSwitchButton checked={checked} disabled={disabled}>
-          <div className="inner-div"></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <StyledChecked checked={checked} disabled={disabled} />
-          <StyledHiddenInput
-            type="checkbox"
-            checked={checked}
-            disabled={disabled}
-            onChange={this.onChangeHandler}
-          />
-        </StyledSwitchButton> 
-      </label>
+      <>
+      {checked
+        ? <SwitchButtonActiveChecked />
+        : <SwitchButtonActiveUnchecked />
+      }
+      </>
+    );
+  }
+
+  render() {
+    const { disabled, checked, onChange, ...rest } = this.props;
+
+    const btnSwitch = this.renderSwitch();
+
+    return (
+      <StyledSwitchButton checked={checked} disabled={disabled} {...rest}>
+        {btnSwitch}
+        <StyledHiddenInput
+          type="checkbox"
+          checked={checked}
+          disabled={disabled}
+          onChange={this.onChangeHandler}
+        />
+      </StyledSwitchButton> 
     );
   }
 }
