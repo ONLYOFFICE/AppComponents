@@ -3,3 +3,4 @@
 **/storybook-static/
 /coverage
 /dist
+**/.DS_Store

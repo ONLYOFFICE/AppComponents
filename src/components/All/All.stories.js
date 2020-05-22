@@ -21,6 +21,7 @@ import Scrollbar from "../Scrollbar";
 import Calendar from "../Calendar";
 import Avatar from "../Avatar";
 import ToggleContent from "../ToggleContent";
+import SwitchButton from '../SwitchButton';
 
 const github = "https://github.com/ONLYOFFICE/AppComponents";
 const arrayUsers = [
@@ -132,6 +133,9 @@ storiesOf("Components|All", module)
             label="Button"
           />
           <Button size="big" label="Button" />
+        </Box>
+        <Box paddingProp="8px">
+          <SwitchButton />
         </Box>
         <Box paddingProp="8px 16px">
           <Loader type="base" size="30px" label="Loading..." />
