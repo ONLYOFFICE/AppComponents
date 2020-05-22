@@ -39,18 +39,18 @@ const StyledSwitchButton = styled.label`
             `
         : css`
             rect {
-                fill: ${props => props.theme.switchButton.fillColorDisabled};
-                stroke: ${props => props.theme.switchButton.disabledFillColor};
-              }
-              path:nth-child(2) {
-                fill: ${props => props.theme.switchButton.disabledFillColor}
-              }
-              path:nth-child(3) {
-                fill: ${props => props.theme.switchButton.disabledFillColorInner}
-              }
-              path:last-child {
-                fill: ${props => props.theme.switchButton.disabledFillColorInner}
-              }
+              fill: ${props => props.theme.switchButton.fillColorDisabled};
+              stroke: ${props => props.theme.switchButton.disabledFillColor};
+            }
+            path:nth-child(2) {
+              fill: ${props => props.theme.switchButton.disabledFillColor}
+            }
+            path:nth-child(3) {
+              fill: ${props => props.theme.switchButton.disabledFillColorInner}
+            }
+            path:last-child {
+              fill: ${props => props.theme.switchButton.disabledFillColorInner}
+            }
           `
     }
   }
