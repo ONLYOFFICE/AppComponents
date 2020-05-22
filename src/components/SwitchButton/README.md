@@ -12,7 +12,7 @@ import { SwitchButton } from "app-components";
 <SwitchButton
   disabled={false}
   checked={false}
-  onClick={() => alert("SwitchButton clicked")}
+  onChange={() => alert("SwitchButton clicked")}
 />
 ```
 
@@ -21,6 +21,6 @@ import { SwitchButton } from "app-components";
 | Props      |   Type   | Required |         Values          | Default | Description                                           |
 | ---------- | :------: | :------: | :---------------------: | :-----: | ----------------------------------------------------- |
 | `disabled` |  `bool`  |    -     |            -            | `false` | Disables the button default functionality             |
-| `onClick`  |  `func`  |    -     |            -            |    -    | The event triggered when the button is clicked        |
+| `onChange` |  `func`  |    -     |            -            |    -    | The event triggered when the button is clicked        |
 | `checked`  |  `bool`  |    -     |            -            | `false` | Makes SwitchButton checked.                           |
 
