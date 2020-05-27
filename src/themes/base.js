@@ -131,6 +131,27 @@ const Base = {
     hoverIndeterminateColor: gray
   },
 
+  slider: {
+    fillColor: white,
+
+    sliderBarColorProgress: blueMain,
+    sliderBarColorProgressDisabled: grayMid,
+    sliderBarColor: grayLightMid,
+    sliderBarDisableColor: grayLightMid,
+
+    sliderBarBorderActive: `1px solid ${globalColors.grayMid}`,
+    sliderBarBorderDisable: `1px solid ${globalColors.grayMid}`,
+
+    thumbFillDisable: grayLightMid,
+    thumbFillActive: grayLightMid,
+    
+    thumbBorderColorActive: `1px solid ${globalColors.gray}`,
+    thumbBorderColorDisable: `1px solid ${globalColors.grayMid}`,
+
+    sliderWidth: '202px',
+    sliderHeight: '10px',
+  },
+
   switchButton: {
     fillColor: white,
     checkedFillColor: gray,
