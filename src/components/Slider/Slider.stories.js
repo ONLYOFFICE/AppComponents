@@ -17,17 +17,17 @@ storiesOf("Components|Slider", module)
       <Box paddingProp="16px">
         <BooleanValue>
           <Slider 
-            disabled={boolean("Slider", false)}
+            disabled={boolean("disabled", false)}
             value={text("value", "5")}
             max={number('max', 30)}
-            min={number('min', 1)}
+            min={number('min', 0)}
             onChange={e => {
               action("onChange")(e);
               window.__STORYBOOK_ADDONS.channel.emit("storybookjs/knobs/change", {
                 name: "value",
                 value: e.target.value
               });
-              console.log(e.target.value)
+              
             }}
             />
         </BooleanValue>

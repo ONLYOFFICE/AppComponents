@@ -7,7 +7,7 @@ const baseProps = {
   disabled: false,
   value: "5",
   max: 30,
-  min: 1,
+  min: 0,
   onChange: jest.fn()
 };
 
@@ -22,7 +22,7 @@ describe("<Slider />", () => {
     expect(wrapper).toExist();
   });
 
-  it('render without max, value, disabled', () => {
+  it('render without max, value, disabled, min', () => {
     const wrapper = mount(<Slider />);
     expect(wrapper).toExist();
   });
@@ -42,20 +42,20 @@ describe("<Slider />", () => {
     expect(wrapper.getDOMNode().style).toHaveProperty("color", "red");
   });
 
+  it("componentDidMount() props lifecycle test", () => {
+    const wrapper = shallow(<Slider {...baseProps}  max={-1} min={-1} />).instance();
+
+    wrapper.componentDidMount();
+    expect(wrapper.state.max).toBe(0);
+    expect(wrapper.state.min).toBe(0);
+  });
+
   it("componentDidUpdate() props lifecycle test", () => {
     const wrapper = shallow(<Slider {...baseProps} />).instance();
 
     wrapper.componentDidUpdate({ value: "8" });
     expect(wrapper.props).toBe(wrapper.props);
     expect(wrapper.state.value).toBe(wrapper.props.value);
-
-    wrapper.componentDidUpdate({ max: 25 });
-    expect(wrapper.props).toBe(wrapper.props);
-    expect(wrapper.state.max).toBe(wrapper.props.max);
-
-    wrapper.componentDidUpdate({ min: 3 });
-    expect(wrapper.props).toBe(wrapper.props);
-    expect(wrapper.state.min).toBe(wrapper.props.min);
   });
 
   it("accepts disabled", () => {
@@ -77,5 +77,47 @@ describe("<Slider />", () => {
     input.simulate("change", event);
     expect(baseProps.onChange).toHaveBeenCalled();
     expect(wrapper1.state.value).toBe(wrapper1.props.value);
+  });
+
+  it('onRight() test', () => {
+    const wrapper = shallow(<Slider {...baseProps} value="22"/>).instance();
+    const event = { target: { value: "23" }};
+
+    wrapper.onRight(event);
+    expect(wrapper.state.value).toBe("23");
+  });
+
+  it(' onLeft() test', () => {
+    const wrapper = shallow(<Slider {...baseProps} value="22"/>).instance();
+    const event = { target: { value: "22" }};
+
+    wrapper.onLeft(event);
+    expect(wrapper.state.value).toBe("21");
+  });
+
+  it('max value test', () => {
+    const wrapper = shallow(<Slider {...baseProps} value="30"/>).instance();
+    const event = { target: { value: "30" }};
+    
+    wrapper.onRight(event);
+    expect(wrapper.state.value).toBe("30");
+  });
+  
+  it('min value test', () => {
+    const wrapper = shallow(<Slider {...baseProps} value="0"/>).instance();
+    const event = { target: { value: "0" }};
+
+    wrapper.onLeft(event);
+    expect(wrapper.state.value).toBe("0");
+  });
+
+  it('onFocusHandler() test', () => {
+    const wrapper = shallow(<Slider {...baseProps} />).instance();
+
+    wrapper.onFocusHandler();
+    expect(wrapper.state.focus).toBe(true);
+
+    wrapper.onFocusHandler();
+    expect(wrapper.state.focus).toBe(false);
   });
 }) 

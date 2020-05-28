@@ -3,18 +3,18 @@ import { Base } from "../../themes/index";
 
 const toggleThumbCss = css`
   ${props => 
-        props.disabled
-          ? css`
-              border: ${Base.slider.thumbBorderColorDisable};
-              background: ${Base.slider.thumbFillDisable};
-              cursor: default;
-            `
-          : css`
-              border: ${Base.slider.thumbBorderColorActive};
-              background: ${Base.slider.thumbFillActive};
-              cursor: pointer;
-            `
-  }
+      props.disabled
+        ? css`
+            border: ${Base.slider.thumbBorderColorDisable};
+            background: ${Base.slider.thumbFillDisable};
+            cursor: default;
+          `
+        : css`
+            border: ${Base.slider.thumbBorderColorActive};
+            background: ${Base.slider.thumbFillActive};
+            cursor: pointer;
+          `
+    }
 `;
 
 const toggleProgressBarCss = css`
@@ -32,21 +32,22 @@ const toggleProgressBarCss = css`
 const StyledSlider = styled.input.attrs({
   type: 'range'
 })`
+  display: inline-block;
+  margin: auto;
   appearance: none;
   outline: none;
   background: transparent;
   offset: hidden;
   width: ${Base.slider.sliderWidth};
-  height: ${Base.slider.sliderHeight};
+  height: 10px;
   border: ${props => 
     props.disabled
       ? Base.slider.sliderBarBorderDisable
       : Base.slider.sliderBarBorderActive
     };
   padding: 2px 2px;
-  margin-right: 16px;
-  vertical-align: sub;
-  
+  vertical-align: bottom;
+
   &::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     box-sizing: border-box;
@@ -71,7 +72,7 @@ const StyledSlider = styled.input.attrs({
           ${Base.slider.sliderBarColor} ${ ( ((props.value - props.min) / (props.max - props.min)) * 100 ) }%, 
           ${Base.slider.sliderBarColor} 100%);
         `
-    } 
+    };
   }
 
   &::-webkit-slider-thumb {
@@ -143,7 +144,34 @@ const StyledSlider = styled.input.attrs({
   }
 `;
 
+const Arrow = styled.span.attrs(props => ({ dir: props.dir, focus: props.focus}))`
+  border: solid ${Base.slider.arrowColor};
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  cursor: pointer;
+  vertical-align: center;
+  
+  ${props => 
+    props.focus && !props.disabled
+      ? css` visibility: visible; `
+      : css` visibility: hidden; `
+  };
+  
+  ${props => 
+    props.dir
+      ? css` transform: rotate(-45deg); `
+      : css` transform: rotate(135deg); `
+  };
+
+  &:hover {
+    border-color: ${Base.slider.arrowHover}
+  }
+`;
+
 const StyledWrap = styled.div`
+  appearance: none;
+  outline: none;
   margin: 0;
   padding: 0;
   display: block;
@@ -151,5 +179,6 @@ const StyledWrap = styled.div`
 
 export {
   StyledSlider,
-  StyledWrap
+  StyledWrap,
+  Arrow
 };

@@ -1,29 +1,41 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { StyledSlider, StyledWrap } from './StyledSlider';
+import { StyledSlider, StyledWrap, Arrow } from './StyledSlider';
 
 class Slider extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      value: props.value,
-      max: props.max
+      value: this.props.value,
+      focus: false, 
+      min: this.props.min,
+      max: this.props.max
     };
+  }
+  
+  componentDidMount() {
+    const min = this.checkingNegativeProps(this.props.min);
+    const max = this.checkingNegativeProps(this.props.max);
+    
+    this.setState( {
+       min: min,
+       max: max
+      })
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.value !== prevProps.value) {
       this.setState({ value: this.props.value });
     }
-
-    if (this.props.max !== prevProps.max) {
-      this.setState({ max: this.props.max });
+    if( this.props.max !== prevProps.max) {
+      const max = this.checkingNegativeProps(this.props.max); 
+      this.setState({ max: max});
     }
-
-    if (this.props.min !== prevProps.min) {
-      this.setState({ min: this.props.min });
+    if( this.props.min !== prevProps.min) {
+      const min = this.checkingNegativeProps(this.props.min); 
+      this.setState({ min: min});
     }
   }
 
@@ -32,20 +44,78 @@ class Slider extends Component {
     this.props.onChange && this.props.onChange(e);
   }
 
+  onRight = (e) => {
+    let val = this.state.value;
+    val = this.checkingMinMaxVal(val, "+");
+    e.target.value = val;
+    this.onChangeHandler(e); 
+  }
+
+  onLeft = (e) => {
+    let val = this.state.value;
+    val = this.checkingMinMaxVal(val, "-");
+    e.target.value = val;
+    this.onChangeHandler(e); 
+  }
+
+  checkingMinMaxVal = (value, i) => {
+    let val = parseInt(value);
+
+    if(i === "+") {
+      val = val + 1;
+      if( val >= this.state.max ) {
+        val = this.state.max;
+      }
+    } 
+
+    if(i === "-") {
+      val = val - 1;
+      if( val <= this.state.min ) {
+        val = this.state.min;
+      }
+    }
+
+    return val.toString();
+  }
+
+  checkingNegativeProps = (val) => {
+    const value = val <= 0 ? 0 : val;
+    return value; 
+  }
+
+  onFocusHandler = () => {
+    this.setState({focus: !this.state.focus})
+  }
+
   render() {
-    const { disabled, onChange, ... rest } = this.props;
-    const { value, max, min } = this.state;
+    const { disabled, onChange, ...rest } = this.props;
+    const { value, focus, min, max } = this.state;
 
     return (
-      <StyledWrap { ...rest }>
-        
+      <StyledWrap 
+      onFocus = {this.onFocusHandler}
+      onBlur = {this.onFocusHandler}
+      tabIndex="0"
+      { ...rest } 
+      >
+        <Arrow 
+          onClick={this.onLeft} 
+          focus={focus}
+          disabled={disabled}
+        />
         <StyledSlider
-          max={max} 
-          min={ min >= 0 ? min : 0 }
+          max={ max } 
+          min={ min }
           value={value} 
           disabled={disabled}
-          onChange={this.onChangeHandler}/>
-        <span>{value}</span>
+          onChange={this.onChangeHandler} 
+        />
+        <Arrow 
+          dir="right" 
+          onMouseDown={this.onRight} 
+          focus={focus}
+          disabled={disabled}
+        />
       </StyledWrap>
     );
   }

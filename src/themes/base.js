@@ -132,8 +132,6 @@ const Base = {
   },
 
   slider: {
-    fillColor: white,
-
     sliderBarColorProgress: blueMain,
     sliderBarColorProgressDisabled: grayMid,
     sliderBarColor: grayLightMid,
@@ -149,7 +147,9 @@ const Base = {
     thumbBorderColorDisable: `1px solid ${globalColors.grayMid}`,
 
     sliderWidth: '202px',
-    sliderHeight: '10px',
+
+    arrowHover: blueMain,
+    arrowColor: grayMid,
   },
 
   switchButton: {
