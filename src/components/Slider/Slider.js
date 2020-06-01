@@ -7,19 +7,20 @@ class Slider extends Component {
   constructor(props) {
     super(props);
 
+    this.slider = React.createRef();
     this.state = {
-      value: this.props.value,
-      focus: false, 
+      value: this.props.value, 
       min: this.props.min,
-      max: this.props.max
+      max: this.props.max,
+      focus: false
     };
   }
   
   componentDidMount() {
     const min = this.checkingNegativeProps(this.props.min);
     const max = this.checkingNegativeProps(this.props.max);
-    
-    this.setState( {
+
+    this.setState({
        min: min,
        max: max
       })
@@ -27,52 +28,57 @@ class Slider extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.value !== prevProps.value) {
-      this.setState({ value: this.props.value });
+      this.setState({ value: this.props.value});
     }
-    if( this.props.max !== prevProps.max) {
+    if (this.props.max !== prevProps.max) {
       const max = this.checkingNegativeProps(this.props.max); 
       this.setState({ max: max});
     }
-    if( this.props.min !== prevProps.min) {
+    if (this.props.min !== prevProps.min) {
       const min = this.checkingNegativeProps(this.props.min); 
       this.setState({ min: min});
     }
   }
 
   onChangeHandler = (e) => {
+    this.slider.current.ondragstart = () => false;
     this.setState({ value: e.target.value });
-    this.props.onChange && this.props.onChange(e);
+    this.props.onChange && this.props.onChange(e.target.value);
   }
 
-  onRight = (e) => {
-    let val = this.state.value;
-    val = this.checkingMinMaxVal(val, "+");
-    e.target.value = val;
-    this.onChangeHandler(e); 
+  onRight = () => {
+    
+    let val = parseInt(this.state.value) + 1;
+    val = this.checkingMinMaxVal(val);
+    this.setState({ value: val });
+    this.props.onChange && this.props.onChange(val);
   }
 
-  onLeft = (e) => {
-    let val = this.state.value;
-    val = this.checkingMinMaxVal(val, "-");
-    e.target.value = val;
-    this.onChangeHandler(e); 
+  onLeft = () => {
+    let val = parseInt(this.state.value) - 1;
+    val = this.checkingMinMaxVal(val);
+    this.setState({ value: val });
+    this.props.onChange && this.props.onChange(val); 
   }
 
-  checkingMinMaxVal = (value, i) => {
+  onKeyUpHandler = (e) => {
+    if ( /^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+      if(e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+        this.onRight();
+      } 
+      if(e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+        this.onLeft();
+      }
+    }
+  }
+
+  checkingMinMaxVal = (value) => {
     let val = parseInt(value);
 
-    if(i === "+") {
-      val = val + 1;
-      if( val >= this.state.max ) {
-        val = this.state.max;
-      }
-    } 
-
-    if(i === "-") {
-      val = val - 1;
-      if( val <= this.state.min ) {
-        val = this.state.min;
-      }
+    if (val < this.state.min ) {
+      val = this.state.min
+    } else if (val > this.state.max) {
+      val = this.state.max
     }
 
     return val.toString();
@@ -84,7 +90,11 @@ class Slider extends Component {
   }
 
   onFocusHandler = () => {
-    this.setState({focus: !this.state.focus})
+    this.setState({focus: true})
+  }
+
+  onBlurHandle = () => {
+    this.setState({focus: false})
   }
 
   render() {
@@ -93,28 +103,31 @@ class Slider extends Component {
 
     return (
       <StyledWrap 
-      onFocus = {this.onFocusHandler}
-      onBlur = {this.onFocusHandler}
-      tabIndex="0"
-      { ...rest } 
+        tabIndex="0"
+        { ...rest } 
+        onFocus = {this.onFocusHandler}
+        onBlur = {this.onBlurHandle}
+        onClick={this.click}
       >
-        <Arrow 
-          onClick={this.onLeft} 
+        <Arrow  
           focus={focus}
           disabled={disabled}
+          onClick={this.onLeft}
         />
         <StyledSlider
           max={ max } 
           min={ min }
           value={value} 
-          disabled={disabled}
+          disabled={disabled}          
           onChange={this.onChangeHandler} 
-        />
+          ref={this.slider}
+          
+        /> 
         <Arrow 
           dir="right" 
-          onMouseDown={this.onRight} 
           focus={focus}
           disabled={disabled}
+          onClick={this.onRight} 
         />
       </StyledWrap>
     );

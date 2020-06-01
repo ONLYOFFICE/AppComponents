@@ -6,12 +6,12 @@ const toggleThumbCss = css`
       props.disabled
         ? css`
             border: ${Base.slider.thumbBorderColorDisable};
-            background: ${Base.slider.thumbFillDisable};
+            background-color: ${Base.slider.thumbFillDisable};
             cursor: default;
           `
         : css`
             border: ${Base.slider.thumbBorderColorActive};
-            background: ${Base.slider.thumbFillActive};
+            background-color: ${Base.slider.thumbFillActive};
             cursor: pointer;
           `
     }
@@ -37,7 +37,6 @@ const StyledSlider = styled.input.attrs({
   appearance: none;
   outline: none;
   background: transparent;
-  offset: hidden;
   width: ${Base.slider.sliderWidth};
   height: 10px;
   border: ${props => 
@@ -55,7 +54,7 @@ const StyledSlider = styled.input.attrs({
     height: 100%;
     border: ${Base.slider.sliderBarBorderActive};
     border-radius: 3px;
-
+  
     ${props => 
       props.disabled
         ? css`
@@ -67,10 +66,11 @@ const StyledSlider = styled.input.attrs({
         `
         : css`
           background: linear-gradient(to right, 
-          ${Base.slider.sliderBarColorProgress}, 0%, 
-          ${Base.slider.sliderBarColorProgress}, ${ ( ((props.value - props.min) / (props.max - props.min)) * 100 ) }%, 
-          ${Base.slider.sliderBarColor} ${ ( ((props.value - props.min) / (props.max - props.min)) * 100 ) }%, 
-          ${Base.slider.sliderBarColor} 100%);
+            ${Base.slider.sliderBarColorProgress}, 0%, 
+            ${Base.slider.sliderBarColorProgress}, ${ ( ((props.value - props.min) / (props.max - props.min)) * 100 ) }%, 
+            ${Base.slider.sliderBarColor} ${ ( ((props.value - props.min) / (props.max - props.min)) * 100 ) }%, 
+            ${Base.slider.sliderBarColor} 100%);
+          z-index: 0;
         `
     };
   }
@@ -81,7 +81,7 @@ const StyledSlider = styled.input.attrs({
     height: 18px;
     margin-top: -5px;
     border-radius: 3px;
-   
+
     ${toggleThumbCss};
   }
 
