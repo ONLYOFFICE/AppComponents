@@ -10,7 +10,7 @@ class Slider extends Component {
     this.slider = React.createRef();
 
     this.state = {
-      value: props.value, 
+      value: this.checkingValueProps(props.value), 
       min: this.checkingNegativeProps(props.min),
       max: this.checkingNegativeProps(props.max),
       focus: false
@@ -19,7 +19,8 @@ class Slider extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.value !== prevProps.value) {
-      this.setState({ value: this.props.value});
+      const val = this.checkingValueProps(this.props.value)
+      this.setState({ value: val});
     }
     if (this.props.max !== prevProps.max) {
       const max = this.checkingNegativeProps(this.props.max); 
@@ -34,21 +35,21 @@ class Slider extends Component {
   onChangeHandler = (e) => {
     this.slider.current.ondragstart = () => false;
     this.setState({ value: e.target.value });
-    this.props.onChange && this.props.onChange(e.target.value);
+    this.props.onChange && this.props.onChange(parseInt(e.target.value));
   }
 
   onRight = () => {
     let val = parseInt(this.state.value) + 1;
     val = this.checkingMinMaxVal(val);
     this.setState({ value: val });
-    this.props.onChange && this.props.onChange(val);
+    this.props.onChange && this.props.onChange(parseInt(val));
   }
 
   onLeft = () => {
     let val = parseInt(this.state.value) - 1;
     val = this.checkingMinMaxVal(val);
     this.setState({ value: val });
-    this.props.onChange && this.props.onChange(val); 
+    this.props.onChange && this.props.onChange(parseInt(val)); 
   }
 
   onKeyUpHandler = (e) => {
@@ -60,6 +61,19 @@ class Slider extends Component {
         this.onLeft();
       }
     }
+  }
+
+  onFocusHandler = () => {
+    this.setState({focus: true});
+  }
+
+  onBlurHandler = () => {
+    this.setState({focus: false});
+  }
+
+  checkingValueProps = (val) => {
+    let value = this.checkingNegativeProps(val);
+    return value.toString();
   }
 
   checkingMinMaxVal = (value) => {
@@ -79,14 +93,6 @@ class Slider extends Component {
     return value; 
   }
 
-  onFocusHandler = () => {
-    this.setState({focus: true});
-  }
-
-  onBlurHandler = () => {
-    this.setState({focus: false});
-  }
-
   render() {
     const { disabled, onChange, ...rest } = this.props;
     const { value, focus, min, max } = this.state;
@@ -96,10 +102,11 @@ class Slider extends Component {
         tabIndex="0"
         { ...rest } 
         onFocus = {this.onFocusHandler}
-        onBlur = {this.onBlurHandle}
-        onKeyUp={this.onKeyUpHandler}
+        onBlur = {this.onBlurHandler}
+        onKeyDown={this.onKeyUpHandler}
       >
-        <Arrow  
+        <Arrow 
+          className='arrow-left' 
           focus={focus}
           disabled={disabled}
           onClick={this.onLeft}
@@ -125,7 +132,7 @@ class Slider extends Component {
 
 Slider.propTypes = {
   disabled: PropTypes.bool,
-  value: PropTypes.string,
+  value: PropTypes.number,
   max: PropTypes.number,
   min: PropTypes.number,
   onChange: PropTypes.func
@@ -133,7 +140,7 @@ Slider.propTypes = {
 
 Slider.defaultProps = {
   disabled: false,
-  value: "5",
+  value: 5,
   max: 30,
   min: 0,
 }

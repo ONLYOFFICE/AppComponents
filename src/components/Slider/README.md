@@ -23,7 +23,7 @@ import { Slider } from "app-components";
 | Props      |   Type   | Required |         Values          | Default | Description                                           |
 | ---------- | :------: | :------: | :---------------------: | :-----: | ----------------------------------------------------- |
 | `disabled` |  `bool`  |    -     |            -            | `false` | Disables the slider default functionality             |
-| `value`    |  `string`  |    -     |            -            | 5 | Slider value                                              |
+| `value`    |  `number`  |    -     |            -            | 5 | Slider value                                              |
 | `min`      |  `number`  |    -     |            -            | 0 | Minimum value                                             |
 | `max`      |  `number`  |    -     |            -            | 30 | Maximum value                                            |
 | `onChange` |  `func`    |    -     |            -            | - |  The event triggered when the slider is change            |
