@@ -135,11 +135,11 @@ const StyledSlider = styled.input.attrs({
   }
 
   &::-ms-thumb {
-    margin-top: 2px;
+    margin-top: 0px;
     width: 8px;
-    height: 16px;
+    height: 12px;
     border-radius: 3px;
-
+    position: absolute;
     ${toggleThumbCss};
   }
 `;

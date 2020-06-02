@@ -42,14 +42,6 @@ describe("<Slider />", () => {
     expect(wrapper.getDOMNode().style).toHaveProperty("color", "red");
   });
 
-  it("componentDidMount() props lifecycle test", () => {
-    const wrapper = shallow(<Slider {...baseProps}  max={-1} min={-1} />).instance();
-
-    wrapper.componentDidMount();
-    expect(wrapper.state.max).toBe(0);
-    expect(wrapper.state.min).toBe(0);
-  });
-
   it("componentDidUpdate() props lifecycle test", () => {
     const wrapper = shallow(<Slider {...baseProps} />).instance();
 
@@ -65,14 +57,9 @@ describe("<Slider />", () => {
   });
 
   it("onChangeHandler() test", () => {
-    const wrapper = shallow(<Slider {...baseProps} />).instance();
-    expect(wrapper.state.value).toBe(baseProps.value);
-
     const event = { target: { value: 25 }};
-    wrapper.onChangeHandler(event);
-    expect(wrapper.state.value).toBe(25);
-
     const wrapper1 = mount(<Slider {...baseProps} />);
+
     const input = wrapper1.find('input[type="range"]');
     input.simulate("change", event);
     expect(baseProps.onChange).toHaveBeenCalled();
@@ -81,43 +68,64 @@ describe("<Slider />", () => {
 
   it('onRight() test', () => {
     const wrapper = shallow(<Slider {...baseProps} value="22"/>).instance();
-    const event = { target: { value: "23" }};
 
-    wrapper.onRight(event);
+    wrapper.onRight();
     expect(wrapper.state.value).toBe("23");
   });
 
-  it(' onLeft() test', () => {
+  it('onLeft() test', () => {
     const wrapper = shallow(<Slider {...baseProps} value="22"/>).instance();
-    const event = { target: { value: "22" }};
 
-    wrapper.onLeft(event);
+    wrapper.onLeft();
     expect(wrapper.state.value).toBe("21");
+  });
+
+  it('onKeyUpHandler() test', () => {
+    Object.defineProperty(
+      window.navigator, 
+      'userAgent', 
+      {value: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Safari/605.1.15" }
+    )
+    const wrapper = shallow(<Slider {...baseProps} value="22"/>).instance();
+
+    let event = { key: "ArrowRight" };
+    wrapper.onKeyUpHandler(event);
+    expect(wrapper.state.value).toBe("23");
+
+    event = { key: "ArrowUp" };
+    wrapper.onKeyUpHandler(event);
+    expect(wrapper.state.value).toBe("24");
+
+    event = { key: "ArrowLeft" };
+    wrapper.onKeyUpHandler(event);
+    expect(wrapper.state.value).toBe("23");
+
+    event = { key: "ArrowDown" };
+    wrapper.onKeyUpHandler(event);
+    expect(wrapper.state.value).toBe("22");
   });
 
   it('max value test', () => {
     const wrapper = shallow(<Slider {...baseProps} value="30"/>).instance();
-    const event = { target: { value: "30" }};
     
-    wrapper.onRight(event);
+    wrapper.onRight();
     expect(wrapper.state.value).toBe("30");
   });
   
   it('min value test', () => {
     const wrapper = shallow(<Slider {...baseProps} value="0"/>).instance();
-    const event = { target: { value: "0" }};
 
-    wrapper.onLeft(event);
+    wrapper.onLeft();
     expect(wrapper.state.value).toBe("0");
   });
 
-  it('onFocusHandler() test', () => {
+  it('onFocusHandler() and onBlurHandler() test', () => {
     const wrapper = shallow(<Slider {...baseProps} />).instance();
 
     wrapper.onFocusHandler();
     expect(wrapper.state.focus).toBe(true);
 
-    wrapper.onFocusHandler();
+    wrapper.onBlurHandler();
     expect(wrapper.state.focus).toBe(false);
   });
 }) 

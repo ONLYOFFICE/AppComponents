@@ -8,22 +8,13 @@ class Slider extends Component {
     super(props);
 
     this.slider = React.createRef();
+
     this.state = {
-      value: this.props.value, 
-      min: this.props.min,
-      max: this.props.max,
+      value: props.value, 
+      min: this.checkingNegativeProps(props.min),
+      max: this.checkingNegativeProps(props.max),
       focus: false
     };
-  }
-  
-  componentDidMount() {
-    const min = this.checkingNegativeProps(this.props.min);
-    const max = this.checkingNegativeProps(this.props.max);
-
-    this.setState({
-       min: min,
-       max: max
-      })
   }
 
   componentDidUpdate(prevProps) {
@@ -47,7 +38,6 @@ class Slider extends Component {
   }
 
   onRight = () => {
-    
     let val = parseInt(this.state.value) + 1;
     val = this.checkingMinMaxVal(val);
     this.setState({ value: val });
@@ -90,11 +80,11 @@ class Slider extends Component {
   }
 
   onFocusHandler = () => {
-    this.setState({focus: true})
+    this.setState({focus: true});
   }
 
-  onBlurHandle = () => {
-    this.setState({focus: false})
+  onBlurHandler = () => {
+    this.setState({focus: false});
   }
 
   render() {
@@ -107,7 +97,7 @@ class Slider extends Component {
         { ...rest } 
         onFocus = {this.onFocusHandler}
         onBlur = {this.onBlurHandle}
-        onClick={this.click}
+        onKeyUp={this.onKeyUpHandler}
       >
         <Arrow  
           focus={focus}
@@ -118,10 +108,9 @@ class Slider extends Component {
           max={ max } 
           min={ min }
           value={value} 
-          disabled={disabled}          
-          onChange={this.onChangeHandler} 
-          ref={this.slider}
-          
+          disabled={disabled}   
+          ref={this.slider}       
+          onChange={this.onChangeHandler}
         /> 
         <Arrow 
           dir="right" 
