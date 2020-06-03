@@ -8,7 +8,7 @@ import {
 import Text from "../Text";
 import { StyledCheckbox, StyledHiddenInput } from "./StyledCheckbox";
 
-class Checkbox extends React.Component {
+class Checkbox extends React.PureComponent {
   constructor(props) {
     super(props);
 
