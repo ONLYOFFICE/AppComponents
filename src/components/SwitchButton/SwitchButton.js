@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import { 
@@ -11,19 +11,11 @@ import {
   SwitchButtonActiveChecked
 } from './svg';
 
-class SwitchButton extends Component {
+class SwitchButton extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-      checked: props.checked
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.checked !== prevProps.checked) {
-      this.setState({ checked: this.props.checked });
-    }
+    this.state = { checked: props.checked }
   }
 
   onChangeHandler = (e) => {
@@ -31,9 +23,7 @@ class SwitchButton extends Component {
     this.props.onChange && this.props.onChange(e);
   }
 
-  renderSwitch = () => {
-    const { checked } = this.props;
-
+  renderSwitch = (checked) => {
     return (
       <>
       {checked
@@ -42,15 +32,18 @@ class SwitchButton extends Component {
       }
       </>
     );
-  }
+  };
 
   render() {
-    const { disabled, checked, onChange, ...rest } = this.props;
+    // console.log('SwitchButton render');
 
-    const btnSwitch = this.renderSwitch();
+    const { checked } = this.state;
+    const { disabled, onChange, ...rest } = this.props;
+
+    const btnSwitch = this.renderSwitch(checked);
 
     return (
-      <StyledSwitchButton checked={checked} disabled={disabled} {...rest}>
+      <StyledSwitchButton {...rest} checked={checked} disabled={disabled} >
         {btnSwitch}
         <StyledHiddenInput
           type="checkbox"
