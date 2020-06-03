@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { 
@@ -11,19 +11,8 @@ import {
   SwitchButtonActiveChecked
 } from './svg';
 
-class SwitchButton extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = { checked: props.checked }
-  }
-
-  onChangeHandler = (e) => {
-    this.setState({ checked: e.target.checked });
-    this.props.onChange && this.props.onChange(e);
-  }
-
-  renderSwitch = (checked) => {
+const SwitchButton = ({ checked, disabled, onChange, ...rest}) => {
+  const renderSwitch = () => {
     return (
       <>
       {checked
@@ -33,27 +22,22 @@ class SwitchButton extends PureComponent {
       </>
     );
   };
+  
+  const btnSwitch = renderSwitch(checked);
 
-  render() {
-    // console.log('SwitchButton render');
+  //console.log('SwitchButton render');
+  return (
+    <StyledSwitchButton {...rest} checked={checked} disabled={disabled} >
+      {btnSwitch}
+      <StyledHiddenInput
+        type="checkbox"
+        checked={checked}
+        disabled={disabled}
+        onChange={onChange}
+      />
+    </StyledSwitchButton> 
+  );
 
-    const { checked } = this.state;
-    const { disabled, onChange, ...rest } = this.props;
-
-    const btnSwitch = this.renderSwitch(checked);
-
-    return (
-      <StyledSwitchButton {...rest} checked={checked} disabled={disabled} >
-        {btnSwitch}
-        <StyledHiddenInput
-          type="checkbox"
-          checked={checked}
-          disabled={disabled}
-          onChange={this.onChangeHandler}
-        />
-      </StyledSwitchButton> 
-    );
-  }
 }
 
 SwitchButton.propTypes = {

@@ -1,5 +1,5 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 import "jest-styled-components";
 import SwitchButton from ".";
 
@@ -61,7 +61,7 @@ describe("<SwitchButton />", () => {
     expect(wrapper.prop("disabled")).toEqual(true);
   });
 
-  it("onChangeHandler() test", () => {
+  it("onChange() test", () => {
     const wrapper = mount(<SwitchButton {...baseProps} />);
     expect(wrapper.props().checked).toBe(false);
 

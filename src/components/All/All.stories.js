@@ -136,7 +136,14 @@ storiesOf("Components|All", module)
           <Button size="big" label="Button" />
         </Box>
         <Box paddingProp="8px">
-          <SwitchButton />
+          <BooleanValue>
+            {({ value, toggle }) => (
+              <SwitchButton 
+                checked={value} 
+                onChange={e => toggle(e.target.checked)}
+              />
+            )}
+          </BooleanValue>
         </Box>
         <Box paddingProp="8px">
           <Slider />

@@ -18,10 +18,10 @@ storiesOf("Components|SwitchButton", module)
         <BooleanValue>
           {({ value, toggle }) => (
             <SwitchButton
-              disabled={boolean("disabled", value)}
-              checked={boolean("checked", false)}
+              disabled={boolean("disabled", false)}
+              checked={value}
               onChange={e => {
-                action("onChange")(e);
+                action("onChange")(e.target.checked);
                 toggle(e.target.checked);
               }}
             />
