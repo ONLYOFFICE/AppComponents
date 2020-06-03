@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import DropDown from "./DropDown";
-import StyledPhoneInput from "./StyledPhoneInput";
+import { StyledPhoneInput } from "./StyledPhoneInput";
 import Box from "../Box";
 import Text from "../Text";
 
@@ -2227,7 +2227,7 @@ const PhoneInput = (props) => {
           width: "0 1px 0 0",
           color: "#D0D5DA"
         }}
-        paddingProp={"14px 25px 14px 16px"}>
+        paddingProp={"14px 16px 14px 16px"}>
         <DropDown
           value={country}
           onChange={onChangeCountry}
@@ -2240,9 +2240,9 @@ const PhoneInput = (props) => {
             {getLocaleCode(country)}
           </Text>
         </Box>
-        <Box>
+        <div>
           <StyledPhoneInput mask={getMask(country)} placeholder={getPlaceholder(country)} {...props} />
-        </Box>
+        </div>
       </Box>
     </Box>
   );
