@@ -11,10 +11,10 @@ import { Slider } from "app-components";
 ```jsx
 <Slider
   disabled={false}
-  value={"5"}
+  value={5}
   min={1}
   max={30}
-  onChange={() => alert("Slider change")}
+  onChange={(value) => alert("The current value: " + value)}
 />
 ```
 

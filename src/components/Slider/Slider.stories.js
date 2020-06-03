@@ -24,7 +24,7 @@ storiesOf("Components|Slider", module)
             window.__STORYBOOK_ADDONS.channel.emit("storybookjs/knobs/change", {
               name: "value",
               value: e
-            })
+            });
           }}
         />
       </Box>
