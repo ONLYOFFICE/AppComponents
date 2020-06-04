@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { 
@@ -31,7 +31,7 @@ const SwitchButton = ({ checked, disabled, onChange, ...rest}) => {
       {btnSwitch}
       <StyledHiddenInput
         type="checkbox"
-        checked={checked}
+        defaultChecked={checked}
         disabled={disabled}
         onChange={onChange}
       />
