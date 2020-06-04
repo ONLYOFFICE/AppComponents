@@ -131,6 +131,17 @@ const Dark = {
     hoverIndeterminateColor: black
   },
 
+  switchButton: {
+    fillColor: white,
+    checkedFillColor: gray,
+
+    fillColorDisabled: grayLight,
+    disabledFillColor: grayLightMid,
+    disabledFillColorInner: grayMid,
+    
+    hoverBorderColor: gray
+  },
+
   toggleButton: {
     fillColor: blueMain,
     fillColorOff: gray,

@@ -16,17 +16,16 @@ storiesOf("Components|SwitchButton", module)
     return (
       <Box paddingProp="16px">
         <BooleanValue>
-          <SwitchButton
-            disabled={boolean("disabled", false)}
-            checked={boolean("checked", false)}
-            onChange={e => {
-              action("onChange")(e)
-              window.__STORYBOOK_ADDONS.channel.emit("storybookjs/knobs/change", {
-                name: "checked",
-                value: e.target.checked
-              });
-            }}
-          />
+          {({ value, toggle }) => (
+            <SwitchButton
+              disabled={boolean("disabled", false)}
+              checked={value}
+              onChange={e => {
+                action("onChange")(e.target.checked);
+                toggle(e.target.checked);
+              }}
+            />
+          )}
         </BooleanValue>
       </Box>
     );

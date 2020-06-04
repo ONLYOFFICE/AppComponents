@@ -1,5 +1,5 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 import "jest-styled-components";
 import SwitchButton from ".";
 
@@ -40,18 +40,6 @@ describe("<SwitchButton />", () => {
     expect(wrapper.getDOMNode().style).toHaveProperty("color", "red");
   });
 
-  it("componentDidUpdate() props lifecycle test", () => {
-    const wrapper = shallow(<SwitchButton {...baseProps} />).instance();
-
-    wrapper.componentDidUpdate({ checked: true });
-    expect(wrapper.props).toBe(wrapper.props);
-    expect(wrapper.state.checked).toBe(wrapper.props.checked);
-
-    wrapper.componentDidUpdate({ checked: false });
-    expect(wrapper.props).toBe(wrapper.props);
-    expect(wrapper.state.checked).toBe(wrapper.props.checked);
-  });
-
   it("accepts disabled", () => {
     const wrapper = mount(<SwitchButton {...baseProps} disabled />);
 
@@ -60,10 +48,10 @@ describe("<SwitchButton />", () => {
 
   it("accepts checked", () => {
     const wrapper = mount(<SwitchButton {...baseProps} checked />);
-    expect(wrapper.state("checked")).toEqual(true);
+    expect(wrapper.prop("checked")).toEqual(true);
 
-    wrapper.setState({ checked: false });
-    expect(wrapper.state("checked")).toEqual(false);
+    const wrapper2 = mount(<SwitchButton {...baseProps} checked={false} />);
+    expect(wrapper2.prop("checked")).toEqual(false);
   });
 
   it("accepts checked and disabled", () => {
@@ -73,18 +61,12 @@ describe("<SwitchButton />", () => {
     expect(wrapper.prop("disabled")).toEqual(true);
   });
 
-  it("onChangeHandler() test", () => {
-    const wrapper = shallow(<SwitchButton {...baseProps} />).instance();
-    expect(wrapper.state.checked).toBe(false);
+  it("onChange() test", () => {
+    const wrapper = mount(<SwitchButton {...baseProps} />);
+    expect(wrapper.props().checked).toBe(false);
 
-    const event = { target: { checked: true }};
-    wrapper.onChangeHandler(event);
-    expect(wrapper.state.checked).toBe(true);
-
-    const wrapper1 = mount(<SwitchButton {...baseProps} />);
-    const input = wrapper1.find('input[type="checkbox"]');
-    input.simulate("change", event);
+    const input = wrapper.find('input[type="checkbox"]');
+    input.simulate("change");
     expect(baseProps.onChange).toHaveBeenCalled();
-    expect(wrapper1.state("checked")).toBe(true);
   }); 
 })
