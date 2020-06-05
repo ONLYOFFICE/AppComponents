@@ -11,55 +11,55 @@ const PhoneInput = (props) => {
     name: "Afghanistan (‫افغانستان‬‎)",
     dialCode: "+93",
     code: "AF",
-    mask: []
+    mask: null
   },
   {
     name: "Albania (Shqipëria)",
     dialCode: "+355",
     code: "AL",
-    mask: []
+    mask: null
   },
   {
     name: "Algeria (‫الجزائر‬‎)",
     dialCode: "+213",
     code: "DZ",
-    mask: []
+    mask: null
   },
   {
     name: "American Samoa (American Samoa)",
     dialCode: "+1684",
     code: "AS",
-    mask: []
+    mask: null
   },
   {
     name: "Andorra (Andorra)",
     dialCode: "+376",
     code: "AD",
-    mask: []
+    mask: null
   },
   {
     name: "Angola (Angola)",
     dialCode: "+244",
     code: "AO",
-    mask: []
+    mask: null
   },
   {
     name: "Anguilla (Anguilla)",
     dialCode: "+1264",
     code: "AI",
-    mask: []
+    mask: null
   },
   {
     name: "Antarctica",
     dialCode: "+672",
     code: "AQ",
-    mask: []
+    mask: null
   },
   {
     name: "Antigua and Barbuda (Antigua and Barbuda)",
     dialCode: "+1268",
     code: "AG",
-    mask: []
+    mask: null
   },
   {
     name: "Argentina (Argentina)",
@@ -71,13 +71,13 @@ const PhoneInput = (props) => {
     name: "Armenia (Հայաստանի Հանրապետություն)",
     dialCode: "+374",
     code: "AM",
-    mask: []
+    mask: null
   },
   {
     name: "Aruba (Aruba)",
     dialCode: "+297",
     code: "AW",
-    mask: []
+    mask: null
   },
   {
     name: "Australia (Australia)",
@@ -89,37 +89,37 @@ const PhoneInput = (props) => {
     name: "Austria (Österreich)",
     dialCode: "+43",
     code: "AT",
-    mask: []
+    mask: null
   },
   {
     name: "Azerbaijan (Azərbaycan)",
     dialCode: "+994",
     code: "AZ",
-    mask: []
+    mask: null
   },
   {
     name: "Bahamas (Bahamas)",
     dialCode: "+1242",
     code: "BS",
-    mask: []
+    mask: null
   },
   {
     name: "Bahrain (‫البحرين‬‎)",
     dialCode: "+973",
     code: "BH",
-    mask: []
+    mask: null
   },
   {
     name: "Bangladesh (বাংলাদেশ)",
     dialCode: "+880",
     code: "BD",
-    mask: []
+    mask: null
   },
   {
     name: "Barbados (Barbados)",
     dialCode: "+1246",
     code: "BB",
-    mask: []
+    mask: null
   },
   {
     name: "Belarus (Беларусь)",
@@ -137,43 +137,43 @@ const PhoneInput = (props) => {
     name: "Belize (Belize)",
     dialCode: "+501",
     code: "BZ",
-    mask: []
+    mask: null
   },
   {
     name: "Benin (Bénin)",
     dialCode: "+229",
     code: "BJ",
-    mask: []
+    mask: null
   },
   {
     name: "Bermuda (Bermuda)",
     dialCode: "+1441",
     code: "BM",
-    mask: []
+    mask: null
   },
   {
     name: "Bhutan (འབྲུག)",
     dialCode: "+975",
     code: "BT",
-    mask: []
+    mask: null
   },
   {
     name: "Bolivia (Bolivia)",
     dialCode: "+591",
     code: "BO",
-    mask: []
+    mask: null
   },
   {
     name: "Bosnia and Herzegovina (Bosna i Hercegovina)",
     dialCode: "+387",
     code: "BA",
-    mask: []
+    mask: null
   },
   {
     name: "Botswana (Botswana)",
     dialCode: "+267",
     code: "BW",
-    mask: []
+    mask: null
   },
   {
     name: "Brazil (Brasil)",
@@ -185,43 +185,43 @@ const PhoneInput = (props) => {
     name: "British Indian Ocean Territory (British Indian Ocean Territory)",
     dialCode: "+246",
     code: "IO",
-    mask: []
+    mask: null
   },
   {
     name: "Brunei Darussalam (Brunei)",
     dialCode: "+673",
     code: "BN",
-    mask: []
+    mask: null
   },
   {
     name: "Bulgaria (България)",
     dialCode: "+359",
     code: "BG",
-    mask: []
+    mask: null
   },
   {
     name: "Burkina Faso (Burkina Faso)",
     dialCode: "+226",
     code: "BF",
-    mask: []
+    mask: null
   },
   {
     name: "Burundi (Uburundi)",
     dialCode: "+257",
     code: "BI",
-    mask: []
+    mask: null
   },
   {
     name: "Cambodia (កម្ពុជា)",
     dialCode: "+855",
     code: "KH",
-    mask: []
+    mask: null
   },
   {
     name: "Cameroon (Cameroun)",
     dialCode: "+237",
     code: "CM",
-    mask: []
+    mask: null
   },
   {
     name: "Canada (Canada)",
@@ -233,31 +233,31 @@ const PhoneInput = (props) => {
     name: "Cape Verde (Kabu Verdi)",
     dialCode: "+238",
     code: "CV",
-    mask: []
+    mask: null
   },
   {
     name: "Cayman Islands (Cayman Islands)",
     dialCode: "+1345",
     code: "KY",
-    mask: []
+    mask: null
   },
   {
     name: "Central African Republic (République centrafricaine)",
     dialCode: "+236",
     code: "CF",
-    mask: []
+    mask: null
   },
   {
     name: "Chad (Tchad)",
     dialCode: "+235",
     code: "TD",
-    mask: []
+    mask: null
   },
   {
     name: "Chile (Chile)",
     dialCode: "+56",
     code: "CL",
-    mask: []
+    mask: null
   },
   {
     name: "China (中国)",
@@ -269,43 +269,43 @@ const PhoneInput = (props) => {
     name: "Christmas Island",
     dialCode: "+61",
     code: "CX",
-    mask: []
+    mask: null
   },
   {
     name: "Cocos (Keeling) Islands",
     dialCode: "+61",
     code: "CC",
-    mask: []
+    mask: null
   },
   {
     name: "Colombia (Colombia)",
     dialCode: "+57",
     code: "CO",
-    mask: []
+    mask: null
   },
   {
     name: "Comoros (‫جزر القمر‬‎)",
     dialCode: "+269",
     code: "KM",
-    mask: []
+    mask: null
   },
   {
     name: "Congo-Brazzaville (Congo-Brazzaville)",
     dialCode: "+242",
     code: "CG",
-    mask: []
+    mask: null
   },
   {
     name: "Congo-Kinshasa (Congo-Kinshasa)",
     dialCode: "+243",
     code: "CD",
-    mask: []
+    mask: null
   },
   {
     name: "Cook Islands (Cook Islands)",
     dialCode: "+682",
     code: "CK",
-    mask: []
+    mask: null
   },
   {
     name: "Costa Rica (Costa Rica)",
@@ -317,751 +317,751 @@ const PhoneInput = (props) => {
     name: "Croatia (Hrvatska)",
     dialCode: "+385",
     code: "HR",
-    mask: []
+    mask: null
   },
   {
     name: "Cuba (Cuba)",
     dialCode: "+53",
     code: "CU",
-    mask: []
+    mask: null
   },
   {
     name: "Cyprus (Κύπρος)",
     dialCode: "+357",
     code: "CY",
-    mask: []
+    mask: null
   },
   {
     name: "Czech Republic (Česká republika)",
     dialCode: "+420",
     code: "CZ",
-    mask: []
+    mask: null
   },
   {
     name: "Denmark (Danmark)",
     dialCode: "+45",
     code: "DK",
-    mask: []
+    mask: null
   },
   {
     name: "Djibouti (Djibouti)",
     dialCode: "+253",
     code: "DJ",
-    mask: []
+    mask: null
   },
   {
     name: "Dominica (Dominica)",
     dialCode: "+1767",
     code: "DM",
-    mask: []
+    mask: null
   },
   {
     name: "Dominican Republic (República Dominicana)",
     dialCode: "+1849",
     code: "DO",
-    mask: []
+    mask: null
   },
   {
     name: "Ecuador (Ecuador)",
     dialCode: "+593",
     code: "EC",
-    mask: []
+    mask: null
   },
   {
     name: "Egypt (‫مصر‬‎)",
     dialCode: "+20",
     code: "EG",
-    mask: []
+    mask: null
   },
   {
     name: "El Salvador (El Salvador)",
     dialCode: "+503",
     code: "SV",
-    mask: []
+    mask: null
   },
   {
     name: "Equatorial Guinea (Guinea Ecuatorial)",
     dialCode: "+240",
     code: "GQ",
-    mask: []
+    mask: null
   },
   {
     name: "Eritrea (Eritrea)",
     dialCode: "+291",
     code: "ER",
-    mask: []
+    mask: null
   },
   {
     name: "Estonia (Eesti)",
     dialCode: "+372",
     code: "EE",
-    mask: []
+    mask: null
   },
   {
     name: "Ethiopia (Ethiopia)",
     dialCode: "+251",
     code: "ET",
-    mask: []
+    mask: null
   },
   {
     name: "Falkland Islands (Malvinas)",
     dialCode: "+500",
     code: "FK",
-    mask: []
+    mask: null
   },
   {
     name: "Faroe Islands (Føroyar)",
     dialCode: "+298",
     code: "FO",
-    mask: []
+    mask: null
   },
   {
     name: "Fiji (Fiji)",
     dialCode: "+679",
     code: "FJ",
-    mask: []
+    mask: null
   },
   {
     name: "Finland (Suomi)",
     dialCode: "+358",
     code: "FI",
-    mask: []
+    mask: null
   },
   {
     name: "France (France)",
     dialCode: "+33",
     code: "FR",
-    mask: []
+    mask: null
   },
   {
     name: "French Guiana (Guyane française)",
     dialCode: "+594",
     code: "GF",
-    mask: []
+    mask: null
   },
   {
     name: "French Polynesia (Polynésie française)",
     dialCode: "+689",
     code: "PF",
-    mask: []
+    mask: null
   },
   {
     name: "Gabon (Gabon)",
     dialCode: "+241",
     code: "GA",
-    mask: []
+    mask: null
   },
   {
     name: "Gambia (Gambia)",
     dialCode: "+220",
     code: "GM",
-    mask: []
+    mask: null
   },
   {
     name: "Georgia (საქართველო)",
     dialCode: "+995",
     code: "GE",
-    mask: []
+    mask: null
   },
   {
     name: "Germany (Deutschland)",
     dialCode: "+49",
     code: "DE",
-    mask: []
+    mask: null
   },
   {
     name: "Ghana (Gaana)",
     dialCode: "+233",
     code: "GH",
-    mask: []
+    mask: null
   },
   {
     name: "Gibraltar (Gibraltar)",
     dialCode: "+350",
     code: "GI",
-    mask: []
+    mask: null
   },
   {
     name: "Greece (Ελλάδα)",
     dialCode: "+30",
     code: "GR",
-    mask: []
+    mask: null
   },
   {
     name: "Greenland (Greenland)",
     dialCode: "+299",
     code: "GL",
-    mask: []
+    mask: null
   },
   {
     name: "Grenada (Grenada)",
     dialCode: "+1473",
     code: "GD",
-    mask: []
+    mask: null
   },
   {
     name: "Guadeloupe (Guadeloupe)",
     dialCode: "+590",
     code: "GP",
-    mask: []
+    mask: null
   },
   {
     name: "Guam (Guam)",
     dialCode: "+1671",
     code: "GU",
-    mask: []
+    mask: null
   },
   {
     name: "Guatemala (Guatemala)",
     dialCode: "+502",
     code: "GT",
-    mask: []
+    mask: null
   },
   {
     name: "Guernsey",
     dialCode: "+44",
     code: "GG",
-    mask: []
+    mask: null
   },
   {
     name: "Guinea (Guinée)",
     dialCode: "+224",
     code: "GN",
-    mask: []
+    mask: null
   },
   {
     name: "Guinea-Bissau (Guiné Bissau)",
     dialCode: "+245",
     code: "GW",
-    mask: []
+    mask: null
   },
   {
     name: "Guyana (Guyana)",
     dialCode: "+592",
     code: "GY",
-    mask: []
+    mask: null
   },
   {
     name: "Haiti (Haiti)",
     dialCode: "+509",
     code: "HT",
-    mask: []
+    mask: null
   },
   {
     name: "Honduras (Honduras)",
     dialCode: "+504",
     code: "HN",
-    mask: []
+    mask: null
   },
   {
     name: "Hong Kong (香港)",
     dialCode: "+852",
     code: "HK",
-    mask: []
+    mask: null
   },
   {
     name: "Hungary (Magyarország)",
     dialCode: "+36",
     code: "HU",
-    mask: []
+    mask: null
   },
   {
     name: "Iceland (Ísland)",
     dialCode: "+354",
     code: "IS",
-    mask: []
+    mask: null
   },
   {
     name: "India (भारत)",
     dialCode: "+91",
     code: "IN",
-    mask: []
+    mask: null
   },
   {
     name: "Indonesia (Indonesia)",
     dialCode: "+62",
     code: "ID",
-    mask: []
+    mask: null
   },
   {
     name: "Iran (‫ایران‬‎)",
     dialCode: "+98",
     code: "IR",
-    mask: []
+    mask: null
   },
   {
     name: "Iraq (‫العراق‬‎)",
     dialCode: "+964",
     code: "IQ",
-    mask: []
+    mask: null
   },
   {
     name: "Ireland (Ireland)",
     dialCode: "+353",
     code: "IE",
-    mask: []
+    mask: null
   },
   {
     name: "Isle of Man",
     dialCode: "+44",
     code: "IM",
-    mask: []
+    mask: null
   },
   {
     name: "Israel (‫ישראל‬‎)",
     dialCode: "+972",
     code: "IL",
-    mask: []
+    mask: null
   },
   {
     name: "Italy (Italia)",
     dialCode: "+39",
     code: "IT",
-    mask: []
+    mask: null
   },
   {
     name: "Ivory Coast (Côte d’Ivoire)",
     dialCode: "+225",
     code: "CI",
-    mask: []
+    mask: null
   },
   {
     name: "Jamaica (Jamaica)",
     dialCode: "+1876",
     code: "JM",
-    mask: []
+    mask: null
   },
   {
     name: "Japan (日本)",
     dialCode: "+81",
     code: "JP",
-    mask: []
+    mask: null
   },
   {
     name: "Jersey",
     dialCode: "+44",
     code: "JE",
-    mask: []
+    mask: null
   },
   {
     name: "Jordan (‫الأردن‬‎)",
     dialCode: "+962",
     code: "JO",
-    mask: []
+    mask: null
   },
   {
     name: "Kazakhstan (Казахстан)",
     dialCode: "+7",
     code: "KZ",
-    mask: []
+    mask: null
   },
   {
     name: "Kenya (Kenya)",
     dialCode: "+254",
     code: "KE",
-    mask: []
+    mask: null
   },
   {
     name: "Kiribati (Kiribati)",
     dialCode: "+686",
     code: "KI",
-    mask: []
+    mask: null
   },
   {
     name: "Kuwait (‫الكويت‬‎)",
     dialCode: "+965",
     code: "KW",
-    mask: []
+    mask: null
   },
   {
     name: "Kyrgyzstan (Kyrgyzstan)",
     dialCode: "+996",
     code: "KG",
-    mask: []
+    mask: null
   },
   {
     name: "Laos (ສ.ປ.ປ ລາວ)",
     dialCode: "+856",
     code: "LA",
-    mask: []
+    mask: null
   },
   {
     name: "Latvia (Latvija)",
     dialCode: "+371",
     code: "LV",
-    mask: []
+    mask: null
   },
   {
     name: "Lebanon (‫لبنان‬‎)",
     dialCode: "+961",
     code: "LB",
-    mask: []
+    mask: null
   },
   {
     name: "Lesotho (Lesotho)",
     dialCode: "+266",
     code: "LS",
-    mask: []
+    mask: null
   },
   {
     name: "Liberia (Liberia)",
     dialCode: "+231",
     code: "LR",
-    mask: []
+    mask: null
   },
   {
     name: "Libya (‫ليبيا‬‎)",
     dialCode: "+218",
     code: "LY",
-    mask: []
+    mask: null
   },
   {
     name: "Liechtenstein (Liechtenstein)",
     dialCode: "+423",
     code: "LI",
-    mask: []
+    mask: null
   },
   {
     name: "Lithuania (Lietuva)",
     dialCode: "+370",
     code: "LT",
-    mask: []
+    mask: null
   },
   {
     name: "Luxembourg (Luxembourg)",
     dialCode: "+352",
     code: "LU",
-    mask: []
+    mask: null
   },
   {
     name: "Macao (澳門)",
     dialCode: "+853",
     code: "MO",
-    mask: []
+    mask: null
   },
   {
     name: "Macedonia (Македонија)",
     dialCode: "+389",
     code: "MK",
-    mask: []
+    mask: null
   },
   {
     name: "Madagascar (Madagasikara)",
     dialCode: "+261",
     code: "MG",
-    mask: []
+    mask: null
   },
   {
     name: "Malawi (Malawi)",
     dialCode: "+265",
     code: "MW",
-    mask: []
+    mask: null
   },
   {
     name: "Malaysia (Malaysia)",
     dialCode: "+60",
     code: "MY",
-    mask: []
+    mask: null
   },
   {
     name: "Maldives (Maldives)",
     dialCode: "+960",
     code: "MV",
-    mask: []
+    mask: null
   },
   {
     name: "Mali (Mali)",
     dialCode: "+223",
     code: "ML",
-    mask: []
+    mask: null
   },
   {
     name: "Malta (Malta)",
     dialCode: "+356",
     code: "MT",
-    mask: []
+    mask: null
   },
   {
     name: "Marshall Islands (Marshall Islands)",
     dialCode: "+692",
     code: "MH",
-    mask: []
+    mask: null
   },
   {
     name: "Martinique (Martinique)",
     dialCode: "+596",
     code: "MQ",
-    mask: []
+    mask: null
   },
   {
     name: "Mauritania (‫موريتانيا‬‎)",
     dialCode: "+222",
     code: "MR",
-    mask: []
+    mask: null
   },
   {
     name: "Mauritius (Moris)",
     dialCode: "+230",
     code: "MU",
-    mask: []
+    mask: null
   },
   {
     name: "Mayotte",
     dialCode: "+262",
     code: "YT",
-    mask: []
+    mask: null
   },
   {
     name: "Mexico (México)",
     dialCode: "+52",
     code: "MX",
-    mask: []
+    mask: null
   },
   {
     name: "Micronesia (Micronesia)",
     dialCode: "+691",
     code: "FM",
-    mask: []
+    mask: null
   },
   {
     name: "Moldova (Republica Moldova)",
     dialCode: "+373",
     code: "MD",
-    mask: []
+    mask: null
   },
   {
     name: "Monaco (Monaco)",
     dialCode: "+377",
     code: "MC",
-    mask: []
+    mask: null
   },
   {
     name: "Mongolia (Mongolia)",
     dialCode: "+976",
     code: "MN",
-    mask: []
+    mask: null
   },
   {
     name: "Montenegro (Crna Gora)",
     dialCode: "+382",
     code: "ME",
-    mask: []
+    mask: null
   },
   {
     name: "Montserrat (Montserrat)",
     dialCode: "+1664",
     code: "MS",
-    mask: []
+    mask: null
   },
   {
     name: "Morocco (‫المغرب‬‎)",
     dialCode: "+212",
     code: "MA",
-    mask: []
+    mask: null
   },
   {
     name: "Mozambique (Moçambique)",
     dialCode: "+258",
     code: "MZ",
-    mask: []
+    mask: null
   },
   {
     name: "Myanmar [Burma] (မြန်မာ)",
     dialCode: "+95",
     code: "MM",
-    mask: []
+    mask: null
   },
   {
     name: "Namibia (Namibia)",
     dialCode: "+264",
     code: "NA",
-    mask: []
+    mask: null
   },
   {
     name: "Nauru (Nauru)",
     dialCode: "+674",
     code: "NR",
-    mask: []
+    mask: null
   },
   {
     name: "Nepal (नेपाल)",
     dialCode: "+977",
     code: "NP",
-    mask: []
+    mask: null
   },
   {
     name: "Netherlands (Nederland)",
     dialCode: "+31",
     code: "NL",
-    mask: []
+    mask: null
   },
   {
     name: "Netherlands Antilles",
     dialCode: "+599",
     code: "AN",
-    mask: []
+    mask: null
   },
   {
     name: "New Caledonia (Nouvelle-Calédonie)",
     dialCode: "+687",
     code: "NC",
-    mask: []
+    mask: null
   },
   {
     name: "New Zealand (New Zealand)",
     dialCode: "+64",
     code: "NZ",
-    mask: []
+    mask: null
   },
   {
     name: "Nicaragua (Nicaragua)",
     dialCode: "+505",
     code: "NI",
-    mask: []
+    mask: null
   },
   {
     name: "Niger (Nijar)",
     dialCode: "+227",
     code: "NE",
-    mask: []
+    mask: null
   },
   {
     name: "Nigeria (Nigeria)",
     dialCode: "+234",
     code: "NG",
-    mask: []
+    mask: null
   },
   {
     name: "Niue (Niue)",
     dialCode: "+683",
     code: "NU",
-    mask: []
+    mask: null
   },
   {
     name: "Norfolk Island (Norfolk Island)",
     dialCode: "+672",
     code: "NF",
-    mask: []
+    mask: null
   },
   {
     name: "Northern Mariana Islands (Northern Mariana Islands)",
     dialCode: "+1670",
     code: "MP",
-    mask: []
+    mask: null
   },
   {
     name: "North Korea (조선 민주주의 인민 공화국)",
     dialCode: "+850",
     code: "KP",
-    mask: []
+    mask: null
   },
   {
     name: "Norway (Norge)",
     dialCode: "+47",
     code: "NO",
-    mask: []
+    mask: null
   },
   {
     name: "Oman (‫عُمان‬‎)",
     dialCode: "+968",
     code: "OM",
-    mask: []
+    mask: null
   },
   {
     name: "Pakistan (‫پاکستان‬‎)",
     dialCode: "+92",
     code: "PK",
-    mask: []
+    mask: null
   },
   {
     name: "Palau (Palau)",
     dialCode: "+680",
     code: "PW",
-    mask: []
+    mask: null
   },
   {
     name: "Palestine (‫فلسطين‬‎)",
     dialCode: "+970",
     code: "PS",
-    mask: []
+    mask: null
   },
   {
     name: "Panama (Panamá)",
     dialCode: "+507",
     code: "PA",
-    mask: []
+    mask: null
   },
   {
     name: "Papua New Guinea (Papua New Guinea)",
     dialCode: "+675",
     code: "PG",
-    mask: []
+    mask: null
   },
   {
     name: "Paraguay (Paraguay)",
     dialCode: "+595",
     code: "PY",
-    mask: []
+    mask: null
   },
   {
     name: "Peru (Perú)",
     dialCode: "+51",
     code: "PE",
-    mask: []
+    mask: null
   },
   {
     name: "Philippines (Philippines)",
     dialCode: "+63",
     code: "PH",
-    mask: []
+    mask: null
   },
   {
     name: "Pitcairn",
     dialCode: "+872",
     code: "PN",
-    mask: []
+    mask: null
   },
   {
     name: "Poland (Polska)",
     dialCode: "+48",
     code: "PL",
-    mask: []
+    mask: null
   },
   {
     name: "Portugal (Portugal)",
     dialCode: "+351",
     code: "PT",
-    mask: []
+    mask: null
   },
   {
     name: "Puerto Rico (Puerto Rico)",
     dialCode: "+1939",
     code: "PR",
-    mask: []
+    mask: null
   },
   {
     name: "Qatar (‫قطر‬‎)",
     dialCode: "+974",
     code: "QA",
-    mask: []
+    mask: null
   },
   {
     name: "Republic of Korea (대한민국)",
     dialCode: "+82",
     code: "KR",
-    mask: []
+    mask: null
   },
   {
     name: "Reunion (Réunion)",
     dialCode: "+262",
     code: "RE",
-    mask: []
+    mask: null
   },
   {
     name: "Romania (România)",
     dialCode: "+40",
     code: "RO",
-    mask: []
+    mask: null
   },
   {
     name: "Russia (Россия)",
@@ -1073,283 +1073,283 @@ const PhoneInput = (props) => {
     name: "Rwanda (Rwanda)",
     dialCode: "+250",
     code: "RW",
-    mask: []
+    mask: null
   },
   {
     name: "Saint Barthélemy (Saint-Barthélémy)",
     dialCode: "+590",
     code: "BL",
-    mask: []
+    mask: null
   },
   {
     name: "Saint Helena (Saint Helena)",
     dialCode: "+290",
     code: "SH",
-    mask: []
+    mask: null
   },
   {
     name: "Saint Kitts and Nevis (Saint Kitts and Nevis)",
     dialCode: "+1869",
     code: "KN",
-    mask: []
+    mask: null
   },
   {
     name: "Saint Lucia (Saint Lucia)",
     dialCode: "+1758",
     code: "LC",
-    mask: []
+    mask: null
   },
   {
     name: "Saint Martin Island (Saint-Martin [partie française])",
     dialCode: "+590",
     code: "MF",
-    mask: []
+    mask: null
   },
   {
     name: "Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)",
     dialCode: "+508",
     code: "PM",
-    mask: []
+    mask: null
   },
   {
     name: "Saint Vincent and the Grenadines (Saint Vincent and the Grenadines)",
     dialCode: "+1784",
     code: "VC",
-    mask: []
+    mask: null
   },
   {
     name: "Samoa (Samoa)",
     dialCode: "+685",
     code: "WS",
-    mask: []
+    mask: null
   },
   {
     name: "San Marino (San Marino)",
     dialCode: "+378",
     code: "SM",
-    mask: []
+    mask: null
   },
   {
     name: "Sao Tome and Principe (São Tomé e Príncipe)",
     dialCode: "+239",
     code: "ST",
-    mask: []
+    mask: null
   },
   {
     name: "Saudi Arabia (‫المملكة العربية السعودية‬‎)",
     dialCode: "+966",
     code: "SA",
-    mask: []
+    mask: null
   },
   {
     name: "Senegal (Sénégal)",
     dialCode: "+221",
     code: "SN",
-    mask: []
+    mask: null
   },
   {
     name: "Serbia (Србија)",
     dialCode: "+381",
     code: "RS",
-    mask: []
+    mask: null
   },
   {
     name: "Seychelles (Seychelles)",
     dialCode: "+248",
     code: "SC",
-    mask: []
+    mask: null
   },
   {
     name: "Sierra Leone (Sierra Leone)",
     dialCode: "+232",
     code: "SL",
-    mask: []
+    mask: null
   },
   {
     name: "Singapore (Singapore)",
     dialCode: "+65",
     code: "SG",
-    mask: []
+    mask: null
   },
   {
     name: "Slovakia (Slovensko)",
     dialCode: "+421",
     code: "SK",
-    mask: []
+    mask: null
   },
   {
     name: "Slovenia (Slovenija)",
     dialCode: "+386",
     code: "SI",
-    mask: []
+    mask: null
   },
   {
     name: "Solomon Islands (Solomon Islands)",
     dialCode: "+677",
     code: "SB",
-    mask: []
+    mask: null
   },
   {
     name: "Somalia (Soomaaliya)",
     dialCode: "+252",
     code: "SO",
-    mask: []
+    mask: null
   },
   {
     name: "South Africa (South Africa)",
     dialCode: "+27",
     code: "ZA",
-    mask: []
+    mask: null
   },
   {
     name: "South Georgia and the South Sandwich Islands",
     dialCode: "+500",
     code: "GS",
-    mask: []
+    mask: null
   },
   {
     name: "Spain (España)",
     dialCode: "+34",
     code: "ES",
-    mask: []
+    mask: null
   },
   {
     name: "Sri Lanka (ශ්‍රී ලංකාව)",
     dialCode: "+94",
     code: "LK",
-    mask: []
+    mask: null
   },
   {
     name: "Sudan (‫السودان‬‎)",
     dialCode: "+249",
     code: "SD",
-    mask: []
+    mask: null
   },
   {
     name: "Suriname (Suriname)",
     dialCode: "+597",
     code: "SR",
-    mask: []
+    mask: null
   },
   {
     name: "Svalbard and Jan Mayen",
     dialCode: "+47",
     code: "SJ",
-    mask: []
+    mask: null
   },
   {
     name: "Swaziland (Swaziland)",
     dialCode: "+268",
     code: "SZ",
-    mask: []
+    mask: null
   },
   {
     name: "Sweden (Sverige)",
     dialCode: "+46",
     code: "SE",
-    mask: []
+    mask: null
   },
   {
     name: "Switzerland (Schweiz)",
     dialCode: "+41",
     code: "CH",
-    mask: []
+    mask: null
   },
   {
     name: "Syria (‫سوريا‬‎)",
     dialCode: "+963",
     code: "SY",
-    mask: []
+    mask: null
   },
   {
     name: "Taiwan (台灣)",
     dialCode: "+886",
     code: "TW",
-    mask: []
+    mask: null
   },
   {
     name: "Tajikistan (Tajikistan)",
     dialCode: "+992",
     code: "TJ",
-    mask: []
+    mask: null
   },
   {
     name: "Tanzania (Tanzania)",
     dialCode: "+255",
     code: "TZ",
-    mask: []
+    mask: null
   },
   {
     name: "Thailand (ไทย)",
     dialCode: "+66",
     code: "TH",
-    mask: []
+    mask: null
   },
   {
     name: "Timor-Leste (Timor-Leste)",
     dialCode: "+670",
     code: "TL",
-    mask: []
+    mask: null
   },
   {
     name: "Togo (Togo)",
     dialCode: "+228",
     code: "TG",
-    mask: []
+    mask: null
   },
   {
     name: "Tokelau (Tokelau)",
     dialCode: "+690",
     code: "TK",
-    mask: []
+    mask: null
   },
   {
     name: "Tonga (Tonga)",
     dialCode: "+676",
     code: "TO",
-    mask: []
+    mask: null
   },
   {
     name: "Trinidad and Tobago (Trinidad and Tobago)",
     dialCode: "+1868",
     code: "TT",
-    mask: []
+    mask: null
   },
   {
     name: "Tunisia (‫تونس‬‎)",
     dialCode: "+216",
     code: "TN",
-    mask: []
+    mask: null
   },
   {
     name: "Turkey (Türkiye)",
     dialCode: "+90",
     code: "TR",
-    mask: []
+    mask: null
   },
   {
     name: "Turkmenistan (Turkmenistan)",
     dialCode: "+993",
     code: "TM",
-    mask: []
+    mask: null
   },
   {
     name: "Turks and Caicos Islands (Turks and Caicos Islands)",
     dialCode: "+1649",
     code: "TC",
-    mask: []
+    mask: null
   },
   {
     name: "Tuvalu (Tuvalu)",
     dialCode: "+688",
     code: "TV",
-    mask: []
+    mask: null
   },
   {
     name: "Uganda (Uganda)",
     dialCode: "+256",
     code: "UG",
-    mask: []
+    mask: null
   },
   {
     name: "Ukraine (Україна)",
@@ -1361,104 +1361,107 @@ const PhoneInput = (props) => {
     name: "United Arab Emirates (‫الإمارات العربية المتحدة‬‎)",
     dialCode: "+971",
     code: "AE",
-    mask: []
+    mask: null
   },
   {
     name: "UK (United Kingdom)",
     dialCode: "+44",
     code: "GB",
-    mask: []
+    mask: null
   },
   {
     name: "United States (United States)",
     dialCode: "+1",
     code: "US",
-    mask: []
+    mask: null
   },
   {
     name: "Uruguay (Uruguay)",
     dialCode: "+598",
     code: "UY",
-    mask: []
+    mask: null
   },
   {
     name: "Uzbekistan (Ўзбекистон)",
     dialCode: "+998",
     code: "UZ",
-    mask: []
+    mask: null
   },
   {
     name: "Vanuatu (Vanuatu)",
     dialCode: "+678",
     code: "VU",
-    mask: []
+    mask: null
   },
   {
     name: "Vatican City (Città del Vaticano)",
     dialCode: "+379",
     code: "VA",
-    mask: []
+    mask: null
   },
   {
     name: "Venezuela (Venezuela)",
     dialCode: "+58",
     code: "VE",
-    mask: []
+    mask: null
   },
   {
     name: "Vietnam (Việt Nam)",
     dialCode: "+84",
     code: "VN",
-    mask: []
+    mask: null
   },
   {
     name: "Virgin Islands (British)",
     dialCode: "+1284",
     code: "VG",
-    mask: []
+    mask: null
   },
   {
     name: "Virgin Islands (US)",
     dialCode: "+1340",
     code: "VI",
-    mask: []
+    mask: null
   },
   {
     name: "Wallis and Futuna (Wallis and Futuna)",
     dialCode: "+681",
     code: "WF",
-    mask: []
+    mask: null
   },
   {
     name: "Yemen (‫اليمن‬‎)",
     dialCode: "+967",
     code: "YE",
-    mask: []
+    mask: null
   },
   {
     name: "Zambia (Zambia)",
     dialCode: "+260",
     code: "ZM",
-    mask: []
+    mask: null
   },
   {
     name: "Zimbabwe (Zimbabwe)",
     dialCode: "+263",
     code: "ZW",
-    mask: []
+    mask: null
   },
   {
     name: "Åland Islands (Ahvenanmaa)",
     dialCode: "+358",
     code: "AX",
-    mask: []
+    mask: null
   }];
 
   const [country, setCountry] = useState(props.locale);
 
   const getMask = locale => options.find(o => o.code === locale).mask;
 
-  const getPlaceholder = locale => options.find(o => o.code === locale).mask.join('').replace(/[\/|\\]/g, "").replace(/[d]/gi, "X");
+  const getPlaceholder = locale =>
+    options.find(o => o.code === locale).mask === null
+      ? "XXXXXXXXXXX"
+      : options.find(o => o.code === locale).mask.join('').replace(/[\/|\\]/g, "").replace(/[d]/gi, "X");
 
   const getLocaleCode = locale => options.find(o => o.code === locale).dialCode;
 
