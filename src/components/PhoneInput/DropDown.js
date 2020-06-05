@@ -3,7 +3,7 @@ import Box from "../Box";
 import Scrollbar from "../Scrollbar";
 import TextInput from "../TextInput";
 import * as Countries from "./svg";
-import { StyledTriangle, StyledDropDown, StyledCountryItem, StyledFlagBox } from "./StyledPhoneInput";
+import { StyledTriangle, StyledDropDown, StyledCountryItem, StyledFlagBox, StyledSearchPanel } from "./StyledPhoneInput";
 
 const Dropdown = ({ value, options, onChange }) => {
 
@@ -33,6 +33,7 @@ const Dropdown = ({ value, options, onChange }) => {
   const handleChange = selectedValue => {
     onChange(selectedValue);
     setOpen(false);
+    setSearch("");
   };
 
   useEffect(() => {
@@ -55,6 +56,8 @@ const Dropdown = ({ value, options, onChange }) => {
 
   const setCountry = options.find(o => o.code === value).code;
 
+  const onSearchCountry = e => setSearch(e.target.value)
+
   return (
     <Box ref={dropDownMenu} displayProp="flex">
       <StyledFlagBox onClick={openDropDown}>
@@ -68,20 +71,13 @@ const Dropdown = ({ value, options, onChange }) => {
       {open && (
         <StyledDropDown>
           <Scrollbar>
-            <div style={{
-              position: "sticky",
-              top: 0,
-              minHeight: 0,
-              background: "white",
-              //borderBottom: "0.5px solid #d1d1d1",
-              margin: "5px 0 3px 0px"
-            }}>
+            <StyledSearchPanel>
               <TextInput
                 value={search}
-                placeholder="Search Countries"
-                onChange={e => setSearch(e.target.value)}
+                placeholder="Type to search country"
+                onChange={onSearchCountry}
               />
-            </div>
+            </StyledSearchPanel>
             <div>
               {filteredCountries.map((option, i) => (
                 <StyledCountryItem key={i}>

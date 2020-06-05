@@ -24,7 +24,7 @@ storiesOf("Components|PhoneInput", module)
               action("onChange")(e);
             }}
             name={text("name", "")}
-            locale={select("locale", locale, "AG")}
+            locale={select("locale", locale, "RU")}
             onFocus={action("onFocus")}
             onBlur={action("onBlur")}
           />
