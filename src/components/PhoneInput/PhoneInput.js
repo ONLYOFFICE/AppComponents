@@ -329,7 +329,7 @@ const PhoneInput = (props) => {
     name: "Cyprus (Κύπρος)",
     dialCode: "+357",
     code: "CY",
-    mask: null
+    mask: [/\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Czech Republic (Česká republika)",
@@ -341,7 +341,7 @@ const PhoneInput = (props) => {
     name: "Denmark (Danmark)",
     dialCode: "+45",
     code: "DK",
-    mask: null
+    mask: [/\d/, /\d/, " ", /\d/, /\d/, " ", /\d/, /\d/, " ", /\d/, /\d/]
   },
   {
     name: "Djibouti (Djibouti)",
@@ -377,7 +377,7 @@ const PhoneInput = (props) => {
     name: "El Salvador (El Salvador)",
     dialCode: "+503",
     code: "SV",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Equatorial Guinea (Guinea Ecuatorial)",
@@ -395,7 +395,7 @@ const PhoneInput = (props) => {
     name: "Estonia (Eesti)",
     dialCode: "+372",
     code: "EE",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Ethiopia (Ethiopia)",
@@ -425,13 +425,13 @@ const PhoneInput = (props) => {
     name: "Finland (Suomi)",
     dialCode: "+358",
     code: "FI",
-    mask: null
+    mask: [/\d/, /\d/, " ", /\d/, /\d/, /\d/, " ", /\d/, /\d/, " ", /\d/, /\d/]
   },
   {
     name: "France (France)",
     dialCode: "+33",
     code: "FR",
-    mask: null
+    mask: [/\d/, " ", /\d/, /\d/, " ", /\d/, /\d/, " ", /\d/, /\d/, " ", /\d/, /\d/]
   },
   {
     name: "French Guiana (Guyane française)",
@@ -467,7 +467,7 @@ const PhoneInput = (props) => {
     name: "Germany (Deutschland)",
     dialCode: "+49",
     code: "DE",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Ghana (Gaana)",
@@ -515,7 +515,7 @@ const PhoneInput = (props) => {
     name: "Guatemala (Guatemala)",
     dialCode: "+502",
     code: "GT",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Guernsey",
@@ -545,7 +545,7 @@ const PhoneInput = (props) => {
     name: "Haiti (Haiti)",
     dialCode: "+509",
     code: "HT",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Honduras (Honduras)",
@@ -557,7 +557,7 @@ const PhoneInput = (props) => {
     name: "Hong Kong (香港)",
     dialCode: "+852",
     code: "HK",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Hungary (Magyarország)",
@@ -569,13 +569,13 @@ const PhoneInput = (props) => {
     name: "Iceland (Ísland)",
     dialCode: "+354",
     code: "IS",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "India (भारत)",
     dialCode: "+91",
     code: "IN",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Indonesia (Indonesia)",
@@ -599,7 +599,7 @@ const PhoneInput = (props) => {
     name: "Ireland (Ireland)",
     dialCode: "+353",
     code: "IE",
-    mask: null
+    mask: [/\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Isle of Man",
@@ -611,13 +611,13 @@ const PhoneInput = (props) => {
     name: "Israel (‫ישראל‬‎)",
     dialCode: "+972",
     code: "IL",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Italy (Italia)",
     dialCode: "+39",
     code: "IT",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Ivory Coast (Côte d’Ivoire)",
@@ -635,7 +635,7 @@ const PhoneInput = (props) => {
     name: "Japan (日本)",
     dialCode: "+81",
     code: "JP",
-    mask: null
+    mask: [/\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Jersey",
@@ -653,7 +653,7 @@ const PhoneInput = (props) => {
     name: "Kazakhstan (Казахстан)",
     dialCode: "+7",
     code: "KZ",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, "-", /\d/, /\d/, "-", /\d/, /\d/]
   },
   {
     name: "Kenya (Kenya)",
@@ -761,7 +761,7 @@ const PhoneInput = (props) => {
     name: "Malaysia (Malaysia)",
     dialCode: "+60",
     code: "MY",
-    mask: null
+    mask: [/\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Maldives (Maldives)",
@@ -815,7 +815,7 @@ const PhoneInput = (props) => {
     name: "Mexico (México)",
     dialCode: "+52",
     code: "MX",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Micronesia (Micronesia)",
@@ -827,7 +827,7 @@ const PhoneInput = (props) => {
     name: "Moldova (Republica Moldova)",
     dialCode: "+373",
     code: "MD",
-    mask: null
+    mask: [/\d/, /\d/, " ", /\d/, /\d/, "-", /\d/, /\d/, "-", /\d/, /\d/]
   },
   {
     name: "Monaco (Monaco)",
@@ -893,7 +893,7 @@ const PhoneInput = (props) => {
     name: "Netherlands (Nederland)",
     dialCode: "+31",
     code: "NL",
-    mask: null
+    mask: [/\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Netherlands Antilles",
@@ -911,7 +911,7 @@ const PhoneInput = (props) => {
     name: "New Zealand (New Zealand)",
     dialCode: "+64",
     code: "NZ",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Nicaragua (Nicaragua)",
@@ -959,7 +959,7 @@ const PhoneInput = (props) => {
     name: "Norway (Norge)",
     dialCode: "+47",
     code: "NO",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, " ", /\d/, /\d/, /\d/]
   },
   {
     name: "Oman (‫عُمان‬‎)",
@@ -971,7 +971,7 @@ const PhoneInput = (props) => {
     name: "Pakistan (‫پاکستان‬‎)",
     dialCode: "+92",
     code: "PK",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Palau (Palau)",
@@ -1013,7 +1013,7 @@ const PhoneInput = (props) => {
     name: "Philippines (Philippines)",
     dialCode: "+63",
     code: "PH",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Pitcairn",
@@ -1025,7 +1025,7 @@ const PhoneInput = (props) => {
     name: "Poland (Polska)",
     dialCode: "+48",
     code: "PL",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/]
   },
   {
     name: "Portugal (Portugal)",
@@ -1049,7 +1049,7 @@ const PhoneInput = (props) => {
     name: "Republic of Korea (대한민국)",
     dialCode: "+82",
     code: "KR",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Reunion (Réunion)",
@@ -1169,7 +1169,7 @@ const PhoneInput = (props) => {
     name: "Singapore (Singapore)",
     dialCode: "+65",
     code: "SG",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Slovakia (Slovensko)",
@@ -1211,7 +1211,7 @@ const PhoneInput = (props) => {
     name: "Spain (España)",
     dialCode: "+34",
     code: "ES",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/]
   },
   {
     name: "Sri Lanka (ශ්‍රී ලංකාව)",
@@ -1247,13 +1247,13 @@ const PhoneInput = (props) => {
     name: "Sweden (Sverige)",
     dialCode: "+46",
     code: "SE",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/]
   },
   {
     name: "Switzerland (Schweiz)",
     dialCode: "+41",
     code: "CH",
-    mask: null
+    mask: [/\d/, /\d/, " ", /\d/, /\d/, /\d/, " ", /\d/, /\d/, " ", /\d/, /\d/]
   },
   {
     name: "Syria (‫سوريا‬‎)",
@@ -1325,7 +1325,7 @@ const PhoneInput = (props) => {
     name: "Turkey (Türkiye)",
     dialCode: "+90",
     code: "TR",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, " ", /\d/, /\d/, " ", /\d/, /\d/]
   },
   {
     name: "Turkmenistan (Turkmenistan)",
@@ -1364,16 +1364,16 @@ const PhoneInput = (props) => {
     mask: null
   },
   {
-    name: "UK (United Kingdom)",
+    name: "United Kingdom (UK)",
     dialCode: "+44",
     code: "GB",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "United States (United States)",
     dialCode: "+1",
     code: "US",
-    mask: null
+    mask: [/\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, "-", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Uruguay (Uruguay)",
@@ -1397,7 +1397,7 @@ const PhoneInput = (props) => {
     name: "Vatican City (Città del Vaticano)",
     dialCode: "+379",
     code: "VA",
-    mask: null
+    mask: [/\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/]
   },
   {
     name: "Venezuela (Venezuela)",
@@ -1460,7 +1460,7 @@ const PhoneInput = (props) => {
 
   const getPlaceholder = locale =>
     options.find(o => o.code === locale).mask === null
-      ? "XXXXXXXXXXX"
+      ? "XXXXXXXXXX"
       : options.find(o => o.code === locale).mask.join('').replace(/[\/|\\]/g, "").replace(/[d]/gi, "X");
 
   const getLocaleCode = locale => options.find(o => o.code === locale).dialCode;
@@ -1507,12 +1507,14 @@ const PhoneInput = (props) => {
 PhoneInput.propTypes = {
   locale: PropTypes.oneOf(["AF", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH", "BD", "BB", "BY", "BE", "BZ", "BJ", "BM", "BT", "BO", "BA", "BW", "BR", "IO", "BN", "BG", "BF", "BI", "KH", "CM", "CA", "CV", "KY", "CF", "TD", "CL", "CN", "CX", "CC", "CO", "KM", "CG", "CD", "CK", "CR", "CI", "HR", "CU", "CY", "CZ", "DK", "DJ", "DM", "DO", "EC", "EG", "SV", "GQ", "ER", "EE", "ET", "FK", "FO", "FJ", "FI", "FR", "GF", "PF", "GA", "GM", "GE", "DE", "GH", "GI", "GR", "GL", "GD", "GP", "GU", "GT", "GG", "GN", "GW", "GY", "HT", "VA", "HN", "HK", "HU", "IS", "IN", "ID", "IR", "IQ", "IE", "IM", "IL", "IT", "JM", "JP", "JE", "JO", "KZ", "KE", "KI", "KP", "KR", "KW", "KG", "LA", "LV", "LB", "LS", "LR", "LY", "LI", "LT", "LU", "MO", "MK", "MG", "MW", "MY", "MV", "ML", "MT", "MH", "MQ", "MR", "MU", "YT", "MX", "FM", "MD", "MC", "MN", "ME", "MS", "MA", "MZ", "MM", "NA", "NR", "NP", "NL", "AN", "NC", "NZ", "NI", "NE", "NG", "NU", "NF", "MP", "NO", "OM", "PK", "PW", "PS", "PA", "PG", "PY", "PE", "PH", "PN", "PL", "PT", "PR", "QA", "RO", "RU", "RW", "RE", "BL", "SH", "KN", "LC", "MF", "PM", "VC", "WS", "SM", "ST", "SA", "SN", "RS", "SC", "SL", "SG", "SK", "SI", "SB", "SO", "ZA", "GS", "ES", "LK", "SD", "SR", "SJ", "SZ", "SE", "CH", "SY", "TW", "TJ", "TZ", "TH", "TL", "TG", "TK", "TO", "TT", "TN", "TR", "TM", "TC", "TV", "UG", "UA", "AE", "GB", "US", "UY", "UZ", "VU", "VE", "VN", "VG", "VI", "WF", "YE", "ZM", "ZW", "AX"]),
   getLocaleCode: PropTypes.func,
+  getMask: PropTypes.func,
+  getPlaceholder: PropTypes.func,
   onChange: PropTypes.func,
   value: PropTypes.string
 };
 
 PhoneInput.defaultProps = {
-  locale: "AS",
+  locale: "RU",
   type: "text",
   value: ""
 };

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-//import commonInputStyles from "../../utils/commonInputStyles";
 import TextInput from "../TextInput";
 import Box from "../Box";
 import { Base } from "../../themes";
