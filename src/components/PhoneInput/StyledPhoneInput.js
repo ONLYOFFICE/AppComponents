@@ -21,21 +21,20 @@ const StyledDropDown = styled.div`
 position: absolute;
 top: 59px;
 left: 15px;
-width: 292px;
+width: ${props => props.theme.phoneInput.width};
 height: 260px;
 z-index: 1999;
 border-radius: 4px;
 border: 1px solid #d1d1d1;
 box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-overflow-x: hidden;
-overflow-y: auto;
 `;
 
 const StyledCountryItem = styled(Box)`
 cursor: pointer;
 &:hover {
-    background-color: #e9e9e9;
-  }
+    background-color: ${props => props.theme.phoneInput.itemHoverColor};
+  };
+background-color: ${props => props.theme.phoneInput.itemBackgroundColor};
 `;
 
 const StyledFlagBox = styled(Box)`
@@ -43,10 +42,22 @@ cursor: pointer;
 `;
 
 const StyledSearchPanel = styled.div`
-position: sticky;
-top: 0px;
 background-color: #fff;
-padding: 10px 0px 10px 10px;
+padding: 8px 8px 0 8px;
+.phone-input-searcher {
+  background-color: #fff;
+  ::placeholder {
+    color: ${props => props.theme.phoneInput.placeholderColor}
+  }
+}
+`;
+
+const StyledInputBox = styled(Box)`
+display: flex;
+border-radius: 3px 3px 3px 3px;
+border: 1px solid #D0D5DA;
+width: ${props => props.theme.phoneInput.width};
+height: ${props => props.theme.phoneInput.height};
 `;
 
 StyledPhoneInput.defaultProps = { theme: Base };
@@ -57,5 +68,6 @@ export {
     StyledDropDown,
     StyledCountryItem,
     StyledFlagBox,
-    StyledSearchPanel
+    StyledSearchPanel,
+    StyledInputBox
 };

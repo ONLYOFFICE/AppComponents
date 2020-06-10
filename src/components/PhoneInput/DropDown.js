@@ -1,12 +1,14 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import Box from "../Box";
 import Scrollbar from "../Scrollbar";
 import TextInput from "../TextInput";
+import Text from "../Text";
 import * as Countries from "./svg";
 import { StyledTriangle, StyledDropDown, StyledCountryItem, StyledFlagBox, StyledSearchPanel } from "./StyledPhoneInput";
 
-const Dropdown = ({ value, options, onChange }) => {
-
+const Dropdown = ({ value, options, onChange, theme }) => {
+  console.log("render dropdown");
+  
   const dropDownMenu = useRef();
 
   const [open, setOpen] = useState(false);
@@ -36,17 +38,21 @@ const Dropdown = ({ value, options, onChange }) => {
     setSearch("");
   };
 
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", handleClick);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClick);
+  //   };
+  // }, []);
+
+  const openDropDown = useCallback(() => setOpen(!open), [open]);
+
   useEffect(() => {
+    if (open) refs[value].current.scrollIntoView(false);
     document.addEventListener("mousedown", handleClick);
     return () => {
       document.removeEventListener("mousedown", handleClick);
     };
-  }, []);
-
-  const openDropDown = () => setOpen(!open);
-
-  useEffect(() => {
-    if (open) refs[value].current.scrollIntoView(false);
   }, [open]);
 
   const refs = options.reduce((acc, value) => {
@@ -54,9 +60,13 @@ const Dropdown = ({ value, options, onChange }) => {
     return acc;
   }, {});
 
-  const setCountry = options.find(o => o.code === value).code;
+  const onSearchCountry = useCallback(e => setSearch(e.target.value), []);
 
-  const onSearchCountry = e => setSearch(e.target.value)
+  const onHandleChange = useCallback(e => {
+    handleChange(e.currentTarget.dataset.option);
+  }, []);
+
+  const setCountry = options.find(o => o.code === value).code;
 
   return (
     <Box ref={dropDownMenu} displayProp="flex">
@@ -70,18 +80,22 @@ const Dropdown = ({ value, options, onChange }) => {
       <StyledTriangle onClick={openDropDown} />
       {open && (
         <StyledDropDown>
-          <Scrollbar>
+          
             <StyledSearchPanel>
               <TextInput
                 value={search}
                 placeholder="Type to search country"
                 onChange={onSearchCountry}
+                scale={true}
+                className="phone-input-searcher"
               />
             </StyledSearchPanel>
-            <div>
+            
+            <div style={{height:"220px"}}>
+            <Scrollbar color={theme.phoneInput.scrollBackground}>
               {filteredCountries.map((option, i) => (
                 <StyledCountryItem key={i}>
-                  <Box displayProp="flex" backgroundProp={option.code === value ? "#e9e9e9" : ""} onClick={() => handleChange(option.code)}>
+                  <Box displayProp="flex" backgroundProp={option.code === value ? "#e9e9e9" : ""} data-option={option.code} onClick={onHandleChange}>
                     <Box marginProp={"5px 0 3px 10px"}>
                       {React.createElement(Countries[`${option.code}`],
                         {
@@ -89,12 +103,14 @@ const Dropdown = ({ value, options, onChange }) => {
                           height: 16
                         })}
                     </Box>
-                    <Box marginProp={"2px 0 2px 8px"} ref={refs[option.code]}>{option.name} {option.dialCode}</Box>
+                    <Box marginProp="2px 0 2px 8px" ref={refs[option.code]}><Text color={theme.phoneInput.itemTextColor}>{option.name} {option.dialCode}</Text></Box>
+                    
                   </Box>
                 </StyledCountryItem>
               ))}
+              </Scrollbar>
             </div>
-          </Scrollbar>
+            
         </StyledDropDown>
       )}
     </Box>

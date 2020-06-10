@@ -527,6 +527,16 @@ const Base = {
     inputPadding: "5px 5px 5px 9px",
     inputBorder: blueMain,
     iconPadding: "8px 8px 7px 0px"
+  },
+
+  phoneInput: {
+    width: "304px",
+    height: "44px",
+    itemTextColor: black ,
+    itemBackgroundColor: white,
+    itemHoverColor: grayLightMid,
+    scrollBackground: "rgba(0, 0, 0, 0.1)",
+    placeholderColor: gray
   }
 };
 

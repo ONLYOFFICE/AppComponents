@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import DropDown from "./DropDown";
-import { StyledPhoneInput } from "./StyledPhoneInput";
+import { StyledPhoneInput, StyledInputBox } from "./StyledPhoneInput";
 import Box from "../Box";
 import Text from "../Text";
+import { Base } from "../../themes";
 
 const PhoneInput = (props) => {
 
@@ -47,12 +48,6 @@ const PhoneInput = (props) => {
     name: "Anguilla (Anguilla)",
     dialCode: "+1264",
     code: "AI",
-    mask: null
-  },
-  {
-    name: "Antarctica",
-    dialCode: "+672",
-    code: "AQ",
     mask: null
   },
   {
@@ -266,7 +261,7 @@ const PhoneInput = (props) => {
     mask: [/\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
-    name: "Christmas Island",
+    name: "Christmas Island (Christmas Island)",
     dialCode: "+61",
     code: "CX",
     mask: null
@@ -602,7 +597,7 @@ const PhoneInput = (props) => {
     mask: [/\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
-    name: "Isle of Man",
+    name: "Isle of Man (Isle of Man)",
     dialCode: "+44",
     code: "IM",
     mask: null
@@ -638,7 +633,7 @@ const PhoneInput = (props) => {
     mask: [/\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/]
   },
   {
-    name: "Jersey",
+    name: "Jersey (Jersey)",
     dialCode: "+44",
     code: "JE",
     mask: null
@@ -806,7 +801,7 @@ const PhoneInput = (props) => {
     mask: null
   },
   {
-    name: "Mayotte",
+    name: "Mayotte (Mayotte)",
     dialCode: "+262",
     code: "YT",
     mask: null
@@ -896,7 +891,7 @@ const PhoneInput = (props) => {
     mask: [/\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
-    name: "Netherlands Antilles",
+    name: "Netherlands Antilles (Nederlandse Antillen)",
     dialCode: "+599",
     code: "AN",
     mask: null
@@ -1016,7 +1011,7 @@ const PhoneInput = (props) => {
     mask: [/\d/, /\d/, /\d/, /\d/, " ", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   },
   {
-    name: "Pitcairn",
+    name: "Pitcairn Islands (Pitkern Ailen)",
     dialCode: "+872",
     code: "PN",
     mask: null
@@ -1202,7 +1197,7 @@ const PhoneInput = (props) => {
     mask: null
   },
   {
-    name: "South Georgia and the South Sandwich Islands",
+    name: "South Georgia and the South Sandwich Islands (SGSSI)",
     dialCode: "+500",
     code: "GS",
     mask: null
@@ -1232,7 +1227,7 @@ const PhoneInput = (props) => {
     mask: null
   },
   {
-    name: "Svalbard and Jan Mayen",
+    name: "Svalbard and Jan Mayen (Svalbard og Jan Mayen)",
     dialCode: "+47",
     code: "SJ",
     mask: null
@@ -1456,27 +1451,17 @@ const PhoneInput = (props) => {
 
   const [country, setCountry] = useState(props.locale);
 
-  const getMask = locale => options.find(o => o.code === locale).mask;
-
-  const getPlaceholder = locale =>
-    options.find(o => o.code === locale).mask === null
-      ? "XXXXXXXXXX"
-      : options.find(o => o.code === locale).mask.join('').replace(/[\/|\\]/g, "").replace(/[d]/gi, "X");
+  const onChangeCountry = useCallback(country => setCountry(country), [country]);
 
   const getLocaleCode = locale => options.find(o => o.code === locale).dialCode;
 
-  const onChangeCountry = country => setCountry(country)
+  const getMask = locale => options.find(o => o.code === locale).mask;
+
+  const getPlaceholder = locale => options.find(o => o.code === locale).mask === null ? "XXXXXXXXXX"
+    : options.find(o => o.code === locale).mask.join('').replace(/[\/|\\]/g, "").replace(/[d]/gi, "X");
 
   return (
-    <Box displayProp="flex"
-      borderProp={{
-        radius: "3px 3px 3px 3px",
-        style: "solid",
-        width: "1px",
-        color: "#D0D5DA"
-      }}
-      widthProp="329px"
-      heightProp="44px">
+    <StyledInputBox>
       <Box displayProp="flex"
         borderProp={{
           style: "solid",
@@ -1488,6 +1473,7 @@ const PhoneInput = (props) => {
           value={country}
           onChange={onChangeCountry}
           options={options}
+          theme={props.theme}
         />
       </Box>
       <Box displayProp="flex">
@@ -1500,7 +1486,7 @@ const PhoneInput = (props) => {
           <StyledPhoneInput mask={getMask(country)} placeholder={getPlaceholder(country)} {...props} />
         </div>
       </Box>
-    </Box>
+    </StyledInputBox>
   );
 }
 
@@ -1510,13 +1496,15 @@ PhoneInput.propTypes = {
   getMask: PropTypes.func,
   getPlaceholder: PropTypes.func,
   onChange: PropTypes.func,
-  value: PropTypes.string
+  value: PropTypes.string,
+  theme: PropTypes.object
 };
 
 PhoneInput.defaultProps = {
   locale: "RU",
   type: "text",
-  value: ""
+  value: "",
+  theme: Base
 };
 
 export default PhoneInput;
