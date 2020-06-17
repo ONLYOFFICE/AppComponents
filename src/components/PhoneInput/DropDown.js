@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useEffect, useState, useRef, useCallback, memo } from "react";
 import Box from "../Box";
 import Scrollbar from "../Scrollbar";
 import TextInput from "../TextInput";
@@ -6,7 +6,7 @@ import Text from "../Text";
 import * as Countries from "./svg";
 import { StyledTriangle, StyledDropDown, StyledCountryItem, StyledFlagBox, StyledSearchPanel } from "./StyledPhoneInput";
 
-const Dropdown = ({ value, options, onChange, theme }) => {
+const Dropdown = memo(({ value, options, onChange, theme }) => {
   console.log("render dropdown");
   
   const dropDownMenu = useRef();
@@ -93,8 +93,8 @@ const Dropdown = ({ value, options, onChange, theme }) => {
             
             <div style={{height:"220px"}}>
             <Scrollbar color={theme.phoneInput.scrollBackground}>
-              {filteredCountries.map((option, i) => (
-                <StyledCountryItem key={i}>
+              {filteredCountries.map((option) => (
+                <StyledCountryItem key={option.code}>
                   <Box displayProp="flex" backgroundProp={option.code === value ? "#e9e9e9" : ""} data-option={option.code} onClick={onHandleChange}>
                     <Box marginProp={"5px 0 3px 10px"}>
                       {React.createElement(Countries[`${option.code}`],
@@ -115,6 +115,6 @@ const Dropdown = ({ value, options, onChange, theme }) => {
       )}
     </Box>
   );
-};
+});
 
 export default Dropdown;

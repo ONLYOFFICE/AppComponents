@@ -60,7 +60,10 @@ width: ${props => props.theme.phoneInput.width};
 height: ${props => props.theme.phoneInput.height};
 `;
 
-StyledPhoneInput.defaultProps = { theme: Base };
+StyledDropDown.defaultProps = { theme: Base };
+StyledCountryItem.defaultProps = { theme: Base };
+StyledSearchPanel.defaultProps = { theme: Base };
+StyledInputBox.defaultProps = { theme: Base };
 
 export {
     StyledPhoneInput,
