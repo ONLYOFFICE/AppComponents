@@ -67,4 +67,6 @@ PhoneInput.defaultProps = {
   theme: Base
 };
 
+PhoneInput.displayName = "PhoneInput";
+
 export default PhoneInput;
