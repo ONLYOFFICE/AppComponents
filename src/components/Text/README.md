@@ -36,7 +36,7 @@ const StyledText = styled(Text)`
 | ----------------- | :--------------: | :------: | :----: | :-------: | -------------------------------------------------- |
 | `fontSize`        | `number, string` |    -     |   -    |   `13`    | Sets the font size                                 |
 | `as`              |     `string`     |    -     |   -    |    `p`    | Sets the tag through which the component is rendered |
-| `title`           |      `bool`      |    -     |   -    |     -     | Title text                                             |
+| `title`           |     `string`     |    -     |   -    |     -     | Title text                                             |
 | `truncate`        |      `bool`      |    -     |   -    |  `false`  | Disables word wrapping                             |
 | `display`         |     `string`     |    -     |   -    |     -     | Sets the 'display' property                        |
 | `inline`          |      `bool`      |    -     |   -    |  `false`  | Sets the 'display: inline-block' property          |
