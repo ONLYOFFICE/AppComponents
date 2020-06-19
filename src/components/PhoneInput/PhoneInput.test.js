@@ -36,13 +36,13 @@ describe("<PhoneInput />", () => {
         expect(defaultProps.onChange).toHaveBeenCalled();
     });
 
-    // it('set search', () => {
-    //     const wrapper = mount(
-    //         <PhoneInput />
-    //     );
-    //     const searchInput = wrapper.find('TextInput');
-    //     expect(searchInput).toEqual();
-    // });
+    it('set search', () => {
+        const wrapper = mount(
+            <PhoneInput />
+        );
+        const searchInput = wrapper.find('TextInput');
+        expect(searchInput).toExist();
+    });
 
     it("check open prop", () => {
         const wrapper = mount(

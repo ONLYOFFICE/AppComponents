@@ -4,11 +4,10 @@ import Box from "../Box";
 import TextInput from "../TextInput";
 import Text from "../Text";
 import * as Countries from "./svg";
-import { StyledTriangle, StyledDropDown, StyledCountryItem, StyledFlagBox, StyledSearchPanel } from "./StyledPhoneInput";
+import { StyledTriangle, StyledDropDown, StyledCountryItem, StyledFlagBox, StyledSearchPanel, StyledDropDownWrapper } from "./StyledPhoneInput";
 import { StyledCustomScrollbarsVirtualList } from "../DropDown/StyledDropDown";
 
 const Dropdown = memo(({ value, options, onChange, theme, searchPlaceholderText, searchEmptyMessage }) => {
-  console.log("render dropdown");
 
   const dropDownMenu = useRef();
 
@@ -64,7 +63,7 @@ const Dropdown = memo(({ value, options, onChange, theme, searchPlaceholderText,
 
     const option = data[index];
     const text = `${option.name} ${option.dialCode}`;
-    
+
     return <div style={style}>
       <StyledCountryItem key={option.code}>
         <Box displayProp="flex" backgroundProp={option.code === value ? "#e9e9e9" : ""} data-option={option.code} onClick={onHandleChange}>
@@ -86,47 +85,49 @@ const Dropdown = memo(({ value, options, onChange, theme, searchPlaceholderText,
   }
 
   return (
-    <Box ref={dropDownMenu} displayProp="flex">
-      <StyledFlagBox onClick={openDropDown}>
-        {value ? React.createElement(Countries[`${setCountry}`],
-          {
-            width: 24,
-            height: 16
-          }) : "n/a"}
-      </StyledFlagBox>
-      <StyledTriangle onClick={openDropDown} />
-      {open && (
-        <StyledDropDown>
-          <StyledSearchPanel>
-            <TextInput
-              value={search}
-              placeholder={searchPlaceholderText}
-              onChange={onSearchCountry}
-              scale={true}
-              className="phone-input-searcher"
-            />
-          </StyledSearchPanel>
-          <div style={{ height: "220px" }}>
-            {filteredCountries.length ? (<List
-              itemData={filteredCountries}
-              height={220}
-              itemCount={filteredCountries.length}
-              itemSize={28}
-              width={304}
-              outerElementType={StyledCustomScrollbarsVirtualList}
-              ref={listRef}
-            >
-              {CountryItem}
-            </List>) : (
-                <Box paddingProp="8px">
-                  <Text>
-                    {searchEmptyMessage}
-                  </Text>
-                </Box>)}
-          </div>
-        </StyledDropDown>
-      )}
-    </Box>
+    <StyledDropDownWrapper>
+      <Box ref={dropDownMenu} displayProp="flex">
+        <StyledFlagBox onClick={openDropDown}>
+          {value ? React.createElement(Countries[`${setCountry}`],
+            {
+              width: 24,
+              height: 16
+            }) : "n/a"}
+        </StyledFlagBox>
+        <StyledTriangle onClick={openDropDown} />
+        {open && (
+          <StyledDropDown>
+            <StyledSearchPanel>
+              <TextInput
+                value={search}
+                placeholder={searchPlaceholderText}
+                onChange={onSearchCountry}
+                scale={true}
+                className="phone-input-searcher"
+              />
+            </StyledSearchPanel>
+            <div style={{ height: "220px" }}>
+              {filteredCountries.length ? (<List
+                itemData={filteredCountries}
+                height={220}
+                itemCount={filteredCountries.length}
+                itemSize={28}
+                width={304}
+                outerElementType={StyledCustomScrollbarsVirtualList}
+                ref={listRef}
+              >
+                {CountryItem}
+              </List>) : (
+                  <Box paddingProp="8px">
+                    <Text>
+                      {searchEmptyMessage}
+                    </Text>
+                  </Box>)}
+            </div>
+          </StyledDropDown>
+        )}
+      </Box>
+    </StyledDropDownWrapper>
   );
 });
 

@@ -19,11 +19,12 @@ margin: 7px 0 20px 4px;
 
 const StyledDropDown = styled.div`
 position: absolute;
-top: 59px;
-left: 15px;
+top: 28px;
+left: -18px;
 width: ${props => props.theme.phoneInput.width};
 height: 260px;
 z-index: 1999;
+background-color: #fff;
 border-radius: 4px;
 border: 1px solid #d1d1d1;
 box-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -39,6 +40,10 @@ background-color: ${props => props.theme.phoneInput.itemBackgroundColor};
 
 const StyledFlagBox = styled(Box)`
 cursor: pointer;
+`;
+
+const StyledDropDownWrapper = styled(Box)`
+position: relative;
 `;
 
 const StyledSearchPanel = styled.div`
@@ -72,5 +77,6 @@ export {
     StyledCountryItem,
     StyledFlagBox,
     StyledSearchPanel,
-    StyledInputBox
+    StyledInputBox,
+    StyledDropDownWrapper
 };
