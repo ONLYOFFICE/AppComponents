@@ -26,6 +26,8 @@ storiesOf("Components|PhoneInput", module)
             }}
             name={text("name", "")}
             locale={select("locale", locale, "RU")}
+            searchPlaceholderText={text("searchPlaceholderText", "Type to search country")}
+            searchEmptyMessage={text("searchEmptyMessage", "Nothing found")}
             onFocus={action("onFocus")}
             onBlur={action("onBlur")}
           />
