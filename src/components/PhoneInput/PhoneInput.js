@@ -17,7 +17,7 @@ const PhoneInput = memo((props) => {
 
   const getMask = locale => options.find(o => o.code === locale).mask;
 
-  const getPlaceholder = locale => options.find(o => o.code === locale).mask === null ? "XXXXXXXXXX"
+  const getPlaceholder = locale => options.find(o => o.code === locale).mask === null ? "Enter phone number"
     : options.find(o => o.code === locale).mask.join('').replace(/[\/|\\]/g, "").replace(/[d]/gi, "X");
 
   return (
@@ -34,6 +34,8 @@ const PhoneInput = memo((props) => {
           onChange={onChangeCountry}
           options={options}
           theme={props.theme}
+          searchPlaceholderText={props.searchPlaceholderText}
+          searchEmptyMessage={props.searchEmptyMessage}
         />
       </Box>
       <Box displayProp="flex">
@@ -57,14 +59,18 @@ PhoneInput.propTypes = {
   getPlaceholder: PropTypes.func,
   onChange: PropTypes.func,
   value: PropTypes.string,
-  theme: PropTypes.object
+  theme: PropTypes.object,
+  searchPlaceholderText: PropTypes.string,
+  searchEmptyMessage: PropTypes.string
 };
 
 PhoneInput.defaultProps = {
   locale: "RU",
   type: "text",
   value: "",
-  theme: Base
+  theme: Base,
+  searchPlaceholderText: "Type to search country",
+  searchEmptyMessage: "Nothing found"
 };
 
 PhoneInput.displayName = "PhoneInput";
