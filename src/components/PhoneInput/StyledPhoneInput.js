@@ -6,7 +6,7 @@ import { Base } from "../../themes";
 const StyledPhoneInput = styled(TextInput)`
 border: 0;
 font-size: 16px;
-padding: 11px 16px 11px 5px;
+padding: 11px 0px 11px 5px;
 `;
 
 const StyledTriangle = styled.div`
