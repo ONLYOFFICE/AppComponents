@@ -1,14 +1,13 @@
 import React, { useEffect, useState, useRef, useCallback, memo } from "react";
 import { FixedSizeList as List } from 'react-window';
 import Box from "../Box";
-import Scrollbar from "../Scrollbar";
 import TextInput from "../TextInput";
 import Text from "../Text";
 import * as Countries from "./svg";
 import { StyledTriangle, StyledDropDown, StyledCountryItem, StyledFlagBox, StyledSearchPanel } from "./StyledPhoneInput";
 import { StyledCustomScrollbarsVirtualList } from "../DropDown/StyledDropDown";
 
-const Dropdown = memo(({ value, options, onChange, theme }) => {
+const Dropdown = memo(({ value, options, onChange, theme, searchPlaceholderText, searchEmptyMessage }) => {
   console.log("render dropdown");
 
   const dropDownMenu = useRef();
@@ -34,22 +33,25 @@ const Dropdown = memo(({ value, options, onChange, theme }) => {
 
   const openDropDown = useCallback(() => setOpen(!open), [open]);
 
+  const listRef = React.createRef();
+
   useEffect(() => {
-    //if (open) refs[value].current.scrollIntoView(false);
+    if (open) {
+      setFilteredCountries(
+        options.filter(option =>
+          option.name.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+    }
     document.addEventListener("mousedown", handleClick);
     return () => {
       document.removeEventListener("mousedown", handleClick);
     };
-  }, [open]);
+  }, [open, search]);
 
   const onSearchCountry = useCallback(e => {
     const textSearch = e.target.value;
     setSearch(textSearch);
-    setFilteredCountries(
-      options.filter(option =>
-        option.name.toLowerCase().includes(textSearch.toLowerCase())
-      )
-    );
   }, []);
 
   const onHandleChange = useCallback(e => {
@@ -62,6 +64,7 @@ const Dropdown = memo(({ value, options, onChange, theme }) => {
 
     const option = data[index];
     const text = `${option.name} ${option.dialCode}`;
+    
     return <div style={style}>
       <StyledCountryItem key={option.code}>
         <Box displayProp="flex" backgroundProp={option.code === value ? "#e9e9e9" : ""} data-option={option.code} onClick={onHandleChange}>
@@ -72,7 +75,7 @@ const Dropdown = memo(({ value, options, onChange, theme }) => {
                 height: 16
               })}
           </Box>
-          <Box widthProp="250px" marginProp="2px 0 2px 8px" ref={refs[option.code]}>
+          <Box widthProp="250px" marginProp="2px 0 2px 8px">
             <Text color={theme.phoneInput.itemTextColor} truncate={true} title={text}>
               {text}
             </Text>
@@ -97,26 +100,30 @@ const Dropdown = memo(({ value, options, onChange, theme }) => {
           <StyledSearchPanel>
             <TextInput
               value={search}
-              placeholder="type to search country"
+              placeholder={searchPlaceholderText}
               onChange={onSearchCountry}
               scale={true}
               className="phone-input-searcher"
             />
           </StyledSearchPanel>
-
           <div style={{ height: "220px" }}>
-            <List
+            {filteredCountries.length ? (<List
               itemData={filteredCountries}
               height={220}
               itemCount={filteredCountries.length}
               itemSize={28}
               width={304}
               outerElementType={StyledCustomScrollbarsVirtualList}
+              ref={listRef}
             >
               {CountryItem}
-            </List>
+            </List>) : (
+                <Box paddingProp="8px">
+                  <Text>
+                    {searchEmptyMessage}
+                  </Text>
+                </Box>)}
           </div>
-
         </StyledDropDown>
       )}
     </Box>
