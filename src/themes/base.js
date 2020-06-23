@@ -625,9 +625,6 @@ const Base = {
       disable: {
         color: black
       }
-    },
-    rectangle: {
-      borderRadius: "81px"
     }
   }
 };

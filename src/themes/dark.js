@@ -604,9 +604,6 @@ const Dark = {
       disable: {
         color: black
       }
-    },
-    rectangle: {
-      borderRadius: "81px"
     }
   }
 };
