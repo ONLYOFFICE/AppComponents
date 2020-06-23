@@ -143,7 +143,7 @@ const Base = {
 
     thumbFillDisable: grayLightMid,
     thumbFillActive: grayLightMid,
-    
+
     thumbBorderColorActive: `1px solid ${globalColors.gray}`,
     thumbBorderColorDisable: `1px solid ${globalColors.grayMid}`,
 
@@ -160,7 +160,7 @@ const Base = {
     fillColorDisabled: grayLight,
     disabledFillColor: grayLightMid,
     disabledFillColorInner: grayMid,
-    
+
     hoverBorderColor: gray
   },
 
@@ -565,7 +565,7 @@ const Base = {
   phoneInput: {
     width: "304px",
     height: "44px",
-    itemTextColor: black ,
+    itemTextColor: black,
     itemBackgroundColor: white,
     itemHoverColor: grayLightMid,
     scrollBackground: "rgba(0, 0, 0, 0.1)",
@@ -597,6 +597,37 @@ const Base = {
       disable: {
         color: gray
       }
+    }
+  },
+
+  roundButton: {
+    height: "40px",
+    width: "40px",
+    backgroundColor: grayLight,
+    borderRadius: 
+    {
+      crossShape: "112px",
+      rectangle: "81px"
+    },
+    borderStyle: "none",
+    outline: "none",
+    hover: {
+      backgroundColor: grayLightMid,
+    },
+    click: {
+      backgroundColor: grayMid,
+    },
+    disable: {
+      backgroundColor: grayLight,
+    },
+    crossShape: {
+      color: grayMid,
+      disable: {
+        color: black
+      }
+    },
+    rectangle: {
+      borderRadius: "81px"
     }
   }
 };
