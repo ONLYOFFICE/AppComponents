@@ -7,6 +7,7 @@ const {
   grayLight,
   grayLightMid,
   grayMid,
+  graySilver,
   gray,
   grayMain,
   shuttleGrey,
@@ -569,6 +570,34 @@ const Base = {
     itemHoverColor: grayLightMid,
     scrollBackground: "rgba(0, 0, 0, 0.1)",
     placeholderColor: gray
+  },
+
+  squareButton: {
+    height: "32px",
+    width: "32px",
+    color: gray,
+    backgroundColor: white,
+    border: `1px solid ${grayMid}`,
+    borderRadius: "3px",
+    outline: "none",
+    hover: {
+      backgroundColor: white,
+      border: `1px solid ${gray}`
+    },
+    click: {
+      backgroundColor: grayLightMid,
+      border: `1px solid ${gray}`
+    },
+    disable: {
+      backgroundColor: grayLight,
+      border: `1px solid ${grayLightMid}`
+    },
+    crossShape: {
+      color: graySilver,
+      disable: {
+        color: gray
+      }
+    }
   }
 };
 

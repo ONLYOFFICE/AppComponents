@@ -24,6 +24,7 @@ import ToggleContent from "../ToggleContent";
 import PhoneInput from "../PhoneInput";
 import SwitchButton from '../SwitchButton';
 import Slider from '../Slider';
+import SquareButton from '../SquareButton';
 
 const github = "https://github.com/ONLYOFFICE/AppComponents";
 const arrayUsers = [
@@ -139,8 +140,8 @@ storiesOf("Components|All", module)
         <Box paddingProp="8px">
           <BooleanValue>
             {({ value, toggle }) => (
-              <SwitchButton 
-                checked={value} 
+              <SwitchButton
+                checked={value}
                 onChange={e => toggle(e.target.checked)}
               />
             )}
@@ -284,6 +285,9 @@ storiesOf("Components|All", module)
       <Box paddingProp="16px" widthProp="100%">
         <Box paddingProp="8px">
           <PhoneInput locale="BY" />
+        </Box>
+        <Box paddingProp="8px">
+          <SquareButton />
         </Box>
       </Box>
     </Grid>
