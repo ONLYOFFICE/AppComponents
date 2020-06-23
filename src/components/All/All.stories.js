@@ -21,6 +21,7 @@ import Scrollbar from "../Scrollbar";
 import Calendar from "../Calendar";
 import Avatar from "../Avatar";
 import ToggleContent from "../ToggleContent";
+import PhoneInput from "../PhoneInput";
 import SwitchButton from '../SwitchButton';
 import Slider from '../Slider';
 
@@ -42,10 +43,10 @@ const arrayUsers = [
 ];
 
 const options = [
-  { key: 0, label: "Option 1", disabled: false, onClick: () => {} },
-  { key: 1, label: "Option 2", disabled: false, onClick: () => {} },
-  { key: 2, label: "Option 3", disabled: true, onClick: () => {} },
-  { key: 3, label: "Option 4", disabled: false, onClick: () => {} }
+  { key: 0, label: "Option 1", disabled: false, onClick: () => { } },
+  { key: 1, label: "Option 2", disabled: false, onClick: () => { } },
+  { key: 2, label: "Option 3", disabled: true, onClick: () => { } },
+  { key: 3, label: "Option 4", disabled: false, onClick: () => { } }
 ];
 
 storiesOf("Components|All", module)
@@ -277,6 +278,12 @@ storiesOf("Components|All", module)
           <ToggleContent label="Toggle content">
             <Text>Toggle content text</Text>
           </ToggleContent>
+        </Box>
+      </Box>
+
+      <Box paddingProp="16px" widthProp="100%">
+        <Box paddingProp="8px">
+          <PhoneInput locale="BY" />
         </Box>
       </Box>
     </Grid>
