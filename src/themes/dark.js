@@ -577,6 +577,37 @@ const Dark = {
         color: gray
       }
     }
+  },
+
+  roundButton: {
+    height: "40px",
+    width: "40px",
+    backgroundColor: grayLight,
+    borderRadius: 
+    {
+      crossShape: "112px",
+      rectangle: "81px"
+    },
+    borderStyle: "none",
+    outline: "none",
+    hover: {
+      backgroundColor: grayLightMid,
+    },
+    click: {
+      backgroundColor: grayMid,
+    },
+    disable: {
+      backgroundColor: grayLight,
+    },
+    crossShape: {
+      color: grayMid,
+      disable: {
+        color: black
+      }
+    },
+    rectangle: {
+      borderRadius: "81px"
+    }
   }
 };
 
