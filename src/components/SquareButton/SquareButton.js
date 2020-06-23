@@ -15,7 +15,7 @@ class SquareButton extends React.Component {
 
     return (
       <StyledSquareButton  {...this.props}>
-        <StyledCrossShape />
+        <StyledCrossShape disabled={this.props.disabled}/>
       </StyledSquareButton>
     );
   }
