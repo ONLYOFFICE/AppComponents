@@ -22,6 +22,8 @@ import Calendar from "../Calendar";
 import Avatar from "../Avatar";
 import ToggleContent from "../ToggleContent";
 import PhoneInput from "../PhoneInput";
+import SwitchButton from '../SwitchButton';
+import Slider from '../Slider';
 
 const github = "https://github.com/ONLYOFFICE/AppComponents";
 const arrayUsers = [
@@ -133,6 +135,19 @@ storiesOf("Components|All", module)
             label="Button"
           />
           <Button size="big" label="Button" />
+        </Box>
+        <Box paddingProp="8px">
+          <BooleanValue>
+            {({ value, toggle }) => (
+              <SwitchButton 
+                checked={value} 
+                onChange={e => toggle(e.target.checked)}
+              />
+            )}
+          </BooleanValue>
+        </Box>
+        <Box paddingProp="8px">
+          <Slider />
         </Box>
         <Box paddingProp="8px 16px">
           <Loader type="base" size="30px" label="Loading..." />

@@ -68,41 +68,26 @@ describe("<Checkbox />", () => {
     expect(wrapper.prop("disabled")).toEqual(true);
   });
 
-  it("componentDidUpdate() props lifecycle test", () => {
-    const wrapper = shallow(<Checkbox {...baseProps} />).instance();
-
-    wrapper.componentDidUpdate({ checked: true }, wrapper.state);
-    expect(wrapper.props).toBe(wrapper.props);
-
-    wrapper.componentDidUpdate({ checked: false }, wrapper.state);
-    expect(wrapper.props).toBe(wrapper.props);
-  });
-
   it("input indeterminate test", () => {
-    const wrapper1 = mount(<Checkbox {...baseProps} />);
-    const input = wrapper1.instance().ref.current;
-    expect(input.indeterminate).toBe(false);
-
-    wrapper1.setProps({ indeterminate: true });
-    expect(input.indeterminate).toBe(true);
+    const wrapper1 = mount(<Checkbox {...baseProps} indeterminate/>);
+  
+    expect(wrapper1.prop("indeterminate")).toEqual(true);
 
     wrapper1.setProps({ indeterminate: false });
-    expect(input.indeterminate).toBe(false);
+    expect(wrapper1.prop("indeterminate")).toEqual(false);
+
+    wrapper1.setProps({ indeterminate: true });
+    expect(wrapper1.prop("indeterminate")).toEqual(true);
   });
 
   it("onInputChange() test", () => {
-    const wrapper = shallow(<Checkbox {...baseProps} />).instance();
-    expect(wrapper.state.checked).toBe(false);
+    const wrapper = mount(<Checkbox {...baseProps} />);
+    expect(wrapper.props().checked).toBe(false);
 
-    const event = { target: { checked: true } };
-    wrapper.onInputChange(event);
-    expect(wrapper.state.checked).toBe(true);
+    const input = wrapper.find('input[type="checkbox"]');
+    input.simulate("change");
 
-    const wrapper1 = mount(<Checkbox {...baseProps} />);
-    const input = wrapper1.find('input[type="checkbox"]');
-    input.simulate("change", event);
     expect(baseProps.onChange).toHaveBeenCalled();
-    expect(wrapper1.state("checked")).toBe(true);
   });
 
   test("svg style test", () => {

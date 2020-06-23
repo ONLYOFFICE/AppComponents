@@ -9,34 +9,6 @@ import Text from "../Text";
 import { StyledCheckbox, StyledHiddenInput } from "./StyledCheckbox";
 
 class Checkbox extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.ref = React.createRef();
-
-    this.state = {
-      checked: props.checked
-    };
-  }
-
-  componentDidMount() {
-    this.ref.current.indeterminate = this.props.indeterminate;
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.indeterminate !== prevProps.indeterminate) {
-      this.ref.current.indeterminate = this.props.indeterminate;
-    }
-    if (this.props.checked !== prevProps.checked) {
-      this.setState({ checked: this.props.checked });
-    }
-  }
-
-  onInputChange = e => {
-    this.setState({ checked: e.target.checked });
-    this.props.onChange && this.props.onChange(e);
-  };
-
   renderLabel = () => {
     const { reverse, disabled, label } = this.props;
 
@@ -70,7 +42,7 @@ class Checkbox extends React.Component {
 
   render() {
     //console.log("Checkbox render");
-    const { disabled, label, reverse } = this.props;
+    const { disabled, label, reverse, checked } = this.props;
     const { onChange, ...rest } = this.props;
 
     const firstComponent = reverse ? this.renderLabel() : this.renderCheckbox();
@@ -91,10 +63,9 @@ class Checkbox extends React.Component {
 
         <StyledHiddenInput
           type="checkbox"
-          checked={this.state.checked}
+          checked={checked}
           disabled={disabled}
-          ref={this.ref}
-          onChange={this.onInputChange}
+          onChange={onChange}
         />
       </StyledCheckbox>
     );
