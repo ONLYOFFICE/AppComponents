@@ -25,6 +25,7 @@ import PhoneInput from "../PhoneInput";
 import SwitchButton from '../SwitchButton';
 import Slider from '../Slider';
 import SquareButton from '../SquareButton';
+import RoundButton from '../RoundButton';
 
 const github = "https://github.com/ONLYOFFICE/AppComponents";
 const arrayUsers = [
@@ -288,6 +289,12 @@ storiesOf("Components|All", module)
         </Box>
         <Box paddingProp="8px">
           <SquareButton />
+        </Box>
+        <Box paddingProp="8px">
+          <RoundButton label="rectangle" />
+        </Box>
+        <Box paddingProp="8px">
+          <RoundButton label="crossShape" />
         </Box>
       </Box>
     </Grid>
