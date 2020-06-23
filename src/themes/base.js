@@ -7,6 +7,7 @@ const {
   grayLight,
   grayLightMid,
   grayMid,
+  graySilver,
   gray,
   grayMain,
   shuttleGrey,
@@ -592,7 +593,7 @@ const Base = {
       border: `1px solid ${grayLightMid}`
     },
     crossShape: {
-      color: shuttleGrey,
+      color: graySilver,
       disable: {
         color: gray
       }
