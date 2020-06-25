@@ -11,7 +11,7 @@ import { RoundButton } from "app-components";
 ```jsx
 <RoundButton
   disabled={false}
-  type="crossShape"
+  type="plus"
   onClick={() => alert("Button clicked")}
 />
 ```
@@ -21,6 +21,6 @@ import { RoundButton } from "app-components";
 | Props      |   Type   | Required |         Values          | Default | Description                                           |
 | ---------- | :------: | :------: | :---------------------: | :-----: | ----------------------------------------------------- |
 | `disabled` |  `bool`  |    -     |            -            | `false` | Disables the button default functionality             |
-| `type`    | `oneOf`  |    -     |`crossShape`, `rectangle`| `crossShape` | Sets the button label                                 |
+| `type`    | `oneOf`  |    -     |`plus`, `minus`| `plus` | Sets the button view type                                 |
 | `onClick`  |  `func`  |    -     |            -            |    -    | The event triggered when the button is clicked        |
 | `tabIndex` | `number` |    -     |            -            |  `-1`   | The tabIndex attribute specifies the tab order of the button (when the "tab" button is used for navigating).                             |
