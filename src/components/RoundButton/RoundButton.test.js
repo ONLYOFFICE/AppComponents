@@ -32,4 +32,15 @@ describe("<RoundButton />", () => {
     expect(wrapper.prop("disabled")).toEqual(true);
   });
 
+  it("render with plus prop", () => {
+    const wrapper = mount(<RoundButton {...baseProps} plus />);
+
+    expect(wrapper.prop("plus")).toEqual(true);
+  });
+  it("render with minus prop", () => {
+    const wrapper = mount(<RoundButton {...baseProps} minus />);
+
+    expect(wrapper.prop("minus")).toEqual(true);
+  });
+
 });
