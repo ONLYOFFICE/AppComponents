@@ -291,10 +291,10 @@ storiesOf("Components|All", module)
           <SquareButton />
         </Box>
         <Box paddingProp="8px">
-          <RoundButton label="rectangle" />
+          <RoundButton type="minus" />
         </Box>
         <Box paddingProp="8px">
-          <RoundButton label="crossShape" />
+          <RoundButton type="plus" />
         </Box>
       </Box>
     </Grid>

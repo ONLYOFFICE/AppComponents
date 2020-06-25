@@ -606,8 +606,8 @@ const Base = {
     backgroundColor: grayLight,
     borderRadius: 
     {
-      crossShape: "112px",
-      rectangle: "81px"
+      plus: "112px",
+      minus: "81px"
     },
     borderStyle: "none",
     outline: "none",
@@ -620,7 +620,7 @@ const Base = {
     disable: {
       backgroundColor: grayLight,
     },
-    crossShape: {
+    plus: {
       color: grayMid,
       disable: {
         color: black

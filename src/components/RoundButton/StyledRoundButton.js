@@ -42,8 +42,8 @@ ${focusCss}
 `;
 
 const CrossShapeColor = props => props.disabled
-  ? props.theme.roundButton.crossShape.color
-  : props.theme.roundButton.crossShape.disable.color;
+  ? props.theme.roundButton.plus.color
+  : props.theme.roundButton.plus.disable.color;
 
 const StyledCrossShape = styled.div`
 position: relative;
@@ -53,7 +53,7 @@ width: 16px;
 left: 6px;
    &:after {
     position: absolute;
-    display: ${props => props.type === "rectangle" ? "none" : null};
+    display: ${props => props.type === "minus" ? "none" : null};
     content: "";
     background: ${props => CrossShapeColor(props)};
     height: 16px;

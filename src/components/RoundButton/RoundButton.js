@@ -23,14 +23,14 @@ class RoundButton extends React.Component {
 }
 
 RoundButton.propTypes = {
-  type: PropTypes.oneOf(["crossShape", "rectangle"]),
+  type: PropTypes.oneOf(["plus", "minus"]),
   tabIndex: PropTypes.number,
   disabled: PropTypes.bool,
   onClick: PropTypes.func
 };
 
 RoundButton.defaultProps = {
-  type: "crossShape",
+  type: "plus",
   tabIndex: -1,
   disabled: false
 };
