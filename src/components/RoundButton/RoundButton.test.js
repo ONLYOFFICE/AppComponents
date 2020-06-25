@@ -7,7 +7,7 @@ const baseProps = {
   disabled: false
 };
 
-describe("<SquareButton />", () => {
+describe("<RoundButton />", () => {
   it("renders without error", () => {
     const wrapper = mount(<RoundButton {...baseProps} />);
 
