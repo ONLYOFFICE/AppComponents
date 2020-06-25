@@ -34,7 +34,7 @@ height: ${props => props.theme.roundButton.height};
 background-color: ${props => backgroundColor(props)};
 box-sizing: "border-box";
 border-style: ${props => props.theme.roundButton.borderStyle};
-border-radius: ${props => props.theme.roundButton.borderRadius[`${props.label}`]};
+border-radius: ${props => props.theme.roundButton.borderRadius[`${props.type}`]};
 cursor: ${props => (props.disabled ? "default" : "pointer")};
 ${props => !props.disabled && hoverCss}
 ${props => !props.disabled && clickCss}
@@ -53,7 +53,7 @@ width: 16px;
 left: 6px;
    &:after {
     position: absolute;
-    display: ${props => props.label === "rectangle" ? "none" : null};
+    display: ${props => props.type === "rectangle" ? "none" : null};
     content: "";
     background: ${props => CrossShapeColor(props)};
     height: 16px;

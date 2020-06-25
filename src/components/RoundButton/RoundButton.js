@@ -12,25 +12,25 @@ class RoundButton extends React.Component {
   render() {
 
     //console.log("Button render");
-    const { disabled, label } = this.props;
+    const { disabled, type } = this.props;
 
     return (
       <StyledRoundButton  {...this.props}>
-        <StyledCrossShape disabled={disabled} label={label} />
+        <StyledCrossShape disabled={disabled} type={type} />
       </StyledRoundButton>
     );
   }
 }
 
 RoundButton.propTypes = {
-  label: PropTypes.oneOf(["crossShape", "rectangle"]),
+  type: PropTypes.oneOf(["crossShape", "rectangle"]),
   tabIndex: PropTypes.number,
   disabled: PropTypes.bool,
   onClick: PropTypes.func
 };
 
 RoundButton.defaultProps = {
-  label: "crossShape",
+  type: "crossShape",
   tabIndex: -1,
   disabled: false
 };

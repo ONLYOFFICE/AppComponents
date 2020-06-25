@@ -12,13 +12,13 @@ storiesOf("Components|RoundButton", module)
   .addDecorator(withReadme(Readme))
   .add("Default", () => {
 
-    const labelOptions = ["crossShape", "rectangle"];
+    const typeOptions = ["crossShape", "rectangle"];
 
     return (
       <Box paddingProp="16px">
         <RoundButton
           disabled={boolean("disabled", false)}
-          label={select("label", labelOptions, "crossShape")}
+          type={select("type", typeOptions, "crossShape")}
           onClick={action("clicked")}
         />
       </Box>
