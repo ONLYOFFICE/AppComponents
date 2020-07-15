@@ -21,7 +21,7 @@ storiesOf("Components|Checkbox", module)
             indeterminate={boolean("indeterminate", false)}
             disabled={boolean("disabled", false)}
             reverse={boolean("reverse", false)}
-            color={color('backgroundColor', '#FFFF')}
+            color={color('color', '#FFFF')}
             onChange={e => {
               action("onChange")(e);
               toggle(e.target.checked);

@@ -36,6 +36,10 @@ const StyledCheckbox = styled.label`
                 props.color === "#FFFF"
                   ? props.theme.checkbox.fillColor
                   : props.color};
+              stroke: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.borderColor
+                  : props.color};
             }
             rect:last-child {
               fill: ${props =>
@@ -89,7 +93,7 @@ const StyledCheckbox = styled.label`
               stroke: ${props =>
                 props.color === "#FFFF"
                   ? props.theme.checkbox.hoverBorderColor
-                  : "rgba(51, 51, 51, 0.25)"};
+                  : "rgba(0,0,0,0.3)"};
             }
             rect:last-child {
               fill: ${props =>
