@@ -36,16 +36,21 @@ const StyledCheckbox = styled.label`
                 props.color === "#FFFF"
                   ? props.theme.checkbox.fillColor
                   : props.color};
-              stroke: ${props =>
-                props.color === "#FFFF"
-                  ? props.theme.checkbox.borderColor
-                  : props.color};
+                  stroke: ${props =>
+                    props.color === "#FFFF"
+                      ? props.theme.checkbox.borderColor
+                      : props.color};
+            }
             }
             rect:last-child {
               fill: ${props =>
                 props.color === "#FFFF"
                   ? props.theme.checkbox.indeterminateColor
                   : "white"};
+              stroke: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.fillColor
+                  : "none"};
             }
           `}
 
@@ -89,6 +94,8 @@ const StyledCheckbox = styled.label`
           `
         : css`
             cursor: pointer;
+
+
             rect:first-child {
               stroke: ${props =>
                 props.color === "#FFFF"

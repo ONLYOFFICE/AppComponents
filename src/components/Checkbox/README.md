@@ -27,4 +27,5 @@ import { Checkbox } from "app-components";
 | `indeterminate` |  `bool`  |    -     |   -    |    -    | If true, a black filled rectangle appears in the checkbox   |
 | `label`         | `string` |    -     |   -    |    -    | Checkbox label                                              |
 | `onChange`      |  `func`  |    ✅     |   -    |    -    | Returns the value of the `checked` prop                   |
-| `reverse`       |  `bool`  |    -     |   -    | `false` | Swaps the checkbox and the label                            |
+| `reverse`       |  `bool`  |    -     |   -    | `false` | Swaps the checkbox and the label
+| `color`       |  `string`  |    -     |   -    | `#FFFF` | Makes the chexbox a different color
