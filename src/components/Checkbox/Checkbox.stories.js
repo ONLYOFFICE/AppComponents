@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { BooleanValue } from "react-values";
-import { withKnobs, boolean, text } from "@storybook/addon-knobs/react";
+import { withKnobs, boolean, text,color } from "@storybook/addon-knobs/react";
 import withReadme from "storybook-readme/with-readme";
 import Readme from "./README.md";
 import Checkbox from ".";
@@ -21,6 +21,7 @@ storiesOf("Components|Checkbox", module)
             indeterminate={boolean("indeterminate", false)}
             disabled={boolean("disabled", false)}
             reverse={boolean("reverse", false)}
+            color={color('backgroundColor', '#FFFF')}
             onChange={e => {
               action("onChange")(e);
               toggle(e.target.checked);

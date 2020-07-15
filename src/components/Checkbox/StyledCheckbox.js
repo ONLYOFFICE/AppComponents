@@ -14,25 +14,51 @@ const StyledCheckbox = styled.label`
       !props.indeterminate
         ? css`
             rect {
-              fill: ${props => props.theme.checkbox.fillColor};
-              stroke: ${props => props.theme.checkbox.borderColor};
+              fill: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.fillColor
+                  : props.color};
+              stroke: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.borderColor
+                  : props.color};
             }
             path {
-              fill: ${props => props.theme.checkbox.arrowColor};
+              fill: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.arrowColor
+                  : "white"};
             }
           `
         : css`
+            rect {
+              fill: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.fillColor
+                  : props.color};
+            }
             rect:last-child {
-              fill: ${props => props.theme.checkbox.indeterminateColor};
+              fill: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.indeterminateColor
+                  : "white"};
             }
           `}
 
     ${props =>
       props.disabled && !props.indeterminate
         ? css`
+            filter: ${props =>
+              props.color !== "#FFFF" ? "opacity(30%)" : "opacity(100%)"};
             rect {
-              fill: ${props => props.theme.checkbox.disableFillColor};
-              stroke: ${props => props.theme.checkbox.disableBorderColor};
+              fill: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.disableFillColor
+                  : props.color};
+              stroke: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.disableBorderColor
+                  : props.color};
             }
             path {
               fill: ${props => props.theme.checkbox.disableArrowColor};
@@ -40,8 +66,13 @@ const StyledCheckbox = styled.label`
           `
         : props.disabled &&
           css`
+            filter: ${props =>
+              props.color !== "#FFFF" ? "opacity(30%)" : "opacity(100%)"};
             rect:last-child {
-              fill: ${props => props.theme.checkbox.disableIndeterminateColor};
+              fill: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.disableIndeterminateColor
+                  : "rgba(255,255,255,0.7)"};
             }
           `}
   }
@@ -55,12 +86,18 @@ const StyledCheckbox = styled.label`
         : css`
             cursor: pointer;
             rect:first-child {
-              stroke: ${props => props.theme.checkbox.hoverBorderColor};
+              stroke: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.hoverBorderColor
+                  : "rgba(51, 51, 51, 0.25)"};
             }
             rect:last-child {
               fill: ${props =>
-                props.indeterminate &&
-                props.theme.checkbox.hoverIndeterminateColor};
+                props.indeterminate && props.color === "#FFFF"
+                  ? props.theme.checkbox.hoverIndeterminateColor
+                  : props.indeterminate
+                  ? "white"
+                  : props.color};
             }
           `}
   }
