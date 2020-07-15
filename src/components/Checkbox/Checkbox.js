@@ -69,7 +69,7 @@ class Checkbox extends React.Component {
           color = {color}
           onChange={onChange}
         />
-        {color}
+       
       </StyledCheckbox>
     );
   }
