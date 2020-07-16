@@ -199,7 +199,6 @@ storiesOf("Components|All", module)
             )}
           </StringValue>
         </Box>
-
         <Box marginProp="8px">
           <RadioButtonGroup
             name="fruits"
@@ -219,6 +218,7 @@ storiesOf("Components|All", module)
                 <Checkbox
                   label="Checkbox"
                   checked={value}
+                  color="#FFFF"
                   onChange={e => {
                     toggle(e.target.checked);
                   }}
@@ -227,6 +227,7 @@ storiesOf("Components|All", module)
               <Checkbox
                 label="Indeterminate"
                 checked={value}
+                color="#FFFF"
                 indeterminate
                 onChange={e => {
                   toggle(e.target.checked);
