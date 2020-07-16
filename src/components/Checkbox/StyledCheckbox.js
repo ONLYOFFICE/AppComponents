@@ -92,25 +92,33 @@ const StyledCheckbox = styled.label`
         ? css`
             cursor: default;
           `
-        : css`
+        : !props.indeterminate
+        ? css`
             cursor: pointer;
 
-
-            rect:first-child {
+            rect:nth-child(2) {
               stroke: ${props =>
                 props.color === "#FFFF"
                   ? props.theme.checkbox.hoverBorderColor
-                  : "rgba(0,0,0,0.3)"};
+                  : "rgba(0,0,0,0.2)"};
             }
-            rect:last-child {
+          `
+        : css`
+          cursor: pointer;
+           rect:nth-child(2) {
+              stroke: ${props =>
+                props.color === "#FFFF"
+                  ? props.theme.checkbox.hoverBorderColor
+                  : "rgba(0,0,0,0.2)"};
+            }
+          rect:last-child {
               fill: ${props =>
                 props.indeterminate && props.color === "#FFFF"
                   ? props.theme.checkbox.hoverIndeterminateColor
                   : props.indeterminate
                   ? "white"
                   : props.color};
-            }
-          `}
+            `}}
   }
 
   .checkbox-text {
