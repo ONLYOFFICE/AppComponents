@@ -10,7 +10,7 @@ import { StyledCheckbox, StyledHiddenInput } from "./StyledCheckbox";
 
 class Checkbox extends React.Component {
   renderLabel = () => {
-    const { reverse, disabled, label, color } = this.props;
+    const { reverse, disabled, label} = this.props;
 
     return (
       <Text
@@ -18,7 +18,6 @@ class Checkbox extends React.Component {
         className="checkbox-text"
         reverse={reverse}
         disabled={disabled}
-        color={color}
       >
         {label}
       </Text>
@@ -43,7 +42,7 @@ class Checkbox extends React.Component {
 
   render() {
     //console.log("Checkbox render");
-    const { disabled, label, reverse, checked, color } = this.props;
+    const { disabled, label, reverse, checked} = this.props;
     const { onChange, ...rest } = this.props;
 
     const firstComponent = reverse ? this.renderLabel() : this.renderCheckbox();
@@ -66,7 +65,6 @@ class Checkbox extends React.Component {
           type="checkbox"
           checked={checked}
           disabled={disabled}
-          color = {color}
           onChange={onChange}
         />
 
@@ -74,6 +72,7 @@ class Checkbox extends React.Component {
     );
   }
 }
+
 
 Checkbox.propTypes = {
   label: PropTypes.string,
@@ -87,7 +86,8 @@ Checkbox.propTypes = {
 
 Checkbox.defaultProps = {
   checked: false,
-  reverse: false
+  reverse: false,
+  color: "#FFFF"
 };
 
 export default Checkbox;

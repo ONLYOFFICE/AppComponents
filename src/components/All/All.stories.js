@@ -22,10 +22,10 @@ import Calendar from "../Calendar";
 import Avatar from "../Avatar";
 import ToggleContent from "../ToggleContent";
 import PhoneInput from "../PhoneInput";
-import SwitchButton from '../SwitchButton';
-import Slider from '../Slider';
-import SquareButton from '../SquareButton';
-import RoundButton from '../RoundButton';
+import SwitchButton from "../SwitchButton";
+import Slider from "../Slider";
+import SquareButton from "../SquareButton";
+import RoundButton from "../RoundButton";
 
 const github = "https://github.com/ONLYOFFICE/AppComponents";
 const arrayUsers = [
@@ -45,10 +45,10 @@ const arrayUsers = [
 ];
 
 const options = [
-  { key: 0, label: "Option 1", disabled: false, onClick: () => { } },
-  { key: 1, label: "Option 2", disabled: false, onClick: () => { } },
-  { key: 2, label: "Option 3", disabled: true, onClick: () => { } },
-  { key: 3, label: "Option 4", disabled: false, onClick: () => { } }
+  { key: 0, label: "Option 1", disabled: false, onClick: () => {} },
+  { key: 1, label: "Option 2", disabled: false, onClick: () => {} },
+  { key: 2, label: "Option 3", disabled: true, onClick: () => {} },
+  { key: 3, label: "Option 4", disabled: false, onClick: () => {} }
 ];
 
 storiesOf("Components|All", module)
@@ -199,6 +199,7 @@ storiesOf("Components|All", module)
             )}
           </StringValue>
         </Box>
+
         <Box marginProp="8px">
           <RadioButtonGroup
             name="fruits"
@@ -218,7 +219,6 @@ storiesOf("Components|All", module)
                 <Checkbox
                   label="Checkbox"
                   checked={value}
-                  color="#FFFF"
                   onChange={e => {
                     toggle(e.target.checked);
                   }}
@@ -227,7 +227,6 @@ storiesOf("Components|All", module)
               <Checkbox
                 label="Indeterminate"
                 checked={value}
-                color="#FFFF"
                 indeterminate
                 onChange={e => {
                   toggle(e.target.checked);
