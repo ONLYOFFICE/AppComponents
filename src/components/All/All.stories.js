@@ -11,6 +11,7 @@ import Button from "../Button";
 import Loader from "../Loader";
 import ComboBox from "../ComboBox";
 import TextInput from "../TextInput";
+import FixedInput from "../FixedInput";
 import DatePicker from "../DatePicker";
 import TextArea from "../TextArea";
 
@@ -178,6 +179,17 @@ storiesOf("Components|All", module)
           <StringValue>
             {({ value, set }) => (
               <TextInput
+                placeholder="Add comment"
+                onChange={event => set(event.target.value)}
+                value={value}
+              />
+            )}
+          </StringValue>
+        </Box>
+        <Box paddingProp="8px">
+          <StringValue>
+            {({ value, set }) => (
+              <FixedInput
                 placeholder="Add comment"
                 onChange={event => set(event.target.value)}
                 value={value}

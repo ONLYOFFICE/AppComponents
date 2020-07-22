@@ -11,19 +11,19 @@ import {
 } from "@storybook/addon-knobs/react";
 import withReadme from "storybook-readme/with-readme";
 import Readme from "./README.md";
-import TextInput from ".";
+import FixedInput from ".";
 import Box from "../Box";
 
 const sizeOptions = ["base", "middle", "big", "huge"];
 
-storiesOf("Components|TextInput", module)
+storiesOf("Components|FixedInput", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
-  .add("text2", () => (
+  .add("text", () => (
     <Box paddingProp="16px">
       <StringValue>
         {({ value, set }) => (
-          <TextInput
+          <FixedInput
             value={value}
             onChange={e => {
               set(e.target.value);
@@ -37,10 +37,8 @@ storiesOf("Components|TextInput", module)
             error={boolean("error", false)}
             warning={boolean("warning", false)}
             disabled={boolean("disabled", false)}
-            scale={boolean("scale", false)}
             readOnly={boolean("readOnly", false)}
             autoFocus={boolean("autoFocus", false)}
-            border={boolean("border", true)}
             onFocus={action("onFocus")}
             onBlur={action("onBlur")}
             maxLength={number("maxLength", 255)}
