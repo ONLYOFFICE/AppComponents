@@ -269,6 +269,12 @@ const Base = {
       big: "24px",
       huge: "25px"
     },
+    width: {
+      base: "28px",
+      middle: "33px",
+      big: "36px",
+      huge: "49px"
+    },
     font_size: {
       base: "13px",
       middle: "15px",

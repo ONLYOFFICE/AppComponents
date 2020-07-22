@@ -18,9 +18,10 @@ class FixedInput extends React.Component {
           size={this.props.size}
           warning={this.props.warning}
           disabled={this.props.disabled}
+
         >
-          <TextInput {...this.props} border={false} scale />
-          <div className="input-icon">
+          <TextInput {...this.props} border={false}  scale/>
+          <div>
             <span>.com</span>
           </div>
         </StyledFixedInput>
