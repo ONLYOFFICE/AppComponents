@@ -263,17 +263,25 @@ const Base = {
 
   textFixedInput: {
     inputBorder: blueMain,
+
     height: {
       base: "18px",
       middle: "23px",
       big: "24px",
       huge: "25px"
     },
+
     width: {
       base: "28px",
       middle: "33px",
       big: "36px",
       huge: "49px"
+    },
+    input_width: {
+      base: "130px",
+      middle: "255px",
+      big: "305px",
+      huge: "446px"
     },
     font_size: {
       base: "13px",

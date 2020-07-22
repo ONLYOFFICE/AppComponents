@@ -26,7 +26,13 @@ const StyledFixedInput = styled(Box)`
   input::placeholder {
     color: #a3a9ae;
   }
-
+input{
+  width: ${props =>
+    (props.size === "base" && props.theme.textFixedInput.input_width.base) ||
+    (props.size === "middle" && props.theme.textFixedInput.input_width.middle) ||
+    (props.size === "big" && props.theme.textFixedInput.input_width.big) ||
+    (props.size === "huge" && props.theme.textFixedInput.input_width.huge)};
+}
   div span {
     position: absolute;
     background-color: #f8f9f9;

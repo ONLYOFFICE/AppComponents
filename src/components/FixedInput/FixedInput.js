@@ -20,7 +20,7 @@ class FixedInput extends React.Component {
           disabled={this.props.disabled}
 
         >
-          <TextInput {...this.props} border={false}  scale/>
+          <TextInput {...this.props} border={false}  />
           <div>
             <span>.com</span>
           </div>
