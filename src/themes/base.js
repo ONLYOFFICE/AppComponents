@@ -261,8 +261,10 @@ const Base = {
     }
   },
 
-  textFixedInput: {
-    inputBorder: blueMain,
+  fixedInput: {
+    focusBorderColor: blueMain,
+    hoverBorderColor: "#a3a9ae",
+    fixedBackgroundColor: "#f8f9f9",
 
     height: {
       base: "18px",
@@ -277,7 +279,7 @@ const Base = {
       big: "36px",
       huge: "49px"
     },
-    input_width: {
+    inputWidth: {
       base: "130px",
       middle: "255px",
       big: "305px",

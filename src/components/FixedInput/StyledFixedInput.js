@@ -14,53 +14,50 @@ const StyledFixedInput = styled(Box)`
     (props.size === "huge" && props.theme.input.width.huge)};
 
   ${commonInputStyles} :focus-within {
-    border-color: ${props => props.theme.textFixedInput.inputBorder};
+    border-color: ${props => props.theme.fixedInput.focusBorderColor};
   }
 
   ${commonInputStyles} :hover {
-    border-color: #a3a9ae;
+    border-color: ${props => props.theme.fixedInput.hoverBorderColor};
   }
-
 
   border-color: ${props => props.disabled && props.theme.input.borderColor};
 
   .textInput__fixed--input::placeholder {
-    color: #a3a9ae;
+    color: ${props => props.theme.fixedInput.hoverBorderColor};
   }
 
   .textInput__fixed--input {
     width: ${props =>
-      (props.size === "base" && props.theme.textFixedInput.input_width.base) ||
-      (props.size === "middle" &&
-        props.theme.textFixedInput.input_width.middle) ||
-      (props.size === "big" && props.theme.textFixedInput.input_width.big) ||
-      (props.size === "huge" && props.theme.textFixedInput.input_width.huge)};
+      (props.size === "base" && props.theme.fixedInput.inputWidth.base) ||
+      (props.size === "middle" && props.theme.fixedInput.inputWidth.middle) ||
+      (props.size === "big" && props.theme.fixedInput.inputWidth.big) ||
+      (props.size === "huge" && props.theme.fixedInput.inputWidth.huge)};
   }
 
   .textInput__fixed {
     position: absolute;
-    background-color: #f8f9f9;
-    color: #a3a9ae;
+    background-color: ${props => props.theme.fixedInput.fixedBackgroundColor};
+    color: ${props => props.theme.fixedInput.hoverBorderColor};
     border-left: 1px solid #d0d5da;
 
     width: ${props =>
-      (props.size === "base" && props.theme.textFixedInput.width.base) ||
-      (props.size === "middle" && props.theme.textFixedInput.width.middle) ||
-      (props.size === "big" && props.theme.textFixedInput.width.big) ||
-      (props.size === "huge" && props.theme.textFixedInput.width.huge)};
+      (props.size === "base" && props.theme.fixedInput.width.base) ||
+      (props.size === "middle" && props.theme.fixedInput.width.middle) ||
+      (props.size === "big" && props.theme.fixedInput.width.big) ||
+      (props.size === "huge" && props.theme.fixedInput.width.huge)};
 
     height: ${props =>
-      (props.size === "base" && props.theme.textFixedInput.height.base) ||
-      (props.size === "middle" && props.theme.textFixedInput.height.middle) ||
-      (props.size === "big" && props.theme.textFixedInput.height.big) ||
-      (props.size === "huge" && props.theme.textFixedInput.height.huge)};
+      (props.size === "base" && props.theme.fixedInput.height.base) ||
+      (props.size === "middle" && props.theme.fixedInput.height.middle) ||
+      (props.size === "big" && props.theme.fixedInput.height.big) ||
+      (props.size === "huge" && props.theme.fixedInput.height.huge)};
 
     font-size: ${props =>
-      (props.size === "base" && props.theme.textFixedInput.font_size.base) ||
-      (props.size === "middle" &&
-        props.theme.textFixedInput.font_size.middle) ||
-      (props.size === "big" && props.theme.textFixedInput.font_size.big) ||
-      (props.size === "huge" && props.theme.textFixedInput.font_size.huge)};
+      (props.size === "base" && props.theme.fixedInput.font_size.base) ||
+      (props.size === "middle" && props.theme.fixedInput.font_size.middle) ||
+      (props.size === "big" && props.theme.fixedInput.font_size.big) ||
+      (props.size === "huge" && props.theme.fixedInput.font_size.huge)};
 
     padding: 6px 8px;
     right: 0px;
