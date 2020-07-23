@@ -19,7 +19,7 @@ const sizeOptions = ["base", "middle", "big", "huge"];
 storiesOf("Components|TextInput", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
-  .add("text2", () => (
+  .add("text", () => (
     <Box paddingProp="16px">
       <StringValue>
         {({ value, set }) => (

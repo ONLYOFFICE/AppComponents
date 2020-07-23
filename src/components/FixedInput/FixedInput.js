@@ -1,8 +1,16 @@
 import React from "react";
 import isEqual from "lodash/isEqual";
 import TextInput from "../TextInput";
+import Text from "../Text";
 import StyledFixedInput from "./StyledFixedInput";
-
+import {
+  text,
+  boolean,
+  withKnobs,
+  color,
+  number,
+  select
+} from "@storybook/addon-knobs/react";
 class FixedInput extends React.Component {
   shouldComponentUpdate(nextProps) {
     return !isEqual(this.props, nextProps);
@@ -18,12 +26,9 @@ class FixedInput extends React.Component {
           size={this.props.size}
           warning={this.props.warning}
           disabled={this.props.disabled}
-
         >
-          <TextInput {...this.props} border={false}  />
-          <div>
-            <span>.com</span>
-          </div>
+          <TextInput {...this.props} border={false} className="textInput__fixed--input"/>
+          <Text className="textInput__fixed">.com</Text>
         </StyledFixedInput>
       </div>
     );
