@@ -3,14 +3,7 @@ import isEqual from "lodash/isEqual";
 import TextInput from "../TextInput";
 import Text from "../Text";
 import StyledFixedInput from "./StyledFixedInput";
-import {
-  text,
-  boolean,
-  withKnobs,
-  color,
-  number,
-  select
-} from "@storybook/addon-knobs/react";
+
 class FixedInput extends React.Component {
   shouldComponentUpdate(nextProps) {
     return !isEqual(this.props, nextProps);
