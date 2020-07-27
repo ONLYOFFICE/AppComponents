@@ -13,12 +13,14 @@ const StyledFixedInput = styled(Box)`
     (props.size === "big" && props.theme.input.width.big) ||
     (props.size === "huge" && props.theme.input.width.huge)};
 
-  ${commonInputStyles} :focus-within {
+  ${commonInputStyles} :focus-within:hover,:focus-within  {
     border-color: ${props => props.theme.fixedInput.focusBorderColor};
   }
 
   ${commonInputStyles} :hover {
-    border-color: ${props => props.theme.fixedInput.hoverBorderColor};
+    border-color: ${props =>
+      props.theme.fixedInput.focusBorderColor &&
+      props.theme.fixedInput.hoverBorderColor};
   }
 
   border-color: ${props => props.disabled && props.theme.input.borderColor};

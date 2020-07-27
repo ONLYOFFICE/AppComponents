@@ -3,6 +3,7 @@ import isEqual from "lodash/isEqual";
 import TextInput from "../TextInput";
 import Text from "../Text";
 import StyledFixedInput from "./StyledFixedInput";
+import PropTypes from "prop-types";
 
 class FixedInput extends React.Component {
   shouldComponentUpdate(nextProps) {
@@ -10,8 +11,6 @@ class FixedInput extends React.Component {
   }
 
   render() {
-
-    //console.log(`TextInput render`);
     return (
         <StyledFixedInput
           error={this.props.error}
@@ -25,6 +24,13 @@ class FixedInput extends React.Component {
     );
   }
 }
+
+FixedInput.propTypes = {
+  size: PropTypes.oneOf(["base", "middle", "big", "huge"]),
+  disabled: PropTypes.bool,
+  error: PropTypes.bool,
+  warning: PropTypes.bool
+};
 
 FixedInput.defaultProps = {
   type: "text",

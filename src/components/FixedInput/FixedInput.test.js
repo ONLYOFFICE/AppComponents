@@ -2,11 +2,10 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
-import FixedInput from ".";
 import { Base } from "../../themes";
-import Text from "../text";
-import StyledFixedInput from "./StyledFixedInput";
+import FixedInput from ".";
 import TextInput from "../TextInput";
+
 
 describe("<FixedInput />", () => {
   const baseProps = {
@@ -15,30 +14,25 @@ describe("<FixedInput />", () => {
   };
 
   it("renders without error", () => {
-    const wrapper = mount(<StyledFixedInput {...baseProps}>
-      </StyledFixedInput>);
+    const wrapper = mount(<FixedInput {...baseProps}>
+      </FixedInput>);
     expect(wrapper).toExist();
   });
 
-  it("id, className, style is exists", () => {
+  it("id, className", () => {
     const wrapper = mount(
-      <StyledFixedInput id="testId" className="test" style={{ color: "red" }}>
-
-      </StyledFixedInput>
+      <FixedInput id="testId" className="test"  />
     );
 
     expect(wrapper.prop("id")).toEqual("testId");
     expect(wrapper.prop("className")).toEqual("test");
-    expect(wrapper.getDOMNode().style).toHaveProperty("color", "red");
   });
 
 
   test("textInput--fixed border style test", () => {
     const checkBorderColor = renderer
       .create(
-        <StyledFixedInput border {...baseProps}>
-
-        </StyledFixedInput>
+        <FixedInput border {...baseProps} />
       )
       .toJSON();
     expect(checkBorderColor).toHaveStyleRule("border-color",Base.input.borderColor);
@@ -57,38 +51,54 @@ describe("<FixedInput />", () => {
       }
     );
   });
+test("textInput--fixed error style test", () => {
+  const treeRoot = mount(<FixedInput error {...baseProps} />);
 
- test("text-input error style test", () => {
-   const tree = renderer
-     .create(
-       <StyledFixedInput error {...baseProps}>
-       </StyledFixedInput>
-     )
-    
-     .toJSON();
-  //  expect(tree).toHaveStyleRule("border-color", Base.input.errorBorderColor);
-   expect(tree).toHaveStyleRule(
-     "border-color",
-     Base.input.hoverErrorBorderColor,
-     {
-       modifier: ":hover"
-     }
-   );
-   expect(tree).toHaveStyleRule(
-     "border-color",
-     Base.input.focusErrorBorderColor,
-     {
-       modifier: ":focus"
-     }
-   );
- });
+  const tree = treeRoot.find(TextInput);
+
+  expect(tree).toHaveStyleRule("border-color", Base.input.errorBorderColor);
+  expect(tree).toHaveStyleRule(
+    "border-color",
+    Base.input.hoverErrorBorderColor,
+    {
+      modifier: ":hover"
+    }
+  );
+
+  expect(tree).toHaveStyleRule(
+    "border-color",
+    Base.input.focusErrorBorderColor,
+    {
+      modifier: ":focus"
+    }
+  );
+});
+
+test("textInput--fixed warning style test", () => {
+ const treeRoot = mount(<FixedInput warning {...baseProps} />);
+
+ const tree = treeRoot.find(TextInput);
+  expect(tree).toHaveStyleRule("border-color", Base.input.warningBorderColor);
+  expect(tree).toHaveStyleRule(
+    "border-color",
+    Base.input.hoverWarningBorderColor,
+    {
+      modifier: ":hover"
+    }
+  );
+  expect(tree).toHaveStyleRule(
+    "border-color",
+    Base.input.focusWarningBorderColor,
+    {
+      modifier: ":focus"
+    }
+  );
+});
 
   test("textInput--fixed disabled style test", () => {
     const checkBorderColorDisabled = renderer
       .create(
-        <StyledFixedInput disabled {...baseProps}>
-
-        </StyledFixedInput>
+        <FixedInput disabled {...baseProps} />
       )
       .toJSON();
     expect(checkBorderColorDisabled).toHaveStyleRule(
