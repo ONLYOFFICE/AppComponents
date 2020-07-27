@@ -37,12 +37,14 @@ storiesOf("Components|FixedInput", module)
             error={boolean("error", false)}
             warning={boolean("warning", false)}
             disabled={boolean("disabled", false)}
+            scale={boolean("scale", false)}
             readOnly={boolean("readOnly", false)}
             autoFocus={boolean("autoFocus", false)}
             onFocus={action("onFocus")}
             onBlur={action("onBlur")}
             maxLength={number("maxLength", 255)}
             tabIndex={number("tabIndex", 1)}
+
           />
         )}
       </StringValue>

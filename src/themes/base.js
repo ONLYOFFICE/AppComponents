@@ -283,7 +283,8 @@ const Base = {
       base: "130px",
       middle: "255px",
       big: "305px",
-      huge: "446px"
+      huge: "455px",
+      scale:"470px"
     },
     font_size: {
       base: "13px",

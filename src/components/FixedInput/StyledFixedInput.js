@@ -8,12 +8,14 @@ const StyledFixedInput = styled(Box)`
   position: relative;
 
   width: ${props =>
+    (props.scale && "100%") ||
     (props.size === "base" && props.theme.input.width.base) ||
     (props.size === "middle" && props.theme.input.width.middle) ||
     (props.size === "big" && props.theme.input.width.big) ||
     (props.size === "huge" && props.theme.input.width.huge)};
 
-  ${commonInputStyles} :focus-within:hover,:focus-within  {
+  ${commonInputStyles} :focus-within:hover,
+  :focus-within {
     border-color: ${props => props.theme.fixedInput.focusBorderColor};
   }
 
@@ -31,6 +33,7 @@ const StyledFixedInput = styled(Box)`
 
   .textInput__fixed--input {
     width: ${props =>
+      (props.scale  && props.theme.fixedInput.inputWidth.scale) ||
       (props.size === "base" && props.theme.fixedInput.inputWidth.base) ||
       (props.size === "middle" && props.theme.fixedInput.inputWidth.middle) ||
       (props.size === "big" && props.theme.fixedInput.inputWidth.big) ||
@@ -42,13 +45,6 @@ const StyledFixedInput = styled(Box)`
     background-color: ${props => props.theme.fixedInput.fixedBackgroundColor};
     color: ${props => props.theme.fixedInput.hoverBorderColor};
     border-left: 1px solid #d0d5da;
-
-    width: ${props =>
-      (props.size === "base" && props.theme.fixedInput.width.base) ||
-      (props.size === "middle" && props.theme.fixedInput.width.middle) ||
-      (props.size === "big" && props.theme.fixedInput.width.big) ||
-      (props.size === "huge" && props.theme.fixedInput.width.huge)};
-
     height: ${props =>
       (props.size === "base" && props.theme.fixedInput.height.base) ||
       (props.size === "middle" && props.theme.fixedInput.height.middle) ||
