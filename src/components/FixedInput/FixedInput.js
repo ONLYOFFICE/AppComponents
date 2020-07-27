@@ -31,7 +31,7 @@ class FixedInput extends React.Component {
           border={false}
           className="textInput__fixed--input"
         />
-        <Text className="textInput__fixed"> {text("text", ".com")}</Text>
+        <Text className="textInput__fixed"> {text("fixedText", ".com")}</Text>
       </StyledFixedInput>
     );
   }
