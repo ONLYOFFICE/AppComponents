@@ -33,6 +33,7 @@ storiesOf("Components|FixedInput", module)
             type={text("type", "text")}
             size={select("size", sizeOptions, "base")}
             placeholder={text("placeholder", "This is placeholder")}
+            fixedText = {text("fixedText", ".com")}
             autoComplete={text("autoComplete", "off")}
             error={boolean("error", false)}
             warning={boolean("warning", false)}

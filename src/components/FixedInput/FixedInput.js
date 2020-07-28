@@ -11,6 +11,7 @@ class FixedInput extends React.Component {
   }
 
   render() {
+     const { fixedText } = this.props;
     return (
       <StyledFixedInput
         error={this.props.error}
@@ -18,13 +19,14 @@ class FixedInput extends React.Component {
         warning={this.props.warning}
         disabled={this.props.disabled}
         scale={this.props.scale}
+        style={this.props.style}
       >
         <TextInput
           {...this.props}
           border={false}
           className="textInput__fixed--input"
         />
-        <Text className="textInput__fixed"> {text("fixedText", ".com")}</Text>
+        <Text className="textInput__fixed"> {fixedText}</Text>
       </StyledFixedInput>
     );
   }
