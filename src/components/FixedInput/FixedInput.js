@@ -4,7 +4,7 @@ import TextInput from "../TextInput";
 import Text from "../Text";
 import StyledFixedInput from "./StyledFixedInput";
 import PropTypes from "prop-types";
-import {text} from "@storybook/addon-knobs/react";
+
 class FixedInput extends React.Component {
   shouldComponentUpdate(nextProps) {
     return !isEqual(this.props, nextProps);
@@ -37,7 +37,8 @@ FixedInput.propTypes = {
   disabled: PropTypes.bool,
   error: PropTypes.bool,
   warning: PropTypes.bool,
-  scale: PropTypes.bool
+  scale: PropTypes.bool,
+  style: PropTypes.object
 };
 
 FixedInput.defaultProps = {
