@@ -274,10 +274,10 @@ const Base = {
     },
 
     width: {
-      base: "28px",
-      middle: "33px",
-      big: "36px",
-      huge: "49px"
+      base: "86.5px",
+      middle: "150px",
+      big: "175px",
+      huge: "250px"
     },
     inputWidth: {
       base: "130px",

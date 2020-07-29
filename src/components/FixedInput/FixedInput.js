@@ -4,7 +4,7 @@ import TextInput from "../TextInput";
 import Text from "../Text";
 import StyledFixedInput from "./StyledFixedInput";
 import PropTypes from "prop-types";
-
+import styled, { css } from "styled-components";
 class FixedInput extends React.Component {
   shouldComponentUpdate(nextProps) {
     return !isEqual(this.props, nextProps);
@@ -26,7 +26,9 @@ class FixedInput extends React.Component {
           border={false}
           className="textInput__fixed--input"
         />
-        <Text className="textInput__fixed"> {fixedText}</Text>
+        <Text className="textInput__fixed" title={fixedText}>
+          {fixedText}
+        </Text>
       </StyledFixedInput>
     );
   }
