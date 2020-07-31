@@ -11,7 +11,7 @@ class InputWithOperations extends React.Component {
   }
 
   render() {
-const typeOptions = ["plus", "minus"];
+
     return (
       <StyledInputWithOperations
         error={this.props.error}
@@ -21,14 +21,13 @@ const typeOptions = ["plus", "minus"];
         scale={this.props.scale}
         style={this.props.style}
       >
-        <RoundButton type={"minus"} className="textInput__operations" />
-        
+        <RoundButton type={"minus"} className="textInput__operations left" />
         <TextInput
           {...this.props}
-          border={true}
+          border={false}
           className="textInput__operations--input"
         />
-        <RoundButton type={"plus"} className="textInput__operations" />
+        <RoundButton type={"plus"} className="textInput__operations right" />
       </StyledInputWithOperations>
     );
   }

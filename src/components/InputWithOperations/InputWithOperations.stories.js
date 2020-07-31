@@ -30,9 +30,9 @@ storiesOf("Components|InputWithOperations", module)
               action("onChange")(e);
             }}
             name={text("name", "")}
-            type={text("type", "text")}
+            type={text("type", "number")}
             size={select("size", sizeOptions, "base")}
-            placeholder={text("placeholder", "This is placeholder")}
+            placeholder={text("placeholder", "0")}
             autoComplete={text("autoComplete", "off")}
             error={boolean("error", false)}
             warning={boolean("warning", false)}
