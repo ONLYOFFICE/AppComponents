@@ -6,10 +6,7 @@ import Box from "../Box";
 import { StyledCrossShape } from "../RoundButton/StyledRoundButton";
 import { Base } from "../../themes";
 
-const CrossShapeColor = props =>
-  props.disabled
-    ? "red"
-    : "red";
+
 
 const StyledInputWithOperations = styled(Box)`
   display: flex;
@@ -27,40 +24,61 @@ const StyledInputWithOperations = styled(Box)`
 
   ${commonInputStyles} :hover {
     border-color: ${props =>
-      props.theme.input.focusBorderColor && props.theme.input.hoverBorderColor};
+      props.theme.input.focusBorderColor &&
+      props.theme.inputWithOperations.hoverBorderColor};
   }
 
   border-color: ${props => props.disabled && props.theme.input.borderColor};
 
   .textInput__operations {
     border-radius: 0px;
-    background: #ffffff;
+    background: ${props =>
+      props.disabled
+        ? props.theme.input.disableBackgroundColor
+        : props.theme.input.backgroundColor};
   }
-   .left{
-    border-right: 1px solid #d0d5da;
+
+  .left {
+    border-right: ${props => props.theme.input.border};
+    border-right-color: ${props => props.theme.inputWithOperations.borderColor};
   }
-  .right{
-    border-left: 1px solid #d0d5da;
+  .right {
+    border-left: ${props => props.theme.input.border};
+    border-left-color: ${props => props.theme.inputWithOperations.borderColor};
+  }
+  .textInput__operations:hover {
+    background: ${props =>
+      props.theme.inputWithOperations.backgroundOperations};
+    transition: background 0s;
   }
   .textInput__operations:active {
-    background: #eceef1;
+    background: ${props =>
+      props.theme.inputWithOperations.backgroundOperations};
     transition: background 0s;
+  }
+  .textInput__operations:disabled {
+    background: ${props => props.theme.input.disableBackgroundColor};
   }
 
   ${StyledCrossShape}:after {
-    background:#657077;
+    background: ${props =>
+      props.disabled
+        ? props.theme.inputWithOperations.hoverBorderColor
+        : props.theme.inputWithOperations.backgroundLines};
   }
 
   ${StyledCrossShape} {
-    /* background: ${props => CrossShapeColor(props)}; */
-    background:#657077;
+    background: ${props =>
+      props.disabled
+        ? props.theme.inputWithOperations.hoverBorderColor
+        : props.theme.inputWithOperations.backgroundLines};
   }
+  
 
   .textInput__operations--input::-webkit-outer-spin-button,
   .textInput__operations--input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
   }
   .textInput__operations--input:focus::-webkit-input-placeholder {
     opacity: 0;
@@ -69,8 +87,8 @@ const StyledInputWithOperations = styled(Box)`
   .textInput__operations--input {
     text-align: center;
   }
-  .textInput__operations--input::placeholder{
-    color: #A3A9AE;
+  .textInput__operations--input::placeholder {
+    color: ${props => props.theme.inputWithOperations.hoverBorderColor};
   }
 `;
 

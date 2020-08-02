@@ -25,10 +25,10 @@ storiesOf("Components|InputWithOperations", module)
         {({ value, set }) => (
           <InputWithOperations
             value={value}
-            onChange={e => {
-              set(e.target.value);
-              action("onChange")(e);
-            }}
+            // onChange={e => {
+            //   set(e.target.value);
+            //   action("onChange")(e);
+            // }}
             name={text("name", "")}
             type={text("type", "number")}
             size={select("size", sizeOptions, "base")}
