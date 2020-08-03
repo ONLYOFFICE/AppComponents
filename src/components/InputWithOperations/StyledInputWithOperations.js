@@ -10,6 +10,12 @@ import { Base } from "../../themes";
 
 const StyledInputWithOperations = styled(Box)`
   display: flex;
+  height: ${props =>
+    (props.size === "base" && props.theme.inputWithOperations.heightBox.base) ||
+    (props.size === "middle" &&
+      props.theme.inputWithOperations.heightBox.middle) ||
+    (props.size === "big" && props.theme.inputWithOperations.heightBox.big) ||
+    (props.size === "huge" && props.theme.inputWithOperations.heightBox.huge)};
 
   width: ${props =>
     (props.scale && "100%") ||
@@ -17,6 +23,7 @@ const StyledInputWithOperations = styled(Box)`
     (props.size === "middle" && props.theme.input.width.middle) ||
     (props.size === "big" && props.theme.input.width.big) ||
     (props.size === "huge" && props.theme.input.width.huge)};
+
   ${commonInputStyles} :focus-within:hover,
   :focus-within {
     border-color: ${props => props.theme.input.focusBorderColor};
@@ -31,6 +38,14 @@ const StyledInputWithOperations = styled(Box)`
   border-color: ${props => props.disabled && props.theme.input.borderColor};
 
   .textInput__operations {
+    height: ${props =>
+      (props.size === "base" &&
+        props.theme.inputWithOperations.heightOperations.base) ||
+      (props.size === "middle" &&
+        props.theme.inputWithOperations.heightOperations.middle) ||
+      (props.size === "big" && props.theme.inputWithOperations.heightOperations.big) ||
+      (props.size === "huge" &&
+        props.theme.inputWithOperations.heightOperations.huge)};
     border-radius: 0px;
     background: ${props =>
       props.disabled
@@ -39,10 +54,18 @@ const StyledInputWithOperations = styled(Box)`
   }
 
   .left {
+    border-bottom-left-radius: ${props =>
+      props.theme.inputWithOperations.sizeOperations};
+    border-top-left-radius: ${props =>
+      props.theme.inputWithOperations.sizeOperations};
     border-right: ${props => props.theme.input.border};
     border-right-color: ${props => props.theme.inputWithOperations.borderColor};
   }
   .right {
+    border-bottom-right-radius: ${props =>
+      props.theme.inputWithOperations.sizeOperations};
+    border-top-right-radius: ${props =>
+      props.theme.inputWithOperations.sizeOperations};
     border-left: ${props => props.theme.input.border};
     border-left-color: ${props => props.theme.inputWithOperations.borderColor};
   }
@@ -73,7 +96,6 @@ const StyledInputWithOperations = styled(Box)`
         ? props.theme.inputWithOperations.hoverBorderColor
         : props.theme.inputWithOperations.backgroundLines};
   }
-  
 
   .textInput__operations--input::-webkit-outer-spin-button,
   .textInput__operations--input::-webkit-inner-spin-button {

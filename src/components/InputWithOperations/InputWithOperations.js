@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import isEqual from "lodash/isEqual";
+import React from "react";
 import TextInput from "../TextInput";
 import RoundButton from "../RoundButton";
 import StyledInputWithOperations from "./StyledInputWithOperations";
 import PropTypes from "prop-types";
-import { withKnobs, boolean, select } from "@storybook/addon-knobs/react";
+
 
 
 class InputWithOperations extends React.Component {
@@ -15,6 +14,24 @@ class InputWithOperations extends React.Component {
     };
   }
 
+  onClickMinus = () => {
+    const { counter } = this.state;
+    let value = +counter;
+
+    this.setState({
+      counter: value > 0 ? --value : value
+    });
+  };
+
+  onClickPlus = () => {
+    const { counter } = this.state;
+    let value = +counter;
+
+    this.setState({
+      counter: ++value
+    });
+  };
+  
   render() {
     return (
       <StyledInputWithOperations
@@ -29,39 +46,27 @@ class InputWithOperations extends React.Component {
           {...this.props}
           type={"minus"}
           className="textInput__operations left"
-          onClick={() => {
-            this.setState({
-              counter:
-                this.state.counter * 1 - 1 >= 0 ? this.state.counter * 1 - 1 : 0
-            });
-          }}
+          onClick={this.onClickMinus}
         />
         <TextInput
           {...this.props}
-          id="myElement"
           border={false}
           type="number"
           className="textInput__operations--input"
-          value={ this.state.counter === 0 ? this.props.value  : this.state.counter}
-
+          value={
+            this.state.counter === 0 ? this.props.value : this.state.counter
+          }
           onChange={e => {
             this.setState({
-              counter:
-                +e.target.value
+              counter: +e.target.value
             });
-            
           }}
-
         />
         <RoundButton
           {...this.props}
           type={"plus"}
           className="textInput__operations right"
-          onClick={() => {
-            this.setState({
-              counter: this.state.counter * 1 + 1
-            });
-          }}
+          onClick={this.onClickPlus}
         />
       </StyledInputWithOperations>
     );
@@ -69,6 +74,7 @@ class InputWithOperations extends React.Component {
 }
 
 InputWithOperations.propTypes = {
+  value: PropTypes.number,
   size: PropTypes.oneOf(["base", "middle", "big", "huge"]),
   disabled: PropTypes.bool,
   error: PropTypes.bool,
@@ -79,7 +85,7 @@ InputWithOperations.propTypes = {
 
 InputWithOperations.defaultProps = {
   type: "text",
-  value: "",
+  value: 0,
   maxLength: 255,
   size: "base",
   tabIndex: -1,
