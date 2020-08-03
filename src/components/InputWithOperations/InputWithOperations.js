@@ -32,6 +32,13 @@ class InputWithOperations extends React.Component {
     });
   };
 
+  onChangeInput = (e) => {
+    this.setState({
+      counter: +e.target.value
+    });
+  }
+
+
   render() {
     return (
       <StyledInputWithOperations
@@ -56,11 +63,7 @@ class InputWithOperations extends React.Component {
           value={
             this.state.counter === 0 ? this.props.value : this.state.counter
           }
-          onChange={e => {
-            this.setState({
-              counter: +e.target.value
-            });
-          }}
+          onChange={this.onChangeInput}
         />
         <RoundButton
           {...this.props}
