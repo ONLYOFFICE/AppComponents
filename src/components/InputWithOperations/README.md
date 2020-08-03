@@ -1,6 +1,6 @@
 # InputWithOperations
 
-Text box for single-line strings
+Text box for numbers with operations
 
 #### See documentation: https://github.com/text-mask/text-mask
 
