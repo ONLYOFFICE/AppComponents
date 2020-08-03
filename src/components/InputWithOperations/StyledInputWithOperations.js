@@ -114,10 +114,9 @@ const StyledInputWithOperations = styled(Box)`
 
   ${StyledCrossShape} {
     width: 14px;
-    left: 30.25%;
-    right: 6.25%;
-    top: 43.75%;
-    bottom: 43.75%;
+    left: 25.25%;
+    bottom:50%;
+
     background: ${props =>
       props.disabled
         ? props.theme.inputWithOperations.hoverBorderColor
