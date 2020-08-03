@@ -31,7 +31,7 @@ class InputWithOperations extends React.Component {
       counter: ++value
     });
   };
-  
+
   render() {
     return (
       <StyledInputWithOperations
@@ -90,7 +90,6 @@ InputWithOperations.defaultProps = {
   size: "base",
   tabIndex: -1,
   autoComplete: "off",
-  border: true,
   keepCharPositions: false
 };
 

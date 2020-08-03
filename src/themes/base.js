@@ -274,10 +274,16 @@ const Base = {
       huge: "39px"
     },
     heightOperations: {
-      base: "30px",
-      middle: "36px",
-      big: "36px",
-      huge: "37px"
+      base: "32px",
+      middle: "38px",
+      big: "38px",
+      huge: "39px"
+    },
+    widthOperations: {
+      base: "32px",
+      middle: "38px",
+      big: "38px",
+      huge: "39px"
     }
   },
 

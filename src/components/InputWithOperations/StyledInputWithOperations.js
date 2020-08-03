@@ -10,6 +10,8 @@ import { Base } from "../../themes";
 
 const StyledInputWithOperations = styled(Box)`
   display: flex;
+  overflow: hidden;
+  position: relative;
   height: ${props =>
     (props.size === "base" && props.theme.inputWithOperations.heightBox.base) ||
     (props.size === "middle" &&
@@ -38,15 +40,29 @@ const StyledInputWithOperations = styled(Box)`
   border-color: ${props => props.disabled && props.theme.input.borderColor};
 
   .textInput__operations {
+    padding: 0px;
+    position: absolute;
     height: ${props =>
       (props.size === "base" &&
         props.theme.inputWithOperations.heightOperations.base) ||
       (props.size === "middle" &&
         props.theme.inputWithOperations.heightOperations.middle) ||
-      (props.size === "big" && props.theme.inputWithOperations.heightOperations.big) ||
+      (props.size === "big" &&
+        props.theme.inputWithOperations.heightOperations.big) ||
       (props.size === "huge" &&
         props.theme.inputWithOperations.heightOperations.huge)};
     border-radius: 0px;
+
+    width: ${props =>
+      (props.size === "base" &&
+        props.theme.inputWithOperations.heightOperations.base) ||
+      (props.size === "middle" &&
+        props.theme.inputWithOperations.heightOperations.middle) ||
+      (props.size === "big" &&
+        props.theme.inputWithOperations.heightOperations.big) ||
+      (props.size === "huge" &&
+        props.theme.inputWithOperations.heightOperations.huge)};
+
     background: ${props =>
       props.disabled
         ? props.theme.input.disableBackgroundColor
@@ -54,6 +70,7 @@ const StyledInputWithOperations = styled(Box)`
   }
 
   .left {
+    left: 0;
     border-bottom-left-radius: ${props =>
       props.theme.inputWithOperations.sizeOperations};
     border-top-left-radius: ${props =>
@@ -62,6 +79,7 @@ const StyledInputWithOperations = styled(Box)`
     border-right-color: ${props => props.theme.inputWithOperations.borderColor};
   }
   .right {
+    right: 0;
     border-bottom-right-radius: ${props =>
       props.theme.inputWithOperations.sizeOperations};
     border-top-right-radius: ${props =>
@@ -84,6 +102,10 @@ const StyledInputWithOperations = styled(Box)`
   }
 
   ${StyledCrossShape}:after {
+    height: 14px;
+    margin-top: 1px;
+    left: 43.25%;
+
     background: ${props =>
       props.disabled
         ? props.theme.inputWithOperations.hoverBorderColor
@@ -91,6 +113,11 @@ const StyledInputWithOperations = styled(Box)`
   }
 
   ${StyledCrossShape} {
+    width: 14px;
+    left: 30.25%;
+    right: 6.25%;
+    top: 43.75%;
+    bottom: 43.75%;
     background: ${props =>
       props.disabled
         ? props.theme.inputWithOperations.hoverBorderColor
