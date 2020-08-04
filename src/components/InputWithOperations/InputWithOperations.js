@@ -14,32 +14,21 @@ class InputWithOperations extends React.Component {
     };
   }
 
-  onClickOperations = () => {
+  onClickOperations = (e) => {
+    const operation = e.currentTarget.dataset.operation;
     const { counter } = this.state;
     let value = +counter;
-
+    if (operation === "plus") {
+      value = ++value;
+    }
+    if (operation === "minus") {
+      value = value > 0 ? --value : value;
+    }
     this.setState({
-      counter: value > 0 ? --value : value
-    });
+       counter: value
+     });
+
   };
-  onClickMinus = () => {
-    const { counter } = this.state;
-    let value = +counter;
-
-    this.setState({
-      counter: value > 0 ? --value : value
-    });
-  };
-
-  onClickPlus = () => {
-    const { counter } = this.state;
-    let value = +counter;
-
-    this.setState({
-      counter: ++value
-    });
-  };
-
   onChangeInput = e => {
     this.setState({
       counter: +e.target.value
@@ -60,7 +49,8 @@ class InputWithOperations extends React.Component {
           {...this.props}
           type={"minus"}
           className="textInput__operations left"
-          onClick={this.onClickMinus}
+          onClick={this.onClickOperations}
+          data-operation={"minus"}
         />
         <TextInput
           {...this.props}
@@ -76,7 +66,8 @@ class InputWithOperations extends React.Component {
           {...this.props}
           type={"plus"}
           className="textInput__operations right"
-          onClick={this.onClickPlus}
+          onClick={this.onClickOperations}
+          data-operation={"plus"}
         />
       </StyledInputWithOperations>
     );
