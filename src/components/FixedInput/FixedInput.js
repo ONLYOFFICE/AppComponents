@@ -24,7 +24,7 @@ class FixedInput extends React.Component {
         <TextInput
           {...this.props}
       border = {false}
-      
+
           className="textInput__fixed--input"
         />
         <Text className="textInput__fixed" title={fixedText}>
@@ -51,7 +51,6 @@ FixedInput.defaultProps = {
   size: "base",
   tabIndex: -1,
   autoComplete: "off",
-  border: true,
   keepCharPositions: false
 };
 

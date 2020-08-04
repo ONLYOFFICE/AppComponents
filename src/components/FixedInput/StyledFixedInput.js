@@ -1,4 +1,4 @@
-import styled, { css }from "styled-components";
+import styled from "styled-components";
 import commonInputStyles from "../../utils/commonInputStyles";
 import Box from "../Box";
 import { Base } from "../../themes";
@@ -6,6 +6,7 @@ import { Base } from "../../themes";
 const StyledFixedInput = styled(Box)`
   display: flex;
   position: relative;
+  overflow: hidden;
   height: ${props =>
     (props.size === "base" && props.theme.fixedInput.heightBox.base) ||
     (props.size === "middle" && props.theme.fixedInput.heightBox.middle) ||
