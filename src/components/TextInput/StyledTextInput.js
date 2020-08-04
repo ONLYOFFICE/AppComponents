@@ -4,7 +4,6 @@ import Input from "./Input";
 import { Base } from "../../themes";
 
 const StyledTextInput = styled(Input)`
-
   ${commonInputStyles}
   -webkit-appearance: ${props => props.theme.textInput.appearance};
   display: ${props => props.theme.textInput.display};
@@ -71,8 +70,6 @@ const StyledTextInput = styled(Input)`
 
   ${props => !props.border && `border: none;`}
 `;
-
-
 
 StyledTextInput.defaultProps = { theme: Base };
 
