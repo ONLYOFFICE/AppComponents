@@ -14,6 +14,14 @@ class InputWithOperations extends React.Component {
     };
   }
 
+  onClickOperations = () => {
+    const { counter } = this.state;
+    let value = +counter;
+
+    this.setState({
+      counter: value > 0 ? --value : value
+    });
+  };
   onClickMinus = () => {
     const { counter } = this.state;
     let value = +counter;
@@ -32,12 +40,11 @@ class InputWithOperations extends React.Component {
     });
   };
 
-  onChangeInput = (e) => {
+  onChangeInput = e => {
     this.setState({
       counter: +e.target.value
     });
-  }
-
+  };
 
   render() {
     return (
