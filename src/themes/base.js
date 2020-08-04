@@ -273,7 +273,7 @@ const Base = {
       huge: "25px"
     },
     heightBox: {
-      base:"32px",
+      base: "32px",
       middle: "38px",
       big: "38px",
       huge: "39px"
@@ -284,12 +284,11 @@ const Base = {
       big: "40px",
       huge: "45px"
     },
-    inputWidth: {
-      base: "125px",
-      middle: "250px",
-      big: "303px",
-      huge: "455px",
-      scale:"600px"
+    maxWidth: {
+      base: "86.5px",
+      middle: "150px",
+      big: "175px",
+      huge: "250px"
     },
     font_size: {
       base: "13px",

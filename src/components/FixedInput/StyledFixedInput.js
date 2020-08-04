@@ -5,7 +5,7 @@ import { Base } from "../../themes";
 
 const StyledFixedInput = styled(Box)`
   display: flex;
-  position: relative;
+
   overflow: hidden;
   height: ${props =>
     (props.size === "base" && props.theme.fixedInput.heightBox.base) ||
@@ -36,24 +36,14 @@ const StyledFixedInput = styled(Box)`
     color: ${props => props.theme.fixedInput.hoverBorderColor};
   }
 
-  .textInput__fixed--input {
-    position: absolute;
-    width: ${props =>
-      (props.scale && "88%") ||
-      (props.size === "base" && props.theme.fixedInput.inputWidth.base) ||
-      (props.size === "middle" && props.theme.fixedInput.inputWidth.middle) ||
-      (props.size === "big" && props.theme.fixedInput.inputWidth.big) ||
-      (props.size === "huge" && props.theme.fixedInput.inputWidth.huge)};
-  }
-
   .textInput__fixed {
-    position: absolute;
+
     max-width: ${props =>
-      (props.scale && "10%") ||
-      (props.size === "base" && props.theme.fixedInput.width.base) ||
-      (props.size === "middle" && props.theme.fixedInput.width.middle) ||
-      (props.size === "big" && props.theme.fixedInput.width.big) ||
-      (props.size === "huge" && props.theme.fixedInput.width.huge)};
+      (props.scale && "50%") ||
+      (props.size === "base" && props.theme.fixedInput.maxWidth.base) ||
+      (props.size === "middle" && props.theme.fixedInput.maxWidth.middle) ||
+      (props.size === "big" && props.theme.fixedInput.maxWidth.big) ||
+      (props.size === "huge" && props.theme.fixedInput.maxWidth.huge)};
 
     overflow: hidden;
     text-overflow: ellipsis;
