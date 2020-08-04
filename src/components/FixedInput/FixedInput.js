@@ -47,6 +47,7 @@ FixedInput.propTypes = {
 FixedInput.defaultProps = {
   type: "text",
   value: "",
+  fixedText: ".com",
   maxLength: 255,
   size: "base",
   tabIndex: -1,
