@@ -40,7 +40,7 @@ const StyledInputWithOperations = styled(Box)`
   border-color: ${props => props.disabled && props.theme.input.borderColor};
 
   .textInput__operations {
-    padding: 0px;
+    padding: 8px;
     position: absolute;
     height: ${props =>
       (props.size === "base" &&
@@ -114,8 +114,8 @@ const StyledInputWithOperations = styled(Box)`
 
   ${StyledCrossShape} {
     width: 14px;
-    left: 25.25%;
-    bottom:50%;
+    left: 6.25%;
+margin-bottom:2px;
 
     background: ${props =>
       props.disabled
