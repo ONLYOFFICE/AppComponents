@@ -7,8 +7,10 @@ import PropTypes from "prop-types";
 
 
 class InputWithOperations extends React.Component {
+
   constructor(props) {
     super(props);
+
     this.state = {
       counter: this.props.value
     };
@@ -58,7 +60,11 @@ class InputWithOperations extends React.Component {
           border={false}
           type="number"
           className="textInput__operations--input"
-          value={this.state.counter === 0 ? this.props.value : this.state.counter}
+          value={
+            this.state.counter === 0
+              ? this.props.value + ""
+              : this.state.counter + ""
+          }
           onChange={this.onChangeInput}
         />
         <RoundButton

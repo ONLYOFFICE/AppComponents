@@ -1,16 +1,21 @@
 import React from "react";
-import { mount} from "enzyme";
+import { mount, shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 import { Base } from "../../themes";
 import InputWithOperations from ".";
 import TextInput from "../TextInput";
 
-describe("<InputWithOperations />", () => {
+
+jest.useFakeTimers();
   const baseProps = {
-    value: "text",
+    value: 0,
     onChange: jest.fn()
   };
+
+
+describe("<InputWithOperations />", () => {
+
 
   it("renders without error", () => {
     const wrapper = mount(<InputWithOperations {...baseProps}></InputWithOperations>);
@@ -51,6 +56,7 @@ describe("<InputWithOperations />", () => {
     );
   });
   test("textInput--operations error style test", () => {
+
     const treeRoot = mount(<InputWithOperations error {...baseProps} />);
 
     const checkErrorBorder = treeRoot.find(TextInput);
@@ -117,4 +123,44 @@ describe("<InputWithOperations />", () => {
       }
     );
   });
+
+ test("textInput--operations prop test", () => {
+      const number = 3;
+      const wrapper = mount(<InputWithOperations value={number} />);
+      expect(wrapper.state().counter).toBe(number);
+      wrapper.setProps({value: 8 });
+      expect(wrapper.props().value).toBe(8);
+
+ });
+
+ test("causes function onClickOperations()--plus", () => {
+   const number = 6;
+   const wrapper = shallow(
+     <InputWithOperations {...baseProps} value={number} />
+   );
+   const instance = wrapper.instance();
+   instance.onClickOperations({
+     currentTarget: {
+       dataset: {
+         operation: "plus"
+       }
+     }
+   });
+   expect(wrapper.state().counter).toBe(7);
+ });
+ test("causes function onClickOperations()--minus", () => {
+   const number = 6;
+   const wrapper = shallow(
+     <InputWithOperations {...baseProps} value={number} />
+   );
+   const instance = wrapper.instance();
+   instance.onClickOperations({
+     currentTarget: {
+       dataset: {
+         operation: "minus"
+       }
+     }
+   });
+   expect(wrapper.state().counter).toBe(5);
+ });
 });

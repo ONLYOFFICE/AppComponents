@@ -115,7 +115,7 @@ const StyledInputWithOperations = styled(Box)`
   ${StyledCrossShape} {
     width: 14px;
     left: 6.25%;
-margin-bottom:2px;
+    margin-bottom:2px;
 
     background: ${props =>
       props.disabled
