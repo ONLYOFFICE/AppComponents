@@ -11,13 +11,13 @@ import { InputWithOperations } from "app-components";
 ```
 
 ```js
-const mask = [/\d/, /\d/, "/", /\d/, /\d/, "/", /\d/, /\d/, /\d/, /\d/];
+const mask = [/0-5/];
 ```
 
 ```jsx
 <InputWithOperations
   mask={mask}
-  value="text"
+  value="number"
   onChange={event => alert(event.target.value)}
 />
 ```
@@ -32,8 +32,7 @@ const mask = [/\d/, /\d/, "/", /\d/, /\d/, "/", /\d/, /\d/, /\d/, /\d/];
 | `type`              | `string` |          |       `number`        | `number`  | Supported type of input characters.                                                                                                                                                                                                                           |
 | `size`              | `string` |          | `base`, `middle`, `big`, `huge` | `base`  | Supported size of input characters.                                                                                                                                                                                                                           |
 | `placeholder`       | `string` |    -     |                -                |    -    | Placeholder text for the input                                                                                                                                                                                                                                |
-| `autoComplete`      | `string` |    -     |                -                |    -    | Used as HTML `autocomplete` attribute                                                                                                                                                                                                                          |
-| `maxLength`         | `number` |    -     |                -                |    -    | Sets the maximum number of characters allowed in the input box.                                                                                                                                                              |
+| `autoComplete`      | `string` |    -     |                -                |    -    | Used as HTML `autocomplete` attribute                                                                                                                                     |
 | `tabIndex`          | `number` |    -     |                -                |  `-1`   | The tabIndex attribute specifies the tab order of the text box (when the "tab" button is used for navigating).                                                                                                                                                  |
 | `error`             |  `bool`  |    -     |                -                |    -    | Indicates with a red border that the input field has an error                                                                                                                                                                                                                      |
 | `warning`           |  `bool`  |    -     |                -                |    -    | Indicates with a yellow border that the input field has a warning                                                                                                                                                                                                                     |

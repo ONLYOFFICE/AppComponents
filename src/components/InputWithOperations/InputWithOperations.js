@@ -10,10 +10,10 @@ class InputWithOperations extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
-      counter: this.props.value
+      counter: 0
     };
+
   }
 
   onClickOperations = (e) => {
@@ -21,23 +21,23 @@ class InputWithOperations extends React.Component {
     const { counter } = this.state;
     let value = +counter;
     if (operation === "plus") {
-      value = ++value;
+      value = ++value
+
     }
     if (operation === "minus") {
-      value = value > 0 ? --value : value;
+      value = Math.max(0, counter - 1);
     }
     this.setState({
-       counter: value
-     });
-
+      counter: value
+    });
   };
 
   onChangeInput = e => {
     this.setState({
-      counter: +e.target.value
+      counter: +e.target.value.length <= 15 ? +e.target.value : value
     });
   };
-
+  
   render() {
     return (
       <StyledInputWithOperations
@@ -58,14 +58,10 @@ class InputWithOperations extends React.Component {
         <TextInput
           {...this.props}
           border={false}
-          type="number"
           className="textInput__operations--input"
-          value={
-            this.state.counter === 0
-              ? this.props.value + ""
-              : this.state.counter + ""
-          }
+          value={this.state.counter + ""}
           onChange={this.onChangeInput}
+
         />
         <RoundButton
           {...this.props}

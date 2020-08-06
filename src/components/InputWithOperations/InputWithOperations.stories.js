@@ -43,7 +43,6 @@ storiesOf("Components|InputWithOperations", module)
             border={boolean("border", true)}
             onFocus={action("onFocus")}
             onBlur={action("onBlur")}
-            maxLength={number("maxLength", 255)}
             tabIndex={number("tabIndex", 1)}
           />
         )}
