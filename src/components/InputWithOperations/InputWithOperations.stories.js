@@ -20,7 +20,6 @@ const options = {
   min: 1,
   max: 10000,
   step: 1,
-
 };
 storiesOf("Components|InputWithOperations", module)
   .addDecorator(withKnobs)

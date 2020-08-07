@@ -11,8 +11,7 @@ class InputWithOperations extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      counter: 0,
-      step: this.props.step
+      counter: 0
     };
 
   }
@@ -21,10 +20,8 @@ class InputWithOperations extends React.Component {
     const operation = e.currentTarget.dataset.operation;
     const { counter } = this.state;
     let value = +counter;
-
     if (operation === "plus") {
       value = value + this.props.step
-
     }
     if (operation === "minus") {
       value = Math.max(0, counter - this.props.step);
@@ -61,7 +58,6 @@ class InputWithOperations extends React.Component {
           onClick={this.onClickOperations}
           data-operation={"minus"}
         />
-
         <TextInput
           {...this.props}
           border={false}
@@ -69,7 +65,6 @@ class InputWithOperations extends React.Component {
           value={this.state.counter + ""}
           onChange={this.onChangeInput}
         />
-
         <RoundButton
           {...this.props}
           type={"plus"}
