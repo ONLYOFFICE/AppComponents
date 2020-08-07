@@ -15,7 +15,13 @@ import InputWithOperations from ".";
 import Box from "../Box";
 
 const sizeOptions = ["base", "middle", "big", "huge"];
+const options = {
+   range: true,
+  min: 1,
+  max: 10000,
+  step: 1,
 
+};
 storiesOf("Components|InputWithOperations", module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(Readme))
@@ -30,8 +36,9 @@ storiesOf("Components|InputWithOperations", module)
               action("onChange")(e);
             }}
             name={text("name", "")}
-            type={text("type", "number")}
+            type={text("type", "text")}
             size={select("size", sizeOptions, "base")}
+            step={number("step", 1, options)}
             placeholder={text("placeholder", "0")}
             autoComplete={text("autoComplete", "off")}
             error={boolean("error", false)}

@@ -2,22 +2,16 @@
 
 Text box for numbers with operations
 
-#### See documentation: https://github.com/text-mask/text-mask
-
 ### Usage
 
 ```js
 import { InputWithOperations } from "app-components";
 ```
 
-```js
-const mask = [/0-5/];
-```
 
 ```jsx
 <InputWithOperations
-  mask={mask}
-  value="number"
+  value="text"
   onChange={event => alert(event.target.value)}
 />
 ```
@@ -40,8 +34,6 @@ const mask = [/0-5/];
 | `scale`             |  `bool`  |    -     |                -                |    -    | Makes the input field stretch to fit the page width or the distance till the next element on the page                                                                                                                                                                                                                         |
 | `readOnly`          |  `bool`  |    -     |                -                | `false` | Indicates that the field is displaying read-only content                                                                                                                                                                                                      |
 | `autoFocus`         |  `bool`  |    -     |                -                |    -    | Puts input field in focus at the initial render                                                                                                                                                                                                                       |
-| `border`            |  `bool`  |    -     |                -                | `true`  | Indicates that the component contains borders                                                                                                                                                                                                                       |
-| `keepCharPositions` |  `bool`  |    -     |                -                | `false` | When true, adding or deleting characters will not affect the positions of existing characters. When false, adding characters makes existing characters move to the right of the cursor. Deleting characters makes existing characters move left following the cursor. Can be used only with `mask` prop |
-| `mask`              | `array`  |    -     |                -                |    -    | Input text mask                                                                                                                                                                                                                                               |
+| `border`            |  `bool`  |    -     |                -                | `true`  | Indicates that the component contains borders                                                                                                                                                                                                                                   |
 | `onFocus`           |  `func`  |    -     |                -                |    -    | Is called when the input field is focused                                                                                                                                                                                                                                  |
 | `onBlur`            |  `func`  |    -     |                -                |    -    | Is called when the input field is blurred - when the focus is outside the input field                                                                                                                                                                                                                                  |
