@@ -3,6 +3,7 @@ import TextInput from "../TextInput";
 import RoundButton from "../RoundButton";
 import StyledInputWithOperations from "./StyledInputWithOperations";
 import PropTypes from "prop-types";
+import isEqual from "lodash/isEqual";
 
 class InputWithOperations extends React.Component {
   constructor(props) {
@@ -10,6 +11,10 @@ class InputWithOperations extends React.Component {
     this.state = {
       counter: this.props.value
     };
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return !isEqual(this.props, nextProps) || !isEqual(this.state, nextState);
   }
 
   onClickOperations = e => {
