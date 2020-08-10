@@ -257,7 +257,7 @@ describe("Calendar tests:", () => {
     const wrapper = shallow(<Calendar locale="en" />).instance();
 
     expect(wrapper.getCurrentMonth(optionsMonth, newOpenToDate)).toEqual(
-      optionsMonth[6]
+      optionsMonth[newOpenToDate.getMonth()]
     );
   });
 
