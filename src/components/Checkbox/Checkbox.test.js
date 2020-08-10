@@ -70,7 +70,7 @@ describe("<Checkbox />", () => {
 
   it("input indeterminate test", () => {
     const wrapper1 = mount(<Checkbox {...baseProps} indeterminate/>);
-  
+
     expect(wrapper1.prop("indeterminate")).toEqual(true);
 
     wrapper1.setProps({ indeterminate: false });

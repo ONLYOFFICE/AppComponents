@@ -4,24 +4,20 @@ import RoundButton from "../RoundButton";
 import StyledInputWithOperations from "./StyledInputWithOperations";
 import PropTypes from "prop-types";
 
-
-
 class InputWithOperations extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       counter: this.props.value
     };
-
   }
 
-  onClickOperations = (e) => {
+  onClickOperations = e => {
     const operation = e.currentTarget.dataset.operation;
     const { counter } = this.state;
     let value = +counter;
     if (operation === "plus") {
-      value = value + this.props.step
+      value = value + this.props.step;
     }
     if (operation === "minus") {
       value = Math.max(0, counter - this.props.step);
