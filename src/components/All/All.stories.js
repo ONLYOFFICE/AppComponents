@@ -192,6 +192,7 @@ storiesOf("Components|All", module)
               <FixedInput
                 placeholder="Add comment"
                 onChange={event => set(event.target.value)}
+                fixedText=".com"
                 value={value}
               />
             )}

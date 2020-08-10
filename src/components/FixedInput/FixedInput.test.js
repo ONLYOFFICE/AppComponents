@@ -21,7 +21,12 @@ describe("<FixedInput />", () => {
 
   it("id, className", () => {
     const wrapper = mount(
-      <FixedInput id="testId" className="test" style={{ color: "red" }} />
+      <FixedInput
+        id="testId"
+        className="test"
+        style={{ color: "red" }}
+        {...baseProps}
+      />
     );
 
     expect(wrapper.prop("id")).toEqual("testId");

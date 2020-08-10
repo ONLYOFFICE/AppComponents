@@ -6,10 +6,6 @@ import StyledFixedInput from "./StyledFixedInput";
 import PropTypes from "prop-types";
 
 class FixedInput extends React.Component {
-  shouldComponentUpdate(nextProps) {
-    return !isEqual(this.props, nextProps);
-  }
-
   render() {
     const { fixedText } = this.props;
     return (
@@ -22,9 +18,8 @@ class FixedInput extends React.Component {
         style={this.props.style}
       >
         <TextInput
-          {...this.props}
-      border = {false}
-
+        {...this.props}
+          border={false}
           className="textInput__fixed--input"
         />
         <Text className="textInput__fixed" title={fixedText}>
@@ -47,7 +42,6 @@ FixedInput.propTypes = {
 FixedInput.defaultProps = {
   type: "text",
   value: "",
-  fixedText: ".com",
   maxLength: 255,
   size: "base",
   tabIndex: -1,
