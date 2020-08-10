@@ -2,21 +2,16 @@
 
 Text box for single-line strings with fixed block
 
-#### See documentation: https://github.com/text-mask/text-mask
-
 ### Usage
 
 ```js
 import { FixedInput } from "app-components";
 ```
 
-```js
-const mask = [/\d/, /\d/, "/", /\d/, /\d/, "/", /\d/, /\d/, /\d/, /\d/];
-```
 
 ```jsx
 <FixedInput = {
-  mask={mask}
+  fixedText=".com"
   value="text"
   onChange={event => alert(event.target.value)}
 />
@@ -26,13 +21,13 @@ const mask = [/\d/, /\d/, "/", /\d/, /\d/, "/", /\d/, /\d/, /\d/, /\d/];
 
 | Props               |   Type   | Required |             Values              | Default | Description                                                                                                                                                                                                                                                   |
 | ------------------- | :------: | :------: | :-----------------------------: | :-----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `value`             | `string` |    ✅    |                -                |    -    | Input value                                                                                                                                                                                                                                            |
+| `value`             | `string` |    ✅    |                -                |    -    | Input value                                                                                                                            |
+| `fixedText`       | `string` |    -     |                -                |    -    | Fixed component value                                                                                                                         |
 | `onChange`          |  `func`  |    ✅    |                -                |    -    | Is called with a new value. Is required when input is not read-only. Parent passes it back as `value`                                                                                                                                                        |
 | `name`              | `string` |    -     |                -                |    -    | Used as HTML `name` property                                                                                                                                                                                                                                  |
 | `type`              | `string` |          |       `text`, `password`        | `text`  | Supported type of input characters.                                                                                                                                                                                                                           |
 | `size`              | `string` |          | `base`, `middle`, `big`, `huge` | `base`  | Supported size of input characters.                                                                                                                                                                                                                           |
-| `placeholder`       | `string` |    -     |                -                |    -    | Placeholder text for the input                                                                                                                                                                                                                              |
-| `fixedText`       | `string` |    -     |                -                |    -    | Placeholder text for the fixed component                                                                                                                |
+| `placeholder`       | `string` |    -     |                -                |    -    | Placeholder text for the input                                                                                                                                                                                                                                                                                                                                     |
 | `autoComplete`      | `string` |    -     |                -                |    -    | Used as HTML `autocomplete` attribute                                                                                                                                                                                                                          |
 | `maxLength`         | `number` |    -     |                -                |    -    | Sets the maximum number of characters allowed in the input box.                                                                                                                                                              |
 | `tabIndex`          | `number` |    -     |                -                |  `-1`   | The tabIndex attribute specifies the tab order of the text box (when the "tab" button is used for navigating).                                                                                                                                                  |
