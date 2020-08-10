@@ -10,6 +10,7 @@ import TextInput from "../TextInput";
 jest.useFakeTimers();
   const baseProps = {
     value: 0,
+    step: 1,
     onChange: jest.fn()
   };
 
