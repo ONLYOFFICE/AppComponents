@@ -8,6 +8,7 @@ import { Base } from "../../themes/index";
 
 const baseProps = {
   label: "checkbox",
+  color: "#FFFF",
   onChange: jest.fn()
 };
 
@@ -91,9 +92,10 @@ describe("<Checkbox />", () => {
   });
 
   test("svg style test", () => {
+
     const tree = renderer
       .create(
-        <StyledCheckbox>
+        <StyledCheckbox {...baseProps}>
           <svg>
             <rect />
           </svg>
@@ -106,7 +108,7 @@ describe("<Checkbox />", () => {
 
     const tree1 = renderer
       .create(
-        <StyledCheckbox disabled>
+        <StyledCheckbox disabled {...baseProps}>
           <svg>
             <rect />
           </svg>
@@ -114,12 +116,12 @@ describe("<Checkbox />", () => {
       )
       .toJSON();
     expect(tree1).toHaveStyleRule("fill", Base.checkbox.disableFillColor, {
-      modifier: "svg rect"
-    });
+       modifier: "svg rect"
+     });
 
     const tree2 = renderer
       .create(
-        <StyledCheckbox indeterminate>
+        <StyledCheckbox indeterminate {...baseProps}>
           <svg>
             <rect />
           </svg>
@@ -132,7 +134,7 @@ describe("<Checkbox />", () => {
 
     const tree3 = renderer
       .create(
-        <StyledCheckbox disabled indeterminate>
+        <StyledCheckbox disabled indeterminate {...baseProps}>
           <svg>
             <rect />
           </svg>
