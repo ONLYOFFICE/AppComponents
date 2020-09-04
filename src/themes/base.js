@@ -147,10 +147,10 @@ const Base = {
     thumbBorderColorActive: `1px solid ${globalColors.gray}`,
     thumbBorderColorDisable: `1px solid ${globalColors.grayMid}`,
 
-    sliderWidth: '202px',
+    sliderWidth: "202px",
 
     arrowHover: blueMain,
-    arrowColor: grayMid,
+    arrowColor: grayMid
   },
 
   switchButton: {
@@ -258,6 +258,32 @@ const Base = {
       middle: "8px 12px",
       big: "8px 16px",
       huge: "8px 20px"
+    }
+  },
+
+  inputWithOperations: {
+    borderColor: "#d0d5da",
+    hoverBorderColor: "#A3A9AE",
+    backgroundOperations: "#eceef1",
+    backgroundLines: "#657077",
+    sizeOperations: "2px",
+    heightBox: {
+      base: "32px",
+      middle: "38px",
+      big: "38px",
+      huge: "39px"
+    },
+    heightOperations: {
+      base: "32px",
+      middle: "38px",
+      big: "38px",
+      huge: "39px"
+    },
+    widthOperations: {
+      base: "32px",
+      middle: "38px",
+      big: "38px",
+      huge: "39px"
     }
   },
 
@@ -604,21 +630,20 @@ const Base = {
     height: "40px",
     width: "40px",
     backgroundColor: grayLight,
-    borderRadius: 
-    {
+    borderRadius: {
       plus: "112px",
       minus: "81px"
     },
     borderStyle: "none",
     outline: "none",
     hover: {
-      backgroundColor: grayLightMid,
+      backgroundColor: grayLightMid
     },
     click: {
-      backgroundColor: grayMid,
+      backgroundColor: grayMid
     },
     disable: {
-      backgroundColor: grayLight,
+      backgroundColor: grayLight
     },
     plus: {
       color: grayMid,

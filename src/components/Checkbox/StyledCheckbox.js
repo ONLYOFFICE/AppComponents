@@ -40,7 +40,7 @@ const StyledCheckbox = styled.label`
                     props.color === "#FFFF"
                       ? props.theme.checkbox.borderColor
                       : props.color};
-            }
+            
             }
             rect:last-child {
               fill: ${props =>
