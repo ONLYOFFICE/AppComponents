@@ -103,7 +103,7 @@
   },
   "dependencies": {
     "html-to-react": "^1.4.2",
-    "lodash": "4.17.19",
+    "lodash": "4.17.21",
     "lodash-es": "^4.17.15",
     "moment": "^2.24.0",
     "react-autosize-textarea": "^7.0.0",
